@@ -1,0 +1,1 @@
+to run the app ./.venv/bin/streamlit run app.py

@@ -1,0 +1,13 @@
+streamlit
+pydantic
+pandas
+plotly
+google-genai
+
+langgraph
+langchain
+numpy
+markitdown[pdf]
+streamlit-autorefresh
+aiohttp
+scikit-learn

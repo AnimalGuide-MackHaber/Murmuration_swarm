@@ -1,0 +1,56 @@
+{
+    "physics": {
+        "visual_range": 25.0,
+        "max_speed": 5.0,
+        "influence_decay_alpha": 0.1,
+        "weights": {
+            "separation": 1.5,
+            "alignment": 1.0,
+            "cohesion": 1.0,
+            "goal_seeking": 0.8
+        },
+        "dt": 1.0
+    },
+    "simulation": {
+        "default_max_iterations": 20
+    },
+    "circuit_breaker": {
+        "max_failures": 15,
+        "open_duration_seconds": 600
+    },
+    "knowledge_graph": {
+        "max_retrieval_depth": 1,
+        "max_children_per_node": 3,
+        "chunk_size": 150000
+    },
+    "rate_limiting": {
+        "ollama": {
+            "requests_per_minute": 20000,
+            "tokens_per_minute": 90000000,
+            "request_delay_seconds": 0.05
+        },
+        "nvidia": {
+            "requests_per_minute": 5000,
+            "tokens_per_minute": 50000000,
+            "request_delay_seconds": 0.1
+        },
+        "gemini": {
+            "requests_per_minute": 14,
+            "tokens_per_minute": 25000000,
+            "request_delay_seconds": 0.25
+        },
+        "doab": {
+            "requests_per_minute": 30,
+            "tokens_per_minute": 0,
+            "request_delay_seconds": 2.0
+        }
+    },
+    "llm_provider": "gemini",
+    "enable_thinking": true,
+    "google_api_key": "",
+    "model_name": "gemma-4-31b-it",
+    "nvidia_api": {
+        "base_url": "https://integrate.api.nvidia.com/v1",
+        "api_key": ""
+    }
+}
