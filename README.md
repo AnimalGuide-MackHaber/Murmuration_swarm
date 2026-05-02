@@ -57,6 +57,140 @@ Once the spatial-cognitive loop completes, the swarm enters the **Synthesis Phas
 1.  **Consortium Vote**: Agents aggregate their final positions. A lead model synthesizes these into a primary consensus.
 2.  **Expert Enrichment**: Each agent performs a technical "pass" over the consensus, adding domain-specific addendums and methodology critiques without deleting others' work.
 3.  **Collaborative Knowledge Graph**: The agents collaboratively build a structured JSON Knowledge Graph representing the final conclusion, which is then persisted for future simulations.
+    
+---
+
+## 🕸 Knowledge Graph Architecture
+
+The **Knowledge Architect** transforms unstructured research material into a high-fidelity semantic network. This process ensures that agents have access to structured, hierarchical, and cross-linked domain expertise.
+
+```mermaid
+graph TD
+    subgraph Ingestion["1. Data Ingestion & Decomposition"]
+        PDF[PDF Documents] --> MID[MarkItDown Conversion]
+        MD[Markdown Files] --> Clean[Text Cleaning]
+        MID --> Chunk[Sliding Window Chunking]
+        Clean --> Chunk
+    end
+
+    subgraph Extraction["2. Cognitive Extraction (LLM)"]
+        Chunk --> Prompt[Architect Prompting]
+        Prompt --> Concepts[Identify Core Concepts]
+        Prompt --> Facts[Extract Atomic Facts]
+        Prompt --> Meta[Metadata & Page Refs]
+    end
+
+    subgraph Structuring["3. Hierarchical Synthesis"]
+        Concepts --> Root[Domain Root]
+        Root --> Parent[Primary Nodes]
+        Parent --> Child[Sub-Concepts]
+        Child --> Atomic[Atomic Facts]
+    end
+
+    subgraph Linking["4. Semantic Interlinking"]
+        Atomic --> Relation{Semantic Relationship?}
+        Relation -- "is-a" --> Child
+        Relation -- "relates-to" --> Cross[Cross-Domain Linking]
+        Parent -.->|Refining Pass| Cross
+    end
+
+    subgraph Persistence["5. Graph Persistence"]
+        Structuring --> JSON[Valid JSON Structure]
+        Linking --> JSON
+        JSON --> Storage[(Knowledge Base)]
+    end
+
+    %% Styling for visual clarity
+    style Ingestion fill:#2d3436,stroke:#00cec9,stroke-width:2px,color:#fff
+    style Extraction fill:#2d3436,stroke:#0984e3,stroke-width:2px,color:#fff
+    style Structuring fill:#2d3436,stroke:#6c5ce7,stroke-width:2px,color:#fff
+    style Linking fill:#2d3436,stroke:#e84393,stroke-width:2px,color:#fff
+    style Persistence fill:#2d3436,stroke:#f1c40f,stroke-width:2px,color:#fff
+```
+
+---
+
+## 🌌 Knowledge Graph Example
+
+Below is a simple conceptual example of how a Knowledge Graph links semantic concepts (e.g., in a Farm domain). Nodes represent entities or concepts, and edges represent their semantic relationships.
+
+```mermaid
+graph LR
+    Farm((The Farm)) --- Barn((Barn))
+    Farm --- Livestock((Livestock))
+    Farm --- Infrastructure((Infrastructure))
+    Farm --- Personnel((Personnel))
+    
+    Livestock --- Cows((Cows))
+    Livestock --- Bulls((Bulls))
+    Cows --- Milk((Milk))
+    Cows --- Calves((Calves))
+    
+    Infrastructure --- Tractor((Tractor))
+    Infrastructure --- Fields((Fields))
+    Fields --- Grass((Grass))
+    Fields --- Crops((Crops))
+    
+    Personnel --- Farmer((Farmer))
+    Personnel --- Vet((Vet))
+    
+    %% Semantic Interlinking
+    Cows -.->|Lives in| Barn
+    Cows -.->|Eats| Grass
+    Bulls -.->|Sires| Calves
+    Farmer -.->|Drives| Tractor
+    Farmer -.->|Manages| Livestock
+    Tractor -.->|Ploughs| Fields
+    Grass -.->|Mowed for| Hay((Hay))
+    Hay -.->|Stored in| Barn
+    Vet -.->|Treats| Livestock
+    Milk -.->|Stored in| Barn
+    
+    %% Styling
+    classDef default fill:#2d3436,stroke:#00cec9,stroke-width:2px,color:#fff;
+    class Farm,Barn,Livestock,Infrastructure,Personnel,Cows,Bulls,Milk,Calves,Tractor,Fields,Grass,Crops,Farmer,Vet,Hay default;
+```
+
+---
+
+## 🔍 Knowledge Retrieval & Traversal
+
+When an agent is asked a question, it doesn't just look for a single keyword. It performs a **semantic traversal** of the Knowledge Graph to gather holistic context.
+
+### Example: "How do the cows get fed when it's raining?"
+
+```mermaid
+graph TD
+    Prompt[/"User Prompt: 'How are cows fed during rain?'"/] --> Vectorize[Vectorize Prompt]
+    Vectorize --> Similarity{Cosine Similarity}
+    
+    subgraph Traversal["Graph Traversal (BFS)"]
+        Similarity -- "Seed Match (Score: 0.92)" --> Node1((Cows))
+        Node1 -- "Hop 1: Lives in" --> Node2((Barn))
+        Node1 -- "Hop 1: Eats" --> Node3((Grass))
+        Node3 -- "Hop 2: Mowed for" --> Node4((Hay))
+        Node4 -- "Hop 3: Stored in" --> Node2
+    end
+    
+    Node1 --> Context[Assemble Context]
+    Node2 --> Context
+    Node3 --> Context
+    Node4 --> Context
+    
+    Context --> LLM[/"Agent Thought: 'Cows eat Grass, but since it's raining, they are likely in the Barn eating the stored Hay...'"/]
+
+    %% Styling
+    style Prompt fill:#2d3436,stroke:#00cec9,stroke-width:2px,color:#fff
+    style LLM fill:#2d3436,stroke:#f1c40f,stroke-width:2px,color:#fff
+    style Node1 fill:#6c5ce7,stroke:#fff,stroke-width:3px,color:#fff
+    style Node2 fill:#2d3436,stroke:#00cec9,stroke-width:2px,color:#fff
+    style Node3 fill:#2d3436,stroke:#00cec9,stroke-width:2px,color:#fff
+    style Node4 fill:#2d3436,stroke:#00cec9,stroke-width:2px,color:#fff
+```
+
+1.  **Seed Match**: The system finds the node most semantically similar to the prompt (e.g., **Cows**).
+2.  **Breadth-First Search**: It traverses connected edges (e.g., **Grass**, **Barn**) up to a defined `max_retrieval_depth`.
+3.  **Holistic Context**: The agent receives not just facts about "cows," but also about their environment (**Barn**) and food sources (**Hay**), enabling a much more "intelligent" response.
 
 ---
 
