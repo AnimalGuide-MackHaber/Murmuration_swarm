@@ -1,30 +1,81 @@
 # Murmur Swarm Architecture
 
-Murmur Swarm orchestrates multiple LLMs (Large Language Models) interacting in a virtual spatial environment. The system merges traditional computational state machines with dynamic, generative AI loops to emulate emergent properties seen in natural swarms.
+**Murmur Swarm** orchestrates multiple Large Language Models (LLMs) interacting within a virtual 3D spatial physics environment. The system integrates traditional deterministic state machines with generative cognitive loops to emulate emergent collective intelligence inspired by natural starlings (murmurations).
 
-## High-Level Architecture Overview
+---
 
-The system architecture is decoupled into several highly specialized domains:
+## 1. High-Level Architecture Overview
 
-1. **Orchestrator (`swarm_orchestrator.py`)**: The central brain of the operation. It manages the execution lifecycle using **LangGraph** to model the state machine.
-2. **Physics Engine (`swarm_physics.py`)**: A spatial simulation environment that uses a Boids-derived model to govern agent position, velocity, and dynamic interaction ranges.
-3. **Agent Ecosystem (`swarm_schema.py`)**: Pydantic models defining the strong typing of the `SwarmSnapshot`, agent states, and configurations.
-4. **Knowledge Architect (`knowledge_graph.py`)**: Handles context retrieval, vector embeddings (via FAISS or similar), and the synthesis of continuous conversational data into semantic graphs.
-5. **Provider Layer (`swarm_gemini.py`, `swarm_ollama.py`, `swarm_nvidia.py`)**: Abstractions over various LLM APIs allowing hot-swapping between local models and cloud providers natively.
+The system architecture is decoupled into distinct modules organized under `core/`, served by dual interface options (FastAPI + React 19 Control Tower and Streamlit), with an integrated academic RAG layer:
 
-## The LangGraph State Machine
+```mermaid
+graph TD
+    subgraph Interfaces["Presentation Tier"]
+        UI_React["React 19 Control Tower (Vite + Plotly 3D)"]
+        UI_API["FastAPI REST Backend (backend.py)"]
+        UI_Streamlit["Streamlit Interactive Dashboard (app.py)"]
+        UI_React <--> UI_API
+    end
 
-The heart of the simulation is a directed state graph maintained by LangGraph. It ensures fault-tolerant, trackable state transitions iteratively over time.
+    subgraph Orchestration["Cognitive Orchestration Tier"]
+        SO["SwarmOrchestrator (core/swarm_orchestrator.py)"]
+        LG["LangGraph StateGraph"]
+        SO --- LG
+    end
 
-### State Scope (`SwarmSnapshot`)
-The SwarmSnapshot represents the globally immutable frame at any given time $t$. It includes:
-- `iteration`: Current tick value.
-- `agent_states`: The 3D vectors mapping the positions, velocities, and latest thoughts of all active agents.
-- `influence_matrix`: The pre-computed list of "who can hear whom" calculated purely by physical dynamics.
+    subgraph Dynamics["Spatial & Cognitive Subsystems"]
+        PHY["Physics Engine (core/swarm_physics.py)"]
+        SCHEMA["Type System (core/swarm_schema.py)"]
+        KG["Knowledge Architect (core/knowledge_graph.py)"]
+        SYNTH["Synthetic Organism (core/synthetic_organism.py)"]
+        DOAB["DOAB Literature Client (core/DOAB_client.py)"]
+    end
 
-### Execution Nodes
+    subgraph Resilience["Resilience & LLM Abstraction"]
+        RL["RateLimiter (core/rate_limiter.py)"]
+        RETRY["Exponential Backoff (core/llm_retry.py)"]
+        CB["Circuit Breaker"]
+        LLM_G["GeminiLLM (google-genai SDK)"]
+        LLM_N["NvidiaLLM (openai SDK)"]
+        LLM_O["OllamaWrapper (aiohttp)"]
+    end
 
-The workflow executes in a strict topology:
+    UI_API --> SO
+    UI_Streamlit --> SO
+    SO --> PHY
+    SO --> SCHEMA
+    SO --> KG
+    SO --> SYNTH
+    SO --> DOAB
+    SO --> RL
+    RL --> RETRY
+    RETRY --> CB
+    CB --> LLM_G
+    CB --> LLM_N
+    CB --> LLM_O
+```
+
+### Module Responsibilities
+
+1. **Orchestrator ([`core/swarm_orchestrator.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/swarm_orchestrator.py))**: Central simulation coordinator managing the LangGraph state machine, provider dispatch, parallel/sequential thought loops, consortium voting, and collaborative graph generation.
+2. **Physics Engine ([`core/swarm_physics.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/swarm_physics.py))**: 3D spatial simulation implementing Reynolds Boids dynamics (Separation, Alignment, Cohesion, Goal Seeking) and computes distance-attenuated auditory influence matrices.
+3. **Core Schema & Type System ([`core/swarm_schema.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/swarm_schema.py))**: Pydantic v2 models defining `Vector3`, `AgentConfig`, `ChatMessage`, `AgentRuntimeState`, and `SwarmSnapshot`.
+4. **Knowledge Architect ([`core/knowledge_graph.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/knowledge_graph.py))**: In-memory TF-IDF and Cosine similarity semantic search, BFS topological sub-graph expansion, document parsing via MarkItDown, and 3-phase collaborative graph synthesis.
+5. **Synthetic Organism Governor ([`core/synthetic_organism.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/synthetic_organism.py))**: Implements Invariant Manifold Anchoring (IMA), Topology-Aware Retrieval Morphing (TARM), Homeostatic Metabolic Governor (HMG), Epistemic Validation Gate (EVG), and manifold curvature tearing evaluation.
+6. **Provider & Resilience Layer**:
+   - [`core/swarm_gemini.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/swarm_gemini.py): Google Gemini integration via modern `google-genai` SDK.
+   - [`core/swarm_nvidia.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/swarm_nvidia.py): NVIDIA NIM cloud endpoints via AsyncOpenAI.
+   - [`core/swarm_ollama.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/swarm_ollama.py): Local inference via asynchronous HTTP REST (`aiohttp`).
+   - [`core/rate_limiter.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/rate_limiter.py): Shared sliding-window token and request throttling (RPM/TPM).
+   - [`core/llm_retry.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/llm_retry.py): Exponential backoff decorator targeting transient HTTP/LLM errors.
+7. **Literature Ingestion ([`core/DOAB_client.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/DOAB_client.py))**: Directory of Open Access Books API client enabling automated peer-reviewed book discovery, retrieval, and ingestion into the swarm memory.
+8. **Storage & Serialization ([`core/swarm_io.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/swarm_io.py))**: Manages persistence for snapshots, agent configurations, live states, markdown conclusions, and JSON knowledge graphs.
+
+---
+
+## 2. The LangGraph State Machine
+
+The simulation lifecycle is driven by a directed cyclic state graph maintained by LangGraph, ensuring determinism, observability, and state persistence.
 
 ```mermaid
 stateDiagram-v2
@@ -34,17 +85,47 @@ stateDiagram-v2
     state check_termination <<choice>>
     agent_think --> check_termination
     
-    check_termination --> physics_update: Iteration < Max
-    check_termination --> consortium_vote: Iteration >= Max
+    check_termination --> physics_update: iteration < max_iterations
+    check_termination --> consortium_vote: iteration >= max_iterations
     
     consortium_vote --> expert_enrichment
-    expert_enrichment --> [*]
+    expert_enrichment --> collaborative_kg_generation
+    collaborative_kg_generation --> [*]
 ```
 
-1. **`physics_update`**: Calculates the separation, alignment, and cohesion forces. Updates $x,y,z$ positions and rebuilds the `influence_matrix`.
-2. **`agent_think`**: This is an asynchronous fan-out process. Every agent simultaneously looks at the `influence_matrix`. If an agent is in range of others, it injects their last thoughts into its local context alongside its own private memory and retrieved KG concepts. It then queries the LLM structure to produce its *next* thought.
-3. **`check_termination`**: A conditional edge. If the maximum number of iterations has not been hit, the simulation loops back to `physics_update`.
-4. **`consortium_vote`**: Once the loop ends, the orchestrator pulls all final thoughts and asks the LLM to synthesize a baseline consensus.
-5. **`expert_enrichment`**: Finally, agents sequentially enrich the synthesized text using their defined `domain` and `interaction_style`.
+### State Scope (`SwarmSnapshot`)
+The `SwarmSnapshot` represents the globally immutable frame at any simulation tick $t$:
+- `simulation_id`: Unique run identifier.
+- `iteration`: Current tick index.
+- `max_iterations`: Simulation ceiling.
+- `universal_prompt`: Root research objective.
+- `agent_configs`: Registry of immutable agent definitions (`AgentConfig`).
+- `agent_states`: Dynamic positions, velocities, private memories, and latest thoughts (`AgentRuntimeState`).
+- `influence_matrix`: Pre-computed pairwise auditory weights $I(r, s)$ derived from 3D Euclidean distances.
 
-By structuring the simulation as a Graph, Murmur Swarm abstracts the concurrency of multi-agent LLM requests away from the complex synchronization of analog physics simulations.
+### Execution Cycle
+
+1. **`physics_update`**: Calculates Boids forces, clamps velocities to `max_speed`, steps positions via Euler integration, and recalculates the Influence Matrix with quadratic distance attenuation.
+2. **`agent_think`**: Asynchronously fans out across all active agents. Each agent:
+   - Identifies peers within auditory proximity ($I(r, s) > 0.05$).
+   - Formulates a combined search query and executes in-memory TF-IDF + Cosine similarity retrieval against its local Knowledge Graph.
+   - Performs Breadth-First Search (BFS) topological expansion on matching nodes.
+   - Generates an updated internal thought using the active LLM provider through rate-limited channels.
+3. **`check_termination`**: Conditional edge checking whether `iteration >= max_iterations`.
+4. **`consortium_vote`**: Synthesizes all final agent thoughts into a master consensus paper using an LLM consensus judge.
+5. **`expert_enrichment`**: Routes the consensus paper back to each agent (sequentially or in parallel) to enrich the paper with domain-specific methodologies, formalisms, and critiques without overwriting peer contributions.
+6. **`collaborative_kg_generation`**: Decomposes the final enriched paper into structured concepts and atomic facts, performs agent expansion passes, and establishes cross-domain semantic links.
+
+---
+
+## 3. Dual Interface Architecture
+
+Murmur Swarm provides two complementary execution modes:
+
+### Modern Control Tower (FastAPI + React 19)
+- **Backend ([`backend.py`](file:///Users/mike/Documents/code/Murmur_swarm/backend.py))**: Async FastAPI REST application serving endpoints for simulation control, agent management, DOAB book ingestion, knowledge graph browsing, and live log broadcasting.
+- **Frontend ([`frontend/`](file:///Users/mike/Documents/code/Murmur_swarm/frontend/))**: Modern React 19 + TypeScript + Vite SPA featuring interactive 3D WebGL scatter plots ([Plotly.js](file:///Users/mike/Documents/code/Murmur_swarm/frontend/package.json)), timeline scrubbers, agent forge, and telemetry panels.
+- **Launcher ([`run_app.py`](file:///Users/mike/Documents/code/Murmur_swarm/run_app.py))**: Single-command startup verifying Python packages, building frontend assets, and launching the server on `http://localhost:8501`.
+
+### Streamlit Control Tower ([`app.py`](file:///Users/mike/Documents/code/Murmur_swarm/app.py))
+- Single-script dashboard providing rapid prototyping, live simulation controls, and 3D visual playback.

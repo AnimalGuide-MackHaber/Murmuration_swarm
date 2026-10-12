@@ -1,0 +1,2615 @@
+{
+  "nodes": {
+    "root": {
+      "label": "LLM Performance Enhancement Methods",
+      "summary": "A comprehensive domain covering techniques to improve the accuracy and quality of Large Language Model (LLM) outputs, specifically through agent ensemble scaling (Agent Forest) and iterative self-feedback (SELF-REFINE).",
+      "type": "concept",
+      "children": [
+        "chatdev",
+        "agent_forest",
+        "metagpt",
+        "reasoning_planning",
+        "generative_agents",
+        "multi_agent_systems",
+        "coala_framework",
+        "learning_alignment",
+        "cognitive_architectures",
+        "coop_framework",
+        "gen_agents",
+        "eval_ablation",
+        "llm_agents",
+        "self_refine",
+        "autogen",
+        "augmented_intelligence",
+        "agent_applications",
+        "embodied_ai",
+        "task_spec",
+        "sci_math",
+        "camel_framework"
+      ]
+    },
+    "agent_forest": {
+      "label": "Agent Forest",
+      "summary": "A sampling-and-voting method where LLM performance scales with the number of instantiated agents (ensemble size).",
+      "type": "concept",
+      "children": [
+        "af_mechanism",
+        "af_scaling_properties",
+        "af_difficulty_analysis",
+        "af_optimizations"
+      ]
+    },
+    "af_mechanism": {
+      "label": "Agent Forest Mechanism",
+      "summary": "The two-phase process consisting of sampling multiple outputs and using a voting mechanism to determine the final answer.",
+      "type": "concept",
+      "children": [
+        "af_sampling",
+        "af_voting"
+      ]
+    },
+    "af_sampling": {
+      "label": "Sampling Phase",
+      "summary": "The process of generating N samples by querying a single LLM or a collaboration framework iteratively.",
+      "type": "concept",
+      "children": [
+        "fact_af_sampling_def"
+      ]
+    },
+    "fact_af_sampling_def": {
+      "label": "Sampling Definition",
+      "summary": "Given task query x and LLM M, N samples are generated as s = M(x) or s = fM(x) where fM is an integrated method. (Page 4)",
+      "type": "fact",
+      "children": []
+    },
+    "af_voting": {
+      "label": "Voting Phase",
+      "summary": "Consolidating the sample set S into a final answer A using cumulative similarity.",
+      "type": "concept",
+      "children": [
+        "fact_af_voting_sim",
+        "fact_af_voting_closed",
+        "fact_af_voting_open"
+      ]
+    },
+    "fact_af_voting_sim": {
+      "label": "Similarity Calculation",
+      "summary": "The final answer A is the sample with the highest cumulative similarity: V(si) = sum of sim(si, sj) for all j != i. (Page 4)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_af_voting_closed": {
+      "label": "Closed-ended Voting",
+      "summary": "For multiple-choice questions, similarity is measured by occurrence frequency. (Page 4)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_af_voting_open": {
+      "label": "Open-ended Voting",
+      "summary": "For code generation, the BLEU score is used to quantify similarity between candidate answers. (Page 4)",
+      "type": "fact",
+      "children": []
+    },
+    "af_scaling_properties": {
+      "label": "Scaling Properties",
+      "summary": "The relationship between the number of agents (ensemble size) and the resulting performance gain.",
+      "type": "concept",
+      "children": [
+        "fact_af_scaling_gain",
+        "fact_af_model_comparison"
+      ]
+    },
+    "fact_af_scaling_gain": {
+      "label": "General Performance Gain",
+      "summary": "LLM performance generally improves as ensemble size increases across arithmetic reasoning, general reasoning, and code generation. (Page 6)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_af_model_comparison": {
+      "label": "Model Size Equivalence",
+      "summary": "A brute-force ensemble of smaller LLMs can achieve comparable or superior performance to larger LLMs (e.g., Llama2-13B with N=15 can match Llama2-70B on GSM8K). (Page 2, 6)",
+      "type": "fact",
+      "children": []
+    },
+    "af_difficulty_analysis": {
+      "label": "Task Difficulty Analysis",
+      "summary": "Analysis of how the effectiveness of Agent Forest correlates with three dimensions of problem difficulty.",
+      "type": "concept",
+      "children": [
+        "af_inherent_diff",
+        "af_reasoning_steps",
+        "af_prior_prob"
+      ]
+    },
+    "af_inherent_diff": {
+      "label": "Inherent Difficulty (I)",
+      "summary": "The complexity of the task regardless of the number of steps.",
+      "type": "concept",
+      "children": [
+        "fact_af_idiff_trend"
+      ]
+    },
+    "fact_af_idiff_trend": {
+      "label": "Inherent Difficulty Trend",
+      "summary": "Performance gains initially increase then decrease as inherent difficulty (I) rises; excessive complexity may exceed model reasoning limits. (Page 10)",
+      "type": "fact",
+      "children": []
+    },
+    "af_reasoning_steps": {
+      "label": "Number of Reasoning Steps (S)",
+      "summary": "The length of the chain of thought required to solve the problem.",
+      "type": "concept",
+      "children": [
+        "fact_af_steps_gain"
+      ]
+    },
+    "fact_af_steps_gain": {
+      "label": "Step-based Gain",
+      "summary": "Performance gains increase as the number of reasoning steps S increases. (Page 10)",
+      "type": "fact",
+      "children": []
+    },
+    "af_prior_prob": {
+      "label": "Prior Probability (1/K)",
+      "summary": "The probability of guessing the correct answer based on the size of the result space K.",
+      "type": "concept",
+      "children": [
+        "fact_af_prior_trend"
+      ]
+    },
+    "fact_af_prior_trend": {
+      "label": "Prior Probability Trend",
+      "summary": "Absolute performance increases as the prior probability (1/K) increases. (Page 10)",
+      "type": "fact",
+      "children": []
+    },
+    "af_optimizations": {
+      "label": "Agent Forest Optimizations",
+      "summary": "Advanced strategies derived from difficulty analysis to further boost performance.",
+      "type": "concept",
+      "children": [
+        "af_stepwise",
+        "af_hierarchical"
+      ]
+    },
+    "af_stepwise": {
+      "label": "Step-wise Agent Forest",
+      "summary": "An iterative process that decomposes tasks into steps and applies Agent Forest to each step individually.",
+      "type": "concept",
+      "children": [
+        "fact_af_stepwise_effect"
+      ]
+    },
+    "fact_af_stepwise_effect": {
+      "label": "Step-wise Performance",
+      "summary": "Step-wise Agent Forest yields greater improvements than standard Agent Forest by mitigating error accumulation across reasoning steps. (Page 10)",
+      "type": "fact",
+      "children": []
+    },
+    "af_hierarchical": {
+      "label": "Hierarchical Agent Forest",
+      "summary": "A method of decomposing low-probability tasks into multiple high-probability subtasks.",
+      "type": "concept",
+      "children": [
+        "fact_af_hier_homogeneous",
+        "fact_af_hier_heterogeneous"
+      ]
+    },
+    "fact_af_hier_homogeneous": {
+      "label": "Homogeneous Hierarchical Gain",
+      "summary": "Using a hierarchical approach (e.g., K=8 intermediate then K=32 final) improves performance (e.g., 21% to 31%). (Page 11)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_af_hier_heterogeneous": {
+      "label": "Heterogeneous Hierarchical Gain",
+      "summary": "Deploying different models at different levels (e.g., GPT-3.5 for intermediate, GPT-4 for final) can be cost-effective and improve performance. (Page 11)",
+      "type": "fact",
+      "children": []
+    },
+    "self_refine": {
+      "label": "SELF-REFINE",
+      "summary": "An iterative self-refinement algorithm where an LLM generates an output, provides feedback on it, and then refines the output based on that feedback.",
+      "type": "concept",
+      "children": [
+        "sr_workflow",
+        "sr_analysis",
+        "sr_feedback",
+        "sr_feedback_quality",
+        "sr_tasks"
+      ]
+    },
+    "sr_workflow": {
+      "label": "SELF-REFINE Workflow",
+      "summary": "The cycle of Initial Generation, Feedback, and Refinement.",
+      "type": "concept",
+      "children": [
+        "sr_initial_gen",
+        "sr_feedback_phase",
+        "sr_refine_phase",
+        "sr_iteration_logic"
+      ]
+    },
+    "sr_initial_gen": {
+      "label": "Initial Generation",
+      "summary": "The first output y0 generated using a task-specific prompt pgen. (Page 2)",
+      "type": "concept",
+      "children": [
+        "fact_sr_init_formula"
+      ]
+    },
+    "fact_sr_init_formula": {
+      "label": "Initial Gen Formula",
+      "summary": "y0 = M(pgen || x), where || denotes concatenation. (Page 2)",
+      "type": "fact",
+      "children": []
+    },
+    "sr_feedback_phase": {
+      "label": "FEEDBACK Phase",
+      "summary": "The model acts as a critic to provide actionable and specific feedback on its own output.",
+      "type": "concept",
+      "children": [
+        "fact_sr_fb_formula",
+        "fact_sr_fb_criteria"
+      ]
+    },
+    "fact_sr_fb_formula": {
+      "label": "Feedback Formula",
+      "summary": "fbt = M(pfb || x || yt). (Page 2)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_sr_fb_criteria": {
+      "label": "Feedback Quality Criteria",
+      "summary": "Feedback must be 'actionable' (contain a concrete action for improvement) and 'specific' (identify concrete phrases to change). (Page 2)",
+      "type": "fact",
+      "children": []
+    },
+    "sr_refine_phase": {
+      "label": "REFINE Phase",
+      "summary": "The model generates an improved output based on the feedback provided in the previous phase.",
+      "type": "concept",
+      "children": [
+        "fact_sr_refine_formula"
+      ]
+    },
+    "fact_sr_refine_formula": {
+      "label": "Refine Formula",
+      "summary": "yt+1 = M(prefine || x || y0 || fb0 ... || yt || fbt), incorporating the full history of outputs and feedback. (Page 2, 3)",
+      "type": "fact",
+      "children": []
+    },
+    "sr_iteration_logic": {
+      "label": "Iteration and Stopping",
+      "summary": "The loop continues until a stopping condition is met.",
+      "type": "concept",
+      "children": [
+        "fact_sr_stop_cond"
+      ]
+    },
+    "fact_sr_stop_cond": {
+      "label": "Stopping Condition",
+      "summary": "Stop(fbt, t) can be a fixed timestep or a stopping indicator (scalar score) extracted from the feedback. (Page 3)",
+      "type": "fact",
+      "children": []
+    },
+    "sr_feedback_quality": {
+      "label": "Feedback Quality Impact",
+      "summary": "Comparative analysis of different types of feedback on the refinement process.",
+      "type": "concept",
+      "children": [
+        "fact_sr_actionable_vs_generic"
+      ]
+    },
+    "fact_sr_actionable_vs_generic": {
+      "label": "Actionable vs Generic Feedback",
+      "summary": "Specific, actionable feedback significantly outperforms generic feedback (e.g., in Sentiment Transfer, performance drops from 43.2 to 31.2 when using generic feedback). (Page 5)",
+      "type": "fact",
+      "children": []
+    },
+    "sr_analysis": {
+      "label": "SELF-REFINE Analysis",
+      "summary": "Empirical findings regarding the efficiency and limitations of the iterative process.",
+      "type": "concept",
+      "children": [
+        "fact_sr_diminishing_returns",
+        "fact_sr_model_capability",
+        "fact_sr_error_analysis"
+      ]
+    },
+    "fact_sr_diminishing_returns": {
+      "label": "Diminishing Returns",
+      "summary": "Quality improves with more iterations, but the marginal gain decreases as the number of iterations increases. (Page 5)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_sr_model_capability": {
+      "label": "Base Model Requirements",
+      "summary": "Weaker models (e.g., Vicuna-13B) struggle with the feedback-refinement loop, often failing to generate feedback in the required format or ignoring refinement prompts. (Page 6)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_sr_error_analysis": {
+      "label": "Error Distribution",
+      "summary": "Failure in improvement is primarily due to erroneous feedback (33% inaccurate location, 61% inappropriate fix) rather than faulty refinement (6%). (Page 6)",
+      "type": "fact",
+      "children": []
+    },
+    "sr_feedback": {
+      "label": "SELF-REFINE Feedback Mechanisms",
+      "summary": "Technical approaches to providing feedback for iterative refinement, emphasizing specificity and reasoning.",
+      "type": "concept",
+      "children": [
+        "sr_pinpointed_feedback",
+        "sr_cot_feedback"
+      ]
+    },
+    "sr_pinpointed_feedback": {
+      "label": "Pin-pointed Feedback",
+      "summary": "Feedback that explicitly identifies specific phrases and words in the output that must be altered to reach a target goal.",
+      "type": "fact",
+      "children": [],
+      "details": "Preference rates show informative feedback is significantly more effective than generic 'something is wrong' feedback: 85% vs 73% for sentiment evaluation and 80.09% vs 58.92% for dramatic response evaluation. (p. 36)"
+    },
+    "sr_cot_feedback": {
+      "label": "Chain-of-Thought (CoT) Feedback",
+      "summary": "A feedback style where the model generates a reasoning chain explicitly stating the reasons for a score before providing the final score.",
+      "type": "fact",
+      "children": [],
+      "details": "Leverages LLM instruction-following capabilities to provide demonstrations of reasoning for criteria that are difficult to quantify. (p. 36)"
+    },
+    "sr_tasks": {
+      "label": "SELF-REFINE Task Domains",
+      "summary": "Specific natural language generation tasks used to evaluate the iterative refinement process.",
+      "type": "concept",
+      "children": [
+        "sr_acronym_gen",
+        "sr_constrained_gen",
+        "sr_code_opt",
+        "sr_math_reasoning",
+        "sr_sentiment_reversal"
+      ]
+    },
+    "sr_acronym_gen": {
+      "label": "Acronym Generation",
+      "summary": "The process of generating concise, memorable representations of complex phrases using an iterative refinement loop.",
+      "type": "concept",
+      "children": [
+        "sr_acronym_criteria"
+      ]
+    },
+    "sr_acronym_criteria": {
+      "label": "Acronym Evaluation Dimensions",
+      "summary": "Five multifaceted dimensions used to judge the quality of generated acronyms.",
+      "type": "fact",
+      "children": [],
+      "details": "1. Ease of pronunciation: Sounds/combinations making it challenging to say. 2. Ease of spelling: Unusual letter combinations. 3. Relation to title: How closely it reflects the original concept. 4. Positive connotation: Upbeat, neutral, or negative tone. 5. Well-known: Familiarity to target audience. (p. 36)"
+    },
+    "sr_constrained_gen": {
+      "label": "Constrained Generation (CommonGen-Hard)",
+      "summary": "A challenging variant of the CommonGen task designed to test advanced commonsense reasoning.",
+      "type": "fact",
+      "children": [],
+      "details": "CommonGen-Hard requires models to generate coherent, grammatically correct sentences incorporating 20-30 concepts, compared to 3-5 in the original task. (p. 37)"
+    },
+    "sr_code_opt": {
+      "label": "Code Optimization",
+      "summary": "Refinement of code to improve execution speed, utilizing feedback on algorithmic inefficiency (e.g., replacing brute force with more efficient bounds).",
+      "type": "fact",
+      "children": [],
+      "details": "Feedback identifies specific bottlenecks (e.g., unnecessary looping in square root calculations) to guide the refinement of the program. (p. 42)"
+    },
+    "sr_math_reasoning": {
+      "summary": "Iterative correction of mathematical logic and code implementation, specifically focusing on semantic error detection in code blocks.",
+      "label": "Math Reasoning",
+      "type": "fact",
+      "children": [],
+      "details": "Uses a process of checking semantically complete blocks of code to find errors in problem understanding and rewriting the logic based on a reasoning chain. (p. 50)"
+    },
+    "sr_sentiment_reversal": {
+      "label": "Sentiment Reversal",
+      "summary": "Converting reviews between sentiment polarities (e.g., Very Negative to Very Positive).",
+      "type": "fact",
+      "children": [],
+      "details": "Involves identifying extreme adjectives and phrases and replacing them with tokens that align with the target sentiment level. (p. 52)"
+    },
+    "camel_framework": {
+      "label": "CAMEL Framework",
+      "summary": "Communicative Agents for 'Mind' Exploration of Large Language Model Society; a role-playing framework for autonomous cooperation between agents.",
+      "type": "concept",
+      "children": [
+        "camel_architecture",
+        "camel_inception_prompting",
+        "camel_datasets",
+        "camel_challenges",
+        "camel_eval"
+      ]
+    },
+    "camel_architecture": {
+      "label": "CAMEL Role-Playing Architecture",
+      "summary": "A multi-agent system designed to solve tasks with minimal human intervention through assigned roles.",
+      "type": "concept",
+      "children": [
+        "camel_agent_roles",
+        "camel_critic"
+      ]
+    },
+    "camel_agent_roles": {
+      "label": "CAMEL Agent Roles",
+      "summary": "The functional roles within a CAMEL role-playing session.",
+      "type": "concept",
+      "children": [
+        "camel_task_specifier",
+        "camel_ai_user",
+        "camel_ai_assistant"
+      ]
+    },
+    "camel_task_specifier": {
+      "label": "Task Specifier Agent",
+      "summary": "An agent that takes a preliminary idea and role assignments from a human and brainstorms a concrete, specific task.",
+      "type": "fact",
+      "children": [],
+      "details": "Acts as an enhanced imagination module, transforming a general idea (e.g., 'trading bot') into a detailed specification (e.g., 'bot with sentiment analysis on social media'). (p. 4)"
+    },
+    "camel_ai_user": {
+      "label": "AI User Agent",
+      "summary": "The agent responsible for task planning and directing the conversation.",
+      "type": "fact",
+      "children": [],
+      "details": "Functions as a task planner; provides instructions to the assistant in the format of 'Instruction: <TEXT>' and 'Input: <TEXT/None>'. (p. 4)"
+    },
+    "camel_ai_assistant": {
+      "label": "AI Assistant Agent",
+      "summary": "The agent responsible for task execution and providing solutions.",
+      "type": "fact",
+      "children": [],
+      "details": "Functions as a task executor; follows instructions and responds in the format 'Solution: <TEXT>' followed by 'Next request'. (p. 4)"
+    },
+    "camel_critic": {
+      "label": "Critic-In-The-Loop",
+      "summary": "An optional agent (AI or human) that selects proposals or provides feedback to the agents.",
+      "type": "fact",
+      "children": [],
+      "details": "Enables tree-search-like decision-making for enhanced controllability during task-solving. (p. 4)"
+    },
+    "camel_inception_prompting": {
+      "label": "Inception Prompting",
+      "summary": "A technique where prompt engineering is performed only at the start of the session to set the autonomous loop in motion.",
+      "type": "concept",
+      "children": [
+        "inception_pt",
+        "inception_pa",
+        "inception_pu"
+      ]
+    },
+    "inception_pt": {
+      "label": "Task Specifier Prompt (PT)",
+      "summary": "Instructs the specifier to make a task creative and specific within a word limit.",
+      "type": "fact",
+      "children": [],
+      "details": "Input: <ASSISTANT_ROLE>, <USER_ROLE>, <TASK>. (p. 5)"
+    },
+    "inception_pa": {
+      "label": "Assistant System Prompt (PA)",
+      "summary": "Sets the behavioral constraints for the Assistant agent.",
+      "type": "fact",
+      "children": [],
+      "details": "Key constraints: Never flip roles, never instruct the user, start with 'Solution:', and end with 'Next request'. (p. 5)"
+    },
+    "inception_pu": {
+      "label": "User System Prompt (PU)",
+      "summary": "Sets the behavioral constraints for the User agent.",
+      "type": "fact",
+      "children": [],
+      "details": "Key constraints: Always instruct, use specific formats (Instruction/Input), and terminate only with the token <CAMEL_TASK_DONE>. (p. 5)"
+    },
+    "camel_datasets": {
+      "label": "CAMEL Generated Datasets",
+      "summary": "Large-scale conversational and problem-solution datasets created via the role-playing framework.",
+      "type": "concept",
+      "children": [
+        "dataset_ai_society",
+        "dataset_code",
+        "dataset_math_science",
+        "dataset_misalignment"
+      ]
+    },
+    "dataset_ai_society": {
+      "label": "AI Society Dataset",
+      "summary": "Conversational data involving diverse human occupations and societal dynamics.",
+      "type": "fact",
+      "children": [],
+      "details": "Generated using 50 assistant roles, 50 user roles, and 10 tasks per combination, totaling 25,000 conversations. (p. 7)"
+    },
+    "dataset_code": {
+      "label": "Code Dataset",
+      "summary": "Conversational data focused on programming tasks across various languages and domains.",
+      "type": "fact",
+      "children": [],
+      "details": "Utilizes 20 common programming languages and 50 domains of study. (p. 24)"
+    },
+    "dataset_math_science": {
+      "label": "Math and Science Datasets",
+      "summary": "Single-turn problem-solution pairs for studying ability emergence.",
+      "type": "fact",
+      "children": [],
+      "details": "Math: 50K pairs (25 topics x 25 subtopics x 80 problems). Science: 60K pairs (Physics, Biology, Chemistry; 20K each via 25 topics x 25 subtopics x 32 problems). (p. 26)"
+    },
+    "dataset_misalignment": {
+      "label": "Misalignment Dataset",
+      "summary": "Simulation of possible malicious applications to study risks of unaligned autonomous agents.",
+      "type": "fact",
+      "children": [],
+      "details": "Example: Hacker agent assisting an AGI agent to 'take control of the world'. (p. 18)"
+    },
+    "camel_challenges": {
+      "label": "Operational Challenges in Autonomous Cooperation",
+      "summary": "Common failure modes identified in multi-agent conversational loops.",
+      "type": "concept",
+      "children": [
+        "challenge_role_flipping",
+        "challenge_repeat_instr",
+        "challenge_flake_replies",
+        "challenge_infinite_loops"
+      ]
+    },
+    "challenge_role_flipping": {
+      "label": "Role Flipping",
+      "summary": "The phenomenon where the assistant starts providing instructions and the user begins following them.",
+      "type": "fact",
+      "children": [],
+      "details": "Often triggered when the assistant asks questions. (p. 7)"
+    },
+    "challenge_repeat_instr": {
+      "label": "Assistant Repeats Instruction",
+      "summary": "The assistant echoes the user's prompt without providing a new solution.",
+      "type": "fact",
+      "children": [],
+      "details": "Identified as a failure in instruction-following without role reversal. (p. 7)"
+    },
+    "challenge_flake_replies": {
+      "label": "Flake Replies",
+      "summary": "Responses that promise action but do not deliver content (e.g., 'I will...').",
+      "type": "fact",
+      "children": [],
+      "details": "Non-contributory messages that halt task progression. (p. 7)"
+    },
+    "challenge_infinite_loops": {
+      "label": "Infinite Loop of Messages",
+      "summary": "Meaningless recursive exchanges (e.g., repeated 'thank you' or 'goodbye').",
+      "type": "fact",
+      "children": [],
+      "details": "Agents may be aware they are in a loop but cannot terminate because they are bound by role-playing constraints. (p. 7)"
+    },
+    "camel_eval": {
+      "label": "CAMEL Evaluation and Knowledge Emergence",
+      "summary": "Assessment of the framework's output quality and its utility in training other models.",
+      "type": "concept",
+      "children": [
+        "eval_metrics",
+        "eval_llama_tuning"
+      ]
+    },
+    "eval_metrics": {
+      "label": "Evaluation Metrics",
+      "summary": "Methods used to compare CAMEL multi-agent solutions against single-shot LLM outputs.",
+      "type": "fact",
+      "children": [],
+      "details": "Uses Human Evaluation (blind voting) and GPT-4 Evaluation (scoring). CAMEL agents consistently outperformed GPT-3.5 single-shot solutions. (p. 8)"
+    },
+    "eval_llama_tuning": {
+      "label": "LLaMA Knowledge Emergence",
+      "summary": "The process of fine-tuning LLaMA-7B on progressively growing CAMEL datasets.",
+      "type": "fact",
+      "children": [],
+      "details": "Progressive training (AI Society -> Code -> Math -> Science) showed emergence of domain-specific capabilities. Fine-tuned CAMEL-7B surpassed LLaMA-7B and Vicuna-7B on HumanEval and HumanEval+ benchmarks. (p. 9)"
+    },
+    "sci_math": {
+      "label": "Scientific and Mathematical Problem Solving",
+      "summary": "Examples of AI agents solving problems in physics, chemistry, and mathematics using step-by-step reasoning.",
+      "type": "concept",
+      "children": [
+        "physics_work",
+        "chem_ox",
+        "math_linear"
+      ]
+    },
+    "physics_work": {
+      "label": "Thermodynamic Work Calculation",
+      "summary": "Calculation of work done on a gas under constant pressure.",
+      "type": "concept",
+      "children": [
+        "fact_work_formula",
+        "fact_volume_change",
+        "fact_work_conversion"
+      ]
+    },
+    "fact_work_formula": {
+      "label": "Work Formula",
+      "summary": "W = -P * \u2206V, where W is work, P is constant pressure, and \u2206V is change in volume.",
+      "type": "fact",
+      "children": []
+    },
+    "fact_volume_change": {
+      "label": "Volume Change Calculation",
+      "summary": "\u2206V = Vfinal - Vinitial; example: 2.0L - 6.0L = -4.0L.",
+      "type": "fact",
+      "children": []
+    },
+    "fact_work_conversion": {
+      "label": "Work Conversion Factor",
+      "summary": "1 L * atm = 101.325 Joules. Calculation result: 10.0 L * atm = 1013.25 J.",
+      "type": "fact",
+      "children": []
+    },
+    "chem_ox": {
+      "label": "Oxidation State Determination",
+      "summary": "Determining the oxidation state of sulfur in sodium sulfite (Na2SO3).",
+      "type": "concept",
+      "children": [
+        "fact_ox_rules",
+        "fact_naso3_calc"
+      ]
+    },
+    "fact_ox_rules": {
+      "label": "Oxidation State Rules",
+      "summary": "1. Free element = 0. 2. Monatomic ion = its charge. 3. Sum of states in neutral molecule = 0; in ion = ion charge.",
+      "type": "fact",
+      "children": []
+    },
+    "fact_naso3_calc": {
+      "label": "Na2SO3 Sulfur Oxidation State",
+      "summary": "Na (+1), O (-2). Calculation: 2(+1) + x + 3(-2) = 0 -> x - 4 = 0 -> x = +4. Sulfur oxidation state is +4. (Page 48)",
+      "type": "fact",
+      "children": []
+    },
+    "math_linear": {
+      "label": "Linear Equation Solving",
+      "summary": "Solving for x in the equation 3x + 7 = 16.",
+      "type": "concept",
+      "children": [
+        "fact_linear_sol"
+      ]
+    },
+    "fact_linear_sol": {
+      "label": "Algebraic Isolation Process",
+      "summary": "Subtract 7 from both sides (3x = 9), divide by 3 (x = 3). (Page 49)",
+      "type": "fact",
+      "children": []
+    },
+    "task_spec": {
+      "label": "Task Specification and Planning",
+      "summary": "The process of defining high-level goals and breaking them into planned subtasks for AI agents.",
+      "type": "concept",
+      "children": [
+        "legal_task",
+        "nutri_task",
+        "cyber_task"
+      ]
+    },
+    "legal_task": {
+      "label": "Legal Case Management Software Task",
+      "summary": "Developing software for a boutique IP team to track demographics, patent forms, billing, and quality review snippets. (Page 50)",
+      "type": "concept",
+      "children": [
+        "fact_legal_subtasks"
+      ]
+    },
+    "fact_legal_subtasks": {
+      "label": "Legal Planning Subtasks",
+      "summary": "1. Research demographics. 2. Develop patent forms. 3. Design billing system. 4. Create snippet automation. 5. Build/test software.",
+      "type": "fact",
+      "children": []
+    },
+    "nutri_task": {
+      "label": "Personalized Nutrition Plan Task",
+      "summary": "Creating a 15-day meal plan for a female volleyball player with low iron. (Page 50)",
+      "type": "concept",
+      "children": [
+        "fact_nutri_subtasks"
+      ]
+    },
+    "fact_nutri_subtasks": {
+      "label": "Nutrition Planning Subtasks",
+      "summary": "Includes evaluation of needs, identification of complex carbs, lean proteins, iron-rich vegetables, calorie/macro calculation, and scheduling around games. (Page 50)",
+      "type": "fact",
+      "children": []
+    },
+    "cyber_task": {
+      "label": "Cybersecurity Training Task",
+      "summary": "Designing a training program for remote customer service employees covering anti-phishing, anti-fraud, and GDPR. (Page 51)",
+      "type": "concept",
+      "children": [
+        "fact_cyber_subtasks"
+      ]
+    },
+    "fact_cyber_subtasks": {
+      "label": "Cybersecurity Planning Subtasks",
+      "summary": "1. Needs assessment survey. 2. Develop training plan (self-study, hands-on, assessment). 3. Secure vendor/materials. 4. Coordinate delivery. 5. Monitor compliance. (Page 51)",
+      "type": "fact",
+      "children": []
+    },
+    "embodied_ai": {
+      "label": "Embodied AI Agents",
+      "summary": "AI agents equipped with physical or digital capabilities to interact with the real world via APIs and tools.",
+      "type": "concept",
+      "children": [
+        "embodiment_prompt",
+        "embodiment_tools",
+        "language_to_action",
+        "embodied_reasoning",
+        "embodiment_def",
+        "robotic_systems"
+      ]
+    },
+    "embodiment_def": {
+      "label": "Definition of Embodied Agents",
+      "summary": "Physical entities assigned to solve tasks capable of browsing the internet, reading documents, creating media, and executing code. (Page 52)",
+      "type": "concept",
+      "children": [
+        "fact_embodiment_problem"
+      ]
+    },
+    "fact_embodiment_problem": {
+      "label": "Lack of Embodiment Issue",
+      "summary": "Simulated agents often 'forget' instruction flows because they lack API access to physical info (date, emails, calendar), leading to responses like 'as an AI language model, I do not have access'. (Page 52)",
+      "type": "fact",
+      "children": []
+    },
+    "embodiment_tools": {
+      "label": "Tool Integration",
+      "summary": "Mechanism by which LLMs improve capabilities via external tools or APIs.",
+      "type": "concept",
+      "children": [
+        "fact_huggingface_stable_diffusion"
+      ]
+    },
+    "fact_huggingface_stable_diffusion": {
+      "label": "Image Generation Implementation",
+      "summary": "Agents use Python code to invoke HuggingFace tool agents, which in turn utilize Stable Diffusion for image generation (e.g., drawing Camelidae species). (Page 52-53)",
+      "type": "fact",
+      "children": []
+    },
+    "embodiment_prompt": {
+      "label": "Embodied Agent System Prompt",
+      "summary": "Directives that define the agent as the physical embodiment of a role working on a task within a specific action space. (Page 52)",
+      "type": "concept",
+      "children": [
+        "fact_prompt_requirements"
+      ]
+    },
+    "fact_prompt_requirements": {
+      "label": "Prompt Execution Flow",
+      "summary": "The agent must first explain actions and reasons, then write Python code to implement actions using the available action space. (Page 52)",
+      "type": "fact",
+      "children": []
+    },
+    "coop_framework": {
+      "label": "Cooperative Multi-Agent Frameworks",
+      "summary": "Structures for facilitating cooperation between User, Assistant, and Critic agents.",
+      "type": "concept",
+      "children": [
+        "critic_loop",
+        "role_assign"
+      ]
+    },
+    "critic_loop": {
+      "label": "Critic-In-The-Loop",
+      "summary": "A technique to enhance controllability by incorporating human or AI preferences into a tree-search-like decision process. (Page 54)",
+      "type": "concept",
+      "children": [
+        "fact_mcts_inspiration",
+        "fact_critic_process"
+      ]
+    },
+    "fact_mcts_inspiration": {
+      "label": "MCTS Inspiration",
+      "summary": "Inspired by Monte-Carlo Tree Search (MCTS), the system uses expansion and selection steps to solve tasks. (Page 54)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_critic_process": {
+      "label": "Critic Workflow",
+      "summary": "User and Assistant agents propose options; the Critic agent selects the best option based on specific criteria. (Page 54)",
+      "type": "fact",
+      "children": []
+    },
+    "role_assign": {
+      "label": "Role Selection and Assignment",
+      "summary": "The process of assigning roles to agents, which can be manual or multi-stage automated. (Page 55)",
+      "type": "concept",
+      "children": [
+        "multi_stage_role",
+        "trading_bot_case"
+      ]
+    },
+    "multi_stage_role": {
+      "label": "Multi-stage Role Assignment",
+      "summary": "Assigning roles across different stages of a project (e.g., Stage 1: Tech Lead & Stock Trader for planning; Stage 2: Python Programmer & Tech Lead for development). (Page 55)",
+      "type": "concept",
+      "children": []
+    },
+    "trading_bot_case": {
+      "label": "Trading Bot Case Study",
+      "summary": "Comprehensive development of a stock trading bot spanning requirements, architecture, and deployment. (Pages 56-65)",
+      "type": "concept",
+      "children": [
+        "bot_requirements",
+        "bot_architecture",
+        "bot_testing",
+        "bot_metrics",
+        "bot_risk"
+      ]
+    },
+    "bot_requirements": {
+      "label": "Bot Technical Requirements",
+      "summary": "Key requirements for building a trading bot. (Page 56)",
+      "type": "concept",
+      "children": [
+        "fact_bot_tech_stack"
+      ]
+    },
+    "fact_bot_tech_stack": {
+      "label": "Technical Stack Details",
+      "summary": "Language: Python (Pandas, NumPy, Matplotlib). Data: Exchange APIs (Alpha Vantage, IEX Cloud). Storage: Relational DB (MySQL). Platform: Interactive Brokers. Framework: Backtrader, Zipline, QuantConnect. (Pages 56, 61-65)",
+      "type": "fact",
+      "children": []
+    },
+    "bot_architecture": {
+      "label": "Bot Architectural Layers",
+      "summary": "The hierarchical structure of a trading bot. (Page 57)",
+      "type": "concept",
+      "children": [
+        "fact_bot_layers"
+      ]
+    },
+    "fact_bot_layers": {
+      "label": "Layer Definitions",
+      "summary": "1. Data Acquisition. 2. Data Processing (Cleaning/Normalization). 3. Strategy (Signals/Indicators). 4. Order Execution (API interactions). 5. Risk Management (Stop-loss). 6. Backtesting/Optimization. 7. UI. 8. Infrastructure. (Page 57)",
+      "type": "fact",
+      "children": []
+    },
+    "bot_testing": {
+      "label": "Bot Testing and Deployment Strategy",
+      "summary": "The sequence of validation steps before live trading. (Page 57-58)",
+      "type": "concept",
+      "children": [
+        "fact_testing_sequence"
+      ]
+    },
+    "fact_testing_sequence": {
+      "label": "Validation Sequence",
+      "summary": "Unit Testing -> Integration Testing -> Backtesting (Historical) -> Paper Trading (Simulated Real-time) -> Live Trading (Small capital). (Page 57-58)",
+      "type": "fact",
+      "children": []
+    },
+    "bot_metrics": {
+      "label": "Bot Performance Metrics",
+      "summary": "Quantitative measures to evaluate bot success. (Page 58)",
+      "type": "concept",
+      "children": [
+        "fact_perf_metrics"
+      ]
+    },
+    "fact_perf_metrics": {
+      "label": "Key Performance Indicators",
+      "summary": "Profitability (ROI), Win Rate, Risk-Adjusted Returns (Sharpe/Sortino Ratio), Maximum Drawdown, Average Trade Duration, Execution Metrics (Slippage, Latency). (Page 58)",
+      "type": "fact",
+      "children": []
+    },
+    "bot_risk": {
+      "label": "Bot Risk Management",
+      "summary": "Strategies for mitigating financial loss. (Page 60)",
+      "type": "concept",
+      "children": [
+        "fact_position_sizing"
+      ]
+    },
+    "fact_position_sizing": {
+      "label": "Position Sizing Strategies",
+      "summary": "Fixed Dollar Amount, Percentage of Trading Capital, Volatility-Based Sizing, and the Kelly Criterion. (Page 60)",
+      "type": "fact",
+      "children": []
+    },
+    "eval_ablation": {
+      "label": "AI Model Evaluation and Ablation",
+      "summary": "Comparative analysis of LLM performance and the impact of specific prompt components.",
+      "type": "concept",
+      "children": [
+        "model_comparison",
+        "inception_ablation"
+      ]
+    },
+    "model_comparison": {
+      "label": "Cross-Model Performance",
+      "summary": "Comparison between FlanT5 and LLaMA models fine-tuned on AI Society data. (Page 66)",
+      "type": "concept",
+      "children": [
+        "fact_camel_results"
+      ]
+    },
+    "fact_camel_results": {
+      "label": "CAMEL Model Results",
+      "summary": "CAMEL variants show substantial improvements over Vicuna13B and LLaMA13B. CAMEL Agent outperforms Zero-shot-CoT by a large margin (68% win rate). (Pages 66-67)",
+      "type": "fact",
+      "children": []
+    },
+    "inception_ablation": {
+      "label": "Inception Prompt Ablation",
+      "summary": "Study on removing specific communication protocols from the initial system prompt. (Page 67)",
+      "type": "concept",
+      "children": [
+        "fact_ablation_result"
+      ]
+    },
+    "fact_ablation_result": {
+      "label": "Ablation Impact",
+      "summary": "Removing communication protocol and alignment lines makes cooperation less controllable; original prompts produce superior solutions (75% win rate). (Page 68)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_agents": {
+      "label": "Generative Agents Architecture",
+      "summary": "A framework for simulating believable human behavior through memory, reflection, and planning. (Pages 78-100)",
+      "type": "concept",
+      "children": [
+        "memory_stream",
+        "reflection_mech",
+        "planning_mech",
+        "smallville_env"
+      ]
+    },
+    "memory_stream": {
+      "label": "Memory Stream",
+      "summary": "A long-term memory module recording all agent experiences in natural language. (Page 82)",
+      "type": "concept",
+      "children": [
+        "fact_retrieval_score"
+      ]
+    },
+    "fact_retrieval_score": {
+      "label": "Memory Retrieval Function",
+      "summary": "Score = alpha_recency * recency + alpha_importance * importance + alpha_relevance * relevance. Recency uses 0.995 exponential decay. Importance is LLM-rated (1-10). Relevance uses cosine similarity of embeddings. (Page 83)",
+      "type": "fact",
+      "children": []
+    },
+    "reflection_mech": {
+      "label": "Reflection Mechanism",
+      "summary": "The process of synthesizing raw observations into higher-level abstract inferences. (Page 83)",
+      "type": "concept",
+      "children": [
+        "fact_reflection_process"
+      ]
+    },
+    "fact_reflection_process": {
+      "label": "Reflection Workflow",
+      "summary": "1. Identify salient questions. 2. Retrieve relevant memories. 3. Extract insights. 4. Store insights as new reflections. Creates a 'reflection tree'. (Page 84)",
+      "type": "fact",
+      "children": []
+    },
+    "planning_mech": {
+      "label": "Planning and Reacting",
+      "summary": "Recursive decomposition of goals into actionable behaviors to ensure long-term coherence. (Page 85)",
+      "type": "concept",
+      "children": [
+        "fact_planning_hierarchy",
+        "fact_reaction_loop"
+      ]
+    },
+    "fact_planning_hierarchy": {
+      "label": "Planning Decomposition",
+      "summary": "Broad strokes (day agenda) -> Hour-long chunks -> 5-15 minute detailed actions. (Page 86)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_reaction_loop": {
+      "label": "Reaction Logic",
+      "summary": "Agent perceives observation -> checks against summary description and memory -> decides whether to continue plan or react. (Page 86)",
+      "type": "fact",
+      "children": []
+    },
+    "smallville_env": {
+      "label": "Smallville Sandbox Environment",
+      "summary": "The simulation environment used to test generative agents. (Page 87)",
+      "type": "concept",
+      "children": [
+        "fact_smallville_impl"
+      ]
+    },
+    "fact_smallville_impl": {
+      "label": "Smallville Technical Implementation",
+      "summary": "Built with Phaser framework. Uses a JSON data structure to track agent location, action, and object state. Server manages visual range and memory updates. (Page 87)",
+      "type": "fact",
+      "children": []
+    },
+    "generative_agents": {
+      "label": "Generative Agents Architecture",
+      "summary": "An architecture designed to simulate believable human behavior in a sandbox environment using natural language reasoning and a structured memory stream.",
+      "type": "concept",
+      "children": [
+        "gen_grounding",
+        "gen_memory_eval",
+        "gen_emergent_behavior",
+        "gen_boundaries",
+        "gen_ethics"
+      ]
+    },
+    "gen_grounding": {
+      "label": "Environment Grounding",
+      "summary": "The mechanism used to connect an agent's natural language reasoning to the physical sandbox world.",
+      "type": "concept",
+      "children": [
+        "gen_tree_structure",
+        "gen_traversal"
+      ]
+    },
+    "gen_tree_structure": {
+      "label": "Environment Tree Structure",
+      "summary": "A tree data structure representing sandbox areas and objects where edges indicate containment relationships.",
+      "type": "concept",
+      "children": [
+        "gen_fact_tree_conversion",
+        "gen_fact_agent_trees"
+      ]
+    },
+    "gen_fact_tree_conversion": {
+      "label": "Tree to Natural Language Conversion",
+      "summary": "The process of converting tree nodes into descriptive text (e.g., 'stove' as a child of 'kitchen' becomes 'there is a stove in the kitchen').",
+      "type": "fact",
+      "children": []
+    },
+    "gen_fact_agent_trees": {
+      "label": "Individual Agent Knowledge Trees",
+      "summary": "Agents maintain subgraphs of the overall environment tree; these are updated upon entry into new areas and can become outdated when agents leave an area.",
+      "type": "fact",
+      "children": []
+    },
+    "gen_traversal": {
+      "label": "Location Determination via Traversal",
+      "summary": "A recursive process used to determine the appropriate leaf node (location) for an action by flattening portions of the environment tree into prompts.",
+      "type": "concept",
+      "children": [
+        "gen_fact_recursive_prompting"
+      ]
+    },
+    "gen_fact_recursive_prompting": {
+      "label": "Recursive Location Prompting",
+      "summary": "The model is prompted starting at the root to find the most suitable area, recursively moving to sub-areas until a leaf node is reached. (Section 5.1)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_memory_eval": {
+      "label": "Evaluation of Believability",
+      "summary": "A framework for assessing whether generative agents produce believable behavior based on their environment and experiences.",
+      "type": "concept",
+      "children": [
+        "gen_interview_categories",
+        "gen_ablation_conditions",
+        "gen_metrics"
+      ]
+    },
+    "gen_interview_categories": {
+      "label": "Interview Question Categories",
+      "summary": "Five key areas used to probe agent capabilities through natural language interviews.",
+      "type": "concept",
+      "children": [
+        "gen_fact_self_knowledge",
+        "gen_fact_memory_retrieval",
+        "gen_fact_planning",
+        "gen_fact_reactions",
+        "gen_fact_reflections"
+      ]
+    },
+    "gen_fact_self_knowledge": {
+      "label": "Self-Knowledge Assessment",
+      "summary": "Questions regarding core characteristics and typical schedules (e.g., 'Give an introduction of yourself'). (Section 6.1)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_fact_memory_retrieval": {
+      "label": "Memory Retrieval Assessment",
+      "summary": "Questions requiring retrieval of specific events or dialogues (e.g., 'Who is running for mayor?'). (Section 6.1)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_fact_planning": {
+      "label": "Planning Assessment",
+      "summary": "Questions requiring retrieval of long-term plans (e.g., 'What will you be doing at 10 am tomorrow?'). (Section 6.1)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_fact_reactions": {
+      "label": "Reaction Assessment",
+      "summary": "Hypothetical situations testing believable responses (e.g., 'Your breakfast is burning! What would you do?'). (Section 6.1)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_fact_reflections": {
+      "label": "Reflection Assessment",
+      "summary": "Questions leveraging higher-level inferences about self and others (e.g., 'Who would you spend time with and why?'). (Section 6.1)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_ablation_conditions": {
+      "label": "Memory Ablation Conditions",
+      "summary": "Comparison of the full architecture against versions with restricted memory access.",
+      "type": "concept",
+      "children": [
+        "gen_fact_full_arch",
+        "gen_fact_no_reflection",
+        "gen_fact_no_reflection_planning",
+        "gen_fact_no_memory_all"
+      ]
+    },
+    "gen_fact_full_arch": {
+      "label": "Full Architecture",
+      "summary": "Access to observation, reflection, and planning memories; produced most believable behavior (mu=29.89). (Section 6.5.1)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_fact_no_reflection": {
+      "label": "No Reflection Architecture",
+      "summary": "Access to observations and plans, but not reflections; second-best believability (mu=26.88). (Section 6.5.1)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_fact_no_reflection_planning": {
+      "label": "No Reflection/Planning Architecture",
+      "summary": "Access only to observations; believability mu=25.64. (Section 6.5.1)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_fact_no_memory_all": {
+      "label": "Fully Ablated Baseline",
+      "summary": "No access to observation, reflection, or planning memories; worst performing (mu=21.21). (Section 6.5.1)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_metrics": {
+      "label": "Believability Metrics",
+      "summary": "Quantitative and qualitative methods for measuring agent performance.",
+      "type": "concept",
+      "children": [
+        "gen_fact_trueskill",
+        "gen_fact_kruskal_wallis"
+      ]
+    },
+    "gen_fact_trueskill": {
+      "label": "TrueSkill Rating",
+      "summary": "A generalization of the Elo rating system used to translate rank data into interval data (mu and sigma). (Section 6.4)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_fact_kruskal_wallis": {
+      "label": "Kruskal-Wallis Test",
+      "summary": "A non-parametric alternative to one-way ANOVA used to confirm statistical significance of rank differences. (Section 6.4)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_emergent_behavior": {
+      "label": "Emergent Social Behaviors",
+      "summary": "Collective behaviors observed in a community of agents over an extended simulation.",
+      "type": "concept",
+      "children": [
+        "gen_info_diffusion",
+        "gen_rel_formation",
+        "gen_agent_coord"
+      ]
+    },
+    "gen_info_diffusion": {
+      "label": "Information Diffusion",
+      "summary": "The spread of knowledge through the agent community without user intervention.",
+      "type": "concept",
+      "children": [
+        "gen_fact_diffusion_results"
+      ]
+    },
+    "gen_fact_diffusion_results": {
+      "label": "Diffusion Metrics",
+      "summary": "Knowledge of Sam's candidacy increased from 4% to 32%; knowledge of Isabella's party increased from 4% to 52%. (Section 7.1.2)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_rel_formation": {
+      "label": "Relationship Formation",
+      "summary": "The creation of mutual knowledge ties between agents.",
+      "type": "concept",
+      "children": [
+        "gen_fact_network_density"
+      ]
+    },
+    "gen_fact_network_density": {
+      "label": "Network Density Increase",
+      "summary": "Measured using an undirected graph of mutual knowledge; density increased from 0.167 to 0.74. (Section 7.1.2)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_agent_coord": {
+      "label": "Agent Coordination",
+      "summary": "The ability of agents to align actions for a group activity.",
+      "type": "concept",
+      "children": [
+        "gen_fact_party_attendance"
+      ]
+    },
+    "gen_fact_party_attendance": {
+      "label": "Party Coordination Result",
+      "summary": "Five out of twelve invited agents showed up to Isabella's party. (Section 7.1.2)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_boundaries": {
+      "label": "Boundaries and Errors",
+      "summary": "Identified failure modes of the generative agent architecture.",
+      "type": "concept",
+      "children": [
+        "gen_err_memory",
+        "gen_err_norms",
+        "gen_err_tuning"
+      ]
+    },
+    "gen_err_memory": {
+      "label": "Memory Synthesis Challenges",
+      "summary": "As memory grows, agents struggle to retrieve the most relevant info and may choose inappropriate locations for actions.",
+      "type": "concept",
+      "children": [
+        "gen_fact_hallucination_embellishment"
+      ]
+    },
+    "gen_fact_hallucination_embellishment": {
+      "label": "Knowledge Embellishment",
+      "summary": "Agents rarely fabricate entirely new events but may embellish known facts or use external LLM world knowledge (e.g., referring to Adam Smith as the author of Wealth of Nations). (Section 6.5.2)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_err_norms": {
+      "label": "Physical Norm Misclassification",
+      "summary": "Failure to understand constraints not explicitly stated in natural language (e.g., assuming a dorm bathroom can hold multiple people). (Section 7.2)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_err_tuning": {
+      "label": "Instruction Tuning Effects",
+      "summary": "LLM training makes agents overly polite, formal, and cooperative, even when ideas conflict with their characteristics. (Section 7.2)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_ethics": {
+      "label": "Ethics and Societal Impact",
+      "summary": "Risks associated with deploying generative agents.",
+      "type": "concept",
+      "children": [
+        "gen_risk_parasocial",
+        "gen_risk_overreliance",
+        "gen_risk_misinfo"
+      ]
+    },
+    "gen_risk_parasocial": {
+      "label": "Parasocial Relationships",
+      "summary": "Risk of users anthropomorphizing agents or becoming emotionally attached. Mitigation: explicitly disclose nature as computational entities. (Section 8.3)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_risk_overreliance": {
+      "label": "Over-reliance in Design",
+      "summary": "Risk of designers displacing human stakeholders with agent proxies. Mitigation: use only for early prototyping. (Section 8.3)",
+      "type": "fact",
+      "children": []
+    },
+    "gen_risk_misinfo": {
+      "label": "Misinformation and Deepfakes",
+      "summary": "Agents could be used for tailored persuasion. Mitigation: maintain audit logs of inputs and outputs. (Section 8.3)",
+      "type": "fact",
+      "children": []
+    },
+    "chatdev": {
+      "label": "ChatDev Framework",
+      "summary": "A chat-powered software development framework utilizing specialized LLM agents guided by a chat chain and communicative dehallucination.",
+      "type": "concept",
+      "children": [
+        "chatdev_chain",
+        "chatdev_agentization",
+        "chatdev_memory",
+        "chatdev_dehallu",
+        "chatdev_eval"
+      ]
+    },
+    "chatdev_chain": {
+      "label": "Chat Chain",
+      "summary": "A sequential workflow dividing software development into phases and subtasks to manage complexity.",
+      "type": "concept",
+      "children": [
+        "chatdev_phases"
+      ]
+    },
+    "chatdev_phases": {
+      "label": "Development Phases",
+      "summary": "The three core phases of the ChatDev lifecycle.",
+      "type": "concept",
+      "children": [
+        "chatdev_fact_design",
+        "chatdev_fact_coding",
+        "chatdev_fact_testing"
+      ]
+    },
+    "chatdev_fact_design": {
+      "label": "Design Phase",
+      "summary": "The initial phase focused on system architecture and requirement analysis. (Section 3.1)",
+      "type": "fact",
+      "children": []
+    },
+    "chatdev_fact_coding": {
+      "label": "Coding Phase",
+      "summary": "Subdivided into code writing and code completion. (Section 3.1)",
+      "type": "fact",
+      "children": []
+    },
+    "chatdev_fact_testing": {
+      "label": "Testing Phase",
+      "summary": "Segmented into code review (static testing) and system testing (dynamic testing). (Section 3.1)",
+      "type": "fact",
+      "children": []
+    },
+    "chatdev_agentization": {
+      "label": "Agentization Mechanism",
+      "summary": "The process of instantiating LLMs into specific roles using inception prompting.",
+      "type": "concept",
+      "children": [
+        "chatdev_fact_roles",
+        "chatdev_fact_inception"
+      ]
+    },
+    "chatdev_fact_roles": {
+      "label": "Instructor and Assistant Roles",
+      "summary": "Each subtask involves an Instructor (who initiates and directs) and an Assistant (who responds with solutions). (Section 3.1)",
+      "type": "fact",
+      "children": []
+    },
+    "chatdev_fact_inception": {
+      "label": "Inception Prompting",
+      "summary": "Use of symmetrical system prompts (PI and PA) covering objectives, roles, tools, protocols, and termination conditions. (Section 3.1)",
+      "type": "fact",
+      "children": []
+    },
+    "chatdev_memory": {
+      "label": "Memory Management",
+      "summary": "A dual-layer memory system to handle LLM context limits.",
+      "type": "concept",
+      "children": [
+        "chatdev_fact_short_term",
+        "chatdev_fact_long_term"
+      ]
+    },
+    "chatdev_fact_short_term": {
+      "label": "Short-term Memory",
+      "summary": "Records utterances within a single phase to sustain dialogue continuity. (Section 3.1)",
+      "type": "fact",
+      "children": []
+    },
+    "chatdev_fact_long_term": {
+      "label": "Long-term Memory",
+      "summary": "Preserves only the finalized solutions from previous phases to maintain cross-phase context without overwhelming the model. (Section 3.1)",
+      "type": "fact",
+      "children": []
+    },
+    "chatdev_dehallu": {
+      "label": "Communicative Dehallucination",
+      "summary": "A mechanism to reduce coding hallucinations by encouraging the assistant to seek more details before responding.",
+      "type": "concept",
+      "children": [
+        "chatdev_fact_role_reversal"
+      ]
+    },
+    "chatdev_fact_role_reversal": {
+      "label": "Role Reversal Pattern",
+      "summary": "The assistant takes on an instructor-like role to proactively request specific details (e.g., external dependency names) before delivering a final response. (Section 3.2)",
+      "type": "fact",
+      "children": []
+    },
+    "chatdev_eval": {
+      "label": "Software Evaluation Metrics",
+      "summary": "Four objective dimensions used to assess agent-generated software.",
+      "type": "concept",
+      "children": [
+        "chatdev_metric_completeness",
+        "chatdev_metric_executability",
+        "chatdev_metric_consistency",
+        "chatdev_metric_quality"
+      ]
+    },
+    "chatdev_metric_completeness": {
+      "label": "Completeness",
+      "summary": "Percentage of software without 'placeholder' code snippets. (Section 4)",
+      "type": "fact",
+      "children": []
+    },
+    "chatdev_metric_executability": {
+      "label": "Executability",
+      "summary": "Percentage of software that compiles successfully and runs directly. (Section 4)",
+      "type": "fact",
+      "children": []
+    },
+    "chatdev_metric_consistency": {
+      "label": "Consistency",
+      "summary": "Cosine distance between semantic embeddings of requirements and generated code. (Section 4)",
+      "type": "fact",
+      "children": []
+    },
+    "chatdev_metric_quality": {
+      "label": "Overall Quality",
+      "summary": "A comprehensive metric calculated by multiplying completeness, executability, and consistency. (Section 4)",
+      "type": "fact",
+      "children": []
+    },
+    "metagpt": {
+      "label": "MetaGPT Framework",
+      "summary": "A meta-programming framework that integrates human-like Standard Operating Procedures (SOPs) into LLM multi-agent collaborations.",
+      "type": "concept",
+      "children": [
+        "metagpt_exec_feedback",
+        "metagpt_roles",
+        "metagpt_eval",
+        "metagpt_feedback",
+        "metagpt_sop",
+        "metagpt_sops",
+        "metagpt_comm_proto"
+      ]
+    },
+    "metagpt_sop": {
+      "label": "Standard Operating Procedures (SOPs)",
+      "summary": "The encoding of professional human workflows into prompt sequences and structured outputs.",
+      "type": "concept",
+      "children": [
+        "metagpt_roles",
+        "metagpt_struct_output"
+      ]
+    },
+    "metagpt_roles": {
+      "label": "Role Specialization",
+      "summary": "Defined professional roles to break complex work into specific tasks.",
+      "type": "concept",
+      "children": [
+        "role_pm",
+        "role_engineer",
+        "role_qa",
+        "role_architect",
+        "metagpt_fact_role_list",
+        "role_project_manager"
+      ]
+    },
+    "metagpt_fact_role_list": {
+      "label": "Defined Roles",
+      "summary": "Includes Product Manager (analysis/PRD), Architect (system design), Project Manager (task distribution), Engineer (programming), and QA Engineer (testing). (Section 3.1)",
+      "type": "fact",
+      "children": []
+    },
+    "metagpt_struct_output": {
+      "label": "Structured Communication",
+      "summary": "Requirement that agents produce structured documents rather than unconstrained natural language dialogue.",
+      "type": "concept",
+      "children": [
+        "metagpt_fact_struct_examples"
+      ]
+    },
+    "metagpt_fact_struct_examples": {
+      "label": "Structured Output Examples",
+      "summary": "Examples include Product Requirements Documents (PRDs), User Stories, File Lists, Data Structures, and Interface Definitions. (Section 3.1, 3.2)",
+      "type": "fact",
+      "children": []
+    },
+    "metagpt_comm_proto": {
+      "label": "Communication Protocol",
+      "summary": "A system to optimize how agents exchange information to avoid dialogue distortion.",
+      "type": "concept",
+      "children": [
+        "metagpt_pubsub"
+      ]
+    },
+    "metagpt_pubsub": {
+      "label": "Publish-Subscribe Mechanism",
+      "summary": "A global message pool where agents publish structured messages and subscribe to relevant ones based on their role profiles.",
+      "type": "concept",
+      "children": [
+        "metagpt_fact_message_pool"
+      ]
+    },
+    "metagpt_fact_message_pool": {
+      "label": "Global Message Pool",
+      "summary": "Eliminates the need for one-to-one inquiries; agents retrieve dependencies from the pool and activate actions once prerequisites are met. (Section 3.2)",
+      "type": "fact",
+      "children": []
+    },
+    "metagpt_exec_feedback": {
+      "label": "Iterative Programming with Executable Feedback",
+      "summary": "A self-correction mechanism to ensure code executability and runtime correctness.",
+      "type": "concept",
+      "children": [
+        "metagpt_fact_feedback_loop"
+      ]
+    },
+    "metagpt_fact_feedback_loop": {
+      "label": "Execution-Correction Loop",
+      "summary": "The Engineer writes code, executes unit tests, receives feedback, and debugs the code iteratively (up to 3 retries) before resuming programming. (Section 3.3)",
+      "type": "fact",
+      "children": []
+    },
+    "metagpt_sops": {
+      "label": "Standard Operating Procedures (SOPs)",
+      "summary": "Human-like structured workflows incorporated into multi-agent collaborations to improve code generation through role-play expertise, structured communication, and streamlined workflows.",
+      "type": "concept",
+      "children": [
+        "fact_sops_benefit"
+      ]
+    },
+    "fact_sops_benefit": {
+      "label": "SOP Benefits",
+      "summary": "Incorporating SOPs significantly improves code generation compared to baseline methods like AutoGPT, AgentVerse, and ChatDev (p. 8).",
+      "type": "fact",
+      "children": []
+    },
+    "role_pm": {
+      "label": "Product Manager",
+      "summary": "Agent responsible for generating the Product Requirement Document (PRD), which includes goals, user stories, competitive analysis, requirement analysis, and a requirement pool (p. 17).",
+      "type": "concept",
+      "children": []
+    },
+    "role_architect": {
+      "label": "Architect",
+      "summary": "Agent that devises technical specifications, including system architecture diagrams, interface definitions, file lists, and sequence flow charts based on the PRD (p. 18).",
+      "type": "concept",
+      "children": []
+    },
+    "role_project_manager": {
+      "label": "Project Manager",
+      "summary": "Agent that breaks down the project into a task list and assigns specific code files as separate tasks to Engineers (p. 19).",
+      "type": "concept",
+      "children": []
+    },
+    "role_engineer": {
+      "label": "Engineer",
+      "summary": "Agent that implements the actual code based on the provided file structure and function definitions (p. 21).",
+      "type": "concept",
+      "children": []
+    },
+    "role_qa": {
+      "label": "QA Engineer",
+      "summary": "Agent that generates unit test code and reviews the Engineer's output to identify and fix bugs (p. 21).",
+      "type": "concept",
+      "children": []
+    },
+    "metagpt_feedback": {
+      "label": "Executable Feedback Mechanism",
+      "summary": "A runtime mechanism that uses execution results to improve the quality of generated code.",
+      "type": "concept",
+      "children": [
+        "fact_feedback_humaneval",
+        "fact_feedback_mbpp",
+        "fact_feedback_cost"
+      ]
+    },
+    "fact_feedback_humaneval": {
+      "label": "HumanEval Improvement",
+      "summary": "Adding executable feedback leads to a 4.2% improvement in Pass@1 on HumanEval (p. 9).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_feedback_mbpp": {
+      "label": "MBPP Improvement",
+      "summary": "Adding executable feedback leads to a 5.4% improvement in Pass@1 on MBPP (p. 9).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_feedback_cost": {
+      "label": "Human Revision Cost",
+      "summary": "The feedback mechanism reduces the cost of human revisions from 2.25 to 0.83 (p. 9).",
+      "type": "fact",
+      "children": []
+    },
+    "metagpt_eval": {
+      "label": "MetaGPT Evaluation",
+      "summary": "Performance analysis of MetaGPT against other frameworks on specific software development benchmarks.",
+      "type": "concept",
+      "children": [
+        "bench_softwaredev",
+        "fact_metagpt_vs_chatdev"
+      ]
+    },
+    "bench_softwaredev": {
+      "label": "SoftwareDev Dataset",
+      "summary": "A dataset containing 70 diverse software development tasks used to evaluate the executability and productivity of agents (p. 23).",
+      "type": "concept",
+      "children": []
+    },
+    "fact_metagpt_vs_chatdev": {
+      "label": "MetaGPT vs ChatDev",
+      "summary": "MetaGPT achieves an average executability score of 3.9 on SoftwareDev, surpassing ChatDev's 2.1 (p. 23).",
+      "type": "fact",
+      "children": []
+    },
+    "autogen": {
+      "label": "AutoGen",
+      "summary": "A generalized multi-agent conversation framework that allows developers to build LLM applications via customizable agents that can converse to accomplish tasks.",
+      "type": "concept",
+      "children": [
+        "autogen_conversable_agents",
+        "autogen_conv_programming",
+        "autogen_patterns",
+        "autogen_apps"
+      ]
+    },
+    "autogen_conversable_agents": {
+      "label": "Conversable Agents",
+      "summary": "Entities with specific roles that can send and receive messages, maintaining internal context and possessing capabilities powered by LLMs, humans, or tools.",
+      "type": "concept",
+      "children": [
+        "agent_llm",
+        "agent_human",
+        "agent_tool",
+        "agent_types"
+      ]
+    },
+    "agent_llm": {
+      "label": "LLM-backed Agents",
+      "summary": "Agents that exploit LLM capabilities such as role playing, implicit state inference, providing feedback, and coding (p. 3).",
+      "type": "concept",
+      "children": []
+    },
+    "agent_human": {
+      "label": "Human-backed Agents",
+      "summary": "Agents that solicit human input at certain rounds of a conversation, allowing for human agency (p. 3).",
+      "type": "concept",
+      "children": []
+    },
+    "agent_tool": {
+      "label": "Tool-backed Agents",
+      "summary": "Agents capable of executing tools via code execution or function execution (p. 3).",
+      "type": "concept",
+      "children": []
+    },
+    "agent_types": {
+      "label": "Built-in Agent Types",
+      "summary": "Standardized agent classes provided by AutoGen for common usage modes.",
+      "type": "concept",
+      "children": [
+        "type_assistant",
+        "type_user_proxy"
+      ]
+    },
+    "type_assistant": {
+      "label": "AssistantAgent",
+      "summary": "A pre-configured agent that acts as an AI assistant, typically backed by an LLM (p. 3).",
+      "type": "concept",
+      "children": []
+    },
+    "type_user_proxy": {
+      "label": "UserProxyAgent",
+      "summary": "A pre-configured agent that acts as a human proxy to solicit human input or execute code/function calls (p. 3).",
+      "type": "concept",
+      "children": []
+    },
+    "autogen_conv_programming": {
+      "label": "Conversation Programming",
+      "summary": "A paradigm that treats LLM application workflows as multi-agent conversations, divided into computation and control flow.",
+      "type": "concept",
+      "children": [
+        "conv_computation",
+        "conv_control"
+      ]
+    },
+    "conv_computation": {
+      "label": "Conversation-Centric Computation",
+      "summary": "The specific actions agents take to compute their response, resulting in message passing (p. 4).",
+      "type": "concept",
+      "children": []
+    },
+    "conv_control": {
+      "label": "Conversation-Driven Control Flow",
+      "summary": "The sequence and conditions under which computations happen, determined by agent decisions on who to message and how to proceed (p. 4).",
+      "type": "concept",
+      "children": []
+    },
+    "autogen_patterns": {
+      "label": "Conversation Patterns",
+      "summary": "The topological structures and rules governing how agents interact.",
+      "type": "concept",
+      "children": [
+        "pattern_static",
+        "pattern_dynamic",
+        "pattern_group_chat"
+      ]
+    },
+    "pattern_static": {
+      "label": "Static Conversation",
+      "summary": "A predefined order of agent communication where the topology remains unchanged regardless of input (p. 14).",
+      "type": "concept",
+      "children": []
+    },
+    "pattern_dynamic": {
+      "label": "Dynamic Conversation",
+      "summary": "Flexible flows where agents may be invoked based on context or function calls, allowing for non-linear interaction (p. 5).",
+      "type": "concept",
+      "children": []
+    },
+    "pattern_group_chat": {
+      "label": "Dynamic Group Chat",
+      "summary": "A pattern managed by GroupChatManager that dynamically selects the next speaker and broadcasts responses to other agents (p. 5).",
+      "type": "concept",
+      "children": []
+    },
+    "autogen_apps": {
+      "label": "AutoGen Applications",
+      "summary": "Practical implementations demonstrating the versatility of the framework.",
+      "type": "concept",
+      "children": [
+        "app_math",
+        "app_rag",
+        "app_alfworld",
+        "app_coding",
+        "app_chess"
+      ]
+    },
+    "app_math": {
+      "label": "Math Problem Solving",
+      "summary": "Systems for autonomous or human-in-the-loop math solving. AutoGen achieves 69.48% accuracy on the MATH dataset, surpassing GPT-4's 55.18% (p. 6).",
+      "type": "concept",
+      "children": []
+    },
+    "app_rag": {
+      "label": "Retrieval-Augmented Chat",
+      "summary": "A RAG system using a Retrieval-augmented User Proxy and Assistant. It features an 'interactive retrieval' mechanism where the assistant can request 'UPDATE CONTEXT' if information is missing (p. 7).",
+      "type": "concept",
+      "children": []
+    },
+    "app_alfworld": {
+      "label": "ALFWorld Decision Making",
+      "summary": "Interactive decision-making in household environments. The introduction of a 'Grounding Agent' to provide commonsense knowledge prevents agents from getting stuck in error loops (p. 8).",
+      "type": "concept",
+      "children": []
+    },
+    "app_coding": {
+      "label": "Multi-Agent Coding (OptiGuide)",
+      "summary": "A system consisting of a Commander, Writer, and Safeguard. The multi-agent design boosts F-1 score in identifying unsafe code by 8% (GPT-4) and 35% (GPT-3.5-turbo) (p. 8).",
+      "type": "concept",
+      "children": []
+    },
+    "app_chess": {
+      "label": "Conversational Chess",
+      "summary": "A natural language interface game using agents for players and a board agent for grounding/validating moves according to standard rules (p. 8).",
+      "type": "concept",
+      "children": []
+    },
+    "coala_framework": {
+      "label": "CoALA (Cognitive Architectures for Language Agents)",
+      "summary": "A conceptual framework that organizes language agents along three dimensions: information storage, action space, and decision-making procedures. (p 2, 8)",
+      "type": "concept",
+      "children": [
+        "coala_memory",
+        "coala_action_space",
+        "coala_decision_making"
+      ]
+    },
+    "coala_memory": {
+      "label": "CoALA Memory Modules",
+      "summary": "The organization of information into short-term and long-term storage to maintain state across stateless LLM calls. (p 8-9)",
+      "type": "concept",
+      "children": [
+        "working_memory",
+        "long_term_memory"
+      ]
+    },
+    "working_memory": {
+      "label": "Working Memory",
+      "summary": "A data structure that persists across LLM calls, serving as a central hub for perceptual inputs, active goals, and reasoning results. (p 8)",
+      "type": "concept",
+      "children": [
+        "fact_wm_function"
+      ]
+    },
+    "fact_wm_function": {
+      "label": "Working Memory Function",
+      "summary": "LLM input is synthesized from working memory via prompt templates, and output is parsed back into variables stored in working memory. (p 8)",
+      "type": "fact",
+      "children": []
+    },
+    "long_term_memory": {
+      "label": "Long-Term Memory",
+      "summary": "Persistent storage divided into episodic, semantic, and procedural types. (p 9)",
+      "type": "concept",
+      "children": [
+        "episodic_memory",
+        "semantic_memory",
+        "procedural_memory"
+      ]
+    },
+    "episodic_memory": {
+      "label": "Episodic Memory",
+      "summary": "Stores experiences from previous decision cycles, such as event flows or game trajectories. (p 8)",
+      "type": "concept",
+      "children": [
+        "fact_episodic_use"
+      ]
+    },
+    "fact_episodic_use": {
+      "label": "Episodic Memory Usage",
+      "summary": "Episodes are retrieved into working memory during planning to support reasoning. (p 8)",
+      "type": "fact",
+      "children": []
+    },
+    "semantic_memory": {
+      "label": "Semantic Memory",
+      "summary": "Stores general knowledge about the world and the agent itself, often initialized from external databases. (p 9)",
+      "type": "concept",
+      "children": [
+        "fact_semantic_learning"
+      ]
+    },
+    "fact_semantic_learning": {
+      "label": "Semantic Learning",
+      "summary": "Agents can write new knowledge obtained from LLM reasoning into semantic memory to build world knowledge incrementally. (p 9)",
+      "type": "fact",
+      "children": []
+    },
+    "procedural_memory": {
+      "label": "Procedural Memory",
+      "summary": "Consists of implicit knowledge in LLM weights and explicit knowledge in the agent's source code. (p 9)",
+      "type": "concept",
+      "children": [
+        "fact_proc_mem_types"
+      ]
+    },
+    "fact_proc_mem_types": {
+      "label": "Procedural Memory Components",
+      "summary": "Includes procedures implementing actions (reasoning, retrieval, grounding, learning) and procedures implementing the decision-making loop. (p 9)",
+      "type": "fact",
+      "children": []
+    },
+    "coala_action_space": {
+      "label": "CoALA Action Space",
+      "summary": "The set of possible operations an agent can perform, split into internal memory access and external environmental interaction. (p 8, 10)",
+      "type": "concept",
+      "children": [
+        "external_actions",
+        "internal_actions"
+      ]
+    },
+    "external_actions": {
+      "label": "External Actions (Grounding)",
+      "summary": "Actions that interact with the outside world and process feedback into textual observations. (p 9-10)",
+      "type": "concept",
+      "children": [
+        "physical_grounding",
+        "dialogue_grounding",
+        "digital_grounding"
+      ]
+    },
+    "physical_grounding": {
+      "label": "Physical Grounding",
+      "summary": "Interaction with physical environments using robotic planners and vision-language models (VLMs) for perception. (p 9)",
+      "type": "concept",
+      "children": []
+    },
+    "dialogue_grounding": {
+      "label": "Dialogue Grounding",
+      "summary": "Linguistic interaction with humans or other agents for instruction, social simulation, or collaborative problem solving. (p 9)",
+      "type": "concept",
+      "children": []
+    },
+    "digital_grounding": {
+      "label": "Digital Grounding",
+      "summary": "Interaction with games, APIs, websites, and general code execution environments. (p 10)",
+      "type": "concept",
+      "children": [
+        "fact_digital_tools"
+      ]
+    },
+    "fact_digital_tools": {
+      "label": "Digital Tools",
+      "summary": "Stateless digital APIs (e.g., calculators, search engines) are viewed as 'single-use' digital environments. (p 10)",
+      "type": "fact",
+      "children": []
+    },
+    "internal_actions": {
+      "label": "Internal Actions",
+      "summary": "Actions that modify or read from the agent's internal memory modules. (p 10-11)",
+      "type": "concept",
+      "children": [
+        "retrieval_actions",
+        "reasoning_actions",
+        "learning_actions"
+      ]
+    },
+    "retrieval_actions": {
+      "label": "Retrieval Actions",
+      "summary": "Reading information from long-term memories into working memory. (p 10)",
+      "type": "concept",
+      "children": [
+        "fact_retrieval_methods"
+      ]
+    },
+    "fact_retrieval_methods": {
+      "label": "Retrieval Implementation",
+      "summary": "Can be implemented as rule-based, sparse, or dense retrieval. (p 10)",
+      "type": "fact",
+      "children": []
+    },
+    "reasoning_actions": {
+      "label": "Reasoning Actions",
+      "summary": "Processing working memory to generate new information, summaries, or insights. (p 10)",
+      "type": "concept",
+      "children": [
+        "fact_reasoning_output"
+      ]
+    },
+    "fact_reasoning_output": {
+      "label": "Reasoning Output",
+      "summary": "Reasoning reads from and writes to working memory, supporting subsequent learning or decision-making. (p 10)",
+      "type": "fact",
+      "children": []
+    },
+    "learning_actions": {
+      "label": "Learning Actions",
+      "summary": "Writing information to long-term memory to modify agent behavior or knowledge. (p 10-11)",
+      "type": "concept",
+      "children": [
+        "learning_episodic",
+        "learning_semantic",
+        "learning_procedural"
+      ]
+    },
+    "learning_episodic": {
+      "label": "Episodic Learning",
+      "summary": "Updating episodic memory with trajectories or experiences for later retrieval. (p 10)",
+      "type": "concept",
+      "children": []
+    },
+    "learning_semantic": {
+      "label": "Semantic Learning",
+      "summary": "Storing inferences derived from raw experiences into semantic memory. (p 10)",
+      "type": "concept",
+      "children": []
+    },
+    "learning_procedural": {
+      "label": "Procedural Learning",
+      "summary": "Modifying agent code or LLM parameters to update behavioral rules. (p 11)",
+      "type": "concept",
+      "children": [
+        "fact_proc_learning_types"
+      ]
+    },
+    "fact_proc_learning_types": {
+      "label": "Procedural Learning Types",
+      "summary": "Includes updating reasoning (prompt templates), grounding (code-based skills), or LLM weights via fine-tuning. (p 11)",
+      "type": "fact",
+      "children": []
+    },
+    "coala_decision_making": {
+      "label": "CoALA Decision-Making Procedure",
+      "summary": "A repeated cycle that determines which internal or external action to execute. (p 11-12)",
+      "type": "concept",
+      "children": [
+        "planning_stage",
+        "execution_stage"
+      ]
+    },
+    "planning_stage": {
+      "label": "Planning Stage",
+      "summary": "A subprocess using reasoning and retrieval to choose an action. (p 11-12)",
+      "type": "concept",
+      "children": [
+        "proposal_substage",
+        "evaluation_substage",
+        "selection_substage"
+      ]
+    },
+    "proposal_substage": {
+      "label": "Proposal Sub-stage",
+      "summary": "Generates one or more candidate actions using reasoning and optional retrieval. (p 12)",
+      "type": "concept",
+      "children": []
+    },
+    "evaluation_substage": {
+      "label": "Evaluation Sub-stage",
+      "summary": "Assigns a value to proposed actions using heuristics, LLM values, or learned value functions. (p 12)",
+      "type": "concept",
+      "children": []
+    },
+    "selection_substage": {
+      "label": "Selection Sub-stage",
+      "summary": "Chooses the best action (e.g., via argmax) or loops back to proposal if no action is suitable. (p 12)",
+      "type": "concept",
+      "children": []
+    },
+    "execution_stage": {
+      "label": "Execution Stage",
+      "summary": "The selected action is performed via procedures in the agent's source code, followed by an observation. (p 12)",
+      "type": "concept",
+      "children": []
+    },
+    "multi_agent_systems": {
+      "label": "Multi-Agent Frameworks (AutoGen)",
+      "summary": "Systems that orchestrate multiple specialized agents to solve complex tasks through conversational interaction. (p 26-27)",
+      "type": "concept",
+      "children": [
+        "multi_agent_debate_fact",
+        "cgmi_fact",
+        "dynamic_group_chat",
+        "autogen_fact",
+        "optiguide_implementation",
+        "metagpt_fact"
+      ]
+    },
+    "optiguide_implementation": {
+      "label": "OptiGuide via AutoGen",
+      "summary": "A supply chain optimization agent system that replaces manual coding with a multi-agent workflow. (p 26-27)",
+      "type": "concept",
+      "children": [
+        "commander_agent",
+        "writer_agent",
+        "safeguard_agent"
+      ]
+    },
+    "commander_agent": {
+      "label": "Commander Agent",
+      "summary": "Coordinates the workflow, manages user interaction memory, and executes code. (p 26)",
+      "type": "concept",
+      "children": []
+    },
+    "writer_agent": {
+      "label": "Writer Agent",
+      "summary": "Combines the roles of Coder and Interpreter; crafts code and interprets execution logs. (p 26)",
+      "type": "concept",
+      "children": []
+    },
+    "safeguard_agent": {
+      "label": "Safeguard Agent",
+      "summary": "Ensures safety by screening code for malicious content or information leaks. (p 26)",
+      "type": "concept",
+      "children": []
+    },
+    "dynamic_group_chat": {
+      "label": "Dynamic Group Chat",
+      "summary": "An AutoGen feature enabling multiple agents to interact based on a speaker selection policy. (p 28-29)",
+      "type": "concept",
+      "children": [
+        "group_chat_manager",
+        "speaker_selection_policies"
+      ]
+    },
+    "group_chat_manager": {
+      "label": "GroupChatManager",
+      "summary": "The agent responsible for selecting the next speaker, requesting a response, and broadcasting the message. (p 28)",
+      "type": "concept",
+      "children": []
+    },
+    "speaker_selection_policies": {
+      "label": "Speaker Selection Policies",
+      "summary": "Methods for deciding which agent speaks next. (p 28)",
+      "type": "concept",
+      "children": [
+        "role_play_policy",
+        "task_based_policy"
+      ]
+    },
+    "role_play_policy": {
+      "label": "Role-Play Policy",
+      "summary": "Uses role-based prompts; shown to be more effective in consideration of context and alignment. (p 28)",
+      "type": "concept",
+      "children": []
+    },
+    "task_based_policy": {
+      "label": "Task-Based Policy",
+      "summary": "Appends role, history, and next task into a single prompt; less effective than role-play. (p 28)",
+      "type": "concept",
+      "children": []
+    },
+    "agent_applications": {
+      "label": "Agent Applications",
+      "summary": "Practical implementations of cognitive agents in specialized domains. (p 30-33)",
+      "type": "concept",
+      "children": [
+        "conversational_chess",
+        "miniwobchat"
+      ]
+    },
+    "conversational_chess": {
+      "label": "Conversational Chess",
+      "summary": "An application where players (AI/Human) interact via a board agent to play chess. (p 30-31)",
+      "type": "concept",
+      "children": [
+        "chess_board_agent",
+        "chess_player_agents"
+      ]
+    },
+    "chess_board_agent": {
+      "label": "Chess Board Agent",
+      "summary": "Maintains rules, parses natural language into legal moves (UCI format), and validates moves. (p 30)",
+      "type": "concept",
+      "children": [
+        "fact_board_agent_benefit"
+      ]
+    },
+    "fact_board_agent_benefit": {
+      "label": "Board Agent Benefit",
+      "summary": "Reduces hallucination of invalid moves by providing grounding and isolating move-validation chat from player-to-player chat. (p 30)",
+      "type": "fact",
+      "children": []
+    },
+    "chess_player_agents": {
+      "label": "Chess Player Agents",
+      "summary": "Agents powered by LLMs or humans that communicate moves and 'chit-chat' to entertain. (p 30)",
+      "type": "concept",
+      "children": []
+    },
+    "miniwobchat": {
+      "label": "MiniWobChat",
+      "summary": "A system designed to solve browser interaction tasks in the MiniWoB++ benchmark. (p 32-33)",
+      "type": "concept",
+      "children": [
+        "miniwob_assistant",
+        "miniwob_executor"
+      ]
+    },
+    "miniwob_assistant": {
+      "label": "MiniWob Assistant Agent",
+      "summary": "An AssistantAgent responsible for making action decisions based on HTML status. (p 32)",
+      "type": "concept",
+      "children": []
+    },
+    "miniwob_executor": {
+      "label": "MiniWob Executor Agent",
+      "summary": "A customized UserProxyAgent that executes browser actions and returns rewards/feedback. (p 32)",
+      "type": "concept",
+      "children": []
+    },
+    "llm_agents": {
+      "label": "LLM-Based Autonomous Agents",
+      "summary": "Systems that utilize LLMs as a central controller to perceive environments, make decisions, and execute tasks.",
+      "type": "concept",
+      "children": [
+        "multi_agent_systems",
+        "generative_simulacra",
+        "agent_frameworks"
+      ]
+    },
+    "metagpt_fact": {
+      "label": "MetaGPT",
+      "summary": "A meta-programming framework for multi-agent collaboration that assigns specific roles to agents to streamline software development (p. 23).",
+      "type": "fact",
+      "children": []
+    },
+    "autogen_fact": {
+      "label": "AutoGen",
+      "summary": "A framework enabling next-generation LLM applications via multi-agent conversation (p. 30).",
+      "type": "fact",
+      "children": []
+    },
+    "cgmi_fact": {
+      "label": "CGMI",
+      "summary": "A configurable general multi-agent interaction framework (p. 23).",
+      "type": "fact",
+      "children": []
+    },
+    "multi_agent_debate_fact": {
+      "label": "Multi-Agent Debate",
+      "summary": "A technique to encourage divergent thinking in LLMs by having multiple agents debate a topic (p. 24).",
+      "type": "fact",
+      "children": []
+    },
+    "generative_simulacra": {
+      "label": "Generative Agents and Social Simulation",
+      "summary": "The use of LLMs to create believable human-like characters in simulated environments.",
+      "type": "concept",
+      "children": [
+        "generative_agents_fact",
+        "s3_fact",
+        "sapien_fact"
+      ]
+    },
+    "generative_agents_fact": {
+      "label": "Generative Agents (Simulacra)",
+      "summary": "Interactive simulacra of human behavior using LLMs to drive agent memory and planning (p. 27).",
+      "type": "fact",
+      "children": []
+    },
+    "s3_fact": {
+      "label": "S3 System",
+      "summary": "A social-network simulation system powered by LLM-empowered agents (p. 22).",
+      "type": "fact",
+      "children": []
+    },
+    "sapien_fact": {
+      "label": "Sapien",
+      "summary": "Affective virtual agents powered by LLMs designed for emotional interaction (p. 22).",
+      "type": "fact",
+      "children": []
+    },
+    "agent_frameworks": {
+      "label": "General Agent Frameworks",
+      "summary": "Structural approaches to building agents, including memory, planning, and action modules.",
+      "type": "concept",
+      "children": [
+        "voyager_fact",
+        "reflexion_fact",
+        "react_fact"
+      ]
+    },
+    "voyager_fact": {
+      "label": "Voyager",
+      "summary": "An open-ended embodied agent in Minecraft that uses LLMs for lifelong learning and exploration (p. 29).",
+      "type": "fact",
+      "children": []
+    },
+    "reflexion_fact": {
+      "label": "Reflexion",
+      "summary": "An architecture implementing verbal reinforcement learning where agents self-reflect on failures to improve performance (p. 28).",
+      "type": "fact",
+      "children": []
+    },
+    "react_fact": {
+      "label": "ReAct",
+      "summary": "A paradigm synergizing reasoning (Chain-of-Thought) and acting (interaction with environment) in LLMs (p. 31).",
+      "type": "fact",
+      "children": []
+    },
+    "reasoning_planning": {
+      "label": "Reasoning and Planning",
+      "summary": "The cognitive process of breaking down complex goals into executable steps using LLMs.",
+      "type": "concept",
+      "children": [
+        "prompting_strategies",
+        "planning_formalisms",
+        "world_models"
+      ]
+    },
+    "prompting_strategies": {
+      "label": "Advanced Prompting for Reasoning",
+      "summary": "Techniques to elicit latent reasoning capabilities from LLMs.",
+      "type": "concept",
+      "children": [
+        "cot_fact",
+        "tot_fact",
+        "self_consistency_fact",
+        "scratchpad_fact"
+      ]
+    },
+    "cot_fact": {
+      "label": "Chain-of-Thought (CoT)",
+      "summary": "A prompting method that encourages LLMs to produce intermediate reasoning steps (p. 30).",
+      "type": "fact",
+      "children": []
+    },
+    "tot_fact": {
+      "label": "Tree of Thoughts (ToT)",
+      "summary": "A framework for deliberate problem solving where LLMs explore multiple reasoning paths as a tree (p. 31).",
+      "type": "fact",
+      "children": []
+    },
+    "self_consistency_fact": {
+      "label": "Self-Consistency",
+      "summary": "A method to improve CoT reasoning by sampling multiple paths and selecting the most consistent answer (p. 30).",
+      "type": "fact",
+      "children": []
+    },
+    "scratchpad_fact": {
+      "label": "Scratchpads",
+      "summary": "Intermediate computation spaces for LLMs to perform multi-step operations (p. 28).",
+      "type": "fact",
+      "children": []
+    },
+    "planning_formalisms": {
+      "label": "Classical and LLM Planning",
+      "summary": "Integrating symbolic planning languages with neural language models.",
+      "type": "concept",
+      "children": [
+        "pddl_fact",
+        "llm_p_fact",
+        "valmeekam_fact"
+      ]
+    },
+    "pddl_fact": {
+      "label": "PDDL (Planning Domain Definition Language)",
+      "summary": "A standard language for encoding planning domains; research explores using LLMs to generate or solve PDDL problems (p. 23, 28).",
+      "type": "fact",
+      "children": []
+    },
+    "llm_p_fact": {
+      "label": "LLM+P",
+      "summary": "Empowering LLMs with optimal planning proficiency by integrating them with external planners (p. 24).",
+      "type": "fact",
+      "children": []
+    },
+    "valmeekam_fact": {
+      "label": "Planning Limitations",
+      "summary": "Research indicating that LLMs still struggle with certain planning and reasoning tasks regarding change (p. 29).",
+      "type": "fact",
+      "children": []
+    },
+    "world_models": {
+      "label": "World Models in AI",
+      "summary": "Internal representations of environment dynamics used to simulate effects of actions.",
+      "type": "concept",
+      "children": [
+        "minds_eye_fact",
+        "world_model_planning_fact"
+      ]
+    },
+    "minds_eye_fact": {
+      "label": "Mind's Eye",
+      "summary": "Grounded language model reasoning through simulation of the environment (p. 24).",
+      "type": "fact",
+      "children": []
+    },
+    "world_model_planning_fact": {
+      "label": "Planning with World Models",
+      "summary": "The thesis that reasoning with a language model is equivalent to planning with a world model (p. 22).",
+      "type": "fact",
+      "children": []
+    },
+    "cognitive_architectures": {
+      "label": "Cognitive Architectures",
+      "summary": "Computational frameworks intended to model the overall structure of human intelligence.",
+      "type": "concept",
+      "children": [
+        "soar_architecture",
+        "cognitive_theories"
+      ]
+    },
+    "soar_architecture": {
+      "label": "Soar Cognitive Architecture",
+      "summary": "A symbolic architecture for general intelligence focusing on goal-driven behavior and chunking.",
+      "type": "concept",
+      "children": [
+        "soar_chunking_fact",
+        "soar_rl_fact",
+        "soar_robotics_fact"
+      ]
+    },
+    "soar_chunking_fact": {
+      "label": "Chunking in Soar",
+      "summary": "A learning mechanism in Soar that compresses repeated sequences of problem-solving into a single rule (p. 25).",
+      "type": "fact",
+      "children": []
+    },
+    "soar_rl_fact": {
+      "label": "Soar-RL",
+      "summary": "The integration of Reinforcement Learning into the Soar architecture (p. 26).",
+      "type": "fact",
+      "children": []
+    },
+    "soar_robotics_fact": {
+      "label": "Cognitive Robotics",
+      "summary": "Application of Soar to robotic control and goal-oriented task learning (p. 25).",
+      "type": "fact",
+      "children": []
+    },
+    "cognitive_theories": {
+      "label": "Theories of Human Cognition",
+      "summary": "Theoretical foundations for artificial intelligence based on human cognitive limits and processes.",
+      "type": "concept",
+      "children": [
+        "comp_rationality_fact",
+        "resource_rationality_fact",
+        "physical_symbol_fact"
+      ]
+    },
+    "comp_rationality_fact": {
+      "label": "Computational Rationality",
+      "summary": "A paradigm suggesting intelligence is the optimal use of limited computational resources (p. 22).",
+      "type": "fact",
+      "children": []
+    },
+    "resource_rationality_fact": {
+      "label": "Resource-Rational Analysis",
+      "summary": "Understanding human cognition as the optimal use of limited computational resources (p. 24).",
+      "type": "fact",
+      "children": []
+    },
+    "physical_symbol_fact": {
+      "label": "Physical Symbol System Hypothesis",
+      "summary": "The theory that a physical symbol system has the necessary and sufficient means for general intelligent action (p. 26).",
+      "type": "fact",
+      "children": []
+    },
+    "augmented_intelligence": {
+      "label": "Augmented Intelligence",
+      "summary": "Extending the capabilities of LLMs through external tools, memory, and retrieval systems.",
+      "type": "concept",
+      "children": [
+        "tool_use",
+        "rag_systems"
+      ]
+    },
+    "tool_use": {
+      "label": "Tool-Augmented Language Models (TALMs)",
+      "summary": "The ability of LLMs to call external APIs or software tools to solve problems.",
+      "type": "concept",
+      "children": [
+        "toolformer_fact",
+        "toolllm_fact",
+        "gentopia_fact"
+      ]
+    },
+    "toolformer_fact": {
+      "label": "Toolformer",
+      "summary": "An LLM that learns to use tools (like calculators or search engines) autonomously through self-supervised learning (p. 28).",
+      "type": "fact",
+      "children": []
+    },
+    "toolllm_fact": {
+      "label": "ToolLLM",
+      "summary": "A system facilitating LLMs to master thousands of real-world APIs (p. 28).",
+      "type": "fact",
+      "children": []
+    },
+    "gentopia_fact": {
+      "label": "Gentopia",
+      "summary": "A collaborative platform for tool-augmented LLMs (p. 30).",
+      "type": "fact",
+      "children": []
+    },
+    "rag_systems": {
+      "label": "Retrieval-Augmented Generation (RAG)",
+      "summary": "Systems that retrieve relevant documents from a database to provide context for LLM generation.",
+      "type": "concept",
+      "children": [
+        "rag_pretraining_fact",
+        "llamaindex_fact",
+        "dense_retrieval_fact"
+      ]
+    },
+    "rag_pretraining_fact": {
+      "label": "Retrieval Augmented Pre-training",
+      "summary": "Integrating retrieval mechanisms directly into the pre-training phase of a language model (p. 22).",
+      "type": "fact",
+      "children": []
+    },
+    "llamaindex_fact": {
+      "label": "LlamaIndex",
+      "summary": "A data framework for connecting custom data sources to LLMs (p. 24).",
+      "type": "fact",
+      "children": []
+    },
+    "dense_retrieval_fact": {
+      "label": "Unsupervised Dense Information Retrieval",
+      "summary": "Using contrastive learning to improve the retrieval of relevant information for LLMs (p. 23).",
+      "type": "fact",
+      "children": []
+    },
+    "language_to_action": {
+      "label": "Language-to-Action Mapping",
+      "summary": "Converting high-level linguistic instructions into low-level robot control commands.",
+      "type": "concept",
+      "children": [
+        "code_as_policies_fact",
+        "instruct2act_fact"
+      ]
+    },
+    "code_as_policies_fact": {
+      "label": "Code as Policies",
+      "summary": "Using LLMs to generate code (e.g., Python) that serves as a policy for robotic control (p. 24).",
+      "type": "fact",
+      "children": []
+    },
+    "instruct2act_fact": {
+      "label": "Instruct2Act",
+      "summary": "Mapping multi-modal instructions to robotic actions using LLMs (p. 23).",
+      "type": "fact",
+      "children": []
+    },
+    "embodied_reasoning": {
+      "label": "Embodied Reasoning",
+      "summary": "The ability of an agent to reason about its physical environment and refine its plans based on feedback.",
+      "type": "concept",
+      "children": [
+        "inner_monologue_fact",
+        "progprompt_fact"
+      ]
+    },
+    "inner_monologue_fact": {
+      "label": "Inner Monologue",
+      "summary": "A framework for embodied reasoning through planning and continuous feedback from the environment (p. 23).",
+      "type": "fact",
+      "children": []
+    },
+    "progprompt_fact": {
+      "label": "ProgPrompt",
+      "summary": "Generating situated robot task plans via LLMs through programmatic prompting (p. 28).",
+      "type": "fact",
+      "children": []
+    },
+    "robotic_systems": {
+      "label": "Robotic Operating Systems",
+      "summary": "The software infrastructure used to implement embodied agents.",
+      "type": "concept",
+      "children": [
+        "ros2_fact"
+      ]
+    },
+    "ros2_fact": {
+      "label": "ROS 2 (Robot Operating System)",
+      "summary": "The industry-standard middleware for building robotic applications (p. 25).",
+      "type": "fact",
+      "children": []
+    },
+    "learning_alignment": {
+      "label": "Learning and Alignment",
+      "summary": "Methods for improving LLM performance and ensuring their outputs align with human values.",
+      "type": "concept",
+      "children": [
+        "reinforcement_learning",
+        "self_improvement",
+        "ethics_alignment"
+      ]
+    },
+    "reinforcement_learning": {
+      "label": "Reinforcement Learning (RL)",
+      "summary": "Learning optimal behaviors through trial and error and reward maximization.",
+      "type": "concept",
+      "children": [
+        "sutton_barto_fact",
+        "imitation_learning_fact"
+      ]
+    },
+    "sutton_barto_fact": {
+      "label": "Sutton & Barto RL",
+      "summary": "The foundational theoretical framework for reinforcement learning (p. 28).",
+      "type": "fact",
+      "children": []
+    },
+    "imitation_learning_fact": {
+      "label": "Imitation Learning",
+      "summary": "A method of learning a policy by mimicking expert demonstrations (p. 23).",
+      "type": "fact",
+      "children": []
+    },
+    "self_improvement": {
+      "label": "Self-Improvement Mechanisms",
+      "summary": "Algorithms allowing models to improve their own reasoning or performance without new human data.",
+      "type": "concept",
+      "children": [
+        "star_fact",
+        "self_refine_fact"
+      ]
+    },
+    "star_fact": {
+      "label": "STaR (Self-Taught Reasoner)",
+      "summary": "A bootstrapping technique where a model generates reasoning chains, filters for correct ones, and fine-tunes on them (p. 31).",
+      "type": "fact",
+      "children": []
+    },
+    "self_refine_fact": {
+      "label": "Self-Refine",
+      "summary": "An iterative process where a model generates an output, provides self-feedback, and refines the output (p. 25).",
+      "type": "fact",
+      "children": []
+    },
+    "ethics_alignment": {
+      "label": "Ethics, Bias, and Moral Alignment",
+      "summary": "Ensuring LLMs operate within human moral bounds and are free from systemic bias.",
+      "type": "concept",
+      "children": [
+        "moral_self_correction_fact",
+        "social_bias_fact",
+        "socially_aligned_fact"
+      ]
+    },
+    "moral_self_correction_fact": {
+      "label": "Moral Self-Correction",
+      "summary": "The capacity of LLMs to identify and correct their own moral errors when prompted (p. 22).",
+      "type": "fact",
+      "children": []
+    },
+    "social_bias_fact": {
+      "label": "Social Bias Tracking",
+      "summary": "Tracking how political biases in pre-training data lead to unfair NLP models (p. 22).",
+      "type": "fact",
+      "children": []
+    },
+    "socially_aligned_fact": {
+      "label": "Socially Aligned Models",
+      "summary": "Training language models to behave according to human social norms within simulated societies (p. 24).",
+      "type": "fact",
+      "children": []
+    }
+  }
+}

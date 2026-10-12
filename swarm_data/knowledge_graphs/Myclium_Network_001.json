@@ -1,0 +1,120 @@
+{
+  "nodes": {
+    "root": {
+      "label": "Logics in Fungal Mycelium Networks",
+      "summary": "Comprehensive framework for utilizing living fungal mycelium networks for distributed decision-making, sensorial fusion, and unconventional computing through electrical and chemical signal processing.",
+      "type": "concept",
+      "children": [
+        "c_info_processing",
+        "c_logical_implementation",
+        "c_mathematical_modeling",
+        "c_experimental_setup"
+      ]
+    },
+    "c_info_processing": {
+      "label": "Information Processing & Neurobiology of Fungi",
+      "summary": "Mechanisms by which mycelial networks act as distributed sensory networks, exhibiting non-linear electrical properties akin to neural systems.",
+      "type": "concept",
+      "children": [
+        "f_spiking_dynamics",
+        "f_signal_transduction"
+      ]
+    },
+    "f_spiking_dynamics": {
+      "label": "Action Potential-like Spikes",
+      "summary": "Fungi exhibit rich dynamics of neuron-like spiking behavior. These spontaneous low-frequency extracellular voltage spikes propagate along hyphal tubes and facilitate intra-network communication.",
+      "type": "fact",
+      "children": []
+    },
+    "f_signal_transduction": {
+      "label": "Electro-Chemical Signal Propagation",
+      "summary": "Information fusion over large areas is implemented via the propagation of electro-chemical signals, often coupled with distinct morphological changes and transport of nutrients across the mycelial syncytium.",
+      "type": "fact",
+      "children": []
+    },
+    "c_logical_implementation": {
+      "label": "Logical Gates & Computing Circuits",
+      "summary": "The theoretical and practical translation of fungal excitation dynamics into functional Boolean logic operations.",
+      "type": "concept",
+      "children": [
+        "f_boolean_encoding",
+        "f_wave_collision_computing",
+        "f_gate_types"
+      ]
+    },
+    "f_boolean_encoding": {
+      "label": "Spike-based Boolean Encoding",
+      "summary": "In fungal computing, Boolean logic is encoded via excitation: Boolean True (1) is represented by the presence of an electrical spike (or action potential), while Boolean False (0) is represented by the absence of a spike.",
+      "type": "fact",
+      "children": []
+    },
+    "f_wave_collision_computing": {
+      "label": "Computing via Wave Collision",
+      "summary": "Logical operations are executed through the spatial interaction of excitation waves at mycelial junctions. Depending on the timing and geometry, colliding waves can either summate or annihilate due to refractory period interference.",
+      "type": "fact",
+      "children": []
+    },
+    "f_gate_types": {
+      "label": "Universal Logic Gate Implementation",
+      "summary": "By exploiting the non-linear transformation of electrical signals and specific mycelial graph geometries, universal logical gates (e.g., AND, OR, XOR, NOT) can be successfully mined and constructed within the colony.",
+      "type": "fact",
+      "children": []
+    },
+    "c_mathematical_modeling": {
+      "label": "Mathematical & Computational Modeling",
+      "summary": "Frameworks used to simulate and validate the computing potential of the mycelium using non-linear differential equations and circuit theory.",
+      "type": "concept",
+      "children": [
+        "f_fhn_model",
+        "f_rc_network_extraction",
+        "f_rc_values"
+      ]
+    },
+    "f_fhn_model": {
+      "label": "FitzHugh-Nagumo (FHN) Oscillator Model",
+      "summary": "Excitation propagation is numerically modeled using the FHN equations: du/dt = c1*u*(u-a)*(1-u) - c2*v, where 'u' is the transmembrane potential and 'v' is a recovery variable accounting for ion channel kinetics.",
+      "type": "fact",
+      "children": []
+    },
+    "f_rc_network_extraction": {
+      "label": "Resistive-Capacitive (RC) Graph Representation",
+      "summary": "The biological network is mathematically abstracted into a planar graph. Nodes represent hyphal junctions, and edges represent hyphal tubes, which are modeled as discrete Resistor-Capacitor (RC) circuits.",
+      "type": "fact",
+      "children": []
+    },
+    "f_rc_values": {
+      "label": "Biophysical Circuit Parameters",
+      "summary": "RC models utilize biological constants: specific resistivity of cytoplasm (approx. 100 Ohm*cm) and specific capacitance of the cellular membrane (approx. 1 microFarad/cm^2) calculated against the length and diameter of the hyphal tubes.",
+      "type": "fact",
+      "children": []
+    },
+    "c_experimental_setup": {
+      "label": "Experimental & Laboratory Approaches",
+      "summary": "The empirical methodologies and hardware setups used to interface with and measure the computational properties of living mycelium.",
+      "type": "concept",
+      "children": [
+        "f_fungal_species",
+        "f_electrode_hardware",
+        "f_composites"
+      ]
+    },
+    "f_fungal_species": {
+      "label": "Utilized Fungal Species",
+      "summary": "Experiments specifically utilize colonies of Aspergillus niger for logic modeling, alongside robust species like Pleurotus ostreatus and Ganoderma resinaceum for structural composites.",
+      "type": "fact",
+      "children": []
+    },
+    "f_electrode_hardware": {
+      "label": "Electrode Interfacing Hardware",
+      "summary": "Electrical activity is recorded and stimulated using arrays of iridium-coated stainless steel sub-dermal needle electrodes inserted directly into the mycelial network or composite substrate.",
+      "type": "fact",
+      "children": []
+    },
+    "f_composites": {
+      "label": "Mycelium Bound Composites",
+      "summary": "Logical circuits are mined directly from physical mycelium bound composites, where the fungus binds lignocellulosic substrates (like hemp shavings), forming a structural and computationally active bio-material.",
+      "type": "fact",
+      "children": []
+    }
+  }
+}

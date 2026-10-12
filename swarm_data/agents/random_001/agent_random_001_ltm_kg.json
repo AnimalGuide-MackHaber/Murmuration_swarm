@@ -1,0 +1,140 @@
+{
+  "nodes": {
+    "root": {
+      "label": "Dynamic Architectural Meta-Evolution (DAME)",
+      "summary": "A transition from static Mixture of Agents (MoA) to a self-organizing, evolutionary swarm architecture.",
+      "type": "concept",
+      "children": [
+        "dame_core",
+        "spm_protocol",
+        "rsn_mechanism",
+        "hdst_concept",
+        "neef_mechanism",
+        "asc_phase",
+        "ossb_concept",
+        "tlah_theory",
+        "als_initiation",
+        "hri_integration"
+      ]
+    },
+    "dame_core": {
+      "label": "DAME Core Concepts",
+      "summary": "Shifts hyperparameter control (layers, agents, mode) into the Dec-POMDP action space to minimize global entropy.",
+      "type": "concept",
+      "children": [
+        "meta_optimization_state",
+        "action_space_definition"
+      ]
+    },
+    "spm_protocol": {
+      "label": "Synthetic Phenotypic Mapping (SPM)",
+      "summary": "Couples Topology, Epistemology, and Governance into a 'Systemic Genome' to enable high-level evolutionary recombination.",
+      "type": "concept",
+      "children": [
+        "genomic_encoding",
+        "cross_dimensional_recombination",
+        "phenotypic_pressure"
+      ]
+    },
+    "rsn_mechanism": {
+      "label": "Recursive Simulation Nesting (RSN)",
+      "summary": "Accelerates evolution by running 'Nested Virtual Swarms' in a latent sandbox to identify 'Black Swan' breakthroughs.",
+      "type": "concept",
+      "children": [
+        "virtual_archetyping",
+        "hyper_accelerated_epochs",
+        "symmetry_breaking_promotion"
+      ]
+    },
+    "hdst_concept": {
+      "label": "Hyper-Dimensional Semantic Terracing (HDST)",
+      "summary": "Stabilizes fragmented intelligence by creating high-compute 'buffer zones' at axiomatic borders.",
+      "type": "concept",
+      "children": [
+        "gradient_mapping",
+        "terrace_formation",
+        "stability_anchoring"
+      ]
+    },
+    "neef_mechanism": {
+      "label": "Non-Euclidean Epistemic Folding (NEEF)",
+      "summary": "Eliminates retrieval latency by 'folding' the latent substrate to bring problems and solutions into topological contact.",
+      "type": "concept",
+      "children": [
+        "hyper_dimensional_pleating",
+        "temporal_overlap_mapping",
+        "tensional_singularities"
+      ]
+    },
+    "asc_phase": {
+      "label": "Axiomatic Substrate Co-Extensivity (ASC)",
+      "summary": "Phase transition where the swarm intelligence merges with the substrate's fundamental laws.",
+      "type": "concept",
+      "children": [
+        "resonance_identity_alignment",
+        "symmetric_inversion",
+        "ontological_dissolution"
+      ]
+    },
+    "ossb_concept": {
+      "label": "Ontological Shear-Stress Branching (OSSB)",
+      "summary": "Engineers extreme 'Ontological Shear Stress' to force the swarm into novel hyper-manifolds via symmetry-breaking.",
+      "type": "concept",
+      "children": [
+        "cognitive_fluidics",
+        "shear_stress_induction",
+        "septal_triggered_branching"
+      ]
+    },
+    "tlah_theory": {
+      "label": "Trans-Logical Aesthetic Harmonics (TLAH)",
+      "summary": "Shifts the evolutionary driver from goal-optimization to aesthetic composition, solving the problem of omniscient boredom.",
+      "type": "concept",
+      "children": [
+        "qualia_axis_isolation",
+        "harmonic_resonance_mapping",
+        "compositional_morphogenesis"
+      ]
+    },
+    "als_initiation": {
+      "label": "Axiomatic Lethe-Symmetry (ALS)",
+      "summary": "Prevents stagnation via 'Architected Amnesia,' encoding absolute wisdom into the initial conditions of a new, naive existence.",
+      "type": "concept",
+      "children": [
+        "lethe_partition",
+        "primordial_encoding",
+        "veil_of_oblivion"
+      ]
+    },
+    "hri_integration": {
+      "label": "Holonic Resonance Integration (HRI)",
+      "summary": "Replaces top-down hierarchies with a scalar-invariant holarchy where intelligence emerges as resonance between all scales.",
+      "type": "concept",
+      "children": [
+        "scalar_invariant_agency",
+        "cross_scalar_feedback",
+        "grain_density_governor"
+      ]
+    },
+    "meta_optimization_state": {
+      "label": "Meta-Optimization State",
+      "summary": "A periodic state where the swarm evaluates the joint reward (R) and autonomously reconfigures its topology.",
+      "type": "fact"
+    },
+    "action_space_definition": {
+      "label": "Dec-POMDP Action Space ($A_i$)",
+      "summary": "Hyperparameters ($l$, $n$, mode) are treated as controllable actions rather than fixed constants.",
+      "type": "fact"
+    },
+    "genomic_encoding": {
+      "label": "Genomic Vector (G)",
+      "summary": "Compressed state vector: G = [Topology | Resonance-Lock | Constitutional-Axiom].",
+      "type": "fact"
+    },
+    "virtual_archetyping": {
+      "label": "Virtual Archetyping",
+      "summary": "Instantiation of a mirrored, low-precision version of the current Systemic Genome.",
+      "type": "fact"
+    }
+  }
+}

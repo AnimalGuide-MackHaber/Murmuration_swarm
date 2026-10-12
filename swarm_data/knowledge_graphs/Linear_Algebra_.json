@@ -1,0 +1,2241 @@
+{
+  "nodes": {
+    "root": {
+      "label": "Linear Algebra",
+      "summary": "The study of vectors and linear functions, focusing on organizing information about vector spaces to make problems involving linear functions of many variables tractable.",
+      "type": "concept",
+      "children": [
+        "sys_lin_eq",
+        "matrices_concept",
+        "concept_diag",
+        "concept_ortho",
+        "lin_trans",
+        "det_theory",
+        "concept_fields",
+        "vector_spaces_general",
+        "mat_theory",
+        "matrices",
+        "concept_approx",
+        "eigen_theory",
+        "simplex_method",
+        "bases_dimension",
+        "concept_sym",
+        "linear_transformations",
+        "concept_eigen",
+        "vectors_concept",
+        "apps_lin_alg",
+        "subspaces_spanning",
+        "vec_spaces",
+        "systems_linear_equations",
+        "concept_ker_ran",
+        "linear_functions_concept",
+        "inner_prod",
+        "linear_independence",
+        "n_vectors_space"
+      ]
+    },
+    "vectors_concept": {
+      "label": "Vectors",
+      "summary": "Objects that can be added together and multiplied by scalars. They are not limited to stacks of numbers but include any mathematical object following these rules.",
+      "type": "concept",
+      "children": [
+        "vector_examples",
+        "zero_vector"
+      ]
+    },
+    "vector_examples": {
+      "label": "Examples of Vectors",
+      "summary": "Diverse mathematical objects that function as vectors because they support addition and scalar multiplication.",
+      "type": "concept",
+      "children": [
+        "fact_vec_numbers",
+        "fact_vec_n_vectors",
+        "fact_vec_polynomials",
+        "fact_vec_power_series",
+        "fact_vec_functions"
+      ]
+    },
+    "fact_vec_numbers": {
+      "label": "Numbers as Vectors",
+      "summary": "Real numbers can be treated as vectors where addition and scalar multiplication are standard arithmetic operations. (Page 12)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_vec_n_vectors": {
+      "label": "n-Vectors as Vectors",
+      "summary": "Ordered lists of numbers (stacks) that can be added component-wise. (Page 12)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_vec_polynomials": {
+      "label": "Polynomials as Vectors",
+      "summary": "Polynomials are vectors where addition is performed by summing coefficients of like terms. (Page 12)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_vec_power_series": {
+      "label": "Power Series as Vectors",
+      "summary": "Infinite series that can be added together term by term. (Page 12)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_vec_functions": {
+      "label": "Functions as Vectors",
+      "summary": "Functions mapping a domain to a codomain, where addition is pointwise: (f+g)(x) = f(x) + g(x). (Page 12)",
+      "type": "fact",
+      "children": []
+    },
+    "zero_vector": {
+      "label": "Zero Vector",
+      "summary": "A special vector produced by scalar multiplying any vector by 0, denoted as 0.",
+      "type": "concept",
+      "children": [
+        "fact_zero_vec_def"
+      ]
+    },
+    "fact_zero_vec_def": {
+      "label": "Zero Vector Definition",
+      "summary": "The zero vector is the additive identity; for any vector v, v + 0 = v. It varies by the type of vector space (e.g., zero polynomial, zero function). (Page 14)",
+      "type": "fact",
+      "children": []
+    },
+    "linear_functions_concept": {
+      "label": "Linear Functions",
+      "summary": "Functions of vectors that respect vector addition and scalar multiplication, also known as linear transformations or linear operators.",
+      "type": "concept",
+      "children": [
+        "linearity_properties",
+        "linear_operator_examples"
+      ]
+    },
+    "linearity_properties": {
+      "label": "Properties of Linearity",
+      "summary": "The two essential characteristics that define a linear function.",
+      "type": "concept",
+      "children": [
+        "fact_additivity",
+        "fact_homogeneity",
+        "fact_linearity_combined"
+      ]
+    },
+    "fact_additivity": {
+      "label": "Additivity",
+      "summary": "L(u + v) = L(u) + L(v). The function respects vector addition. (Page 18)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_homogeneity": {
+      "label": "Homogeneity",
+      "summary": "L(cu) = cL(u). The function respects scalar multiplication. (Page 18)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_linearity_combined": {
+      "label": "Combined Linearity",
+      "summary": "L(cu + dv) = cL(u) + dL(v). This property allows linear functions to be specified by their action on a basis. (Page 20)",
+      "type": "fact",
+      "children": []
+    },
+    "linear_operator_examples": {
+      "label": "Examples of Linear Operators",
+      "summary": "Real-world and mathematical instances of linear transformations.",
+      "type": "concept",
+      "children": [
+        "fact_derivative_operator"
+      ]
+    },
+    "fact_derivative_operator": {
+      "label": "The Derivative Operator",
+      "summary": "The operator d/dx is linear because d/dx(cf + g) = c(df/dx) + dg/dx. (Page 19)",
+      "type": "fact",
+      "children": []
+    },
+    "matrices_concept": {
+      "label": "Matrices",
+      "summary": "Arrays of numbers used to organize information about linear functions; they represent linear transformations under specific notational choices (bases).",
+      "type": "concept",
+      "children": [
+        "matrix_vector_multiplication",
+        "matrix_multiplication",
+        "matrix_invertibility",
+        "matrix_factorizations"
+      ]
+    },
+    "matrix_vector_multiplication": {
+      "label": "Matrix-Vector Multiplication",
+      "summary": "A process where a matrix acts on a vector to produce another vector, equivalent to a linear combination of the matrix columns. (Page 22)",
+      "type": "concept",
+      "children": [
+        "fact_col_space_def"
+      ]
+    },
+    "fact_col_space_def": {
+      "label": "Column Space",
+      "summary": "The set of all possible outputs of a matrix times a vector; also known as the image of the linear function. (Page 23)",
+      "type": "fact",
+      "children": []
+    },
+    "matrix_multiplication": {
+      "label": "Matrix Multiplication",
+      "summary": "The multiplication of two matrices, which corresponds to the composition of their respective linear functions.",
+      "type": "concept",
+      "children": [
+        "fact_composition_def"
+      ]
+    },
+    "fact_composition_def": {
+      "label": "Composition of Functions",
+      "summary": "If f: U -> V and g: V -> W, the composition g o f: U -> W is defined by (g o f)(u) = g(f(u)). Matrix multiplication computes this. (Page 25)",
+      "type": "fact",
+      "children": []
+    },
+    "matrix_invertibility": {
+      "label": "Matrix Invertibility",
+      "summary": "A property of square matrices that allow them to be 'undone'.",
+      "type": "concept",
+      "children": [
+        "fact_invertible_def",
+        "fact_inverse_property"
+      ]
+    },
+    "fact_invertible_def": {
+      "label": "Invertible Matrix Definition",
+      "summary": "A matrix M is invertible if its Reduced Row Echelon Form (RREF) is the identity matrix I. (Page 55)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_inverse_property": {
+      "label": "Inverse Matrix Property",
+      "summary": "Two matrices M and N are inverses if MN = I and NM = I, denoted as N = M^-1. (Page 55)",
+      "type": "fact",
+      "children": []
+    },
+    "matrix_factorizations": {
+      "label": "Matrix Factorizations",
+      "summary": "Decomposing a matrix into a product of simpler matrices (e.g., triangular matrices).",
+      "type": "concept",
+      "children": [
+        "fact_lu_decomp",
+        "fact_ldu_decomp",
+        "fact_pldu_decomp"
+      ]
+    },
+    "fact_lu_decomp": {
+      "label": "LU Decomposition",
+      "summary": "Factorizing a matrix M into M = LU, where L is lower triangular and U is upper triangular. (Page 58)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_ldu_decomp": {
+      "label": "LDU Decomposition",
+      "summary": "A refinement of LU where M = LDU; L is lower triangular with 1s on the diagonal, D is diagonal, and U is upper triangular with 1s on the diagonal. (Page 60)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_pldu_decomp": {
+      "label": "PLDU Decomposition",
+      "summary": "Used when row exchanges are necessary: M = PLDU, where P is a permutation matrix. (Page 61)",
+      "type": "fact",
+      "children": []
+    },
+    "systems_linear_equations": {
+      "label": "Systems of Linear Equations",
+      "summary": "Collections of equations where variables are multiplied by constants and summed. They can be represented as matrix equations Mv = w.",
+      "type": "concept",
+      "children": [
+        "gaussian_elimination",
+        "solution_sets_sle"
+      ]
+    },
+    "gaussian_elimination": {
+      "label": "Gaussian Elimination",
+      "summary": "An algorithm for simplifying systems of linear equations using augmented matrices and elementary row operations.",
+      "type": "concept",
+      "children": [
+        "augmented_matrix",
+        "ero_concept",
+        "rref_concept"
+      ]
+    },
+    "augmented_matrix": {
+      "label": "Augmented Matrix",
+      "summary": "A notation that combines the coefficient matrix and the constants vector into one matrix for efficient computation. (Page 37)",
+      "type": "concept",
+      "children": []
+    },
+    "ero_concept": {
+      "label": "Elementary Row Operations (EROs)",
+      "summary": "Operations that simplify a matrix without changing the solution set of the associated system.",
+      "type": "concept",
+      "children": [
+        "fact_ero_swap",
+        "fact_ero_scalar",
+        "fact_ero_addition"
+      ]
+    },
+    "fact_ero_swap": {
+      "label": "Row Swap",
+      "summary": "Interchanging any two rows of a matrix. (Page 42)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_ero_scalar": {
+      "label": "Scalar Multiplication",
+      "summary": "Multiplying a row by a non-zero constant. (Page 42)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_ero_addition": {
+      "label": "Row Addition",
+      "summary": "Adding one row to another row. (Page 42)",
+      "type": "fact",
+      "children": []
+    },
+    "rref_concept": {
+      "label": "Reduced Row Echelon Form (RREF)",
+      "summary": "The most simplified form of a matrix reachable via EROs.",
+      "type": "concept",
+      "children": [
+        "fact_rref_prop1",
+        "fact_rref_prop2",
+        "fact_rref_prop3"
+      ]
+    },
+    "fact_rref_prop1": {
+      "label": "RREF Property 1",
+      "summary": "In every row, the leftmost non-zero entry is 1 (the pivot). (Page 44)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_rref_prop2": {
+      "label": "RREF Property 2",
+      "summary": "The pivot of any given row is always to the right of the pivot of the row above it. (Page 44)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_rref_prop3": {
+      "label": "RREF Property 3",
+      "summary": "The pivot is the only non-zero entry in its column. (Page 44)",
+      "type": "fact",
+      "children": []
+    },
+    "solution_sets_sle": {
+      "label": "Solution Sets for SLE",
+      "summary": "The set of all vectors that satisfy a system of linear equations.",
+      "type": "concept",
+      "children": [
+        "fact_sol_types",
+        "particular_homogeneous_solutions"
+      ]
+    },
+    "fact_sol_types": {
+      "label": "Possible Solution Outcomes",
+      "summary": "A linear system Ax = b has either one solution, no solutions, or infinitely many solutions. (Page 63)",
+      "type": "fact",
+      "children": []
+    },
+    "particular_homogeneous_solutions": {
+      "label": "Particular and Homogeneous Solutions",
+      "summary": "The general solution to a linear system is the sum of a particular solution and the set of homogeneous solutions.",
+      "type": "concept",
+      "children": [
+        "fact_particular_sol",
+        "fact_homogeneous_sol"
+      ]
+    },
+    "fact_particular_sol": {
+      "label": "Particular Solution",
+      "summary": "A specific vector x_p that satisfies M x_p = v. (Page 47)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_homogeneous_sol": {
+      "label": "Homogeneous Solution",
+      "summary": "A vector x_H that satisfies M x_H = 0, where 0 is the zero vector. (Page 47)",
+      "type": "fact",
+      "children": []
+    },
+    "simplex_method": {
+      "label": "The Simplex Method",
+      "summary": "A computational algorithm for solving linear programming problems to find an optimal solution under linear constraints.",
+      "type": "concept",
+      "children": [
+        "linear_programming",
+        "simplex_algorithm_details"
+      ]
+    },
+    "linear_programming": {
+      "label": "Linear Programming",
+      "summary": "The process of maximizing or minimizing a linear objective function subject to linear inequalities (constraints).",
+      "type": "concept",
+      "children": [
+        "fact_feasible_region",
+        "fact_vertex_optimality"
+      ]
+    },
+    "fact_feasible_region": {
+      "label": "Feasible Region",
+      "summary": "The set of all variable values that satisfy all constraints of a linear programming problem. (Page 73)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_vertex_optimality": {
+      "label": "Vertex Optimality",
+      "summary": "The optimal answer to a linear programming problem must lie at a vertex of the feasible region. (Page 73)",
+      "type": "fact",
+      "children": []
+    },
+    "simplex_algorithm_details": {
+      "label": "Simplex Algorithm Details",
+      "summary": "The mechanics of Dantzig's algorithm using augmented matrices and slack/artificial variables.",
+      "type": "concept",
+      "children": [
+        "fact_slack_variables",
+        "fact_artificial_variables"
+      ]
+    },
+    "fact_slack_variables": {
+      "label": "Slack Variables",
+      "summary": "Positive variables introduced to convert linear inequalities into linear equalities (e.g., x + y <= 13 becomes x + y + s = 13). (Page 78)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_artificial_variables": {
+      "label": "Artificial Variables",
+      "summary": "Variables added to constraints to facilitate the start of the simplex algorithm, which are then forced to zero using a penalty in the objective function. (Page 79)",
+      "type": "fact",
+      "children": []
+    },
+    "n_vectors_space": {
+      "label": "Vectors in Space (Rn)",
+      "summary": "The study of n-dimensional Euclidean space consisting of all n-vectors.",
+      "type": "concept",
+      "children": [
+        "hyperplanes_concept",
+        "euclidean_metrics",
+        "rs_notation"
+      ]
+    },
+    "hyperplanes_concept": {
+      "label": "Hyperplanes",
+      "summary": "Generalizations of lines and planes in higher dimensions.",
+      "type": "concept",
+      "children": [
+        "fact_hyperplane_def",
+        "fact_standard_hyperplane"
+      ]
+    },
+    "fact_hyperplane_def": {
+      "label": "k-Dimensional Hyperplane",
+      "summary": "A set of points defined by P + sum(lambda_i * v_i) for i=1 to k, where v_i are vectors not lying in the (k-1)-dimensional hyperplane determined by the others. (Page 86)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_standard_hyperplane": {
+      "label": "Standard Hyperplane",
+      "summary": "Unless specified, a 'hyperplane' in Rn refers to a (n-1)-dimensional hyperplane, typically defined by a single linear algebraic equation. (Page 87)",
+      "type": "fact",
+      "children": []
+    },
+    "euclidean_metrics": {
+      "label": "Euclidean Metrics",
+      "summary": "The tools used to measure lengths, angles, and orthogonality in Rn.",
+      "type": "concept",
+      "children": [
+        "dot_product",
+        "vector_norm",
+        "vector_angle",
+        "orthogonal_vectors"
+      ]
+    },
+    "dot_product": {
+      "label": "Dot Product",
+      "summary": "An algebraic operation that takes two equal-length sequences of numbers and returns a single number.",
+      "type": "concept",
+      "children": [
+        "fact_dot_product_def",
+        "fact_dot_product_props"
+      ]
+    },
+    "fact_dot_product_def": {
+      "label": "Dot Product Definition",
+      "summary": "u . v = u1v1 + u2v2 + ... + unvn. (Page 89)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_dot_product_props": {
+      "label": "Dot Product Properties",
+      "summary": "The dot product is symmetric, distributive, bilinear, and positive definite. (Page 91)",
+      "type": "fact",
+      "children": []
+    },
+    "vector_norm": {
+      "label": "Vector Norm (Length)",
+      "summary": "The Euclidean length of a vector.",
+      "type": "concept",
+      "children": [
+        "fact_norm_def"
+      ]
+    },
+    "fact_norm_def": {
+      "label": "Norm Definition",
+      "summary": "||v|| = sqrt(v . v) = sqrt(sum(v_i^2)). (Page 90)",
+      "type": "fact",
+      "children": []
+    },
+    "vector_angle": {
+      "label": "Vector Angle",
+      "summary": "The angle theta between two vectors determined by their dot product and norms.",
+      "type": "concept",
+      "children": [
+        "fact_angle_def"
+      ]
+    },
+    "fact_angle_def": {
+      "label": "Angle Definition",
+      "summary": "cos(theta) = (u . v) / (||u|| ||v||). (Page 90)",
+      "type": "fact",
+      "children": []
+    },
+    "orthogonal_vectors": {
+      "label": "Orthogonal Vectors",
+      "summary": "Vectors that are perpendicular to each other.",
+      "type": "concept",
+      "children": [
+        "fact_orthogonality_def"
+      ]
+    },
+    "fact_orthogonality_def": {
+      "label": "Orthogonality Definition",
+      "summary": "Two vectors are orthogonal if their dot product is zero. (Page 90)",
+      "type": "fact",
+      "children": []
+    },
+    "rs_notation": {
+      "label": "RS Notation",
+      "summary": "Viewing n-vectors as functions from a set S to the real numbers.",
+      "type": "concept",
+      "children": [
+        "fact_rs_def"
+      ]
+    },
+    "fact_rs_def": {
+      "label": "RS Definition",
+      "summary": "RS is the set of all functions f: S -> R. When S = {1, ..., n}, RS is equivalent to Rn. (Page 95)",
+      "type": "fact",
+      "children": []
+    },
+    "vector_spaces_general": {
+      "label": "Vector Spaces (General)",
+      "summary": "A formal mathematical structure consisting of a set closed under addition and scalar multiplication satisfying ten axioms.",
+      "type": "concept",
+      "children": [
+        "vector_space_axioms",
+        "vector_space_examples",
+        "subspace_concept",
+        "base_fields"
+      ]
+    },
+    "vector_space_axioms": {
+      "label": "Vector Space Axioms",
+      "summary": "The ten rules that must be satisfied for a set V to be a vector space over a field.",
+      "type": "concept",
+      "children": [
+        "fact_ax_add_closure",
+        "fact_ax_add_comm",
+        "fact_ax_add_assoc",
+        "fact_ax_zero",
+        "fact_ax_add_inv",
+        "fact_ax_mult_closure",
+        "fact_ax_dist_scalar",
+        "fact_ax_dist_vector",
+        "fact_ax_mult_assoc",
+        "fact_ax_unity"
+      ]
+    },
+    "fact_ax_add_closure": {
+      "label": "Additive Closure",
+      "summary": "u + v is in V for all u, v in V. (Page 101)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_ax_add_comm": {
+      "label": "Additive Commutativity",
+      "summary": "u + v = v + u. (Page 101)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_ax_add_assoc": {
+      "label": "Additive Associativity",
+      "summary": "(u + v) + w = u + (v + w). (Page 101)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_ax_zero": {
+      "label": "Zero Vector Existence",
+      "summary": "There exists 0 such that u + 0 = u. (Page 101)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_ax_add_inv": {
+      "label": "Additive Inverse Existence",
+      "summary": "For every u, there exists w such that u + w = 0. (Page 101)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_ax_mult_closure": {
+      "label": "Multiplicative Closure",
+      "summary": "cv is in V for all scalars c and vectors v. (Page 101)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_ax_dist_scalar": {
+      "label": "Distributivity (Scalars)",
+      "summary": "(c + d)v = cv + dv. (Page 101)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_ax_dist_vector": {
+      "label": "Distributivity (Vectors)",
+      "summary": "c(u + v) = cu + cv. (Page 101)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_ax_mult_assoc": {
+      "label": "Scalar Associativity",
+      "summary": "(cd)v = c(dv). (Page 101)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_ax_unity": {
+      "label": "Unity",
+      "summary": "1v = v. (Page 101)",
+      "type": "fact",
+      "children": []
+    },
+    "vector_space_examples": {
+      "label": "Examples of Vector Spaces",
+      "summary": "Common sets that satisfy the vector space axioms.",
+      "type": "concept",
+      "children": [
+        "fact_vs_rn",
+        "fact_vs_sequences",
+        "fact_vs_diff_funcs"
+      ]
+    },
+    "fact_vs_rn": {
+      "label": "Rn Space",
+      "summary": "The set of all n-vectors over the field of real numbers. (Page 102)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_vs_sequences": {
+      "label": "Sequence Space (RN)",
+      "summary": "The set of functions from natural numbers to real numbers, viewed as infinite lists. (Page 102)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_vs_diff_funcs": {
+      "label": "Differentiable Function Space",
+      "summary": "The set of functions that have at least one derivative. (Page 104)",
+      "type": "fact",
+      "children": []
+    },
+    "subspace_concept": {
+      "label": "Subspace",
+      "summary": "A vector space that is a subset of another vector space.",
+      "type": "concept",
+      "children": [
+        "fact_subspace_def",
+        "fact_homogeneous_sol_subspace"
+      ]
+    },
+    "fact_subspace_def": {
+      "label": "Subspace Definition",
+      "summary": "A subset is a subspace if it is closed under addition and scalar multiplication. (Page 105)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_homogeneous_sol_subspace": {
+      "label": "Homogeneous Solution Subspace",
+      "summary": "The solution set to a homogeneous linear equation Mx = 0 is always a subspace, called the kernel of M. (Page 105)",
+      "type": "fact",
+      "children": []
+    },
+    "base_fields": {
+      "label": "Base Fields",
+      "summary": "The set of scalars used in a vector space.",
+      "type": "concept",
+      "children": [
+        "fact_field_real",
+        "fact_field_complex",
+        "fact_field_rational",
+        "fact_field_bits"
+      ]
+    },
+    "fact_field_real": {
+      "label": "Real Field (R)",
+      "summary": "The standard field of real numbers. (Page 107)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_field_complex": {
+      "label": "Complex Field (C)",
+      "summary": "Numbers of the form x + iy. Useful because every polynomial over C factors into linear polynomials. (Page 107)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_field_rational": {
+      "label": "Rational Field (Q)",
+      "summary": "Numbers expressed as fractions, used in computer algebra for precision. (Page 108)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_field_bits": {
+      "label": "Bit Field (Z2)",
+      "summary": "The set {0, 1} where addition and multiplication follow binary logic (e.g., 1 + 1 = 0). (Page 108)",
+      "type": "fact",
+      "children": []
+    },
+    "linear_transformations": {
+      "label": "Linear Transformations",
+      "summary": "Functions between vector spaces that preserve addition and scalar multiplication.",
+      "type": "concept",
+      "children": [
+        "linearity_definition",
+        "matrix_representation_of_L",
+        "linear_differential_operators"
+      ]
+    },
+    "linearity_definition": {
+      "label": "Linearity Definition",
+      "summary": "The core properties that define a linear function.",
+      "type": "concept",
+      "children": [
+        "fact_linearity_conditions",
+        "fact_linearity_equivalent"
+      ]
+    },
+    "fact_linearity_conditions": {
+      "label": "Linearity Conditions",
+      "summary": "L(u + v) = L(u) + L(v) and L(cv) = cL(v) for all vectors u, v and scalar c.",
+      "type": "fact",
+      "children": []
+    },
+    "fact_linearity_equivalent": {
+      "label": "Linearity Equivalent Form",
+      "summary": "The two conditions of linearity are equivalent to the single condition: L(ru + sv) = rL(u) + sL(v) (p. 118).",
+      "type": "fact",
+      "children": []
+    },
+    "matrix_representation_of_L": {
+      "label": "Matrix Representation of L",
+      "summary": "The process of encoding a linear operator as a matrix given specific bases.",
+      "type": "concept",
+      "children": [
+        "fact_matrix_dimensions",
+        "fact_matrix_construction"
+      ]
+    },
+    "fact_matrix_dimensions": {
+      "label": "Matrix Dimensions",
+      "summary": "A linear transformation L: V -> W is represented by an m x n matrix where n is the dimension of the domain V and m is the dimension of the codomain W (p. 114).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_matrix_construction": {
+      "label": "Matrix Construction Process",
+      "summary": "To calculate the matrix of a linear transformation, compute what the transformation does to every input basis vector and write the results in terms of the output basis vectors (p. 127).",
+      "type": "fact",
+      "children": []
+    },
+    "linear_differential_operators": {
+      "label": "Linear Differential Operators",
+      "summary": "Differential operators acting on function spaces, such as polynomials, which obey linearity.",
+      "type": "concept",
+      "children": [
+        "fact_derivative_basis_action"
+      ]
+    },
+    "fact_derivative_basis_action": {
+      "label": "Derivative Basis Action",
+      "summary": "The derivative operator d/dx acting on polynomials of degree 2 or less is completely determined by its action on the basis {1, x, x^2}: d/dx(1)=0, d/dx(x)=1, d/dx(x^2)=2x (p. 115).",
+      "type": "fact",
+      "children": []
+    },
+    "bases_dimension": {
+      "label": "Bases and Dimension",
+      "summary": "Systems for uniquely labeling vectors in a vector space and the measure of a space's size.",
+      "type": "concept",
+      "children": [
+        "basis_definition",
+        "dimension_definition",
+        "standard_basis",
+        "basis_transformation"
+      ]
+    },
+    "basis_definition": {
+      "label": "Basis Definition",
+      "summary": "A set of vectors in which it is possible to uniquely express any other vector in the space (p. 118).",
+      "type": "concept",
+      "children": [
+        "fact_basis_invertibility"
+      ]
+    },
+    "fact_basis_invertibility": {
+      "label": "Basis and Invertibility",
+      "summary": "A pair or triple of vectors forms a basis for R2 or R3 if they, when used as columns of a matrix, give an invertible matrix (p. 117).",
+      "type": "fact",
+      "children": []
+    },
+    "dimension_definition": {
+      "label": "Dimension Definition",
+      "summary": "The number of independent directions available in a vector space; specifically, the number of vectors in any basis for that space (p. 117).",
+      "type": "concept",
+      "children": [
+        "fact_dim_invariant"
+      ]
+    },
+    "fact_dim_invariant": {
+      "label": "Dimension Invariance",
+      "summary": "All bases for a particular vector space have the same number of vectors (p. 117).",
+      "type": "fact",
+      "children": []
+    },
+    "standard_basis": {
+      "label": "Standard Basis",
+      "summary": "The canonical basis for Rn consisting of vectors ei with 1 at index i and 0 elsewhere (p. 122, 216).",
+      "type": "concept",
+      "children": []
+    },
+    "basis_transformation": {
+      "label": "Basis Transformation/Notation",
+      "summary": "Expressing vectors as column vectors relative to a specific basis.",
+      "type": "concept",
+      "children": [
+        "fact_column_vector_notation"
+      ]
+    },
+    "fact_column_vector_notation": {
+      "label": "Column Vector Notation",
+      "summary": "The column vector [v]_B consists of coefficients (alpha1, ..., alphan) such that v = sum(alpha_i * b_i) (p. 126).",
+      "type": "fact",
+      "children": []
+    },
+    "matrices": {
+      "label": "Matrices",
+      "summary": "Rectangular arrays of numbers used as a tool for calculating linear transformations.",
+      "type": "concept",
+      "children": [
+        "matrix_operations",
+        "elementary_matrices",
+        "matrix_inverses",
+        "matrix_decompositions",
+        "determinants",
+        "matrix_special_types"
+      ]
+    },
+    "matrix_operations": {
+      "label": "Matrix Operations",
+      "summary": "Standard algebraic operations performed on matrices.",
+      "type": "concept",
+      "children": [
+        "fact_matrix_multiplication_rule",
+        "fact_matrix_multiplication_properties",
+        "fact_transpose_rule",
+        "fact_trace_definition",
+        "fact_trace_property"
+      ]
+    },
+    "fact_matrix_multiplication_rule": {
+      "label": "Matrix Multiplication Rule",
+      "summary": "The entry L_ij of the product MN is the dot product of the i-th row of M and the j-th column of N: sum_{p=1}^k M_ip * N_pj (p. 136, 137).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_matrix_multiplication_properties": {
+      "label": "Matrix Multiplication Properties",
+      "summary": "Matrix multiplication is associative (M(NR) = (MN)R) but generally non-commutative (MN != NM) (p. 140, 141).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_transpose_rule": {
+      "label": "Transpose Rule",
+      "summary": "The transpose M^T swaps rows and columns. Property: (MN)^T = N^T M^T (p. 134, 139).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_trace_definition": {
+      "label": "Trace Definition",
+      "summary": "The trace of a square matrix is the sum of its diagonal entries: tr(M) = sum(m_ii) (p. 145).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_trace_property": {
+      "label": "Trace Property",
+      "summary": "The trace of a product is independent of order: tr(MN) = tr(NM) (p. 145).",
+      "type": "fact",
+      "children": []
+    },
+    "elementary_matrices": {
+      "label": "Elementary Matrices",
+      "summary": "Matrices that perform a single elementary row operation (ERO).",
+      "type": "concept",
+      "children": [
+        "ero_swap",
+        "ero_multiplication",
+        "ero_addition"
+      ]
+    },
+    "ero_swap": {
+      "label": "Row Swap Matrix",
+      "summary": "Ei,j is the identity matrix with rows i and j swapped. det(Ei,j) = -1 (p. 174, 175).",
+      "type": "fact",
+      "children": []
+    },
+    "ero_multiplication": {
+      "label": "Row Multiplication Matrix",
+      "summary": "Ri(lambda) is the identity matrix with the i-th diagonal entry replaced by lambda. det(Ri(lambda)) = lambda (p. 176).",
+      "type": "fact",
+      "children": []
+    },
+    "ero_addition": {
+      "label": "Row Addition Matrix",
+      "summary": "Si,j(mu) is the identity matrix with mu in the i,j position. det(Si,j(mu)) = 1 (p. 177, 178).",
+      "type": "fact",
+      "children": []
+    },
+    "matrix_inverses": {
+      "label": "Matrix Inverses",
+      "summary": "The process of finding a matrix M^-1 such that M M^-1 = I.",
+      "type": "concept",
+      "children": [
+        "fact_invertibility_condition",
+        "fact_inverse_2x2",
+        "fact_inverse_gaussian",
+        "bit_matrices"
+      ]
+    },
+    "fact_invertibility_condition": {
+      "label": "Invertibility Condition",
+      "summary": "A square matrix M is invertible (non-singular) iff the homogeneous system Mx = 0 has only the trivial solution x = 0 (p. 154).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_inverse_2x2": {
+      "label": "2x2 Inverse Formula",
+      "summary": "For M = [[a,b],[c,d]], M^-1 = (1/(ad-bc)) * [[d,-b],[-c,a]], provided ad-bc != 0 (p. 150).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_inverse_gaussian": {
+      "label": "Inverse via Gaussian Elimination",
+      "summary": "M^-1 can be found by augmenting M with the identity matrix [M | I] and row-reducing to [I | M^-1] (p. 152).",
+      "type": "fact",
+      "children": []
+    },
+    "bit_matrices": {
+      "label": "Bit Matrices",
+      "summary": "Matrices with entries in Z2 = {0, 1}, where addition and multiplication follow binary field rules (p. 154, 155).",
+      "type": "concept",
+      "children": []
+    },
+    "matrix_decompositions": {
+      "label": "Matrix Decompositions",
+      "summary": "Breaking a matrix into a product of simpler matrices to facilitate computation.",
+      "type": "concept",
+      "children": [
+        "lu_decomposition",
+        "ldu_decomposition"
+      ]
+    },
+    "lu_decomposition": {
+      "label": "LU Decomposition",
+      "summary": "M = LU, where L is lower triangular (entries above diagonal are 0) and U is upper triangular (entries below diagonal are 0) (p. 159).",
+      "type": "concept",
+      "children": [
+        "fact_lu_solving_steps"
+      ]
+    },
+    "fact_lu_solving_steps": {
+      "label": "Solving via LU",
+      "summary": "To solve MX = V, first solve LW = V for W via forward substitution, then solve UX = W for X via back substitution (p. 160).",
+      "type": "fact",
+      "children": []
+    },
+    "ldu_decomposition": {
+      "label": "LDU Decomposition",
+      "summary": "Decomposition into a unit lower triangular matrix L, a diagonal matrix D, and a unit upper triangular matrix U (p. 165).",
+      "type": "concept",
+      "children": []
+    },
+    "determinants": {
+      "label": "Determinants",
+      "summary": "A scalar value that characterizes a square matrix and determines its invertibility.",
+      "type": "concept",
+      "children": [
+        "det_definition",
+        "det_properties",
+        "det_calculation_methods",
+        "adjunct_matrix"
+      ]
+    },
+    "det_definition": {
+      "label": "Determinant Definition",
+      "summary": "det M = sum_{sigma} sgn(sigma) * product(m_i, sigma(i)), summed over all permutations sigma of n objects (p. 172).",
+      "type": "concept",
+      "children": [
+        "fact_det_invertibility"
+      ]
+    },
+    "fact_det_invertibility": {
+      "label": "Determinant and Invertibility",
+      "summary": "A square matrix M is invertible if and only if det M != 0 (p. 180).",
+      "type": "fact",
+      "children": []
+    },
+    "det_properties": {
+      "label": "Determinant Properties",
+      "summary": "Algebraic laws governing determinants.",
+      "type": "concept",
+      "children": [
+        "fact_det_row_swap",
+        "fact_det_transpose",
+        "prod_det_fact",
+        "fact_det_row_scale",
+        "fact_det_product",
+        "row_add_det",
+        "row_swap_det",
+        "row_scale_det"
+      ]
+    },
+    "fact_det_product": {
+      "label": "Determinant of Product",
+      "summary": "det(MN) = det(M) * det(N) (p. 181, 182).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_det_transpose": {
+      "label": "Determinant of Transpose",
+      "summary": "det(M^T) = det(M) (p. 188, 189).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_det_row_swap": {
+      "label": "Determinant Row Swap",
+      "summary": "Swapping two rows of a matrix flips the sign of the determinant (p. 173, 174).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_det_row_scale": {
+      "label": "Determinant Row Scaling",
+      "summary": "Multiplying a row by scalar lambda multiplies the determinant by lambda (p. 176, 177).",
+      "type": "fact",
+      "children": []
+    },
+    "det_calculation_methods": {
+      "label": "Determinant Calculation",
+      "summary": "Techniques to compute det M beyond the general permutation formula.",
+      "type": "concept",
+      "children": [
+        "fact_det_diagonal",
+        "fact_expansion_by_minors"
+      ]
+    },
+    "fact_det_diagonal": {
+      "label": "Determinant of Diagonal Matrix",
+      "summary": "The determinant of a diagonal matrix is the product of its diagonal entries (p. 173).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_expansion_by_minors": {
+      "label": "Expansion by Minors",
+      "summary": "Expanding the determinant along a row/column by summing (-1)^(i+j) * m_ij * det(Minor_ij) (p. 186, 187).",
+      "type": "fact",
+      "children": []
+    },
+    "adjunct_matrix": {
+      "label": "Adjoint Matrix",
+      "summary": "The transpose of the cofactor matrix, used to find the inverse of a matrix.",
+      "type": "concept",
+      "children": [
+        "fact_adjoint_inverse_formula"
+      ]
+    },
+    "fact_adjoint_inverse_formula": {
+      "label": "Inverse via Adjoint",
+      "summary": "M^-1 = (1/det M) * adj(M) (p. 191).",
+      "type": "fact",
+      "children": []
+    },
+    "matrix_special_types": {
+      "label": "Special Matrix Types",
+      "summary": "Matrices with specific structural properties.",
+      "type": "concept",
+      "children": [
+        "symmetric_matrix",
+        "diagonal_matrix",
+        "identity_matrix",
+        "block_matrix"
+      ]
+    },
+    "symmetric_matrix": {
+      "label": "Symmetric Matrix",
+      "summary": "A square matrix where M = M^T (p. 139).",
+      "type": "concept",
+      "children": []
+    },
+    "diagonal_matrix": {
+      "label": "Diagonal Matrix",
+      "summary": "A square matrix where all non-diagonal entries are zero (p. 138).",
+      "type": "concept",
+      "children": []
+    },
+    "identity_matrix": {
+      "label": "Identity Matrix",
+      "summary": "A diagonal matrix with all diagonal entries equal to 1; serves as the multiplicative identity (p. 139).",
+      "type": "concept",
+      "children": []
+    },
+    "block_matrix": {
+      "label": "Block Matrix",
+      "summary": "A matrix partitioned into smaller matrices called blocks, allowing operations to be carried out on the blocks themselves (p. 142, 143).",
+      "type": "concept",
+      "children": []
+    },
+    "subspaces_spanning": {
+      "label": "Subspaces and Spanning Sets",
+      "summary": "The study of subsets of vector spaces that maintain vector space properties.",
+      "type": "concept",
+      "children": [
+        "subspace_definition",
+        "span_definition",
+        "linear_map_subspaces"
+      ]
+    },
+    "subspace_definition": {
+      "label": "Subspace Definition",
+      "summary": "A subset U of vector space V is a subspace if it is closed under addition and scalar multiplication (p. 195).",
+      "type": "concept",
+      "children": [
+        "fact_subspace_theorem"
+      ]
+    },
+    "fact_subspace_theorem": {
+      "label": "Subspace Theorem",
+      "summary": "A non-empty subset U is a subspace iff mu*u1 + nu*u2 is in U for all u1, u2 in U and constants mu, nu (p. 196).",
+      "type": "fact",
+      "children": []
+    },
+    "span_definition": {
+      "label": "Span Definition",
+      "summary": "The span of a set S is the set of all finite linear combinations of elements of S (p. 198).",
+      "type": "concept",
+      "children": [
+        "fact_span_is_subspace"
+      ]
+    },
+    "fact_span_is_subspace": {
+      "label": "Span as Subspace",
+      "summary": "For any subset S of V, span(S) is a subspace of V (p. 199).",
+      "type": "fact",
+      "children": []
+    },
+    "linear_map_subspaces": {
+      "label": "Linear Map Subspaces",
+      "summary": "Specific subspaces derived from linear transformations.",
+      "type": "concept",
+      "children": [
+        "kernel_definition",
+        "image_definition",
+        "eigenspace_definition"
+      ]
+    },
+    "kernel_definition": {
+      "label": "Kernel (ker L)",
+      "summary": "The set of all vectors in the domain that map to the zero vector: {u in U | L(u) = 0} (p. 200).",
+      "type": "concept",
+      "children": []
+    },
+    "image_definition": {
+      "label": "Image (im L)",
+      "summary": "The set of all vectors in the codomain that are outputs of the map: {L(u) | u in U} (p. 201).",
+      "type": "concept",
+      "children": []
+    },
+    "eigenspace_definition": {
+      "label": "Eigenspace (V_lambda)",
+      "summary": "The set of all vectors that obey the eigenvector equation L(v) = lambda*v (p. 201).",
+      "type": "concept",
+      "children": []
+    },
+    "linear_independence": {
+      "label": "Linear Independence",
+      "summary": "The property of a set of vectors where no vector can be expressed as a linear combination of the others.",
+      "type": "concept",
+      "children": [
+        "linear_dependence_definition",
+        "linear_independence_definition",
+        "fact_independence_zero_vector"
+      ]
+    },
+    "linear_dependence_definition": {
+      "label": "Linear Dependence Definition",
+      "summary": "Vectors v1...vn are linearly dependent if there exist constants c1...cn, not all zero, such that sum(ci*vi) = 0 (p. 204).",
+      "type": "concept",
+      "children": [
+        "fact_dependence_linear_comb"
+      ]
+    },
+    "fact_dependence_linear_comb": {
+      "label": "Dependence and Linear Combinations",
+      "summary": "A set of non-zero vectors is linearly dependent iff one of the vectors is expressible as a linear combination of the preceding vectors (p. 205).",
+      "type": "fact",
+      "children": []
+    },
+    "linear_independence_definition": {
+      "label": "Linear Independence Definition",
+      "summary": "Vectors are linearly independent if the only solution to sum(ci*vi) = 0 is ci = 0 for all i (p. 204).",
+      "type": "concept",
+      "children": []
+    },
+    "fact_independence_zero_vector": {
+      "label": "Zero Vector and Independence",
+      "summary": "The zero vector can never be part of a linearly independent set (p. 204).",
+      "type": "fact",
+      "children": []
+    },
+    "eigen_theory": {
+      "label": "Eigenvalues and Eigenvectors",
+      "summary": "The study of invariant directions of linear operators.",
+      "type": "concept",
+      "children": [
+        "characteristic_polynomial",
+        "eigen_basics",
+        "eigenvalue_equation",
+        "char_poly",
+        "jordan_cells",
+        "diagonalization"
+      ]
+    },
+    "eigenvalue_equation": {
+      "label": "Eigenvalue-Eigenvector Equation",
+      "summary": "L(v) = lambda * v, where v is a non-zero eigenvector and lambda is the eigenvalue (p. 227, 229).",
+      "type": "concept",
+      "children": []
+    },
+    "characteristic_polynomial": {
+      "label": "Characteristic Polynomial",
+      "summary": "The polynomial P_M(lambda) = det(lambda*I - M), whose roots are the eigenvalues of M (p. 232).",
+      "type": "concept",
+      "children": []
+    },
+    "diagonalization": {
+      "label": "Diagonalization",
+      "summary": "The process of finding a basis of eigenvectors such that the matrix representation of L is a diagonal matrix containing the eigenvalues (p. 230).",
+      "type": "concept",
+      "children": [
+        "diag_condition"
+      ]
+    },
+    "concept_eigen": {
+      "label": "Eigenvalues and Eigenvectors",
+      "summary": "The study of scalars and vectors that characterize the scaling behavior of a linear transformation.",
+      "type": "concept",
+      "children": [
+        "sub_char_poly",
+        "sub_eigenvalue",
+        "sub_eigenvector",
+        "sub_eigenspace"
+      ]
+    },
+    "sub_char_poly": {
+      "label": "Characteristic Polynomial",
+      "summary": "The polynomial PM(\u03bb) used to find eigenvalues of a matrix M.",
+      "type": "concept",
+      "children": [
+        "fact_char_poly_def",
+        "fact_char_poly_deg",
+        "fact_char_poly_zero"
+      ]
+    },
+    "fact_char_poly_def": {
+      "label": "Characteristic Polynomial Definition",
+      "summary": "Defined as det(\u03bbI - M) = 0 or det(M - \u03bbI) = 0 (Page 234).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_char_poly_deg": {
+      "label": "Polynomial Degree",
+      "summary": "For an n x n matrix, the characteristic polynomial has degree n (Page 234).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_char_poly_zero": {
+      "label": "Zero Value",
+      "summary": "PM(0) = det(-M) = (-1)^n det(M) (Page 234).",
+      "type": "fact",
+      "children": []
+    },
+    "sub_eigenvalue": {
+      "label": "Eigenvalues",
+      "summary": "The roots of the characteristic polynomial.",
+      "type": "concept",
+      "children": [
+        "fact_eigenvalue_def",
+        "fact_fta",
+        "fact_multiplicity"
+      ]
+    },
+    "fact_eigenvalue_def": {
+      "label": "Eigenvalue Definition",
+      "summary": "Complex numbers \u03bbi such that PM(\u03bbi) = 0. They can be real, complex, or zero (Page 234).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_fta": {
+      "label": "Fundamental Theorem of Algebra",
+      "summary": "Any polynomial can be factored into a product of first order polynomials over C (Page 234).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_multiplicity": {
+      "label": "Multiplicity",
+      "summary": "The number of times a given root \u03bbi appears in the collection of eigenvalues (Page 234).",
+      "type": "fact",
+      "children": []
+    },
+    "sub_eigenvector": {
+      "label": "Eigenvectors",
+      "summary": "Non-zero vectors that are scaled by the linear transformation.",
+      "type": "concept",
+      "children": [
+        "fact_eigenvector_def",
+        "fact_eigenvector_sys"
+      ]
+    },
+    "fact_eigenvector_def": {
+      "label": "Eigenvector Definition",
+      "summary": "A vector X such that MX = \u03bbX or (M - \u03bbI)X = 0 (Page 235).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_eigenvector_sys": {
+      "label": "Homogeneous System",
+      "summary": "Finding eigenvectors involves solving the homogeneous system (M - \u03bbiI)X = 0 for each eigenvalue (Page 235).",
+      "type": "fact",
+      "children": []
+    },
+    "sub_eigenspace": {
+      "label": "Eigenspaces",
+      "summary": "The set of all vectors associated with a specific eigenvalue.",
+      "type": "concept",
+      "children": [
+        "fact_eigenspace_def",
+        "fact_eigenspace_subspace"
+      ]
+    },
+    "fact_eigenspace_def": {
+      "label": "Eigenspace Definition",
+      "summary": "The space of all vectors with eigenvalue \u03bb; any linear combination of eigenvectors sharing the same eigenvalue is also an eigenvector (Page 237).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_eigenspace_subspace": {
+      "label": "Eigenspace as Subspace",
+      "summary": "V\u03bb := {v \u2208 V | Lv = \u03bbv} is a subspace of V (Page 237).",
+      "type": "fact",
+      "children": []
+    },
+    "concept_diag": {
+      "label": "Diagonalization",
+      "summary": "The process of finding a basis of eigenvectors to represent a linear transformation as a diagonal matrix.",
+      "type": "concept",
+      "children": [
+        "sub_diag_def",
+        "sub_change_basis",
+        "sub_similarity"
+      ]
+    },
+    "sub_diag_def": {
+      "label": "Diagonalizability",
+      "summary": "The conditions under which a matrix can be represented as a diagonal matrix.",
+      "type": "concept",
+      "children": [
+        "fact_diag_def",
+        "fact_diag_theorem"
+      ]
+    },
+    "fact_diag_def": {
+      "label": "Diagonalizable Definition",
+      "summary": "A linear transformation L is diagonalizable if there exists a collection of n linearly independent eigenvectors for L, forming a basis for V (Page 242).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_diag_theorem": {
+      "label": "Diagonal Matrix Theorem",
+      "summary": "The matrix for L in basis B is diagonal if and only if B consists of eigenvectors for L (Page 242).",
+      "type": "fact",
+      "children": []
+    },
+    "sub_change_basis": {
+      "label": "Change of Basis",
+      "summary": "The mechanism for shifting a linear transformation's matrix representation between different bases.",
+      "type": "concept",
+      "children": [
+        "fact_cob_matrix",
+        "fact_cob_formula"
+      ]
+    },
+    "fact_cob_matrix": {
+      "label": "Change of Basis Matrix P",
+      "summary": "A square matrix where columns are the components of the new basis vectors in terms of the old basis vectors (Page 243).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_cob_formula": {
+      "label": "Change of Basis Formula",
+      "summary": "The new matrix M' is related to the old matrix M by M' = Q^-1 M P, where P and Q are change of basis matrices for input and output spaces (Page 245).",
+      "type": "fact",
+      "children": []
+    },
+    "sub_similarity": {
+      "label": "Similarity",
+      "summary": "The relationship between two matrices that represent the same linear transformation in different bases.",
+      "type": "concept",
+      "children": [
+        "fact_similar_def",
+        "fact_diag_similarity"
+      ]
+    },
+    "fact_similar_def": {
+      "label": "Similar Matrices Definition",
+      "summary": "Two matrices M and N are similar if there exists an invertible matrix P such that M = P^-1 N P (Page 247).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_diag_similarity": {
+      "label": "Diagonal Similarity",
+      "summary": "A matrix is diagonalizable if and only if it is similar to a diagonal matrix D consisting of its eigenvalues (Page 247).",
+      "type": "fact",
+      "children": []
+    },
+    "concept_ortho": {
+      "label": "Orthonormal Bases and Complements",
+      "summary": "Study of vector spaces equipped with an inner product, allowing for notions of length, angle, and perpendicularity.",
+      "type": "concept",
+      "children": [
+        "sub_ortho_bases",
+        "sub_gram_schmidt",
+        "sub_ortho_matrix",
+        "sub_ortho_complement"
+      ]
+    },
+    "sub_ortho_bases": {
+      "label": "Orthogonal and Orthonormal Bases",
+      "summary": "Special types of bases where vectors are mutually perpendicular.",
+      "type": "concept",
+      "children": [
+        "fact_ortho_basis_def",
+        "fact_orthonormal_basis_def",
+        "fact_orthonormal_expansion"
+      ]
+    },
+    "fact_ortho_basis_def": {
+      "label": "Orthogonal Basis Definition",
+      "summary": "A basis where vi \u00b7 vj = 0 if i != j (Page 255).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_orthonormal_basis_def": {
+      "label": "Orthonormal Basis Definition",
+      "summary": "An orthogonal basis where every vector has unit length (ui \u00b7 uj = \u03b4ij) (Page 255).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_orthonormal_expansion": {
+      "label": "Orthonormal Expansion Theorem",
+      "summary": "Any vector v can be expressed as v = \u03a3(v \u00b7 ui)ui for an orthonormal basis {ui} (Page 256).",
+      "type": "fact",
+      "children": []
+    },
+    "sub_gram_schmidt": {
+      "label": "Gram-Schmidt Process",
+      "summary": "An algorithm for constructing an orthogonal basis from a set of linearly independent vectors.",
+      "type": "concept",
+      "children": [
+        "fact_gs_step",
+        "fact_gs_ortho_basis"
+      ]
+    },
+    "fact_gs_step": {
+      "label": "Gram-Schmidt Projection Step",
+      "summary": "Constructs orthogonal vectors by subtracting projections: v_i_perp = v_i - \u03a3[(v_i \u00b7 v_j_perp)/(v_j_perp \u00b7 v_j_perp)] v_j_perp (Page 264).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_gs_ortho_basis": {
+      "label": "GS Output",
+      "summary": "The process transforms a linearly independent set {v1...vn} into an orthogonal set {v1_perp...vn_perp} that spans the same space (Page 264).",
+      "type": "fact",
+      "children": []
+    },
+    "sub_ortho_matrix": {
+      "label": "Orthogonal Matrices",
+      "summary": "Matrices whose columns form an orthonormal basis.",
+      "type": "concept",
+      "children": [
+        "fact_ortho_mat_def",
+        "fact_ortho_mat_property"
+      ]
+    },
+    "fact_ortho_mat_def": {
+      "label": "Orthogonal Matrix Definition",
+      "summary": "A square matrix P is orthogonal if P^-1 = P^T (Page 259).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_ortho_mat_property": {
+      "label": "Orthogonal Matrix Property",
+      "summary": "A change of basis matrix relating two orthonormal bases is always an orthogonal matrix (Page 260).",
+      "type": "fact",
+      "children": []
+    },
+    "sub_ortho_complement": {
+      "label": "Orthogonal Complements",
+      "summary": "The subspace consisting of all vectors orthogonal to a given subspace.",
+      "type": "concept",
+      "children": [
+        "fact_ortho_comp_def",
+        "fact_direct_sum_decomp"
+      ]
+    },
+    "fact_ortho_comp_def": {
+      "label": "Orthogonal Complement Definition",
+      "summary": "U^\u22a5 := {w \u2208 W | <w, u> = 0 for all u \u2208 U} (Page 269).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_direct_sum_decomp": {
+      "label": "Orthogonal Decomposition Theorem",
+      "summary": "For any subspace U of a finite-dimensional space W, W = U \u2295 U^\u22a5 (Page 270).",
+      "type": "fact",
+      "children": []
+    },
+    "concept_sym": {
+      "label": "Symmetric Matrices",
+      "summary": "Square matrices equal to their own transpose, possessing unique spectral properties.",
+      "type": "concept",
+      "children": [
+        "sub_sym_def",
+        "sub_sym_eig",
+        "sub_sym_diag"
+      ]
+    },
+    "sub_sym_def": {
+      "label": "Symmetric Matrix Definition",
+      "summary": "A matrix M is symmetric if M^T = M (Page 277).",
+      "type": "concept",
+      "children": []
+    },
+    "sub_sym_eig": {
+      "label": "Eigenproperties of Symmetric Matrices",
+      "summary": "Special results regarding the eigenvalues and eigenvectors of symmetric matrices.",
+      "type": "concept",
+      "children": [
+        "fact_sym_real_eig",
+        "fact_sym_ortho_eig"
+      ]
+    },
+    "fact_sym_real_eig": {
+      "label": "Reality of Eigenvalues",
+      "summary": "Symmetric matrices always have real eigenvalues (Page 277).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_sym_ortho_eig": {
+      "label": "Orthogonality of Eigenvectors",
+      "summary": "Eigenvectors of a symmetric matrix associated with distinct eigenvalues are orthogonal (Page 278).",
+      "type": "fact",
+      "children": []
+    },
+    "sub_sym_diag": {
+      "label": "Symmetric Diagonalization",
+      "summary": "The ability to diagonalize symmetric matrices using orthogonal matrices.",
+      "type": "concept",
+      "children": [
+        "fact_sym_diag_theorem"
+      ]
+    },
+    "fact_sym_diag_theorem": {
+      "label": "Symmetric Diagonalization Theorem",
+      "summary": "M = M^T if and only if M = P D P^T, where P is an orthogonal matrix and D is diagonal (Page 280).",
+      "type": "fact",
+      "children": []
+    },
+    "concept_ker_ran": {
+      "label": "Kernel, Range, Nullity, and Rank",
+      "summary": "The fundamental subspaces associated with a linear transformation and the relationships between their dimensions.",
+      "type": "concept",
+      "children": [
+        "sub_range",
+        "sub_kernel",
+        "sub_dim_formula"
+      ]
+    },
+    "sub_range": {
+      "label": "Range and Image",
+      "summary": "The set of all output vectors of a linear transformation.",
+      "type": "concept",
+      "children": [
+        "fact_range_def",
+        "fact_range_matrix"
+      ]
+    },
+    "fact_range_def": {
+      "label": "Range Definition",
+      "summary": "ran(f) := {f(s) | s \u2208 S} (Page 286).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_range_matrix": {
+      "label": "Range of a Matrix",
+      "summary": "The range of a matrix is the span of its columns (column space) (Page 286).",
+      "type": "fact",
+      "children": []
+    },
+    "sub_kernel": {
+      "label": "Kernel",
+      "summary": "The set of all vectors that map to the zero vector.",
+      "type": "concept",
+      "children": [
+        "fact_kernel_def",
+        "fact_kernel_injectivity"
+      ]
+    },
+    "fact_kernel_def": {
+      "label": "Kernel Definition",
+      "summary": "ker L = {v \u2208 V | Lv = 0_W} (Page 292).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_kernel_injectivity": {
+      "label": "Kernel and Injectivity",
+      "summary": "A linear transformation L is injective if and only if ker L = {0_V} (Page 293).",
+      "type": "fact",
+      "children": []
+    },
+    "sub_dim_formula": {
+      "label": "Rank-Nullity Theorem",
+      "summary": "The relationship between the dimension of the domain, the kernel, and the range.",
+      "type": "concept",
+      "children": [
+        "fact_rank_def",
+        "fact_nullity_def",
+        "fact_dim_formula"
+      ]
+    },
+    "fact_rank_def": {
+      "label": "Rank Definition",
+      "summary": "The rank of L is the dimension of its range (dim ran L) (Page 295).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_nullity_def": {
+      "label": "Nullity Definition",
+      "summary": "The nullity of L is the dimension of its kernel (dim ker L) (Page 295).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_dim_formula": {
+      "label": "Dimension Formula",
+      "summary": "dim V = null L + rank L (Page 296).",
+      "type": "fact",
+      "children": []
+    },
+    "concept_approx": {
+      "label": "Least Squares and Singular Values",
+      "summary": "Techniques for approximating solutions to overdetermined systems and decomposing non-square matrices.",
+      "type": "concept",
+      "children": [
+        "sub_least_squares",
+        "sub_proj_matrix",
+        "sub_svd"
+      ]
+    },
+    "sub_least_squares": {
+      "label": "Least Squares Method",
+      "summary": "Finding the x that minimizes the error ||Lx - v||.",
+      "type": "concept",
+      "children": [
+        "fact_ls_normal_eq"
+      ]
+    },
+    "fact_ls_normal_eq": {
+      "label": "Normal Equations",
+      "summary": "Least squares solutions satisfy M^T M X = M^T V (Page 304).",
+      "type": "fact",
+      "children": []
+    },
+    "sub_proj_matrix": {
+      "label": "Projection Matrices",
+      "summary": "Matrices that project a vector onto a specific subspace.",
+      "type": "concept",
+      "children": [
+        "fact_proj_formula"
+      ]
+    },
+    "fact_proj_formula": {
+      "label": "Projection Formula",
+      "summary": "The matrix projecting onto ran M is M(M^T M)^-1 M^T (Page 307).",
+      "type": "fact",
+      "children": []
+    },
+    "sub_svd": {
+      "label": "Singular Value Decomposition",
+      "summary": "A decomposition of any m x n matrix into orthogonal and diagonal components.",
+      "type": "concept",
+      "children": [
+        "fact_svd_def",
+        "fact_singular_values"
+      ]
+    },
+    "fact_svd_def": {
+      "label": "SVD Definition",
+      "summary": "Decomposing M into Q\u03a3P^T where Q and P are orthogonal matrices and \u03a3 contains singular values (Page 311).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_singular_values": {
+      "label": "Singular Values Definition",
+      "summary": "The square roots of the eigenvalues of M^T M (Page 310).",
+      "type": "fact",
+      "children": []
+    },
+    "concept_fields": {
+      "label": "Fields",
+      "summary": "The algebraic structure providing the scalars for vector spaces.",
+      "type": "concept",
+      "children": [
+        "fact_field_axioms",
+        "fact_field_examples"
+      ]
+    },
+    "fact_field_axioms": {
+      "label": "Field Axioms",
+      "summary": "A set with addition and multiplication obeying associativity, commutativity, identity, inverse, and distributivity (Page 316).",
+      "type": "fact",
+      "children": []
+    },
+    "fact_field_examples": {
+      "label": "Common Fields",
+      "summary": "Examples include Rational numbers (Q), Real numbers (R), Complex numbers (C), and Bit field (Z2) (Page 317).",
+      "type": "fact",
+      "children": []
+    },
+    "sys_lin_eq": {
+      "label": "Systems of Linear Equations",
+      "summary": "Methods for representing and solving sets of linear equations using matrices.",
+      "type": "concept",
+      "children": [
+        "aug_mat",
+        "gauss_elim",
+        "sol_sets"
+      ]
+    },
+    "aug_mat": {
+      "label": "Augmented Matrix Notation",
+      "summary": "A compact notation for representing linear systems where coefficients and constants are stored together.",
+      "type": "concept",
+      "children": [
+        "aug_equiv",
+        "row_equiv_fact"
+      ]
+    },
+    "aug_equiv": {
+      "label": "Equivalence of Augmented Matrices",
+      "summary": "Two augmented matrices are equivalent if they represent systems with the same solution set.",
+      "type": "concept",
+      "children": []
+    },
+    "row_equiv_fact": {
+      "label": "Row Equivalence Properties",
+      "summary": "Row equivalence is an equivalence relation satisfying reflexive, symmetric, and transitive properties.",
+      "type": "fact",
+      "children": []
+    },
+    "gauss_elim": {
+      "label": "Gaussian Elimination",
+      "summary": "The process of using elementary row operations to transform a matrix into Row Echelon Form (REF) or Reduced Row Echelon Form (RREF).",
+      "type": "concept",
+      "children": [
+        "ero_types",
+        "pivot_vars"
+      ]
+    },
+    "ero_types": {
+      "label": "Elementary Row Operations (EROs)",
+      "summary": "Operations that do not change the solution set: swapping rows, scaling a row, and adding a multiple of one row to another.",
+      "type": "concept",
+      "children": []
+    },
+    "pivot_vars": {
+      "label": "Pivot and Free Variables",
+      "summary": "Pivot variables correspond to leading ones in RREF; non-pivot variables are free variables used to parametrize the solution set.",
+      "type": "concept",
+      "children": []
+    },
+    "sol_sets": {
+      "label": "Solution Sets",
+      "summary": "The set of all vectors that satisfy a linear system, often expressed in parametric vector form.",
+      "type": "concept",
+      "children": [
+        "inconsistent_fact"
+      ]
+    },
+    "inconsistent_fact": {
+      "label": "Inconsistent Systems",
+      "summary": "A system is inconsistent if a row of zeros precedes a non-vanishing entry in the augmented column (e.g., 0 = 6).",
+      "type": "fact",
+      "children": []
+    },
+    "vec_spaces": {
+      "label": "Vector Spaces",
+      "summary": "Algebraic structures consisting of a set of vectors that can be added together and multiplied by scalars.",
+      "type": "concept",
+      "children": [
+        "vs_axioms",
+        "subspaces",
+        "basis_dim"
+      ]
+    },
+    "vs_axioms": {
+      "label": "Vector Space Axioms",
+      "summary": "The set of rules defining a vector space, divided into additive and multiplicative properties.",
+      "type": "concept",
+      "children": [
+        "add_closure",
+        "add_comm",
+        "add_assoc",
+        "zero_vec",
+        "add_inv",
+        "mul_closure",
+        "mul_dist_scalar",
+        "mul_dist_vec",
+        "mul_assoc",
+        "unity_scalar"
+      ]
+    },
+    "add_closure": {
+      "label": "Additive Closure",
+      "summary": "For any vectors u, v in V, u + v must also be in V.",
+      "type": "fact",
+      "children": []
+    },
+    "add_comm": {
+      "label": "Additive Commutativity",
+      "summary": "u + v = v + u for all u, v in V.",
+      "type": "fact",
+      "children": []
+    },
+    "add_assoc": {
+      "label": "Additive Associativity",
+      "summary": "(u + v) + w = u + (v + w) for all u, v, w in V.",
+      "type": "fact",
+      "children": []
+    },
+    "zero_vec": {
+      "label": "Zero Vector",
+      "summary": "There exists a vector 0 such that v + 0 = v for all v in V.",
+      "type": "fact",
+      "children": []
+    },
+    "add_inv": {
+      "label": "Additive Inverse",
+      "summary": "For every v in V, there exists -v such that v + (-v) = 0.",
+      "type": "fact",
+      "children": []
+    },
+    "mul_closure": {
+      "label": "Multiplicative Closure",
+      "summary": "For any scalar a and vector v, av must be in V.",
+      "type": "fact",
+      "children": []
+    },
+    "mul_dist_scalar": {
+      "label": "Scalar Distributivity",
+      "summary": "(a + b)v = av + bv.",
+      "type": "fact",
+      "children": []
+    },
+    "mul_dist_vec": {
+      "label": "Vector Distributivity",
+      "summary": "a(u + v) = au + av.",
+      "type": "fact",
+      "children": []
+    },
+    "mul_assoc": {
+      "label": "Multiplicative Associativity",
+      "summary": "a(bv) = (ab)v.",
+      "type": "fact",
+      "children": []
+    },
+    "unity_scalar": {
+      "label": "Unity",
+      "summary": "The scalar 1 satisfies 1v = v.",
+      "type": "fact",
+      "children": []
+    },
+    "subspaces": {
+      "label": "Subspaces",
+      "summary": "A subset of a vector space that is itself a vector space under the same operations.",
+      "type": "concept",
+      "children": [
+        "subspace_sum",
+        "direct_sum",
+        "ortho_complement"
+      ]
+    },
+    "subspace_sum": {
+      "label": "Subspace Sum",
+      "summary": "The sum of two subspaces U and V is the span of their union: U + V = span(U U V).",
+      "type": "concept",
+      "children": []
+    },
+    "direct_sum": {
+      "label": "Direct Sum",
+      "summary": "A subspace sum U + V where U intersection V = {0}, denoted as U \u2295 V.",
+      "type": "concept",
+      "children": []
+    },
+    "ortho_complement": {
+      "label": "Orthogonal Complement",
+      "summary": "The set of all vectors perpendicular to every vector in a subspace U, denoted U\u22a9.",
+      "type": "concept",
+      "children": [
+        "ortho_comp_fact"
+      ]
+    },
+    "ortho_comp_fact": {
+      "label": "Complement Identity",
+      "summary": "The orthogonal complement of an orthogonal complement returns the original subspace: (U\u22a9)\u22a9 = U.",
+      "type": "fact",
+      "children": []
+    },
+    "basis_dim": {
+      "label": "Basis and Dimension",
+      "summary": "A basis is a linearly independent spanning set; the dimension is the number of vectors in any basis.",
+      "type": "concept",
+      "children": [
+        "lin_indep",
+        "spanning_set",
+        "dim_formula"
+      ]
+    },
+    "lin_indep": {
+      "label": "Linear Independence",
+      "summary": "A set of vectors is independent if the only solution to their linear combination equaling zero is the trivial solution.",
+      "type": "concept",
+      "children": []
+    },
+    "spanning_set": {
+      "label": "Spanning Set",
+      "summary": "A set of vectors whose linear combinations cover the entire vector space.",
+      "type": "concept",
+      "children": []
+    },
+    "dim_formula": {
+      "label": "Dimension Formula",
+      "summary": "Also known as the Rank-Nullity Theorem: dim V = dim(ker L) + dim(im L).",
+      "type": "concept",
+      "children": []
+    },
+    "lin_trans": {
+      "label": "Linear Transformations",
+      "summary": "Mappings between vector spaces that preserve vector addition and scalar multiplication.",
+      "type": "concept",
+      "children": [
+        "trans_properties",
+        "kernel_range",
+        "bijectivity"
+      ]
+    },
+    "trans_properties": {
+      "label": "Linearity Properties",
+      "summary": "L(au + bv) = aL(u) + bL(v).",
+      "type": "concept",
+      "children": []
+    },
+    "kernel_range": {
+      "label": "Kernel and Range",
+      "summary": "The kernel (null space) is the set of vectors mapped to zero; the range (image) is the set of all outputs.",
+      "type": "concept",
+      "children": []
+    },
+    "bijectivity": {
+      "label": "Bijectivity and Invertibility",
+      "summary": "A linear transformation L is bijective if and only if its matrix representation M is invertible.",
+      "type": "concept",
+      "children": [
+        "bijective_injective_fact",
+        "bijective_surjective_fact"
+      ]
+    },
+    "bijective_injective_fact": {
+      "label": "Injective Condition",
+      "summary": "L is injective if and only if ker L = {0}.",
+      "type": "fact",
+      "children": []
+    },
+    "bijective_surjective_fact": {
+      "label": "Surjective Condition",
+      "summary": "L is surjective if and only if im L = W.",
+      "type": "fact",
+      "children": []
+    },
+    "mat_theory": {
+      "label": "Matrix Theory",
+      "summary": "The study of matrices as operators, including decompositions and inverses.",
+      "type": "concept",
+      "children": [
+        "mat_ops",
+        "mat_decomp",
+        "mat_inverses",
+        "mat_exp"
+      ]
+    },
+    "mat_ops": {
+      "label": "Matrix Operations",
+      "summary": "Basic operations including multiplication, transpose, and trace.",
+      "type": "concept",
+      "children": [
+        "trace_identity",
+        "commute_fact"
+      ]
+    },
+    "trace_identity": {
+      "label": "Trace Identity",
+      "summary": "The trace of a product is invariant under cyclic permutations: tr(MN) = tr(NM).",
+      "type": "fact",
+      "children": []
+    },
+    "commute_fact": {
+      "label": "Matrix Commutativity",
+      "summary": "In general, matrix multiplication is not commutative: AB != BA.",
+      "type": "fact",
+      "children": []
+    },
+    "mat_decomp": {
+      "label": "Matrix Decompositions",
+      "summary": "Breaking a matrix into simpler constituent matrices to ease computation.",
+      "type": "concept",
+      "children": [
+        "lu_decomp",
+        "qr_decomp",
+        "ldu_block"
+      ]
+    },
+    "lu_decomp": {
+      "label": "LU Decomposition",
+      "summary": "Decomposing M into a Lower triangular (L) and Upper triangular (U) matrix to solve Mx = b via forward and backward substitution.",
+      "type": "concept",
+      "children": []
+    },
+    "qr_decomp": {
+      "label": "QR Decomposition",
+      "summary": "Decomposing M into an orthogonal matrix Q and an upper triangular matrix R using the Gram-Schmidt process.",
+      "type": "concept",
+      "children": []
+    },
+    "ldu_block": {
+      "label": "Block LDU Decomposition",
+      "summary": "Applying decomposition to block matrices where components are themselves matrices.",
+      "type": "concept",
+      "children": []
+    },
+    "mat_inverses": {
+      "label": "Matrix Inverses",
+      "summary": "The inverse M^-1 satisfies M M^-1 = I. For a 2x2 matrix, the inverse is (1/det M) * [d -b; -c a].",
+      "type": "concept",
+      "children": [
+        "inv_prod_fact"
+      ]
+    },
+    "inv_prod_fact": {
+      "label": "Inverse of Product",
+      "summary": "The inverse of a product is the product of the inverses in reverse order: (AB)^-1 = B^-1 A^-1.",
+      "type": "fact",
+      "children": []
+    },
+    "mat_exp": {
+      "label": "Matrix Exponential",
+      "summary": "Defined by the power series exp(M) = I + M + M^2/2! + M^3/3! + ...",
+      "type": "concept",
+      "children": []
+    },
+    "det_theory": {
+      "label": "Determinant Theory",
+      "summary": "A scalar value that characterizes several properties of a square matrix, including invertibility.",
+      "type": "concept",
+      "children": [
+        "det_calc",
+        "det_properties",
+        "det_invertibility"
+      ]
+    },
+    "det_calc": {
+      "label": "Determinant Calculation",
+      "summary": "Methods for calculating the determinant of n x n matrices.",
+      "type": "concept",
+      "children": [
+        "expansion_minors",
+        "recursive_formula"
+      ]
+    },
+    "expansion_minors": {
+      "label": "Expansion by Minors",
+      "summary": "Calculating the determinant using a row or column, multiplying entries by their cofactors.",
+      "type": "concept",
+      "children": []
+    },
+    "recursive_formula": {
+      "label": "Recursive Determinant Formula",
+      "summary": "Defining det(A) as the sum of elements times the determinants of their minors with alternating signs.",
+      "type": "concept",
+      "children": []
+    },
+    "row_swap_det": {
+      "label": "Row Swap Effect",
+      "summary": "Swapping two rows flips the sign of the determinant.",
+      "type": "fact",
+      "children": []
+    },
+    "row_scale_det": {
+      "label": "Row Scaling Effect",
+      "summary": "Multiplying a row by scalar lambda multiplies the determinant by lambda.",
+      "type": "fact",
+      "children": []
+    },
+    "row_add_det": {
+      "label": "Row Addition Effect",
+      "summary": "Adding a multiple of one row to another does not change the determinant.",
+      "type": "fact",
+      "children": []
+    },
+    "prod_det_fact": {
+      "label": "Determinant of Product",
+      "summary": "det(AB) = det(A)det(B).",
+      "type": "fact",
+      "children": []
+    },
+    "det_invertibility": {
+      "label": "Determinants and Invertibility",
+      "summary": "A square matrix M is invertible if and only if det(M) != 0.",
+      "type": "concept",
+      "children": []
+    },
+    "eigen_basics": {
+      "label": "Eigenvalues and Eigenvectors",
+      "summary": "An eigenvector v satisfies Mv = lambda*v, where lambda is the eigenvalue.",
+      "type": "concept",
+      "children": [
+        "eigenspace"
+      ]
+    },
+    "eigenspace": {
+      "label": "Eigenspace",
+      "summary": "The subspace consisting of all eigenvectors associated with a specific eigenvalue lambda, plus the zero vector.",
+      "type": "concept",
+      "children": []
+    },
+    "char_poly": {
+      "label": "Characteristic Polynomial",
+      "summary": "The polynomial P(lambda) = det(lambda*I - M), whose roots are the eigenvalues of M.",
+      "type": "concept",
+      "children": []
+    },
+    "diag_condition": {
+      "label": "Diagonalizability Condition",
+      "summary": "A matrix is diagonalizable if it has a complete set of linearly independent eigenvectors.",
+      "type": "fact",
+      "children": []
+    },
+    "jordan_cells": {
+      "label": "Jordan Canonical Form",
+      "summary": "A representation for non-diagonalizable matrices using Jordan cells (diagonal with 1s on the super-diagonal).",
+      "type": "concept",
+      "children": []
+    },
+    "inner_prod": {
+      "label": "Inner Product Spaces",
+      "summary": "Vector spaces equipped with an inner product (dot product) allowing for the definition of length and angle.",
+      "type": "concept",
+      "children": [
+        "orthogonality",
+        "gram_schmidt",
+        "orthonormal_basis"
+      ]
+    },
+    "orthogonality": {
+      "label": "Orthogonality",
+      "summary": "Two vectors are orthogonal if their inner product is zero.",
+      "type": "concept",
+      "children": []
+    },
+    "gram_schmidt": {
+      "label": "Gram-Schmidt Process",
+      "summary": "A method for orthonormalizing a set of vectors by iteratively subtracting projections.",
+      "type": "concept",
+      "children": [
+        "gs_formula"
+      ]
+    },
+    "gs_formula": {
+      "label": "Gram-Schmidt Formula",
+      "summary": "v_perp = v - sum((v . u_i) / (u_i . u_i)) * u_i",
+      "type": "fact",
+      "children": []
+    },
+    "orthonormal_basis": {
+      "label": "Orthonormal Basis",
+      "summary": "A basis where all vectors are mutually orthogonal and have unit length.",
+      "type": "concept",
+      "children": []
+    },
+    "apps_lin_alg": {
+      "label": "Applications of Linear Algebra",
+      "summary": "Applying linear algebraic concepts to solve real-world and mathematical problems.",
+      "type": "concept",
+      "children": [
+        "fibonacci_mat",
+        "conic_sections",
+        "least_squares",
+        "vandermonde_det"
+      ]
+    },
+    "fibonacci_mat": {
+      "label": "Fibonacci Sequence Matrix",
+      "summary": "Using a matrix M to represent the Fibonacci recursion X_{n+1} = M X_n, leading to Binet's formula via diagonalization.",
+      "type": "concept",
+      "children": []
+    },
+    "conic_sections": {
+      "label": "Conic Sections",
+      "summary": "Quadratic forms (X^T M X + ... = 0) representing circles, ellipses, hyperbolas, or lines based on eigenvalues.",
+      "type": "concept",
+      "children": []
+    },
+    "least_squares": {
+      "label": "Least Squares Solutions",
+      "summary": "Finding an approximate solution to an overdetermined system by minimizing the squared error: M^T M a = M^T V.",
+      "type": "concept",
+      "children": []
+    },
+    "vandermonde_det": {
+      "label": "Vandermonde Determinant",
+      "summary": "The determinant of a Vandermonde matrix is the product of all pairs (x_i - x_j) for i > j.",
+      "type": "concept",
+      "children": []
+    }
+  }
+}

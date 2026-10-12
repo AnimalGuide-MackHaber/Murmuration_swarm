@@ -1,0 +1,111 @@
+{
+  "nodes": {
+    "root": {
+      "label": "Complex Adaptive Systems & Complexity Theory",
+      "summary": "Overview of Complex Adaptive Systems and the theory that explains them.",
+      "type": "concept",
+      "children": [
+        "cause_effect",
+        "complexity_theory",
+        "cas"
+      ]
+    },
+    "cause_effect": {
+      "label": "Traditional Cause and Effect",
+      "summary": "The historical scientific view of the universe as a linear system of cause and effect.",
+      "type": "concept",
+      "children": []
+    },
+    "complexity_theory": {
+      "label": "Complexity Theory",
+      "summary": "A new theory based on relationships, emergence, patterns, and iterations.",
+      "type": "concept",
+      "children": [
+        "cas_definition"
+      ]
+    },
+    "cas": {
+      "label": "Complex Adaptive Systems (CAS)",
+      "summary": "Systems that are constantly adapting to their environment through interactions between agents.",
+      "type": "concept",
+      "children": [
+        "emergence",
+        "co_evolution",
+        "sub_optimal",
+        "requisite_variety",
+        "connectivity",
+        "simple_rules",
+        "iteration",
+        "self_organising",
+        "edge_of_chaos",
+        "nested_systems"
+      ]
+    },
+    "cas_definition": {
+      "label": "CAS Definition",
+      "summary": "CAS are illustrated by agents interacting unpredictably, leading to emergent patterns and feedback.",
+      "type": "fact",
+      "children": []
+    },
+    "emergence": {
+      "label": "Emergence",
+      "summary": "Patterns emerge from random interactions of agents, influencing their behavior and the system's behavior.",
+      "type": "concept",
+      "children": []
+    },
+    "co_evolution": {
+      "label": "Co-evolution",
+      "summary": "Systems change with their environment, and in doing so, change their environment, creating a continuous cycle.",
+      "type": "concept",
+      "children": []
+    },
+    "sub_optimal": {
+      "label": "Sub-optimal",
+      "summary": "CAS thrive by being 'good enough' rather than striving for perfection, prioritizing effectiveness over efficiency.",
+      "type": "concept",
+      "children": []
+    },
+    "requisite_variety": {
+      "label": "Requisite Variety",
+      "summary": "Greater variety within a system strengthens it, utilizing ambiguity and paradox for co-evolution.",
+      "type": "concept",
+      "children": []
+    },
+    "connectivity": {
+      "label": "Connectivity",
+      "summary": "The connections between agents are critical for pattern formation and feedback dissemination.",
+      "type": "concept",
+      "children": []
+    },
+    "simple_rules": {
+      "label": "Simple Rules",
+      "summary": "Despite complex patterns, CAS are governed by simple underlying rules.",
+      "type": "concept",
+      "children": []
+    },
+    "iteration": {
+      "label": "Iteration",
+      "summary": "Small initial changes can have significant effects through repeated emergence-feedback loops (butterfly effect).",
+      "type": "concept",
+      "children": []
+    },
+    "self_organising": {
+      "label": "Self-Organising",
+      "summary": "CAS lack hierarchy and planning, instead constantly re-organizing to find the best fit with the environment.",
+      "type": "concept",
+      "children": []
+    },
+    "edge_of_chaos": {
+      "label": "Edge of Chaos",
+      "summary": "The most productive state for a system, balancing equilibrium and chaos for maximum variety and creativity.",
+      "type": "concept",
+      "children": []
+    },
+    "nested_systems": {
+      "label": "Nested Systems",
+      "summary": "Most systems exist within other systems, forming a hierarchy of interconnectedness.",
+      "type": "concept",
+      "children": []
+    }
+  }
+}

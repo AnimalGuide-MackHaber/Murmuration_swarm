@@ -1,7 +1,7 @@
 import unittest
-from swarm_schema import SwarmSnapshot, AgentRuntimeState, Vector3, AgentConfig
-from swarm_physics import SwarmPhysicsEngine
-from settings_manager import SettingsManager
+from core.swarm_schema import SwarmSnapshot, AgentRuntimeState, Vector3, AgentConfig
+from core.swarm_physics import SwarmPhysicsEngine
+from core.settings_manager import SettingsManager
 import numpy as np
 
 class TestSwarmPhysics(unittest.TestCase):

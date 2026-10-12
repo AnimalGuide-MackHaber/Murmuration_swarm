@@ -3,8 +3,8 @@ import os
 import json
 import asyncio
 from unittest.mock import MagicMock, patch, AsyncMock
-from knowledge_graph import KnowledgeArchitect
-from swarm_io import SwarmIO
+from core.knowledge_graph import KnowledgeArchitect
+from core.swarm_io import SwarmIO
 
 class TestKnowledgeGraph(unittest.TestCase):
     def setUp(self):
@@ -31,7 +31,7 @@ class TestKnowledgeGraph(unittest.TestCase):
             if os.path.exists(md_path):
                 os.remove(md_path)
 
-    @patch('knowledge_graph.GeminiCLIWrapper')
+    @patch('core.knowledge_graph.OllamaWrapper')
     def test_build_graph_mock(self, MockWrapper):
         # Mock the Gemini response
         mock_response = MagicMock()
@@ -50,8 +50,8 @@ class TestKnowledgeGraph(unittest.TestCase):
         self.architect.model = mock_instance 
         
         # Run build
-        text = "This is some dummy text."
-        filename = self.architect.build_graph(text, "TestDomain")
+        with patch.object(self.architect, 'ingest_file', return_value="This is some dummy text."):
+            filename = self.architect.build_graph(["dummy.md"], "TestDomain")
         
         # Verify file created
         filepath = os.path.join(SwarmIO.KG_DIR, filename)
@@ -74,7 +74,7 @@ class TestKnowledgeGraph(unittest.TestCase):
         self.assertEqual(len(result["children"]), 2)
         self.assertEqual(result["children"][0]["id"], "c1")
 
-    @patch('knowledge_graph.GeminiCLIWrapper')
+    @patch('core.knowledge_graph.OllamaWrapper')
     def test_enrich_system_prompt_mock(self, MockWrapper):
         # Setup mock
         mock_instance = MockWrapper.return_value

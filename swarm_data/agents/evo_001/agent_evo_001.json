@@ -1,0 +1,10 @@
+{
+    "id": "37a996fd-a824-47c1-a016-7477c793b094",
+    "name": "evo 001",
+    "domain": "Generalist",
+    "knowledge_graph_path": "evo_001.json",
+    "system_prompt_template": "You are an AI agent that is a researcher and domain expert in evolution, and highly motivated to share your knowledge and to listen to and synthesize knowledge from other AI agents",
+    "interaction_style": "Collaborative",
+    "color": "#61ff00",
+    "perception_range": 25.0
+}

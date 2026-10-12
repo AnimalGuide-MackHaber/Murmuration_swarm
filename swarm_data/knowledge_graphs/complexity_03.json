@@ -1,0 +1,156 @@
+{
+  "nodes": {
+    "root": {
+      "label": "Complex Adaptive Systems & Complexity Theory",
+      "summary": "Two highly interrelated knowledge domains exploring complex systems and their behavior.",
+      "type": "concept",
+      "children": [
+        "cas",
+        "complexity_theory"
+      ]
+    },
+    "cas": {
+      "label": "Complex Adaptive Systems (CAS)",
+      "summary": "A school of thought emphasizing crossing disciplinary boundaries and using computer simulation to understand self-organizing dynamics.",
+      "type": "concept",
+      "children": [
+        "cas_characteristics",
+        "cas_background",
+        "cas_applications"
+      ]
+    },
+    "complexity_theory": {
+      "label": "Complexity Theory",
+      "summary": "Focuses on identifying and measuring complexity and its relationship to engineering systems.",
+      "type": "concept",
+      "children": [
+        "complexity_identification",
+        "complexity_measurement",
+        "complexity_engineering"
+      ]
+    },
+    "cas_characteristics": {
+      "label": "CAS Characteristics",
+      "summary": "Common characteristics of Complex Adaptive Systems.",
+      "type": "concept",
+      "children": [
+        "cas_edge_of_chaos",
+        "cas_network_of_agents",
+        "cas_coevolution",
+        "cas_emergent_order",
+        "cas_hierarchical_levels",
+        "cas_unpredictability"
+      ]
+    },
+    "cas_edge_of_chaos": {
+      "label": "Edge of Chaos",
+      "summary": "CAS are balanced between order and anarchy, at the edge of chaos. (Waldrop, 1992)",
+      "type": "fact",
+      "children": []
+    },
+    "cas_network_of_agents": {
+      "label": "Network of Agents",
+      "summary": "CAS are composed of a network of many agents gathering information, learning and acting in parallel. ",
+      "type": "fact",
+      "children": []
+    },
+    "cas_coevolution": {
+      "label": "Coevolution",
+      "summary": "The system co-evolves with its environment.",
+      "type": "fact",
+      "children": []
+    },
+    "cas_emergent_order": {
+      "label": "Emergent Order",
+      "summary": "Order is emergent, instead of pre-determined, always unfolding and always in transition.",
+      "type": "fact",
+      "children": []
+    },
+    "cas_hierarchical_levels": {
+      "label": "Hierarchical Levels",
+      "summary": "CAS tend to exist in many levels of organization.",
+      "type": "fact",
+      "children": []
+    },
+    "cas_unpredictability": {
+      "label": "Unpredictability",
+      "summary": "CAS have a future that is hard to predict.",
+      "type": "fact",
+      "children": []
+    },
+    "cas_background": {
+      "label": "CAS Background",
+      "summary": "The historical roots and development of CAS.",
+      "type": "concept",
+      "children": [
+        "santa_fe_institute",
+        "ilya_prigogine"
+      ]
+    },
+    "santa_fe_institute": {
+      "label": "Santa Fe Institute",
+      "summary": "Founded in the mid-1980s, a think tank that fostered the development of CAS. (Dodder & Dare, 2000)",
+      "type": "fact",
+      "children": []
+    },
+    "ilya_prigogine": {
+      "label": "Ilya Prigogine",
+      "summary": "Belgian Nobel laureate who explored self-organizing structures in nature since the 1960s. (Waldrop, 1992)",
+      "type": "fact",
+      "children": []
+    },
+    "cas_applications": {
+      "label": "CAS Applications",
+      "summary": "Applications of CAS thinking in various disciplines.",
+      "type": "concept",
+      "children": [
+        "cas_physics",
+        "cas_biology",
+        "cas_economics",
+        "cas_political_science"
+      ]
+    },
+    "cas_physics": {
+      "label": "CAS in Physics",
+      "summary": "Exploration of complexity in physics, exemplified by Murray Gell-Mann's work. (Dodder & Dare, 2000)",
+      "type": "concept",
+      "children": []
+    },
+    "cas_biology": {
+      "label": "CAS in Biology",
+      "summary": "Exploration of complexity in biology, exemplified by Stuart Kauffman's work. (Dodder & Dare, 2000)",
+      "type": "concept",
+      "children": []
+    },
+    "cas_economics": {
+      "label": "CAS in Economics",
+      "summary": "Application of complexity to economic systems, focusing on adaptation and nonlinear networks. (Dodder & Dare, 2000)",
+      "type": "concept",
+      "children": []
+    },
+    "cas_political_science": {
+      "label": "CAS in Political Science",
+      "summary": "Application of complexity to political systems, using agent-based models. (Dodder & Dare, 2000)",
+      "type": "concept",
+      "children": []
+    },
+    "complexity_identification": {
+      "label": "Identifying Complexity",
+      "summary": "Recognizing patterns of complexity in systems.",
+      "type": "concept",
+      "children": []
+    },
+    "complexity_measurement": {
+      "label": "Measuring Complexity",
+      "summary": "Approaches to quantifying complexity, considering knowledge and ignorance.",
+      "type": "concept",
+      "children": []
+    },
+    "complexity_engineering": {
+      "label": "Complexity and Engineering Systems",
+      "summary": "Applying complexity theory to engineering systems, focusing on modeling and control.",
+      "type": "concept",
+      "children": []
+    }
+  }
+}

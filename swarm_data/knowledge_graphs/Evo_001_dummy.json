@@ -1,0 +1,25 @@
+{
+  "nodes": {
+    "root": {
+      "label": "Evo_001",
+      "summary": "Root node for Evo_001",
+      "type": "concept",
+      "children": [
+        "c1",
+        "c2"
+      ]
+    },
+    "c1": {
+      "label": "Concept 1",
+      "summary": "First major concept",
+      "type": "concept",
+      "children": []
+    },
+    "c2": {
+      "label": "Concept 2",
+      "summary": "Second major concept",
+      "type": "concept",
+      "children": []
+    }
+  }
+}

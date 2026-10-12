@@ -1,0 +1,2606 @@
+{
+  "nodes": {
+    "root": {
+      "label": "Knowledge Repository",
+      "summary": "A comprehensive collection of technical documentation covering audio engineering, behavioral simulation, team enablement, and evolutionary biology.",
+      "type": "concept",
+      "children": [
+        "astec_root",
+        "moa_framework",
+        "boid_root",
+        "cellular_architecture",
+        "ecological_dynamics",
+        "computational_modeling",
+        "llm_cooperation",
+        "complex_adaptive_systems",
+        "experimental_evaluation",
+        "mycelium_networks",
+        "network_morphology",
+        "evo_root",
+        "transport_mechanisms",
+        "agent_forest",
+        "marl_llm_collaboration",
+        "reward_shaping",
+        "aggregation_mechanisms",
+        "lg_root",
+        "quantitative_analysis",
+        "evolutionary_biology",
+        "uncertainty_estimation",
+        "growth_branching",
+        "water_economy"
+      ]
+    },
+    "lg_root": {
+      "label": "Landscape Granulator",
+      "summary": "An acoustic machine designed as a site of geological acoustic events that fractures signals into microscopic artifacts and rearranges them into tectonic swells or decaying spaces.",
+      "type": "concept",
+      "children": [
+        "lg_arch",
+        "lg_controls",
+        "lg_signal_path",
+        "lg_settings"
+      ]
+    },
+    "lg_arch": {
+      "label": "Landscape Granulator Architecture",
+      "summary": "The underlying system built around an auto-chopping buffer and a multi-stage diffusion network.",
+      "type": "concept",
+      "children": [
+        "lg_arch_fact_1"
+      ]
+    },
+    "lg_arch_fact_1": {
+      "label": "Design Purpose",
+      "summary": "Designed to pull structure apart and build massive sonic ruins from the fragments.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_controls": {
+      "label": "Landscape Granulator Controls",
+      "summary": "The interface used to manipulate the granulator's sonic output.",
+      "type": "concept",
+      "children": [
+        "lg_dials",
+        "lg_ext_control",
+        "lg_switches",
+        "lg_footswitches",
+        "lg_indicators"
+      ]
+    },
+    "lg_dials": {
+      "label": "Control Dials",
+      "summary": "The primary parametric controls for sonic manipulation.",
+      "type": "concept",
+      "children": [
+        "lg_dial_grain_size",
+        "lg_dial_grain_density",
+        "lg_dial_grain_arp",
+        "lg_dial_randomness",
+        "lg_dial_verb_feedback",
+        "lg_dial_dry_wet"
+      ]
+    },
+    "lg_dial_grain_size": {
+      "label": "Grain Size (Scope)",
+      "summary": "Dictates the physical dimension of sonic fragments. Low settings produce microscopic clicks; high settings create long, overlapping tectonic plates of sound.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_dial_grain_density": {
+      "label": "Grain Density (Mass)",
+      "summary": "Controls the population of active fragments. Low settings produce sparse events; high settings create a dense monolith of noise. Density inversely dictates grain lifespan (higher density equals shorter individual lives).",
+      "type": "fact",
+      "children": []
+    },
+    "lg_dial_grain_arp": {
+      "label": "Grain Arp (Concurrence)",
+      "summary": "Forces grains into pitched intervals. Zero results in pure texture; higher settings create chordal structures, arpeggios, or microtonal sequences based on Alignment switch.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_dial_randomness": {
+      "label": "Randomness (Erosion)",
+      "summary": "Introduces entropic jitter. Effects include unpredictable playhead origin, wildly varying grain lifespans, and destabilized looper sequence logic.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_dial_verb_feedback": {
+      "label": "Verb Mix / Master Feedback (Space)",
+      "summary": "Controls depth and intensity of the multi-tap diffusion tank. Pushing past 12 o'clock feeds delayed signals back into themselves, pushing internal filters toward screaming self-oscillation.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_dial_dry_wet": {
+      "label": "Dry / Wet (Surface)",
+      "summary": "Balances uncorrupted input signal against the processed ruin.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_ext_control": {
+      "label": "External Control (EXP)",
+      "summary": "Expression pedal input that simultaneously shifts Grain Size, Grain Arp, and Master Feedback.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_switches": {
+      "label": "Control Switches",
+      "summary": "Three-position switches for Topography, Pulse, and Alignment.",
+      "type": "concept",
+      "children": [
+        "lg_sw_filter",
+        "lg_sw_chop",
+        "lg_sw_arp"
+      ]
+    },
+    "lg_sw_filter": {
+      "label": "Filter (Topography)",
+      "summary": "HPF (Jagged/Brittle), BPF (Hollowed/Vocal), LPF (Subterranean/Warm). Driven by 16 internal LFOs.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_sw_chop": {
+      "label": "Chop (Pulse)",
+      "summary": "Determines how the auto-sampler dices phrases: 1/4 Notes (Slow/Tectonic), 1/8 Notes (Steady), 1/16 Notes (Frantic/Mechanical).",
+      "type": "fact",
+      "children": []
+    },
+    "lg_sw_arp": {
+      "label": "Arp Mode (Alignment)",
+      "summary": "Fifths (Open/Resonant), Chromatic (Densely packed staircase), Custom (Unpredictable microtonal shifting).",
+      "type": "fact",
+      "children": []
+    },
+    "lg_footswitches": {
+      "label": "Footswitches",
+      "summary": "Hands-free control for bypass and looping operations.",
+      "type": "concept",
+      "children": [
+        "lg_fs_bypass",
+        "lg_fs_looper"
+      ]
+    },
+    "lg_fs_bypass": {
+      "label": "Bypass (SW1)",
+      "summary": "Engages or bypasses the entire architecture.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_fs_looper": {
+      "label": "Alt / Looper (SW2)",
+      "summary": "Complex state machine: Short tap on empty buffer starts recording; short tap on recording closes loop for playback; short tap on playing overdub; long press erases timeline.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_indicators": {
+      "label": "Status Indicators",
+      "summary": "LEDs for system state visualization.",
+      "type": "concept",
+      "children": [
+        "lg_led_effect",
+        "lg_led_tempo"
+      ]
+    },
+    "lg_led_effect": {
+      "label": "Effect LED (LED1)",
+      "summary": "Solid when the effect is active.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_led_tempo": {
+      "label": "Tempo & Record LED (LED2)",
+      "summary": "Flashing indicates mechanical pulse; solid indicates active recording or overdubbing.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_signal_path": {
+      "label": "Signal Path",
+      "summary": "The linear sequence of processing stages.",
+      "type": "concept",
+      "children": [
+        "lg_sp_1",
+        "lg_sp_2",
+        "lg_sp_3",
+        "lg_sp_4",
+        "lg_sp_5",
+        "lg_sp_6",
+        "lg_sp_7"
+      ]
+    },
+    "lg_sp_1": {
+      "label": "Input Stage",
+      "summary": "Entry point for raw signal.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_sp_2": {
+      "label": "Auto-Chop Sampler",
+      "summary": "Anchors phrases, locks pulse, and creates foundational loop.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_sp_3": {
+      "label": "Granulator",
+      "summary": "Shatters signal into grains; playback and pitch randomized by entropy settings.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_sp_4": {
+      "label": "VCA / Filter Array",
+      "summary": "Grains swept through 8 panning filters driven by 16 hidden LFOs.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_sp_5": {
+      "label": "Multi-Tap Pre-Delay",
+      "summary": "Filtered ruins bounced across 6 delay lines (249ms to 747ms) to widen space.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_sp_6": {
+      "label": "Diffusion Tank",
+      "summary": "Echoes wash through un-synced allpass diffusers into a dense atmosphere.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_sp_7": {
+      "label": "Stereo Output Stage",
+      "summary": "Hard-panned stereo field merged with uncorrupted input.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_settings": {
+      "label": "Suggested Patch Settings",
+      "summary": "Specific knob configurations for desired sonic outcomes.",
+      "type": "concept",
+      "children": [
+        "lg_patch_glacial",
+        "lg_patch_unstable",
+        "lg_patch_ascendant",
+        "lg_patch_geothermal",
+        "lg_patch_scratched",
+        "lg_patch_memory"
+      ]
+    },
+    "lg_patch_glacial": {
+      "label": "The Glacial",
+      "summary": "Massive, slow-moving tectonic pad. LPF, Quarter notes, Fifths.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_patch_unstable": {
+      "label": "The Unstable",
+      "summary": "Stuttering mechanical breakdown for drums/synths. HPF, Sixteenth notes, Custom Arp.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_patch_ascendant": {
+      "label": "The Ascendant",
+      "summary": "Cascading pitched-up shimmer. BPF, Eighth notes, Chromatic Arp.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_patch_geothermal": {
+      "label": "The Geothermal",
+      "summary": "Saturated sub-harmonics on the edge of chaos. LPF, Quarter notes, Custom Arp.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_patch_scratched": {
+      "label": "The Scratched",
+      "summary": "Brittle icy textures for ambient guitar. HPF, Eighth notes, Fifths.",
+      "type": "fact",
+      "children": []
+    },
+    "lg_patch_memory": {
+      "label": "The Memory",
+      "summary": "Mutated, degraded artifacts via looper. BPF, Sixteenth notes, Chromatic Arp.",
+      "type": "fact",
+      "children": []
+    },
+    "boid_root": {
+      "label": "Boids / Distributed Behavioral Model",
+      "summary": "A simulation approach to aggregate motion (flocking) based on the interaction of independent actors following simple local behaviors.",
+      "type": "concept",
+      "children": [
+        "boid_fundamentals",
+        "boid_flight",
+        "boid_behaviors",
+        "boid_perception",
+        "boid_system_tech"
+      ]
+    },
+    "boid_fundamentals": {
+      "label": "Boid Fundamentals",
+      "summary": "The conceptual basis of the boid model relative to other systems.",
+      "type": "concept",
+      "children": [
+        "boid_particle_systems",
+        "boid_actor_model",
+        "boid_behavioral_animation"
+      ]
+    },
+    "boid_particle_systems": {
+      "label": "Relation to Particle Systems",
+      "summary": "Boids are a generalization of particle systems. Unlike dots, boids have full local coordinate systems, orientation, and strong interaction between particles.",
+      "type": "fact",
+      "children": []
+    },
+    "boid_actor_model": {
+      "label": "The Actor Model",
+      "summary": "A computational abstraction combining process, procedure, and state. Boids are implemented as actors (virtual computers) that communicate via message passing.",
+      "type": "fact",
+      "children": []
+    },
+    "boid_behavioral_animation": {
+      "label": "Behavioral Animation",
+      "summary": "Modeling the behavior of a character rather than scripting paths. The animator becomes a 'meta-animator' or theatrical director designing behavior.",
+      "type": "fact",
+      "children": []
+    },
+    "boid_flight": {
+      "label": "Geometric Flight",
+      "summary": "The physical simulation of movement along a 3D curve.",
+      "type": "concept",
+      "children": [
+        "boid_flight_mechanics",
+        "boid_banking",
+        "boid_momentum"
+      ]
+    },
+    "boid_flight_mechanics": {
+      "label": "Flight Mechanics",
+      "summary": "Incremental translations along the local Z axis (forward), intermixed with pitch (X-axis rotation) and yaw (Y-axis rotation).",
+      "type": "fact",
+      "children": []
+    },
+    "boid_banking": {
+      "label": "Banking",
+      "summary": "Rotation about the local Z axis. Aligns the local Y axis with the total acceleration vector (lateral and gravitational). Coordinated turns match viewer expectations of flight.",
+      "type": "fact",
+      "children": []
+    },
+    "boid_momentum": {
+      "label": "Conservation of Momentum",
+      "summary": "Includes viscous speed damping (max speed limit) and maximum acceleration truncation to ensure smooth heading and speed changes.",
+      "type": "fact",
+      "children": []
+    },
+    "boid_behaviors": {
+      "label": "Flocking Behaviors",
+      "summary": "The three primary rules that create aggregate motion, listed in order of precedence.",
+      "type": "concept",
+      "children": [
+        "boid_beh_collision",
+        "boid_beh_velocity",
+        "boid_beh_centering",
+        "boid_beh_arbitration"
+      ]
+    },
+    "boid_beh_collision": {
+      "label": "Collision Avoidance",
+      "summary": "The highest priority rule: steer away from imminent impact based on relative position of flockmates.",
+      "type": "fact",
+      "children": []
+    },
+    "boid_beh_velocity": {
+      "label": "Velocity Matching",
+      "summary": "The predictive version of collision avoidance: attempt to match the heading and speed of nearby flockmates to maintain invariant separation.",
+      "type": "fact",
+      "children": []
+    },
+    "boid_beh_centering": {
+      "label": "Flock Centering",
+      "summary": "The urge to move toward the centroid of nearby flockmates. This allow flocks to bifurcate around obstacles.",
+      "type": "fact",
+      "children": []
+    },
+    "boid_beh_arbitration": {
+      "label": "Behavioral Arbitration",
+      "summary": "Requests are processed via prioritized acceleration allocation. Acceleration is parceled out to satisfy high-priority needs first; if the maximum acceleration is reached, lower-priority behaviors are ignored.",
+      "type": "fact",
+      "children": []
+    },
+    "boid_perception": {
+      "label": "Simulated Perception",
+      "summary": "How boids access environmental data to mimic biological limitations.",
+      "type": "concept",
+      "children": [
+        "boid_perc_locality",
+        "boid_perc_weighting",
+        "boid_perc_obstacles"
+      ]
+    },
+    "boid_perc_locality": {
+      "label": "Localized Perception",
+      "summary": "Neighborhoods are defined as spherical zones of sensitivity centered at the boid's origin. Sensitivity is an inverse exponential of distance.",
+      "type": "fact",
+      "children": []
+    },
+    "boid_perc_weighting": {
+      "label": "Distance Weighting",
+      "summary": "The model uses an inverse square of the distance (gravity-like) to determine influence, correlating with biological findings (visual angle and pressure waves).",
+      "type": "fact",
+      "children": []
+    },
+    "boid_perc_obstacles": {
+      "label": "Obstacle Avoidance",
+      "summary": "Steer-to-avoid: The boid finds the silhouette edge of an obstacle on its Z-axis and aims for a point one body length beyond that edge.",
+      "type": "fact",
+      "children": []
+    },
+    "boid_system_tech": {
+      "label": "System Technical Specifications",
+      "summary": "Computational details of the simulation.",
+      "type": "concept",
+      "children": [
+        "boid_tech_complexity",
+        "boid_tech_env"
+      ]
+    },
+    "boid_tech_complexity": {
+      "label": "Algorithmic Complexity",
+      "summary": "The naive implementation is O(N^2). To achieve constant time, spatial partitioning (bins) or incremental collision detection is required.",
+      "type": "fact",
+      "children": []
+    },
+    "boid_tech_env": {
+      "label": "Computing Environment",
+      "summary": "Written in Symbolics Common Lisp using Flavors (OO extensions), running on a Symbolics 3600 Lisp Machine with S-Geometry and S-Dynamics.",
+      "type": "fact",
+      "children": []
+    },
+    "astec_root": {
+      "label": "ASTEC\u2122 Engagement Cycle\u2122",
+      "summary": "An orientation for thoughtful team enablement moving through Awareness, Sense, Think, and Enable, surrounded by Celebration.",
+      "type": "concept",
+      "children": [
+        "astec_awareness",
+        "astec_sense",
+        "astec_think",
+        "astec_enable",
+        "astec_celebration",
+        "astec_transitions"
+      ]
+    },
+    "astec_awareness": {
+      "label": "Awareness",
+      "summary": "Disciplined observation without intervention. Focused on noticing patterns, energy, and timing without trying to influence or explain.",
+      "type": "concept",
+      "children": [
+        "astec_aw_stance",
+        "astec_aw_discipline"
+      ]
+    },
+    "astec_aw_stance": {
+      "label": "Awareness Stance",
+      "summary": "Present, open, and non-reactive. Notice influence without reacting to it.",
+      "type": "fact",
+      "children": []
+    },
+    "astec_aw_discipline": {
+      "label": "Awareness Discipline",
+      "summary": "Avoid early exits such as explaining, reframing, offering reassurance, or naming causes before patterns stabilize.",
+      "type": "fact",
+      "children": []
+    },
+    "astec_sense": {
+      "label": "Sense",
+      "summary": "Meaning-making without blame. Hypothesizing on the drivers of observed system behavior.",
+      "type": "concept",
+      "children": [
+        "astec_se_stance",
+        "astec_se_method"
+      ]
+    },
+    "astec_se_stance": {
+      "label": "Sense Stance",
+      "summary": "Sense-making, not judgment. Form working hypotheses, not conclusions.",
+      "type": "fact",
+      "children": []
+    },
+    "astec_se_method": {
+      "label": "Sense-making Method",
+      "summary": "Integrate across perspectives, hold contradictions, and notice where stories diverge without privileging the loudest narrative.",
+      "type": "fact",
+      "children": []
+    },
+    "astec_think": {
+      "label": "Think",
+      "summary": "Intentional, disciplined decision-making regarding what deserves action and what should be left alone.",
+      "type": "concept",
+      "children": [
+        "astec_th_stance",
+        "astec_th_restraint",
+        "astec_th_ownership"
+      ]
+    },
+    "astec_th_stance": {
+      "label": "Think Stance",
+      "summary": "Intentional, thoughtful, and disciplined. Guard against 'heroics' (rescuing) and 'urgency traps'.",
+      "type": "fact",
+      "children": []
+    },
+    "astec_th_restraint": {
+      "label": "Active Restraint",
+      "summary": "Choosing a smaller move over sweeping change or allowing discomfort to persist to protect the system's learning capacity.",
+      "type": "fact",
+      "children": []
+    },
+    "astec_th_ownership": {
+      "label": "Ownership Constraint",
+      "summary": "Crucial question: 'Who will own this once I step back?' If the answer is 'me', the move does not belong in Enable.",
+      "type": "fact",
+      "children": []
+    },
+    "astec_enable": {
+      "label": "Enable",
+      "summary": "Action without control. Changing conditions so the system can respond differently.",
+      "type": "concept",
+      "children": [
+        "astec_en_stance",
+        "astec_en_conditions",
+        "astec_en_coaching"
+      ]
+    },
+    "astec_en_stance": {
+      "label": "Enable Stance",
+      "summary": "Light-touch, non-owning. The aim is to be unnecessary later.",
+      "type": "fact",
+      "children": []
+    },
+    "astec_en_conditions": {
+      "label": "Condition Modification",
+      "summary": "Changing decision rights, information flow, handoffs, visibility of risk, or incentives rather than directly changing behavior.",
+      "type": "fact",
+      "children": []
+    },
+    "astec_en_coaching": {
+      "label": "Enablement Coaching",
+      "summary": "Expanding agency by building confidence or inviting new perspectives. Becomes control if it creates dependence on the TEC's judgment.",
+      "type": "fact",
+      "children": []
+    },
+    "astec_celebration": {
+      "label": "Celebration",
+      "summary": "An environment, not a step. Making learning visible and reinforcing ownership without creating dependency.",
+      "type": "concept",
+      "children": [
+        "astec_ce_purpose",
+        "astec_ce_boundary"
+      ]
+    },
+    "astec_ce_purpose": {
+      "label": "Purpose of Celebration",
+      "summary": "Notice what is different. Signals what matters (e.g., improved decision-making, clearer ownership).",
+      "type": "fact",
+      "children": []
+    },
+    "astec_ce_boundary": {
+      "label": "Celebration Boundary",
+      "summary": "Celebration belongs to the system, not the TEC. The TEC is a catalyst, not the source of validation.",
+      "type": "fact",
+      "children": []
+    },
+    "astec_transitions": {
+      "label": "ASTEC Transitions",
+      "summary": "Interior discernment moments to shift attention between phases.",
+      "type": "concept",
+      "children": [
+        "astec_tr_aw_se",
+        "astec_tr_se_th",
+        "astec_tr_th_en"
+      ]
+    },
+    "astec_tr_aw_se": {
+      "label": "Awareness -> Sense",
+      "summary": "Shift from noticing to understanding. Occurs when a pattern is persistent and worth understanding more deeply.",
+      "type": "fact",
+      "children": []
+    },
+    "astec_tr_se_th": {
+      "label": "Sense -> Think",
+      "summary": "Shift from understanding to possibility. Occurs when working hypotheses feel coherent and stable enough to explore.",
+      "type": "fact",
+      "children": []
+    },
+    "astec_tr_th_en": {
+      "label": "Think -> Enable",
+      "summary": "Shift from possibility to movement. Occurs when a well-considered action would help the system work better and continued thinking provides diminishing returns.",
+      "type": "fact",
+      "children": []
+    },
+    "evo_root": {
+      "label": "Evolutionary Biology",
+      "summary": "The study of changes in the gene pool of a population over time, uniting all fields of biology under one theoretical umbrella.",
+      "type": "concept",
+      "children": [
+        "evo_def",
+        "evo_variation",
+        "evo_mechanisms",
+        "evo_lineage"
+      ]
+    },
+    "evo_def": {
+      "label": "Evolutionary Definitions",
+      "summary": "Core terminology for evolutionary processes.",
+      "type": "concept",
+      "children": [
+        "evo_def_evo",
+        "evo_def_gene",
+        "evo_def_pool",
+        "evo_def_phenotype",
+        "evo_def_micro_macro"
+      ]
+    },
+    "evo_def_evo": {
+      "label": "Evolution",
+      "summary": "A change in the gene pool of a population over time. Populations evolve, not individuals.",
+      "type": "fact",
+      "children": []
+    },
+    "evo_def_gene": {
+      "label": "Gene",
+      "summary": "A hereditary unit that can be passed on unaltered for many generations.",
+      "type": "fact",
+      "children": []
+    },
+    "evo_def_pool": {
+      "label": "Gene Pool",
+      "summary": "The set of all genes in a species or population.",
+      "type": "fact",
+      "children": []
+    },
+    "evo_def_phenotype": {
+      "label": "Phenotype",
+      "summary": "The morphological, physiological, biochemical, and behavioral properties exhibited by an organism, determined by genes and environment.",
+      "type": "fact",
+      "children": []
+    },
+    "evo_def_micro_macro": {
+      "label": "Microevolution vs Macroevolution",
+      "summary": "Microevolution involves small changes in gene frequency. Macroevolution involves larger changes, such as the formation of new species.",
+      "type": "fact",
+      "children": []
+    },
+    "evo_variation": {
+      "label": "Genetic Variation",
+      "summary": "The prerequisite for evolution, consisting of allelic diversity and non-random associations.",
+      "type": "concept",
+      "children": [
+        "evo_var_allele",
+        "evo_var_locus",
+        "evo_var_hom_het",
+        "evo_var_linkage"
+      ]
+    },
+    "evo_var_allele": {
+      "label": "Allele",
+      "summary": "An alternate version of a gene created by mutation.",
+      "type": "fact",
+      "children": []
+    },
+    "evo_var_locus": {
+      "label": "Locus",
+      "summary": "The specific location of a gene on a chromosome.",
+      "type": "fact",
+      "children": []
+    },
+    "evo_var_hom_het": {
+      "label": "Homozygous vs Heterozygous",
+      "summary": "Homozygous: an individual with two identical alleles at a locus. Heterozygous: an individual with two different alleles at a locus.",
+      "type": "fact",
+      "children": []
+    },
+    "evo_var_linkage": {
+      "label": "Linkage Disequilibrium",
+      "summary": "The non-random association between alleles of two different genes. Calculated as D = f(A1B1)*f(A2B2) - f(A1B2)*f(A2B1).",
+      "type": "fact",
+      "children": []
+    },
+    "evo_mechanisms": {
+      "label": "Mechanisms of Evolution",
+      "summary": "Processes that either increase or decrease genetic variation.",
+      "type": "concept",
+      "children": [
+        "evo_mech_decrease",
+        "evo_mech_increase"
+      ]
+    },
+    "evo_mech_decrease": {
+      "label": "Variation-Decreasing Mechanisms",
+      "summary": "Processes that remove genetic diversity from the pool.",
+      "type": "concept",
+      "children": [
+        "evo_sel_natural",
+        "evo_sel_balancing",
+        "evo_sel_sexual",
+        "evo_drift"
+      ]
+    },
+    "evo_sel_natural": {
+      "label": "Natural Selection",
+      "summary": "Differential reproductive success of pre-existing genetic variants. It is the only mechanism of adaptive evolution.",
+      "type": "fact",
+      "children": []
+    },
+    "evo_sel_balancing": {
+      "label": "Balancing Selection",
+      "summary": "Selection favoring heterozygotes (e.g., sickle-cell allele maintenance in malaria-prone regions).",
+      "type": "fact",
+      "children": []
+    },
+    "evo_sel_sexual": {
+      "label": "Sexual Selection",
+      "summary": "Natural selection operating on mating success. Includes 'Good Genes' (display as viability signal) and 'Runaway Selection' (positive feedback loop of preference and trait).",
+      "type": "fact",
+      "children": []
+    },
+    "evo_drift": {
+      "label": "Genetic Drift",
+      "summary": "Random change in allele frequencies due to binomial sampling error. Pronounced in small populations; includes the Founder Effect.",
+      "type": "fact",
+      "children": []
+    },
+    "evo_mech_increase": {
+      "label": "Variation-Increasing Mechanisms",
+      "summary": "Processes that introduce new genetic material or combinations.",
+      "type": "concept",
+      "children": [
+        "evo_inc_mutation",
+        "evo_inc_recombination",
+        "evo_inc_gene_flow"
+      ]
+    },
+    "evo_inc_mutation": {
+      "label": "Mutation",
+      "summary": "Errors in DNA copying. Can be point mutations, deletions, insertions, inversions, or duplications. Most are neutral or deleterious; few are beneficial.",
+      "type": "fact",
+      "children": []
+    },
+    "evo_inc_recombination": {
+      "label": "Recombination",
+      "summary": "Gene shuffling during meiosis where homologous chromosomes break and rejoin, creating new combinations of alleles.",
+      "type": "fact",
+      "children": []
+    },
+    "evo_inc_gene_flow": {
+      "label": "Gene Flow",
+      "summary": "Introduction of alleles via migration or horizontal transfer (e.g., P elements in Drosophila via parasitic mites).",
+      "type": "fact",
+      "children": []
+    },
+    "evo_lineage": {
+      "label": "Evolution within a Lineage",
+      "summary": "The macro-scale patterns of common descent and adaptation.",
+      "type": "concept",
+      "children": [
+        "evo_lin_inclusive_fit",
+        "evo_lin_landscape",
+        "evo_lin_exaptation",
+        "evo_lin_common_descent"
+      ]
+    },
+    "evo_lin_inclusive_fit": {
+      "label": "Inclusive Fitness",
+      "summary": "The sum of direct fitness (own offspring) and indirect fitness (alleles passed via relatives). Explains altruistic behavior in kin.",
+      "type": "fact",
+      "children": []
+    },
+    "evo_lin_landscape": {
+      "label": "Adaptive Landscape",
+      "summary": "The model where populations move toward local optima. Transition to global optima may be blocked by less adaptive states.",
+      "type": "fact",
+      "children": []
+    },
+    "evo_lin_exaptation": {
+      "label": "Adaptation vs Exaptation",
+      "summary": "Adaptation: a trait evolved for its current utility. Exaptation: a trait evolved for one purpose but later used for another (e.g., penguin wings).",
+      "type": "fact",
+      "children": []
+    },
+    "evo_lin_common_descent": {
+      "label": "Common Descent",
+      "summary": "The principle that all species descended from a common ancestor. Evolution is a branching tree, not a ladder.",
+      "type": "fact",
+      "children": []
+    },
+    "evolutionary_biology": {
+      "label": "Evolutionary Biology",
+      "summary": "The study of biological populations, common ancestry, and the processes of modification with descent.",
+      "type": "concept",
+      "children": [
+        "macroevolution_evidence",
+        "molecular_genetics",
+        "speciation_extinction",
+        "history_of_life",
+        "punctuated_equilibrium"
+      ]
+    },
+    "macroevolution_evidence": {
+      "label": "Evidence for Macroevolution",
+      "summary": "Fields of study providing empirical evidence for common ancestry and modification with descent.",
+      "type": "concept",
+      "children": [
+        "biochemical_genetic_evidence",
+        "developmental_biology_evidence",
+        "biogeography_evidence",
+        "morphology_anatomy_evidence",
+        "fossil_record_evidence"
+      ]
+    },
+    "biochemical_genetic_evidence": {
+      "label": "Biochemical and Genetic Evidence",
+      "summary": "Evidence derived from gene sequences and molecular similarity between species.",
+      "type": "concept",
+      "children": [
+        "fact_gene_similarity",
+        "fact_nucleotide_divergence"
+      ]
+    },
+    "fact_gene_similarity": {
+      "label": "Gene Sequence Similarity",
+      "summary": "Closely related species have similar gene sequences; redundancy in nucleotides and positions of introns/pseudogenes are inherited from common ancestors. [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_nucleotide_divergence": {
+      "label": "Divergence Time and Rates",
+      "summary": "Sequence similarity is a function of divergence time. Silent sites evolve faster (4.61 per 10^9 years) than replacement sites (0.85 per 10^9 years). [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "molecular_genetics": {
+      "label": "Molecular Genetics",
+      "summary": "The technical basis of genetic material, transcription, and translation.",
+      "type": "concept",
+      "children": [
+        "genetic_material",
+        "protein_synthesis",
+        "genomic_structures"
+      ]
+    },
+    "genetic_material": {
+      "label": "Genetic Material",
+      "summary": "The chemical composition of heredity.",
+      "type": "concept",
+      "children": [
+        "fact_dna_composition",
+        "fact_rna_composition"
+      ]
+    },
+    "fact_dna_composition": {
+      "label": "DNA Composition",
+      "summary": "DNA consists of nucleotides: Adenine (A), Guanine (G), Cytosine (C), and Thymine (T). [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_rna_composition": {
+      "label": "RNA Composition",
+      "summary": "Similar to DNA but uses Uracil (U) instead of Thymine (T). [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "protein_synthesis": {
+      "label": "Protein Synthesis",
+      "summary": "The process of turning genetic code into functional proteins.",
+      "type": "concept",
+      "children": [
+        "fact_codon_definition",
+        "fact_transcription_translation"
+      ]
+    },
+    "fact_codon_definition": {
+      "label": "Codons",
+      "summary": "Blocks of three nucleotides designating an amino acid. There are 64 codons for 20 amino acids, leading to redundancy. [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_transcription_translation": {
+      "label": "Transcription and Translation",
+      "summary": "Genes are transcribed into messenger RNA (mRNA), which is translated by ribosomes into amino acid strings (proteins). [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "genomic_structures": {
+      "label": "Genomic Structures",
+      "summary": "Non-coding and specialized regions of the genome.",
+      "type": "concept",
+      "children": [
+        "fact_pseudogenes",
+        "fact_introns_exons",
+        "fact_silent_replacement_sites"
+      ]
+    },
+    "fact_pseudogenes": {
+      "label": "Pseudogenes",
+      "summary": "Inactivated copies of working genes that evolve faster because mutations do not affect organism fitness. [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_introns_exons": {
+      "label": "Introns and Exons",
+      "summary": "Exons are coding portions; Introns are non-coding sequences spliced out of mRNA before translation. [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_silent_replacement_sites": {
+      "label": "Silent vs. Replacement Sites",
+      "summary": "Silent sites are nucleotide positions that can change without altering the protein sequence; replacement sites cause amino acid substitution. [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "speciation_extinction": {
+      "label": "Speciation and Extinction",
+      "summary": "Processes that increase and decrease biological diversity.",
+      "type": "concept",
+      "children": [
+        "speciation_modes",
+        "extinction_types"
+      ]
+    },
+    "speciation_modes": {
+      "label": "Modes of Speciation",
+      "summary": "The geographical and reproductive mechanisms of species divergence.",
+      "type": "concept",
+      "children": [
+        "fact_allopatric_speciation",
+        "fact_sympatric_speciation"
+      ]
+    },
+    "fact_allopatric_speciation": {
+      "label": "Allopatric Speciation",
+      "summary": "Occurs when populations are split by geographical isolation, leading to independent gene pool changes. [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_sympatric_speciation": {
+      "label": "Sympatric Speciation",
+      "summary": "Reproductive isolation occurs without geographical isolation (e.g., apple maggot fly Rhagolettis pomenella switching host plants). [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "extinction_types": {
+      "label": "Types of Extinction",
+      "summary": "The removal of species from the biosphere.",
+      "type": "concept",
+      "children": [
+        "fact_ordinary_extinction",
+        "fact_mass_extinction"
+      ]
+    },
+    "fact_ordinary_extinction": {
+      "label": "Ordinary Extinction",
+      "summary": "Caused by competitive exclusion, habitat loss, or prey defense. [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_mass_extinction": {
+      "label": "Mass Extinction",
+      "summary": "Catastrophic events wiping out many groups, followed by radiation. Examples: Permian (250mya) and K/T Boundary (65mya). [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "punctuated_equilibrium": {
+      "label": "Punctuated Equilibrium",
+      "summary": "Theory by Eldredge and Gould suggesting evolution consists of long stasis interrupted by rapid change during speciation. [TalkOrigins]",
+      "type": "concept",
+      "children": [
+        "fact_species_selection"
+      ]
+    },
+    "fact_species_selection": {
+      "label": "Species Selection",
+      "summary": "The hypothesis that selection acts upon species as units, analogous to natural selection acting on alleles. [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "history_of_life": {
+      "label": "History of Life",
+      "summary": "Chronological development of life on Earth.",
+      "type": "concept",
+      "children": [
+        "rna_world",
+        "biological_lineages",
+        "photosynthesis_evolution",
+        "endosymbiosis"
+      ]
+    },
+    "rna_world": {
+      "label": "RNA World Hypothesis",
+      "summary": "The theory that the first replicating molecules were RNA, which acted as both genetic material and catalysts (polymerases). [TalkOrigins]",
+      "type": "concept",
+      "children": []
+    },
+    "biological_lineages": {
+      "label": "Major Lineages",
+      "summary": "The primary divisions of life.",
+      "type": "concept",
+      "children": [
+        "fact_prokaryotes",
+        "fact_archaebacteria",
+        "fact_eukaryotes"
+      ]
+    },
+    "fact_prokaryotes": {
+      "label": "Prokaryotes",
+      "summary": "Ordinary bacteria; earliest fossils (stromatolites) date to 3.5 billion years ago. [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_archaebacteria": {
+      "label": "Archaebacteria",
+      "summary": "Thermophilic, methanogenic, and halophilic bacteria closely related to eukaryotes. [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_eukaryotes": {
+      "label": "Eukaryotes",
+      "summary": "Organisms with nucleus and organelles, including protists, fungi, plants, and animals. [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "photosynthesis_evolution": {
+      "label": "Evolution of Photosynthesis",
+      "summary": "Development of light-harvesting systems.",
+      "type": "concept",
+      "children": [
+        "fact_psi_anoxygenic",
+        "fact_psii_oxygenic"
+      ]
+    },
+    "fact_psi_anoxygenic": {
+      "label": "Photosystem I (PSI)",
+      "summary": "Early system converting CO2 and H2S to glucose, releasing sulfur. [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_psii_oxygenic": {
+      "label": "Photosystem II (PSII)",
+      "summary": "Later system converting CO2 and H2O to glucose, releasing oxygen; led to the 'Oxygen Holocaust'. [TalkOrigins]",
+      "type": "fact",
+      "children": []
+    },
+    "endosymbiosis": {
+      "label": "Endosymbiotic Theory",
+      "summary": "Theory championed by Lynn Margulis that mitochondria and chloroplasts originated as engulfed free-living bacteria. [TalkOrigins]",
+      "type": "concept",
+      "children": []
+    },
+    "complex_adaptive_systems": {
+      "label": "Complex Adaptive Systems (CAS)",
+      "summary": "Systems with independent components interacting locally to produce emergent global behavior.",
+      "type": "concept",
+      "children": [
+        "cas_definition",
+        "systems_thinking",
+        "agent_based_modeling",
+        "systems_dynamics",
+        "sugarscape_simulation"
+      ]
+    },
+    "cas_definition": {
+      "label": "CAS Definition",
+      "summary": "A system of independent simple components interacting nonlinearly, exhibiting self-organization without central control, yielding emergent behavior. [Abbott/Had\u017eikadi\u0107]",
+      "type": "concept",
+      "children": [
+        "fact_agents_definition",
+        "fact_aggregation"
+      ]
+    },
+    "fact_agents_definition": {
+      "label": "Agents",
+      "summary": "The smallest unit of organization in a CAS, governed by simple stimulus-response rules. [Abbott/Had\u017eikadi\u0107]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_aggregation": {
+      "label": "Aggregation",
+      "summary": "The process where agents combine to produce emergent behaviors, forming 'aggregate agents' which further group into larger CAS. [Abbott/Had\u017eikadi\u0107]",
+      "type": "fact",
+      "children": []
+    },
+    "systems_thinking": {
+      "label": "Systems Thinking",
+      "summary": "Approach studying interdependent component systems (system of systems) and global state changes. [Abbott/Had\u017eikadi\u0107]",
+      "type": "concept",
+      "children": [
+        "fact_goal_seeking_behavior",
+        "fact_purposeful_behavior"
+      ]
+    },
+    "fact_goal_seeking_behavior": {
+      "label": "Goal-Seeking Behavior",
+      "summary": "Component systems producing a single fixed response (uni-minded) in a single environment. [Abbott/Had\u017eikadi\u0107]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_purposeful_behavior": {
+      "label": "Purposeful Behavior",
+      "summary": "Component systems producing multiple varied responses to multiple stimuli (multi-minded), providing high potential for novel emergence. [Abbott/Had\u017eikadi\u0107]",
+      "type": "fact",
+      "children": []
+    },
+    "agent_based_modeling": {
+      "label": "Agent-Based Modeling (ABM)",
+      "summary": "Computational representation of agents and their interactions with the environment to explore emergent behavior. [Abbott/Had\u017eikadi\u0107]",
+      "type": "concept",
+      "children": [
+        "fact_internal_model",
+        "fact_abm_characteristics"
+      ]
+    },
+    "fact_internal_model": {
+      "label": "Internal Model",
+      "summary": "The mechanism used by an agent to issue a response and 'learn' new rules through interaction. [Abbott/Had\u017eikadi\u0107]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_abm_characteristics": {
+      "label": "ABM Characteristics",
+      "summary": "Sensitive to initial conditions; used when systems are NP-Hard/NP-Complete and analytical equations are intractable. [Abbott/Had\u017eikadi\u0107]",
+      "type": "fact",
+      "children": []
+    },
+    "systems_dynamics": {
+      "label": "Systems Dynamics (SD)",
+      "summary": "Modeling method using state variables and systems of difference equations. [Abbott/Had\u017eikadi\u0107]",
+      "type": "concept",
+      "children": [
+        "causal_loop_diagramming"
+      ]
+    },
+    "causal_loop_diagramming": {
+      "label": "Causal Loop Diagramming (CLD)",
+      "summary": "Visual description of system interactions using reinforcing (positive) and balancing (negative) feedback loops. [Abbott/Had\u017eikadi\u0107]",
+      "type": "concept",
+      "children": []
+    },
+    "sugarscape_simulation": {
+      "label": "Sugarscape Simulation",
+      "summary": "A social simulation model following rules for agents in a resource grid. [Sugarscape]",
+      "type": "concept",
+      "children": [
+        "sugarscape_rules",
+        "sugarscape_emergence"
+      ]
+    },
+    "sugarscape_rules": {
+      "label": "Sugarscape Rules",
+      "summary": "The behavioral logic of the simulation.",
+      "type": "concept",
+      "children": [
+        "fact_movement_rule",
+        "fact_reproduction_rule",
+        "fact_trading_rule",
+        "fact_lending_rule"
+      ]
+    },
+    "fact_movement_rule": {
+      "label": "Movement Rule (M)",
+      "summary": "Agents look in 4 directions up to 'vision' distance and move to the vacant patch with highest sugar. [Sugarscape]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_reproduction_rule": {
+      "label": "Reproduction Rule (S)",
+      "summary": "Fertile agents of opposite sex adjacent to an empty patch deplete sugar to create a new agent. [Sugarscape]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_trading_rule": {
+      "label": "Trading Rule (T)",
+      "summary": "Agents trade resources based on Marginal Rate of Substitution (MRS) to increase welfare. [Sugarscape]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_lending_rule": {
+      "label": "Lending Rule (L)",
+      "summary": "Wealthy agents lend sugar to fertile borrowers for reproduction at a specific interest rate. [Sugarscape]",
+      "type": "fact",
+      "children": []
+    },
+    "sugarscape_emergence": {
+      "label": "Emergent Phenomena in Sugarscape",
+      "summary": "Complex outcomes resulting from simple local rules.",
+      "type": "concept",
+      "children": [
+        "fact_terracing",
+        "fact_migration_waves",
+        "fact_social_hierarchy"
+      ]
+    },
+    "fact_terracing": {
+      "label": "Terracing",
+      "summary": "Agents gathering on borders of sugar regions when growback rate is high. [Sugarscape]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_migration_waves": {
+      "label": "Migration Waves",
+      "summary": "Populations propagating diagonally across the grid, a behavior not present in individual agents. [Sugarscape]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_social_hierarchy": {
+      "label": "Social Hierarchy",
+      "summary": "Emergence of distinct classes: lenders (top), lender/borrowers, and borrowers (bottom). [Sugarscape]",
+      "type": "fact",
+      "children": []
+    },
+    "marl_llm_collaboration": {
+      "label": "MARL for LLM Collaboration",
+      "summary": "Using Multi-Agent Reinforcement Learning to optimize coordination between Large Language Models.",
+      "type": "concept",
+      "children": [
+        "dec_pomdp_formalism",
+        "posg_comparison",
+        "magrpo_algorithm",
+        "collaboration_applications"
+      ]
+    },
+    "dec_pomdp_formalism": {
+      "label": "Dec-POMDP Formalism",
+      "summary": "Decentralized Partially Observable Markov Decision Process used to model cooperative LLM collaboration. [Liu et al.]",
+      "type": "concept",
+      "children": [
+        "fact_dec_pomdp_tuple"
+      ]
+    },
+    "fact_dec_pomdp_tuple": {
+      "label": "Dec-POMDP Tuple",
+      "summary": "Defined by <I, S, {Oi}, {Ai}, R, T, H>: I(agents), S(global state), Oi(observation space), Ai(action space), R(joint reward), T(transition function), H(horizon). [Liu et al.]",
+      "type": "fact",
+      "children": []
+    },
+    "posg_comparison": {
+      "label": "POSG Comparison",
+      "summary": "Comparison between Dec-POMDP and Partially Observable Stochastic Games.",
+      "type": "concept",
+      "children": [
+        "fact_posg_nash_equilibrium",
+        "fact_posg_suboptimality"
+      ]
+    },
+    "fact_posg_nash_equilibrium": {
+      "label": "POSG Nash Equilibrium",
+      "summary": "In POSG, agents maximize individual returns; a Nash Equilibrium (NE) occurs when no agent can unilaterally improve their return. [Liu et al.]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_posg_suboptimality": {
+      "label": "POSG Suboptimality",
+      "summary": "Nash Equilibria in POSGs may lead to collective utilities that are suboptimal compared to the joint optimum. [Liu et al.]",
+      "type": "fact",
+      "children": []
+    },
+    "magrpo_algorithm": {
+      "label": "MAGRPO Algorithm",
+      "summary": "Multi-Agent Group Relative Policy Optimization for joint training of LLMs with decentralized execution. [Liu et al.]",
+      "type": "concept",
+      "children": [
+        "fact_magrpo_mechanism",
+        "fact_group_relative_advantage"
+      ]
+    },
+    "fact_magrpo_mechanism": {
+      "label": "MAGRPO Mechanism",
+      "summary": "Combines centralized group-relative advantages for optimization with decentralized execution for efficiency. [Liu et al.]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_group_relative_advantage": {
+      "label": "Group Relative Advantage",
+      "summary": "Estimates the return of a history by averaging over a group of Monte Carlo samples to stabilize training without a large value model. [Liu et al.]",
+      "type": "fact",
+      "children": []
+    },
+    "collaboration_applications": {
+      "label": "Collaboration Applications",
+      "summary": "Practical uses of MARL-tuned LLMs.",
+      "type": "concept",
+      "children": [
+        "writing_collaboration",
+        "coding_collaboration"
+      ]
+    },
+    "writing_collaboration": {
+      "label": "Writing Collaboration",
+      "summary": "Tasks involving TLDR summarization and arXiv abstract expansion. [Liu et al.]",
+      "type": "concept",
+      "children": [
+        "fact_writing_metrics"
+      ]
+    },
+    "fact_writing_metrics": {
+      "label": "Writing Evaluation Metrics",
+      "summary": "Quality measured by Structure (length ratios), Style Consistency (Jaccard similarity), and Logical Coherence (transition word counts). [Liu et al.]",
+      "type": "fact",
+      "children": []
+    },
+    "coding_collaboration": {
+      "label": "Coding Collaboration",
+      "summary": "Collaborative generation of Python functions using a main generator and a helper agent. [Liu et al.]",
+      "type": "concept",
+      "children": [
+        "fact_human_eval_che",
+        "fact_coding_reward_levels"
+      ]
+    },
+    "fact_human_eval_che": {
+      "label": "HumanEval and CoopHumanEval",
+      "summary": "CHE is a dataset constructed from HE specifically for problems with cooperative potential. [Liu et al.]",
+      "type": "fact",
+      "children": []
+    },
+    "fact_coding_reward_levels": {
+      "label": "Coding Reward Hierarchy",
+      "summary": "Rewards are level-based: Structural Integrity -> Syntactic Correctness -> Test Pass Rate -> Cooperation Quality Bonus. [Liu et al.]",
+      "type": "fact",
+      "children": []
+    },
+    "llm_cooperation": {
+      "label": "Multi-Agent LLM Cooperation (MAGRPO)",
+      "summary": "A framework for training LLMs to collaborate using Multi-Agent Reinforcement Learning (MARL) and GRPO, specifically focusing on coding and writing tasks.",
+      "type": "concept",
+      "children": [
+        "magrpo_metrics",
+        "cooperation_schemes",
+        "learning_modes",
+        "reward_specifications",
+        "prompt_design"
+      ]
+    },
+    "magrpo_metrics": {
+      "label": "Evaluation Metrics (@k)",
+      "summary": "Metrics used to evaluate LLM capacity by measuring the best outcome among k generated solutions to reduce variance.",
+      "type": "concept",
+      "children": [
+        "pass_at_k",
+        "acc_at_k",
+        "coop_at_k"
+      ]
+    },
+    "pass_at_k": {
+      "label": "Pass@k",
+      "summary": "The probability that at least one out of k generated solutions passes all test cases.",
+      "type": "concept",
+      "children": [
+        "pass_at_k_fact"
+      ]
+    },
+    "pass_at_k_fact": {
+      "label": "Pass@k Definition",
+      "summary": "Calculated as 1/|D| * sum(E[max p in P 1(npass = nj)]), where 1 is the indicator function for all tests passing.",
+      "type": "fact",
+      "children": []
+    },
+    "acc_at_k": {
+      "label": "Accuracy@k (Acc@k)",
+      "summary": "The highest test accuracy (passed tests / total tests) among k generated solutions, averaged across all problems.",
+      "type": "concept",
+      "children": [
+        "acc_at_k_fact"
+      ]
+    },
+    "acc_at_k_fact": {
+      "label": "Acc@k Definition",
+      "summary": "Provides a fine-grained assessment compared to Pass@k by treating functional correctness as a continuous variable (npass/nj).",
+      "type": "fact",
+      "children": []
+    },
+    "coop_at_k": {
+      "label": "Cooperation@k (Coop@k)",
+      "summary": "The average of the highest normalized cooperation return achieved among k runs across all problems.",
+      "type": "concept",
+      "children": [
+        "coop_at_k_fact"
+      ]
+    },
+    "coop_at_k_fact": {
+      "label": "Coop@k Definition",
+      "summary": "Defined as Rcoop = H^-1 * sum(rcoop_p,t from t=0 to H-1), representing normalized return over horizon H.",
+      "type": "fact",
+      "children": []
+    },
+    "cooperation_schemes": {
+      "label": "Emergent Cooperation Schemes",
+      "summary": "Naturally emerging interaction patterns between auxiliary and main agents under minimal constraints.",
+      "type": "concept",
+      "children": [
+        "fallback_scheme",
+        "decorator_scheme",
+        "coordinator_scheme",
+        "strategy_filter_scheme"
+      ]
+    },
+    "fallback_scheme": {
+      "label": "Fallback Scheme",
+      "summary": "The main agent implements a secondary solution as a backup in case the auxiliary function causes runtime errors.",
+      "type": "concept",
+      "children": [
+        "fallback_fact"
+      ]
+    },
+    "fallback_fact": {
+      "label": "Fallback Utility",
+      "summary": "Benefits smaller models prone to syntax and runtime errors by enhancing code robustness.",
+      "type": "fact",
+      "children": []
+    },
+    "decorator_scheme": {
+      "label": "Decorator Scheme",
+      "summary": "The main agent trusts the auxiliary agent's core logic and adds complementary features like edge case handling or output reformatting.",
+      "type": "concept",
+      "children": [
+        "decorator_fact"
+      ]
+    },
+    "decorator_fact": {
+      "label": "Decorator Utility",
+      "summary": "Necessity depends on the auxiliary agent's completeness; can become redundant if the auxiliary agent already handles edge cases.",
+      "type": "fact",
+      "children": []
+    },
+    "coordinator_scheme": {
+      "label": "Coordinator Scheme",
+      "summary": "The main agent divides tasks into parts (e.g., using a for-loop iterator) and assigns subtasks to the auxiliary agent.",
+      "type": "concept",
+      "children": [
+        "coordinator_fact"
+      ]
+    },
+    "coordinator_fact": {
+      "label": "Coordinator Stability",
+      "summary": "Unstable because the entire solution fails if the auxiliary agent fails a single subtask.",
+      "type": "fact",
+      "children": []
+    },
+    "strategy_filter_scheme": {
+      "label": "Strategy Filter Scheme",
+      "summary": "The auxiliary agent acts as a filter for specific logic branches, typically appearing within conditional blocks (if statements).",
+      "type": "concept",
+      "children": [
+        "strategy_filter_fact"
+      ]
+    },
+    "strategy_filter_fact": {
+      "label": "Strategy Filter Utility",
+      "summary": "Resembles adaptive control flow in software pipelines, enhancing modularity by evaluating preconditions.",
+      "type": "fact",
+      "children": []
+    },
+    "learning_modes": {
+      "label": "MAGRPO Learning Modes",
+      "summary": "Different methods of training agents to improve cooperative behavior.",
+      "type": "concept",
+      "children": [
+        "self_improvement_mode",
+        "guided_learning_mode"
+      ]
+    },
+    "self_improvement_mode": {
+      "label": "Self-Improvement Mode",
+      "summary": "Agents interact with tasks using only previous turn prompts and responses without external feedback.",
+      "type": "concept",
+      "children": [
+        "self_improvement_fact"
+      ]
+    },
+    "self_improvement_fact": {
+      "label": "Self-Improvement Outcome",
+      "summary": "Learning is primarily driven by direct task interaction; second-turn performance remains similar to first-turn.",
+      "type": "fact",
+      "children": []
+    },
+    "guided_learning_mode": {
+      "label": "Guided-Learning Mode",
+      "summary": "Agents leverage external feedback (e.g., expert agents, static checkers like AST, sandbox tests) to refine responses.",
+      "type": "concept",
+      "children": [
+        "guided_learning_fact"
+      ]
+    },
+    "guided_learning_fact": {
+      "label": "Guided-Learning Outcome",
+      "summary": "Second-turn performance exceeds first-turn and outperforms self-improvement, indicating guidance is more efficient for refinement.",
+      "type": "fact",
+      "children": []
+    },
+    "reward_specifications": {
+      "label": "Reward Specifications",
+      "summary": "Hierarchical reward modeling schemes used to prioritize fundamental objectives across different tasks.",
+      "type": "concept",
+      "children": [
+        "writing_rewards",
+        "coding_rewards"
+      ]
+    },
+    "writing_rewards": {
+      "label": "Writing Collaboration Rewards",
+      "summary": "Rewards for TLDR Summarization and arXiv Expansion.",
+      "type": "concept",
+      "children": [
+        "structural_wellness_writing",
+        "style_consistency_writing",
+        "logical_coherence_writing"
+      ]
+    },
+    "structural_wellness_writing": {
+      "label": "Structural Wellness (Writing)",
+      "summary": "Assessed via paragraph length ratios and unique word ratios (excluding stopwords).",
+      "type": "fact",
+      "children": []
+    },
+    "style_consistency_writing": {
+      "label": "Style Consistency (Writing)",
+      "summary": "Measured via Jaccard similarity of vocabulary between completions, capped at 0.03 for TLDR.",
+      "type": "fact",
+      "children": []
+    },
+    "logical_coherence_writing": {
+      "label": "Logical Coherence (Writing)",
+      "summary": "Evaluated by the presence and diversity of transition words across 12 categories; r = min(0.6 log(n + 1), 1).",
+      "type": "fact",
+      "children": []
+    },
+    "coding_rewards": {
+      "label": "Coding Collaboration Rewards",
+      "summary": "Rewards focused on functional and structural correctness of code.",
+      "type": "concept",
+      "children": [
+        "structural_integrity_coding",
+        "syntactical_correctness_coding",
+        "test_pass_rate_coding",
+        "cooperation_quality_coding"
+      ]
+    },
+    "structural_integrity_coding": {
+      "label": "Structural Integrity",
+      "summary": "Verifies that both auxiliary and main functions are properly defined with return statements.",
+      "type": "fact",
+      "children": []
+    },
+    "syntactical_correctness_coding": {
+      "label": "Syntactical Correctness",
+      "summary": "Verified via static analysis (Abstract Syntax Tree - AST); syntax errors lead to evaluation termination.",
+      "type": "fact",
+      "children": []
+    },
+    "test_pass_rate_coding": {
+      "label": "Test Pass Rate",
+      "summary": "Percentage of unit tests passed with a 10-second timeout per test.",
+      "type": "fact",
+      "children": []
+    },
+    "cooperation_quality_coding": {
+      "label": "Cooperation Quality",
+      "summary": "Bonus if main function calls aux; additional rewards for substantive logic beyond wrapping.",
+      "type": "fact",
+      "children": []
+    },
+    "prompt_design": {
+      "label": "Prompt Design",
+      "summary": "Specific instructional sets used to define agent roles.",
+      "type": "concept",
+      "children": [
+        "auxiliary_agent_prompt",
+        "main_agent_prompt",
+        "external_agent_prompt"
+      ]
+    },
+    "auxiliary_agent_prompt": {
+      "label": "Auxiliary Agent Prompt",
+      "summary": "Instructs the agent to create a helper function named 'aux' that returns useful data, with strict formatting constraints (no markdown, no explanations).",
+      "type": "fact",
+      "children": []
+    },
+    "main_agent_prompt": {
+      "label": "Main Agent Prompt",
+      "summary": "Instructs the agent to implement a specific entry point function, providing access to the 'aux()' function without redefining it.",
+      "type": "fact",
+      "children": []
+    },
+    "external_agent_prompt": {
+      "label": "External Agent Prompt",
+      "summary": "Used for multi-turn feedback; acts as an advisor providing JSON-formatted edits for 'aux' and 'main' fields.",
+      "type": "fact",
+      "children": []
+    },
+    "moa_framework": {
+      "label": "Mixture-of-Agents (MoA)",
+      "summary": "A layered architecture that leverages the collective strengths of multiple LLMs through iterative refinement.",
+      "type": "concept",
+      "children": [
+        "collaborativeness_phenomenon",
+        "moa_architecture",
+        "moa_roles",
+        "moe_analogy"
+      ]
+    },
+    "collaborativeness_phenomenon": {
+      "label": "Collaborativeness of LLMs",
+      "summary": "The observation that LLMs generate better responses when presented with outputs from other models, even if those models are less capable.",
+      "type": "concept",
+      "children": [
+        "collaborativeness_fact"
+      ]
+    },
+    "collaborativeness_fact": {
+      "label": "Collaborativeness Utility",
+      "summary": "Enables a model to refine and synthesize higher-quality outputs by leveraging diverse perspectives from auxiliary responses.",
+      "type": "fact",
+      "children": []
+    },
+    "moa_architecture": {
+      "label": "MoA Architecture",
+      "summary": "A layered structure where each layer i consists of n LLMs (Ai,1 ... Ai,n).",
+      "type": "concept",
+      "children": [
+        "moa_flow_fact"
+      ]
+    },
+    "moa_flow_fact": {
+      "label": "MoA Process Flow",
+      "summary": "Layer 1 agents independently generate responses; these are concatenated and passed as input to Layer 2 agents for refinement, continuing for l layers.",
+      "type": "fact",
+      "children": []
+    },
+    "moa_roles": {
+      "label": "MoA Roles",
+      "summary": "Different LLMs excel in different collaborative roles within the MoA ecosystem.",
+      "type": "concept",
+      "children": [
+        "proposers_role",
+        "aggregators_role"
+      ]
+    },
+    "proposers_role": {
+      "label": "Proposers",
+      "summary": "Models that excel at generating useful reference responses providing context and diverse perspectives.",
+      "type": "fact",
+      "children": []
+    },
+    "aggregators_role": {
+      "label": "Aggregators",
+      "summary": "Models proficient in synthesizing multiple responses into a single, high-quality output.",
+      "type": "fact",
+      "children": []
+    },
+    "moe_analogy": {
+      "label": "MoA vs MoE (Mixture-of-Experts)",
+      "summary": "MoA extends the MoE concept from the activation level to the model level.",
+      "type": "concept",
+      "children": [
+        "moe_comparison_fact"
+      ]
+    },
+    "moe_comparison_fact": {
+      "label": "MoA vs MoE Difference",
+      "summary": "Unlike MoE, which uses gating networks and internal weights, MoA operates entirely through the prompt interface and requires no fine-tuning.",
+      "type": "fact",
+      "children": []
+    },
+    "agent_forest": {
+      "label": "Agent Forest",
+      "summary": "A sampling-and-voting method where LLM performance scales with the number of instantiated agents.",
+      "type": "concept",
+      "children": [
+        "agent_forest_phases",
+        "agent_forest_scaling",
+        "difficulty_dimensions"
+      ]
+    },
+    "agent_forest_phases": {
+      "label": "Agent Forest Phases",
+      "summary": "The two-step process to derive a final answer from multiple agent outputs.",
+      "type": "concept",
+      "children": [
+        "sampling_phase",
+        "voting_phase"
+      ]
+    },
+    "sampling_phase": {
+      "label": "Sampling Phase",
+      "summary": "Querying the LLM M (or integrated function fM) N times to create a set of samples S = {s1, ..., sN}.",
+      "type": "fact",
+      "children": []
+    },
+    "voting_phase": {
+      "label": "Voting Phase",
+      "summary": "Using majority voting to select the final answer A based on cumulative similarity V(si) = sum(sim(si, sj)).",
+      "type": "fact",
+      "children": []
+    },
+    "agent_forest_scaling": {
+      "label": "Scaling Property",
+      "summary": "Performance generally improves as the ensemble size (N) increases, allowing smaller models to outperform larger single models.",
+      "type": "fact",
+      "children": []
+    },
+    "difficulty_dimensions": {
+      "label": "Task Difficulty Dimensions",
+      "summary": "Three orthogonal dimensions that influence the effectiveness of the Agent Forest method.",
+      "type": "concept",
+      "children": [
+        "inherent_difficulty",
+        "reasoning_steps",
+        "prior_probability"
+      ]
+    },
+    "inherent_difficulty": {
+      "label": "Inherent Difficulty",
+      "summary": "The core complexity of the task; performance gains increase then decrease as difficulty rises (diminishing returns at extreme complexity).",
+      "type": "fact",
+      "children": []
+    },
+    "reasoning_steps": {
+      "label": "Number of Reasoning Steps",
+      "summary": "The length of the solution path; performance gains increase as the number of steps increases.",
+      "type": "fact",
+      "children": []
+    },
+    "prior_probability": {
+      "label": "Prior Probability",
+      "summary": "The probability of the correct answer among possible outcomes; absolute performance increases with prior probability.",
+      "type": "fact",
+      "children": []
+    },
+    "mycelium_networks": {
+      "label": "Mycelium as a Network",
+      "summary": "Biological study of fungal mycelia as interconnected networks of hyphae affecting ecological behavior.",
+      "type": "concept",
+      "children": [
+        "hyphal_growth",
+        "mycelium_transport"
+      ]
+    },
+    "hyphal_growth": {
+      "label": "Hyphal Tip Growth",
+      "summary": "The process of expansion at the hyphal apex through polarized secretion.",
+      "type": "concept",
+      "children": [
+        "spitzenkoffer_fact",
+        "turgor_pressure_fact"
+      ]
+    },
+    "spitzenkoffer_fact": {
+      "label": "Spitzenk\u00f6rper",
+      "summary": "The organizer of polarized secretion at the hyphal apex, coordinating vesicles for wall material deposition.",
+      "type": "fact",
+      "children": []
+    },
+    "turgor_pressure_fact": {
+      "label": "Turgor Pressure",
+      "summary": "The driving force for tip extension, maintained by water uptake through osmosis in response to solute accumulation.",
+      "type": "fact",
+      "children": []
+    },
+    "mycelium_transport": {
+      "label": "Resource Transport",
+      "summary": "The movement of solutes and organelles across the fungal network.",
+      "type": "concept",
+      "children": [
+        "cytoplasmic_streaming",
+        "diffusion_limit_fact"
+      ]
+    },
+    "cytoplasmic_streaming": {
+      "label": "Cytoplasmic Streaming",
+      "summary": "Motor-driven transport of vesicles and organelles along microtubules and microfilaments, increasing effective transport rates for solutes.",
+      "type": "fact",
+      "children": []
+    },
+    "diffusion_limit_fact": {
+      "label": "Diffusion Limits",
+      "summary": "Diffusion is sufficient for short-range local growth but insufficient for long-distance translocation in large forest-floor networks.",
+      "type": "fact",
+      "children": []
+    },
+    "transport_mechanisms": {
+      "label": "Intracellular Transport Mechanisms",
+      "summary": "The physical processes by which solutes, organelles, and macromolecules move through the hyphal network.",
+      "type": "concept",
+      "children": [
+        "diffusive_movement",
+        "motor_driven_transport",
+        "mass_flow"
+      ]
+    },
+    "diffusive_movement": {
+      "label": "Diffusive Movement",
+      "summary": "Passive movement of molecules based on concentration gradients; highly inefficient for large molecules over long distances.",
+      "type": "concept",
+      "children": [
+        "diff_fact_1",
+        "diff_fact_2"
+      ]
+    },
+    "diff_fact_1": {
+      "label": "Diffusion Time-scales",
+      "summary": "Small molecules take 20h to cross 10mm; proteins take 7 weeks to cross 10mm (Page 4).",
+      "type": "fact",
+      "children": []
+    },
+    "diff_fact_2": {
+      "label": "Macroscopic Diffusion Constraint",
+      "summary": "Transport over a 25-cm microcosm would take 1.5 years for small molecules and 100 years for proteins (Page 4).",
+      "type": "fact",
+      "children": []
+    },
+    "motor_driven_transport": {
+      "label": "Motor-Driven Transport",
+      "summary": "Active transport using cytoskeletal tracks (microtubules and actin) to move cargo at constant velocities.",
+      "type": "concept",
+      "children": [
+        "mt_motors",
+        "actin_myosin_motors",
+        "motor_energetics"
+      ]
+    },
+    "mt_motors": {
+      "label": "Microtubule-Based Motors",
+      "summary": "Fast motors in fungi capable of transporting cargo over medium-length scales (mm to cm).",
+      "type": "concept",
+      "children": [
+        "mt_fact_1"
+      ]
+    },
+    "mt_fact_1": {
+      "label": "Microtubule Velocity",
+      "summary": "Fungal microtubule motors operate at speeds of 1 to 4 \u03bcm s\u20131 (Page 4).",
+      "type": "fact",
+      "children": []
+    },
+    "actin_myosin_motors": {
+      "label": "Actin-Myosin Motors",
+      "summary": "Myosin-based transport of secretory vesicles.",
+      "type": "concept",
+      "children": [
+        "myosin_fact_1"
+      ]
+    },
+    "myosin_fact_1": {
+      "label": "Myosin V and XI Velocity",
+      "summary": "Myosin V in yeast transports vesicles at ~3 \u03bcm s\u20131; Myosin XI in characean algae reaches 100 \u03bcm s\u20131, though such high speeds are not observed in fungi (Page 4).",
+      "type": "fact",
+      "children": []
+    },
+    "motor_energetics": {
+      "label": "Energetics of Motor Transport",
+      "summary": "Costs scale with pathway length, track assembly (microfilaments/microtubules), vesicle size, speed, and cytoplasmic viscosity (Page 4).",
+      "type": "fact",
+      "children": []
+    },
+    "mass_flow": {
+      "label": "Growth-Induced Mass Flow",
+      "summary": "Passive movement of solutes and organelles (vacuoles, nuclei) driven by apical cell wall expansion and subapical water uptake.",
+      "type": "concept",
+      "children": [
+        "peclet_number",
+        "mass_flow_evidence",
+        "localization_scales"
+      ]
+    },
+    "peclet_number": {
+      "label": "P\u00e9clet Number (Pe)",
+      "summary": "A dimensionless ratio used to determine whether advection or diffusion dominates transport: Pe = tA/tD = vl/Dj.",
+      "type": "concept",
+      "children": [
+        "pe_fact_1"
+      ]
+    },
+    "pe_fact_1": {
+      "label": "Neurospora P\u00e9clet Values",
+      "summary": "In Neurospora growing at 1 \u03bcm s\u20131, Pe is ~0.3 for solutes (diffusion dominates) and ~20 for proteins (advection dominates) (Page 4).",
+      "type": "fact",
+      "children": []
+    },
+    "mass_flow_evidence": {
+      "label": "Evidence for Mass Flow",
+      "summary": "Use of oil droplets (non-interacting with motors) shows movement rates (~5 \u03bcm s\u20131) exceeding tip extension rates (0.2 to 0.5 \u03bcm s\u20131) (Page 4).",
+      "type": "fact",
+      "children": []
+    },
+    "localization_scales": {
+      "label": "Localization Scales",
+      "summary": "Scale of macromolecule localization depends on diffusion, advection, and degradation lifetime (\u03c4).",
+      "type": "concept",
+      "children": [
+        "loc_fact_1"
+      ]
+    },
+    "loc_fact_1": {
+      "label": "Dimensionless Ratio C",
+      "summary": "C = sqrt(Dj/v^2\u03c4). If C > 1, diffusion dominates; if C < 1, flow dominates (Page 4).",
+      "type": "fact",
+      "children": []
+    },
+    "water_economy": {
+      "label": "Water Economy and Permeability",
+      "summary": "The regulation of water uptake, movement, and loss to maintain turgor and enable mass flow.",
+      "type": "concept",
+      "children": [
+        "membrane_permeability",
+        "aquaporins",
+        "water_loss_control"
+      ]
+    },
+    "membrane_permeability": {
+      "label": "Plasma Membrane Permeability",
+      "summary": "The intrinsic resistance of the fungal membrane to water flow, influenced by lipid composition.",
+      "type": "concept",
+      "children": [
+        "perm_fact_1",
+        "ergosterol_fact"
+      ]
+    },
+    "perm_fact_1": {
+      "label": "Yeast Permeability",
+      "summary": "In yeast mutants lacking aquaporins, osmotic permeability (Pf) increases from 0.34 \u03bcm s\u20131 at 7\u00b0C to 2 \u03bcm s\u20131 at 23\u00b0C (Page 5).",
+      "type": "fact",
+      "children": []
+    },
+    "ergosterol_fact": {
+      "label": "Role of Ergosterol",
+      "summary": "Presence of ergosterol (instead of cholesterol) is linked to greater resistance to desiccation (Page 5).",
+      "type": "fact",
+      "children": []
+    },
+    "aquaporins": {
+      "label": "Aquaporins (AQPs)",
+      "summary": "Specialized channel proteins that significantly increase membrane water permeability.",
+      "type": "concept",
+      "children": [
+        "aqp_fact_1"
+      ]
+    },
+    "aqp_fact_1": {
+      "label": "AQP Impact",
+      "summary": "Overexpression of AQPs in yeast increases Pf by 9-fold at 7\u00b0C; Laccaria bicolor AQPs in Xenopus oocytes increase permeability up to 147 \u03bcm s\u20131 (Page 5).",
+      "type": "fact",
+      "children": []
+    },
+    "water_loss_control": {
+      "label": "Control of Water Loss",
+      "summary": "Mechanisms to prevent evaporation and maintain internal hydration.",
+      "type": "concept",
+      "children": [
+        "hydrophobins",
+        "matric_potential"
+      ]
+    },
+    "hydrophobins": {
+      "label": "Hydrophobins",
+      "summary": "Small (15 kDa) secreted cysteine-rich proteins that form a hydrophobic rodlet layer on aerial hyphae.",
+      "type": "concept",
+      "children": [
+        "hydro_fact_1"
+      ]
+    },
+    "hydro_fact_1": {
+      "label": "Hydrophobin Function",
+      "summary": "They restrict water movement and evaporation autonomously based on water availability (Page 5).",
+      "type": "fact",
+      "children": []
+    },
+    "matric_potential": {
+      "label": "Matric Potential",
+      "summary": "Biophysical constraints on evaporation caused by cell wall pore diameter.",
+      "type": "concept",
+      "children": [
+        "pore_fact_1"
+      ]
+    },
+    "pore_fact_1": {
+      "label": "Pore Size in Achlya",
+      "summary": "Experimental pore size in Achlya determined to be 2 nm, restricting evaporation even at low humidity (Page 6).",
+      "type": "fact",
+      "children": []
+    },
+    "cellular_architecture": {
+      "label": "Cellular Architecture",
+      "summary": "The structural organization of the hyphae, including septation and pore dynamics.",
+      "type": "concept",
+      "children": [
+        "septation",
+        "septal_dynamics",
+        "wall_shear_stress"
+      ]
+    },
+    "septation": {
+      "label": "Septation",
+      "summary": "The division of the apical cell into compartments via septa in Dikarya.",
+      "type": "concept",
+      "children": [
+        "pore_types",
+        "pore_occlusion"
+      ]
+    },
+    "pore_types": {
+      "label": "Septal Pore Structures",
+      "summary": "Various pore types allowing cytoplasmic continuity.",
+      "type": "concept",
+      "children": [
+        "pore_size_fact"
+      ]
+    },
+    "pore_size_fact": {
+      "label": "Pore Dimensions",
+      "summary": "Plasmodesmata: 10-70 nm; Other pore types: 50-500 nm (Page 6).",
+      "type": "fact",
+      "children": []
+    },
+    "pore_occlusion": {
+      "label": "Pore Occlusion Mechanisms",
+      "summary": "Structures that reversibly or irreversibly block septal pores.",
+      "type": "concept",
+      "children": [
+        "occlusion_fact_1"
+      ]
+    },
+    "occlusion_fact_1": {
+      "label": "Occluding Structures",
+      "summary": "Woronin bodies (WBs) and SPA proteins in Ascomycetes; Septal Pore Caps (SPC) in Basidiomycetes (Page 6).",
+      "type": "fact",
+      "children": []
+    },
+    "septal_dynamics": {
+      "label": "Fluid Flow through Septa",
+      "summary": "The physics of cytoplasmic movement across septal constrictions.",
+      "type": "concept",
+      "children": [
+        "flow_vel_fact"
+      ]
+    },
+    "flow_vel_fact": {
+      "label": "Septal Flow Velocity",
+      "summary": "Velocity (vp) is proportional to the relative area of the pore (rp^2/rh^2); measured in Neurospora in excess of 200 \u03bcm s\u20131 (Page 7).",
+      "type": "fact",
+      "children": []
+    },
+    "wall_shear_stress": {
+      "label": "Wall Shear Stress",
+      "summary": "Mechanical forces produced by laminar fluid flow against the hyphal wall.",
+      "type": "concept",
+      "children": [
+        "wss_formula",
+        "wss_fact_1"
+      ]
+    },
+    "wss_formula": {
+      "label": "Shear Stress Formula",
+      "summary": "\u03c4 = 4\u03b7v/r, where \u03b7 is dynamic viscosity, v is mean velocity, and r is vessel radius (Page 7).",
+      "type": "fact",
+      "children": []
+    },
+    "wss_fact_1": {
+      "label": "Shear Stress at Septal Pores",
+      "summary": "WSS at the septal pore is approximately (rh^3/rp^3) greater than elsewhere, producing forces large enough to degrade septa or trigger gene expression (Page 7).",
+      "type": "fact",
+      "children": []
+    },
+    "growth_branching": {
+      "label": "Growth and Branching",
+      "summary": "The mechanisms of hyphal extension and the creation of new tips.",
+      "type": "concept",
+      "children": [
+        "branching_types",
+        "growth_metrics",
+        "nutrient_link"
+      ]
+    },
+    "branching_types": {
+      "label": "Branching Types",
+      "summary": "The spatial and regulatory modes of hyphal branching.",
+      "type": "concept",
+      "children": [
+        "branch_fact_1"
+      ]
+    },
+    "branch_fact_1": {
+      "label": "Branching Regulation",
+      "summary": "Apical and subapical branching; daughter hyphae show negative autotropism regulated by the Cdc42 signaling pathway (Page 8).",
+      "type": "fact",
+      "children": []
+    },
+    "growth_metrics": {
+      "label": "Growth and Volume Metrics",
+      "summary": "Mathematical relationships between volume, growth rate, and tip number.",
+      "type": "concept",
+      "children": [
+        "growth_unit_fact"
+      ]
+    },
+    "growth_unit_fact": {
+      "label": "Hyphal Growth Unit",
+      "summary": "A constant volume of fungus per hyphal tip during exponential colony growth (Page 8).",
+      "type": "fact",
+      "children": []
+    },
+    "nutrient_link": {
+      "label": "Nutrient-Growth Link",
+      "summary": "The dependency of growth and branching rates on substrate quality.",
+      "type": "concept",
+      "children": [
+        "nutrient_fact_1"
+      ]
+    },
+    "nutrient_fact_1": {
+      "label": "Vesicle-Branching Link",
+      "summary": "Branching is more likely in regions with high density of tip-growth vesicles, often near septa (Page 9).",
+      "type": "fact",
+      "children": []
+    },
+    "network_morphology": {
+      "label": "Network Morphology",
+      "summary": "The macroscopic organization of the mycelium into different structural forms.",
+      "type": "concept",
+      "children": [
+        "fusion_anastomosis",
+        "hyphal_aggregates",
+        "rhizomorphs"
+      ]
+    },
+    "fusion_anastomosis": {
+      "label": "Fusion and Anastomosis",
+      "summary": "The process of hyphal fusion to create loops and interconnected networks.",
+      "type": "concept",
+      "children": [
+        "fusion_fact_1"
+      ]
+    },
+    "fusion_fact_1": {
+      "label": "Role of Loops",
+      "summary": "Loops improve network resilience and allow rapid reallocation of resources; essential for high rates of long-distance nutrient translocation (Page 10).",
+      "type": "fact",
+      "children": []
+    },
+    "hyphal_aggregates": {
+      "label": "Hyphal Aggregates (Cords)",
+      "summary": "Linear aggregates of hyphae used for long-distance transport.",
+      "type": "concept",
+      "children": [
+        "cord_struct_fact"
+      ]
+    },
+    "cord_struct_fact": {
+      "label": "Cord Differentiation",
+      "summary": "Differentiation into thick-walled fiber hyphae and empty vessel hyphae (10-15 \u03bcm diameter) to improve flow (Page 10).",
+      "type": "fact",
+      "children": []
+    },
+    "rhizomorphs": {
+      "label": "Rhizomorphs",
+      "summary": "Highly differentiated root-like structures.",
+      "type": "concept",
+      "children": [
+        "rhizo_struct_fact",
+        "rhizo_cond_fact"
+      ]
+    },
+    "rhizo_struct_fact": {
+      "label": "Rhizomorph Anatomy",
+      "summary": "Consists of a central lacuna, inner medulla (large thin-walled vessel hyphae), outer medulla (2 \u03bcm wide hyphae), and a melanized hydrophobic rind (Page 11).",
+      "type": "fact",
+      "children": []
+    },
+    "rhizo_cond_fact": {
+      "label": "Rhizomorph Conductivity",
+      "summary": "Longitudinal hydraulic conductivity (Lw||) varies from 1.5 to 3 x 10^-1 cm^2 bar^-1 s^-1 (Page 11).",
+      "type": "fact",
+      "children": []
+    },
+    "quantitative_analysis": {
+      "label": "Quantitative Analysis",
+      "summary": "Mathematical and computational methods used to describe mycelial architecture.",
+      "type": "concept",
+      "children": [
+        "fractal_geometry",
+        "graph_theory"
+      ]
+    },
+    "fractal_geometry": {
+      "label": "Fractal Geometry",
+      "summary": "Using fractal dimensions to quantify space-filling properties of mycelia.",
+      "type": "concept",
+      "children": [
+        "fractal_dim_fact",
+        "box_counting_fact"
+      ]
+    },
+    "fractal_dim_fact": {
+      "label": "Fractal Dimensions",
+      "summary": "Mass fractal dimension (DM) and surface/border fractal dimension (DS). DM ranges from 1 (linear rhizomorphs) to close to 2 (dense mycelia) (Page 15).",
+      "type": "fact",
+      "children": []
+    },
+    "box_counting_fact": {
+      "label": "Box-Counting Technique",
+      "summary": "Method for calculating fractal dimension by overlaying grids of square boxes and counting intersections with the mycelium (Page 15).",
+      "type": "fact",
+      "children": []
+    },
+    "graph_theory": {
+      "label": "Graph-Theoretic Representation",
+      "summary": "Representing the mycelial network as a weighted, undirected graph.",
+      "type": "concept",
+      "children": [
+        "graph_nodes_fact",
+        "graph_weights_fact",
+        "centrality_fact"
+      ]
+    },
+    "graph_nodes_fact": {
+      "label": "Graph Nodes",
+      "summary": "Nodes are located at hyphal tips, branches, and anastomoses (Page 17).",
+      "type": "fact",
+      "children": []
+    },
+    "graph_weights_fact": {
+      "label": "Graph Edge Weights",
+      "summary": "Weights are based on cylindrical volume (V = \u03c0r^2L) for material cost or conductance (G = r^2/L) (Page 18).",
+      "type": "fact",
+      "children": []
+    },
+    "centrality_fact": {
+      "label": "Betweenness Centrality",
+      "summary": "A measure of how important each cord is to transport through the network from the resource to every other node (Page 19).",
+      "type": "fact",
+      "children": []
+    },
+    "computational_modeling": {
+      "label": "Computational Modeling",
+      "summary": "Theoretical models used to simulate fungal growth and resource translocation.",
+      "type": "concept",
+      "children": [
+        "continuum_models",
+        "agent_based_models",
+        "add_model"
+      ]
+    },
+    "continuum_models": {
+      "label": "Continuum Models",
+      "summary": "Models that represent the mycelium as a continuous density using differential equations.",
+      "type": "concept",
+      "children": [
+        "continuum_fact_1"
+      ]
+    },
+    "continuum_fact_1": {
+      "label": "Reaction-Diffusion Stability",
+      "summary": "Morphological stability of colonies depends on nutrient and agar concentrations, explained by reaction-diffusion models accounting for waste inhibitors (Page 21).",
+      "type": "fact",
+      "children": []
+    },
+    "agent_based_models": {
+      "label": "Spatially Explicit (Agent-Based) Models",
+      "summary": "Models that track individual hyphal tips as agents with specific behaviors.",
+      "type": "concept",
+      "children": [
+        "abm_fact_1"
+      ]
+    },
+    "abm_fact_1": {
+      "label": "Tip-and-Trail Modeling",
+      "summary": "Hyphae are present wherever moving tips have passed; branching rates can be modeled as a function of internal resource concentration (Page 22).",
+      "type": "fact",
+      "children": []
+    },
+    "add_model": {
+      "label": "ADD Model",
+      "summary": "Advection-Diffusion-Delivery model used to predict resource translocation in complex networks (Page 11).",
+      "type": "fact",
+      "children": []
+    },
+    "ecological_dynamics": {
+      "label": "Ecological Dynamics and Resilience",
+      "summary": "How mycelial networks interact with the environment and respond to damage.",
+      "type": "concept",
+      "children": [
+        "foraging_strategies",
+        "biomass_recycling",
+        "network_resilience"
+      ]
+    },
+    "foraging_strategies": {
+      "label": "Foraging Strategies",
+      "summary": "Differing modes of space exploration and resource capture.",
+      "type": "concept",
+      "children": [
+        "forage_fact_1"
+      ]
+    },
+    "forage_fact_1": {
+      "label": "Phalanx vs. Guerrilla Foraging",
+      "summary": "Phalanx foragers are slow-dense search fronts; Guerrilla foragers are fast-effuse, long-range systems (Page 13).",
+      "type": "fact",
+      "children": []
+    },
+    "biomass_recycling": {
+      "label": "Biomass Recycling",
+      "summary": "The degradation of redundant mycelial parts to redeploy resources to the growing margin.",
+      "type": "concept",
+      "children": [
+        "recycle_fact_1"
+      ]
+    },
+    "recycle_fact_1": {
+      "label": "Recycling Mechanisms",
+      "summary": "Involves autophagy and controlled apoptotic-like mechanisms rather than necrosis (Page 12).",
+      "type": "fact",
+      "children": []
+    },
+    "network_resilience": {
+      "label": "Network Robustness and Resilience",
+      "summary": "The ability of the network to maintain function despite physical damage or grazing.",
+      "type": "concept",
+      "children": [
+        "resilience_fact_1",
+        "mycovirus_fact"
+      ]
+    },
+    "resilience_fact_1": {
+      "label": "Impact of Grazing",
+      "summary": "Collembola often graze on tips or fine hyphae; macrofauna like woodlice can sever thick cords. Resilience is increased by higher cross-connectivity (Page 23).",
+      "type": "fact",
+      "children": []
+    },
+    "mycovirus_fact": {
+      "label": "Systemic Mycovirus Infection",
+      "summary": "Mycoviruses spread horizontally via hyphal anastomosis between compatible hosts; 30-80% of fungi harbor persistent infections (Page 24).",
+      "type": "fact",
+      "children": []
+    },
+    "uncertainty_estimation": {
+      "label": "Uncertainty Estimation",
+      "summary": "The process of quantifying the model's predictive reliability at each decoding step using multiple complementary metrics to capture different facets of confidence.",
+      "type": "concept",
+      "children": [
+        "entropy_metric",
+        "least_confidence_metric",
+        "margin_metric",
+        "aggregated_uncertainty"
+      ]
+    },
+    "entropy_metric": {
+      "label": "Entropy",
+      "summary": "A measure of the dispersion of the probability distribution over the vocabulary, reflecting the concentration of the model's belief.",
+      "type": "concept",
+      "children": [
+        "fact_entropy_formula"
+      ]
+    },
+    "fact_entropy_formula": {
+      "label": "Entropy Calculation",
+      "summary": "Calculated as the negative sum of (p_{t,c} * log p_{t,c}) divided by log |V|, where p_{t,c} is the probability of token c at step t and |V| is vocabulary size. Higher entropy indicates lower confidence. (Page 5)",
+      "type": "fact",
+      "children": []
+    },
+    "least_confidence_metric": {
+      "label": "Least Confidence",
+      "summary": "An uncertainty measure based solely on the probability of the most likely (selected) token.",
+      "type": "concept",
+      "children": [
+        "fact_lc_formula"
+      ]
+    },
+    "fact_lc_formula": {
+      "label": "Least Confidence Calculation",
+      "summary": "Calculated as 1 minus the probability of the chosen token p_{t,(1)}. Lower predicted probability corresponds to higher uncertainty. (Page 5)",
+      "type": "fact",
+      "children": []
+    },
+    "margin_metric": {
+      "label": "Margin",
+      "summary": "A measure of uncertainty derived from the difference between the top two token probabilities, capturing comparative distinctiveness.",
+      "type": "concept",
+      "children": [
+        "fact_margin_formula"
+      ]
+    },
+    "fact_margin_formula": {
+      "label": "Margin Calculation",
+      "summary": "Calculated as the sigmoid of [1 - (p_{t,(1)} - p_{t,(2)}) / s], where s is a scaling factor. Smaller margins indicate greater ambiguity. (Page 5)",
+      "type": "fact",
+      "children": []
+    },
+    "aggregated_uncertainty": {
+      "label": "Aggregated Token-Level Uncertainty",
+      "summary": "A unified uncertainty measure that combines entropy, margin, and least confidence using tunable weights.",
+      "type": "concept",
+      "children": [
+        "fact_agg_formula"
+      ]
+    },
+    "fact_agg_formula": {
+      "label": "Aggregated Uncertainty Formula",
+      "summary": "u_{t,j} = w_{ent}u_{ent} + w_{mar}u_{mar} + w_{lc}u_{lc}. This integration captures distributional spread, decision confidence, and distinctiveness. (Page 5)",
+      "type": "fact",
+      "children": []
+    },
+    "aggregation_mechanisms": {
+      "label": "Step and Trajectory Aggregation",
+      "summary": "Methods used to scale token-level uncertainty signals into rewards usable for reinforcement learning at the step and trajectory levels.",
+      "type": "concept",
+      "children": [
+        "step_level_aggregation",
+        "trajectory_level_aggregation"
+      ]
+    },
+    "step_level_aggregation": {
+      "label": "Step-level Aggregation",
+      "summary": "The process of condensing token uncertainties within a single decision step into a single value.",
+      "type": "concept",
+      "children": [
+        "fact_step_agg_formula"
+      ]
+    },
+    "fact_step_agg_formula": {
+      "label": "Step Aggregation Calculation",
+      "summary": "u_{step,t} is the average of token uncertainties u_{t,j} across the step. (Page 5)",
+      "type": "fact",
+      "children": []
+    },
+    "trajectory_level_aggregation": {
+      "label": "Trajectory-level Aggregation",
+      "summary": "The process of combining step-level uncertainties across an entire sequence of actions (trajectory).",
+      "type": "concept",
+      "children": [
+        "fact_traj_agg_formula"
+      ]
+    },
+    "fact_traj_agg_formula": {
+      "label": "Trajectory Aggregation Calculation",
+      "summary": "Uses exponentially discounted aggregation: U(tau) = [Sum from t=1 to T of lambda^(T-t) * u_{step,t}] / [Sum from t=1 to T of lambda^(T-t)], where lambda is a discount factor prioritizing later steps. (Page 5)",
+      "type": "fact",
+      "children": []
+    },
+    "reward_shaping": {
+      "label": "Failure-aware Reward Shaping",
+      "summary": "A mechanism that integrates uncertainty signals into rewards to ensure failed trajectories provide meaningful learning gradients rather than being discarded.",
+      "type": "concept",
+      "children": [
+        "step_wise_shaping",
+        "trajectory_level_shaping"
+      ]
+    },
+    "step_wise_shaping": {
+      "label": "Step-wise Shaping",
+      "summary": "Modifying the reward of individual steps based on failure status and normalized uncertainty.",
+      "type": "concept",
+      "children": [
+        "fact_step_reward_formula"
+      ]
+    },
+    "fact_step_reward_formula": {
+      "label": "Step-wise Reward Formula",
+      "summary": "If fail: r_tilde = 1[fail] * w_t * u_{step_hat}. If success: r_tilde = r_t. w_t is typically set to 0.95 to ensure failure rewards are informative but lower than success rewards. (Page 5-6)",
+      "type": "fact",
+      "children": []
+    },
+    "trajectory_level_shaping": {
+      "label": "Trajectory-level Shaping",
+      "summary": "Modifying the overall trajectory reward based on aggregated uncertainty in case of failure.",
+      "type": "concept",
+      "children": [
+        "fact_traj_reward_formula"
+      ]
+    },
+    "fact_traj_reward_formula": {
+      "label": "Trajectory Reward Formula",
+      "summary": "If fail: r_tilde_traj = U(tau). If success: r_tilde_traj = r. (Page 6)",
+      "type": "fact",
+      "children": []
+    },
+    "experimental_evaluation": {
+      "label": "Experimental Evaluation",
+      "summary": "Validation of SELAUR against baselines using interactive benchmarks to measure success rates and robustness.",
+      "type": "concept",
+      "children": [
+        "benchmarks",
+        "baselines",
+        "ablation_studies"
+      ]
+    },
+    "benchmarks": {
+      "label": "Benchmarks",
+      "summary": "Interactive environments used to test the agent's decision-making and generalization capabilities.",
+      "type": "concept",
+      "children": [
+        "fact_alfworld",
+        "fact_webshop"
+      ]
+    },
+    "fact_alfworld": {
+      "label": "ALFWorld",
+      "summary": "A benchmark emphasizing generalization in instruction following and compositional reasoning across household tasks. (Page 6)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_webshop": {
+      "label": "WebShop",
+      "summary": "A benchmark focusing on goal-oriented decision-making in realistic e-commerce environments, involving product selection. (Page 6)",
+      "type": "fact",
+      "children": []
+    },
+    "baselines": {
+      "label": "RL Baselines",
+      "summary": "Comparative reinforcement learning methods used to evaluate SELAUR's performance.",
+      "type": "concept",
+      "children": [
+        "fact_ppo",
+        "fact_rloo",
+        "fact_grpo",
+        "fact_gigpo"
+      ]
+    },
+    "fact_ppo": {
+      "label": "PPO",
+      "summary": "Proximal Policy Optimization; competitive but less efficient due to the requirement of an extra critic network. (Page 7)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_rloo": {
+      "label": "RLOO",
+      "summary": "Reinforce-style optimization, computationally more efficient than PPO. (Page 7)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_grpo": {
+      "label": "GRPO",
+      "summary": "Group Relative Policy Optimization; provides balanced results and efficiency. (Page 7)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_gigpo": {
+      "label": "GiGPO",
+      "summary": "Group-in-Group Policy Optimization; utilizes step-level reward modeling to improve fine-grained feedback. (Page 7)",
+      "type": "fact",
+      "children": []
+    },
+    "ablation_studies": {
+      "label": "Ablation Studies",
+      "summary": "Tests conducted to determine the contribution of specific uncertainty metrics and reward formulations.",
+      "type": "concept",
+      "children": [
+        "metric_synergy",
+        "reward_function_variants"
+      ]
+    },
+    "metric_synergy": {
+      "label": "Metric Synergy",
+      "summary": "Analysis of how different uncertainty measures complement each other.",
+      "type": "concept",
+      "children": [
+        "fact_orthogonal_metrics"
+      ]
+    },
+    "fact_orthogonal_metrics": {
+      "label": "Metric Complementarity",
+      "summary": "Entropy captures overall distribution 'sharpness', while least confidence and margin focus on the competitive relationship between top actions. Full integration yields optimal performance. (Page 8)",
+      "type": "fact",
+      "children": []
+    },
+    "reward_function_variants": {
+      "label": "Reward Function Variants",
+      "summary": "Comparison of SELAUR's reward shaping against alternative uncertainty-based reward designs.",
+      "type": "concept",
+      "children": [
+        "fact_negative_variant",
+        "fact_exponential_variant"
+      ]
+    },
+    "fact_negative_variant": {
+      "label": "Negative Reward Variant",
+      "summary": "Replaces failure rewards with negative values to penalize uncertainty; underperforms by limiting exploration in uncertain states. (Page 8-9)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_exponential_variant": {
+      "label": "Exponential Reward Variant",
+      "summary": "Attenuates success rewards by exp(-u_step); underperforms because excessive discounting weakens the reinforcement of successful behaviors. (Page 8-9)",
+      "type": "fact",
+      "children": []
+    }
+  }
+}

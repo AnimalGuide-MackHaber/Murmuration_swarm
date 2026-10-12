@@ -2,7 +2,7 @@
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from swarm_io import SwarmIO
+from core.swarm_io import SwarmIO
 
 def test_save_paper():
     content = "# Test Paper Content"

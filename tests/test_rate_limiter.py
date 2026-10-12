@@ -1,9 +1,9 @@
 import asyncio
 import time
 import pytest
-from rate_limiter import RateLimiter
+from core.rate_limiter import RateLimiter
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_rpm_limit():
     # Limit to 2 requests per minute
     rl = RateLimiter(requests_per_minute=2, tokens_per_minute=1000)
@@ -19,7 +19,7 @@ async def test_rpm_limit():
     # Let's trust the logic for now, but verify it *can* run.
     assert len(rl.request_timestamps) == 2
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_tpm_limit():
     # Limit to 10 tokens per minute
     rl = RateLimiter(requests_per_minute=60, tokens_per_minute=10)

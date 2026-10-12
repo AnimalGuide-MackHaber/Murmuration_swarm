@@ -12,7 +12,9 @@
         "dt": 1.0
     },
     "simulation": {
-        "default_max_iterations": 20
+        "default_max_iterations": 20,
+        "parallel_agent_execution": true,
+        "learning_refit_interval": 25
     },
     "circuit_breaker": {
         "max_failures": 15,
@@ -21,7 +23,8 @@
     "knowledge_graph": {
         "max_retrieval_depth": 1,
         "max_children_per_node": 3,
-        "chunk_size": 150000
+        "chunk_size": 10000,
+        "search_long_term_memory": true
     },
     "rate_limiting": {
         "ollama": {
@@ -30,14 +33,14 @@
             "request_delay_seconds": 0.05
         },
         "nvidia": {
-            "requests_per_minute": 5000,
+            "requests_per_minute": 25,
             "tokens_per_minute": 50000000,
             "request_delay_seconds": 0.1
         },
         "gemini": {
-            "requests_per_minute": 14,
-            "tokens_per_minute": 25000000,
-            "request_delay_seconds": 0.25
+            "requests_per_minute": 13,
+            "tokens_per_minute": 250000,
+            "request_delay_seconds": 0.05
         },
         "doab": {
             "requests_per_minute": 30,
@@ -52,5 +55,10 @@
     "nvidia_api": {
         "base_url": "https://integrate.api.nvidia.com/v1",
         "api_key": ""
+    },
+    "llm_retry": {
+        "max_retries": 10,
+        "base_delay": 5.0,
+        "exponential_backoff": true
     }
 }

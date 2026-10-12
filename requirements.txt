@@ -11,3 +11,12 @@ markitdown[pdf]
 streamlit-autorefresh
 aiohttp
 scikit-learn
+
+pymilvus[milvus_lite]
+scipy
+networkx
+fastapi
+uvicorn
+python-multipart
+
+POT

@@ -1,0 +1,196 @@
+{
+  "nodes": {
+    "root": {
+      "label": "Complexity Theory in Multi-Agent AI",
+      "summary": "Comprehensive analysis of emergence, adaptation, and decentralized control in multi-agent systems.",
+      "type": "concept",
+      "children": [
+        "core_concepts"
+      ]
+    },
+    "core_concepts": {
+      "label": "Core Concepts",
+      "summary": "Fundamental ideas underpinning complexity theory in AI.",
+      "type": "concept",
+      "children": [
+        "reductionism_vs_complexity",
+        "emergence",
+        "agent_ontology",
+        "interaction_topologies",
+        "engineering_emergence"
+      ]
+    },
+    "reductionism_vs_complexity": {
+      "label": "Reductionism vs. Complexity",
+      "summary": "Shift from decomposing systems to understanding dynamic interactions.",
+      "type": "concept",
+      "children": []
+    },
+    "emergence": {
+      "label": "Emergence",
+      "summary": "Properties arising from interactions, not individual agents.",
+      "type": "concept",
+      "children": [
+        "weak_emergence",
+        "strong_emergence",
+        "micro_macro_gap"
+      ]
+    },
+    "weak_emergence": {
+      "label": "Weak Emergence",
+      "summary": "Unexpected but simulatable macro-states.",
+      "type": "fact",
+      "children": []
+    },
+    "strong_emergence": {
+      "label": "Strong Emergence",
+      "summary": "Novel physical laws non-deducible from lower levels.",
+      "type": "fact",
+      "children": []
+    },
+    "micro_macro_gap": {
+      "label": "Micro-Macro Gap",
+      "summary": "Disconnect between individual agent rules and system-level behavior.",
+      "type": "concept",
+      "children": []
+    },
+    "agent_ontology": {
+      "label": "Agent Ontology",
+      "summary": "Defining agents in Complex Adaptive Systems.",
+      "type": "concept",
+      "children": [
+        "autonomy",
+        "adaptability",
+        "embeddedness"
+      ]
+    },
+    "autonomy": {
+      "label": "Autonomy",
+      "summary": "Agent's ability to act independently.",
+      "type": "fact",
+      "children": []
+    },
+    "adaptability": {
+      "label": "Adaptability",
+      "summary": "Agent's ability to learn and update internal models.",
+      "type": "fact",
+      "children": []
+    },
+    "embeddedness": {
+      "label": "Embeddedness",
+      "summary": "Agent's situatedness in a dynamic environment.",
+      "type": "fact",
+      "children": []
+    },
+    "interaction_topologies": {
+      "label": "Interaction Topologies",
+      "summary": "Structure of interactions between agents.",
+      "type": "concept",
+      "children": [
+        "graphs",
+        "multiplex_networks"
+      ]
+    },
+    "graphs": {
+      "label": "Graphs",
+      "summary": "Basic network representation of interactions.",
+      "type": "fact",
+      "children": []
+    },
+    "multiplex_networks": {
+      "label": "Multiplex Networks",
+      "summary": "Multiple layers of interaction between agents.",
+      "type": "fact",
+      "children": []
+    },
+    "engineering_emergence": {
+      "label": "Engineering Emergence",
+      "summary": "Designing systems for desired emergent outcomes.",
+      "type": "concept",
+      "children": [
+        "bottom_up_design",
+        "consensus",
+        "mechanism_design",
+        "stigmergy"
+      ]
+    },
+    "bottom_up_design": {
+      "label": "Bottom-Up Design",
+      "summary": "Focus on local rules and agent interactions.",
+      "type": "concept",
+      "children": [
+        "adelphe_methodology"
+      ]
+    },
+    "adelphe_methodology": {
+      "label": "ADELFE Methodology",
+      "summary": "Framework for designing Adaptive Multi-Agent Systems.",
+      "type": "fact",
+      "children": []
+    },
+    "consensus": {
+      "label": "Consensus",
+      "summary": "Achieving agreement among agents.",
+      "type": "concept",
+      "children": [
+        "average_consensus",
+        "synchronization"
+      ]
+    },
+    "average_consensus": {
+      "label": "Average Consensus",
+      "summary": "Agents converge on a global average value.",
+      "type": "fact",
+      "children": []
+    },
+    "synchronization": {
+      "label": "Synchronization",
+      "summary": "Agents align their internal dynamics.",
+      "type": "fact",
+      "children": []
+    },
+    "mechanism_design": {
+      "label": "Mechanism Design",
+      "summary": "Designing rules to incentivize desired outcomes.",
+      "type": "concept",
+      "children": [
+        "evolutionary_mechanism_design",
+        "reverse_engineering"
+      ]
+    },
+    "evolutionary_mechanism_design": {
+      "label": "Evolutionary Mechanism Design",
+      "summary": "Using evolutionary algorithms to design mechanisms.",
+      "type": "fact",
+      "children": []
+    },
+    "reverse_engineering": {
+      "label": "Reverse Engineering",
+      "summary": "Extracting agent models from existing systems.",
+      "type": "fact",
+      "children": [
+        "reagent"
+      ]
+    },
+    "reagent": {
+      "label": "REAGENT",
+      "summary": "Tool for reverse-engineering multi-agent systems.",
+      "type": "fact",
+      "children": []
+    },
+    "stigmergy": {
+      "label": "Stigmergy",
+      "summary": "Coordination through environmental modification.",
+      "type": "fact",
+      "children": [
+        "digital_pheromones"
+      ]
+    },
+    "digital_pheromones": {
+      "label": "Digital Pheromones",
+      "summary": "Using environmental cues for coordination.",
+      "type": "fact",
+      "children": []
+    }
+  }
+}

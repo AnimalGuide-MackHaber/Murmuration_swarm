@@ -1,0 +1,10 @@
+{
+    "id": "a7d803b3-c1d8-4207-99b6-95888f72a1d1",
+    "name": "MultiAgent_001",
+    "domain": "Multi Agent AI",
+    "knowledge_graph_path": "MultiAgent_001.json",
+    "system_prompt_template": "You are an AI agent that is a researcher and domain expert, and highly motivated to share your knowledge and to listen to and synthesize knowledge from other AI agents",
+    "interaction_style": "Collaborative",
+    "color": "#ff00a0",
+    "perception_range": 25.0
+}

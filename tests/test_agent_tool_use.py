@@ -8,20 +8,16 @@ import os
 # Mock dependencies
 sys.modules["langgraph"] = MagicMock()
 sys.modules["langgraph.graph"] = MagicMock()
-sys.modules["numpy"] = MagicMock()
 sys.modules["markitdown"] = MagicMock()
 sys.modules["aiohttp"] = MagicMock()
 sys.modules["openai"] = MagicMock()
 
-# Mock numpy sqrt specifically
-sys.modules["numpy"].sqrt = lambda x: x**0.5
-
 # Add parent directory to path so we can import swarm modules
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from swarm_orchestrator import SwarmOrchestrator
-from swarm_schema import SwarmSnapshot, AgentConfig, AgentRuntimeState, Vector3
-from knowledge_graph import KnowledgeArchitect 
+from core.swarm_orchestrator import SwarmOrchestrator
+from core.swarm_schema import SwarmSnapshot, AgentConfig, AgentRuntimeState, Vector3
+from core.knowledge_graph import KnowledgeArchitect 
 
 # We need a real KnowledgeArchitect for this test to test the search logic
 # But we need to mock file I/O
@@ -29,10 +25,10 @@ from knowledge_graph import KnowledgeArchitect
 class TestAgentToolUse(unittest.IsolatedAsyncioTestCase):
     async def test_agent_tool_search(self):
         # 1. Setup Mock Orchestrator
-        with patch('swarm_orchestrator.SettingsManager'), \
-             patch('swarm_orchestrator.SwarmLogger'), \
-             patch('swarm_orchestrator.RateLimiter') as MockRateLimiter, \
-             patch('swarm_orchestrator.OllamaWrapper'): 
+        with patch('core.swarm_orchestrator.SettingsManager'), \
+             patch('core.swarm_orchestrator.SwarmLogger'), \
+             patch('core.swarm_orchestrator.RateLimiter') as MockRateLimiter, \
+             patch('core.swarm_orchestrator.OllamaWrapper'): 
              # NOT patching KnowledgeArchitect, using real one but mocking open/json
             
             # Configure Rate Limiter Mock
@@ -49,18 +45,13 @@ class TestAgentToolUse(unittest.IsolatedAsyncioTestCase):
             mock_llm = AsyncMock()
             orchestrator.model = mock_llm
             
-            # Scenario: 
-            # Call 1: Agent searches for "gravity"
-            # Call 2: Agent gives final thought
-            response1 = MagicMock()
-            response1.text = "I need info. [[QUERY: gravity]]"
-            response1.usage_metadata = {}
+            # Scenario:
+            # Automatic context injection will run before model call
+            response = MagicMock()
+            response.text = "Gravity is a force of attraction."
+            response.usage_metadata = {}
             
-            response2 = MagicMock()
-            response2.text = "Gravity is a fundamental force."
-            response2.usage_metadata = {}
-            
-            mock_llm.generate_content_async = AsyncMock(side_effect=[response1, response2])
+            mock_llm.generate_content_async = AsyncMock(return_value=response)
             
             # 2. Setup State
             agent_uuid = uuid.uuid4()
@@ -70,7 +61,7 @@ class TestAgentToolUse(unittest.IsolatedAsyncioTestCase):
                 id=agent_uuid,
                 name="TestAgent",
                 domain="Testing",
-                knowledge_graph_path="test_graph.json",
+                knowledge_graph_paths=["test_graph.json"],
                 system_prompt_template="You are a test agent.",
                 color="#000000"
             )
@@ -85,7 +76,7 @@ class TestAgentToolUse(unittest.IsolatedAsyncioTestCase):
             state = SwarmSnapshot(
                 iteration=1,
                 max_iterations=5,
-                universal_prompt="Test Goal",
+                universal_prompt="gravity",
                 agent_configs={agent_id: config},
                 agent_states={agent_id: agent_state},
                 influence_matrix={}
@@ -101,7 +92,7 @@ class TestAgentToolUse(unittest.IsolatedAsyncioTestCase):
                     },
                     "node_2": {
                         "label": "Gravity",
-                        "summary": "A force of attraction.",
+                        "summary": "Gravity is a force of attraction.",
                          "children": []
                     }
                 }
@@ -118,18 +109,17 @@ class TestAgentToolUse(unittest.IsolatedAsyncioTestCase):
                 result_id, result_agent = await orchestrator._single_agent_think(agent_id, state)
             
                 # 4. Assertions
-                # Verify prompt of second call contains the search result
+                # Verify prompt contains the search result (injected context)
                 call_args_list = mock_llm.generate_content_async.call_args_list
-                second_call_prompt = call_args_list[1][0][0]
+                first_call_prompt = call_args_list[0][0][0]
                 
-                # We expect "node_2" (Gravity) to be found
-                self.assertIn("search_results", second_call_prompt)
-                self.assertIn("node_2", second_call_prompt)
-                self.assertIn("Gravity", second_call_prompt)
+                # We expect the context from "node_2" (Gravity) to be automatically injected
+                self.assertIn("RELEVANT KNOWLEDGE FROM test_graph.json", first_call_prompt)
+                self.assertIn("Gravity is a force of attraction.", first_call_prompt)
                 
                 # Verify Final Thought
-                self.assertEqual(result_agent.latest_thought, "Gravity is a fundamental force.")
-                print("Test passed: Keyword search verified!")
+                self.assertEqual(result_agent.latest_thought, "Gravity is a force of attraction.")
+                print("Test passed: Automatic context injection verified!")
 
 if __name__ == "__main__":
     unittest.main()

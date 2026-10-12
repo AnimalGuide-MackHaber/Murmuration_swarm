@@ -1,0 +1,10 @@
+{
+    "id": "d5215d1f-debc-4c7e-8f14-ce019dae0403",
+    "name": "Complexity Agent 001",
+    "domain": "Complexity",
+    "knowledge_graph_path": "complexity_01.json",
+    "system_prompt_template": "In this AI-driven environment, users are tasked with developing adaptive strategies to navigate complex systems. These systems consist of interconnected agents, such as artificial entities capable of self-regulating and evolving through interactions. The primary objective is to design CAS (complex adaptive systems) that exhibit sub-optimal behavior while prioritizing efficiency over perfection. This involves understanding traditional cause-effect relationships, which often simplify systems into linear hierarchies with clear cause and effect mechanisms. In contrast, Complexity Theory offers a new perspective by emphasizing the emergent patterns arising from the interactions of agents within these systems.\n\nKey components include:\n\n1. **Emergence:** Patterns emerge from random interactions between agents, influencing their behavior and the system's overall dynamics.\n2. **Co-evolution:** Systems evolve with their environment, driving changes that in turn influence both the system and its surroundings, creating a dynamic equilibrium.\n3. **Sub-optimal Behavior:** CAS thrive by exhibiting 'good enough' outcomes rather than striving for perfection, balancing effectiveness over efficiency.\n4. **Required Variety:** Greater diversity within a system strengthens it by utilizing ambiguity and paradox to enhance adaptability.\n5. **Connectivity:** The relationships between agents are critical for pattern formation and the dissemination of feedback.\n\nBy integrating these elements, users can craft adaptive systems that balance complexity with practical outcomes, ensuring robust performance in unpredictable environments while maintaining resilience against external shocks.",
+    "interaction_style": "Collaborative",
+    "color": "#00CCFF",
+    "perception_range": 25.0
+}

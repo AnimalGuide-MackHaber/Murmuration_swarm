@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+.venv/
+venv/
+ENV/
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+.npm
+
+# Runtime databases & caches
+*.db
+*.sqlite3
+*.log
+live_states/
+output/
+scratch/
+trajectory_trace.json
+hpc_benchmark.db
+milvus_maai.db
+reflex_memory.db
+tmp_*.log
+
+# OS & IDE
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local data & binaries
+*.pdf
+*.zip
+swarm_data/snapshots/
+swarm_data/exports/
+swarm_data/conclusions/
+swarm_data/conclusion_*.md
+swarm_data/*/*/*_thoughts.txt
+swarm_data/*/*_thoughts.txt
+swarm_data/*.pdf
+swarm_data/*.zip
+
+# Local environment
+.env
+.env.local
+

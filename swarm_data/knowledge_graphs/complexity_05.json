@@ -1,0 +1,171 @@
+{
+  "nodes": {
+    "root": {
+      "label": "Complex Adaptive Systems",
+      "summary": "The study of intertwined social and natural systems, reframing the conventional divide between them.",
+      "type": "concept",
+      "children": [
+        "cas_definition",
+        "cas_importance",
+        "cas_features",
+        "cas_implications"
+      ]
+    },
+    "cas_definition": {
+      "label": "Definition of Complex Adaptive Systems",
+      "summary": "Systems with interacting elements, dynamic structure, and adaptive components that evolve over time.",
+      "type": "concept",
+      "children": [
+        "system_elements",
+        "adaptive_components",
+        "emergent_behavior",
+        "cas_examples"
+      ]
+    },
+    "system_elements": {
+      "label": "System Elements",
+      "summary": "Systems consist of interacting elements and relations forming an integrated whole.",
+      "type": "fact",
+      "children": [],
+      "page_ref": "1"
+    },
+    "adaptive_components": {
+      "label": "Adaptive Components",
+      "summary": "Allow systems to change and evolve in response to feedback and context.",
+      "type": "fact",
+      "children": [],
+      "page_ref": "1"
+    },
+    "emergent_behavior": {
+      "label": "Emergent Behavior",
+      "summary": "System behavior different from individual components, arising from network connections.",
+      "type": "fact",
+      "children": [],
+      "page_ref": "1"
+    },
+    "cas_examples": {
+      "label": "Examples of CAS",
+      "summary": "Stock market, climate, the brain, business organizations.",
+      "type": "fact",
+      "children": [],
+      "page_ref": "1"
+    },
+    "cas_importance": {
+      "label": "Importance of Understanding CAS",
+      "summary": "Understanding CAS features leads to innovative and sustainable SES governance approaches.",
+      "type": "concept",
+      "children": [
+        "theoretical_frameworks",
+        "empirical_understanding",
+        "practical_heuristics"
+      ]
+    },
+    "theoretical_frameworks": {
+      "label": "Theoretical Frameworks",
+      "summary": "New frameworks for responding to challenges of the Anthropocene.",
+      "type": "fact",
+      "children": [],
+      "page_ref": "1"
+    },
+    "empirical_understanding": {
+      "label": "Empirical Understanding",
+      "summary": "Improved understanding through the study of CAS.",
+      "type": "fact",
+      "children": [],
+      "page_ref": "1"
+    },
+    "practical_heuristics": {
+      "label": "Practical Heuristics",
+      "summary": "Tools to better respond to challenges.",
+      "type": "fact",
+      "children": [],
+      "page_ref": "1"
+    },
+    "cas_features": {
+      "label": "Key Features of CAS",
+      "summary": "Organizing principles for identifying systemic concepts.",
+      "type": "concept",
+      "children": [
+        "relational_constitution",
+        "radical_openness",
+        "context_dependence",
+        "adaptability",
+        "dynamics",
+        "complex_causality"
+      ]
+    },
+    "relational_constitution": {
+      "label": "Relational Constitution",
+      "summary": "Netlike structures, hierarchies, diversity, redundancy, heterogeneity.",
+      "type": "fact",
+      "children": [],
+      "page_ref": "2"
+    },
+    "radical_openness": {
+      "label": "Radical Openness",
+      "summary": "Permeable boundaries, embeddedness, nestedness, exchange of matter/energy/information.",
+      "type": "fact",
+      "children": [],
+      "page_ref": "2"
+    },
+    "context_dependence": {
+      "label": "Context Dependence",
+      "summary": "CAS identity and function defined by context; shaped by environment.",
+      "type": "fact",
+      "children": [],
+      "page_ref": "2"
+    },
+    "adaptability": {
+      "label": "Adaptability",
+      "summary": "Self-organization, decentralised control, memory, evolution, resilience, anticipation.",
+      "type": "fact",
+      "children": [],
+      "page_ref": "2"
+    },
+    "dynamics": {
+      "label": "Dynamics",
+      "summary": "Non-linear processes, attractors, thresholds, tipping points, feedback loops.",
+      "type": "fact",
+      "children": [],
+      "page_ref": "2"
+    },
+    "complex_causality": {
+      "label": "Complex Causality",
+      "summary": "Emergence, novelty, non-linear causal trajectories, unpredictability.",
+      "type": "fact",
+      "children": [],
+      "page_ref": "2"
+    },
+    "cas_implications": {
+      "label": "Implications for CAS-Based Practice",
+      "summary": "Shifting from control to collaboration and interdependence.",
+      "type": "concept",
+      "children": [
+        "habits_of_mind",
+        "systemic_assessment",
+        "cas_capacities"
+      ]
+    },
+    "habits_of_mind": {
+      "label": "Cultivate CAS Thinking",
+      "summary": "Interconnected thinking, accepting uncertainty, no quick fixes.",
+      "type": "fact",
+      "children": [],
+      "page_ref": "3"
+    },
+    "systemic_assessment": {
+      "label": "Assess Systemic Features",
+      "summary": "Identify key variables and leverage points for systemic change.",
+      "type": "fact",
+      "children": [],
+      "page_ref": "3"
+    },
+    "cas_capacities": {
+      "label": "Nurture CAS Capacities",
+      "summary": "Foster creativity, adaptability, trust, and shared learning.",
+      "type": "fact",
+      "children": [],
+      "page_ref": "3"
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+    "nodes": {
+        "root": {
+            "label": "The Mycelium as a Network",
+            "summary": "An exploration of how the interconnected network growth pattern of fungal mycelia links cellular events to ecological colony behavior, utilizing graph theory, biophysics, and mathematical modeling.",
+            "type": "concept",
+            "children": [
+                "c_biophysical_growth",
+                "c_fluid_dynamics",
+                "c_network_topology",
+                "c_adaptive_plasticity",
+                "c_mathematical_modeling"
+            ]
+        },
+        "c_biophysical_growth": {
+            "label": "Hyphal Tip Growth & Cytology",
+            "summary": "The cellular and biophysical mechanisms driving the physical extension of individual hyphae.",
+            "type": "concept",
+            "children": [
+                "f_spitzenkorper",
+                "f_turgor_pressure"
+            ]
+        },
+        "f_spitzenkorper": {
+            "label": "Polarized Secretion via Spitzenkörper",
+            "summary": "Hyphae grow by apical extension through highly localized, polarized secretion of wall materials from macrovesicles and chitosomes, choreographed by the Spitzenkörper. Membrane recycling occurs distally via endosomes.",
+            "type": "fact",
+            "children": []
+        },
+        "f_turgor_pressure": {
+            "label": "Turgor-Driven Extension",
+            "summary": "Hyphal volume increase is driven by water uptake via osmosis, regulated by a MAPK cascade or stretch-activated channels (e.g., mid1). Maintaining sufficient turgor pressure is essential for overcoming cell wall yield thresholds.",
+            "type": "fact",
+            "children": []
+        },
+        "c_fluid_dynamics": {
+            "label": "Fluid Dynamics & Transport",
+            "summary": "The physical principles governing the flow of water, nutrients, and organelles through the hyphal lumen.",
+            "type": "concept",
+            "children": [
+                "f_poiseuille_flow",
+                "f_hydraulic_conductivity"
+            ]
+        },
+        "f_poiseuille_flow": {
+            "label": "Longitudinal Poiseuille Flow",
+            "summary": "Longitudinal fluid flow within the hyphal lumen is laminar and modeled following Poiseuille flow dynamics, driven by hydrostatic pressure gradients across the fungal colony.",
+            "type": "fact",
+            "children": []
+        },
+        "f_hydraulic_conductivity": {
+            "label": "Transverse Hydraulic Conductivity",
+            "summary": "Water uptake depends on the permeability of the plasma membrane, mediated by aquaporins (AQPs) in parallel, and outer wall layers like hydrophobins acting in series.",
+            "type": "fact",
+            "children": []
+        },
+        "c_network_topology": {
+            "label": "Graph Theory & Topological Architecture",
+            "summary": "The quantitative assessment of the mycelium as a self-organized mathematical graph.",
+            "type": "concept",
+            "children": [
+                "f_planar_networks",
+                "f_tradeoff_optimization"
+            ]
+        },
+        "f_planar_networks": {
+            "label": "Planar Spatial Networks & Anastomosis",
+            "summary": "Fungi grow as fractal, tree-like structures that become planar spatial networks via sub-apical branching and tangential hyphal fusions (anastomoses) which create structural loops and cross-links.",
+            "type": "fact",
+            "children": []
+        },
+        "f_tradeoff_optimization": {
+            "label": "Network Measure Trade-offs",
+            "summary": "Graph theory reveals that mycelial networks balance strict biological trade-offs between total wiring length (cost), transport efficiency, and resilience to damage, often favoring robustness over pure minimal cost compared to animal vascular systems.",
+            "type": "fact",
+            "children": []
+        },
+        "c_adaptive_plasticity": {
+            "label": "Adaptive Plasticity & Foraging",
+            "summary": "How network structure dynamically responds to environmental stimuli, resources, and predation.",
+            "type": "concept",
+            "children": [
+                "f_biomass_reallocation",
+                "f_predator_resilience"
+            ]
+        },
+        "f_biomass_reallocation": {
+            "label": "Dynamic Biomass Reallocation",
+            "summary": "Upon discovering resources, the network adapts by selectively reinforcing major transport routes (forming thick cords/rhizomorphs) and recycling redundant intervening mycelium to conserve energy.",
+            "type": "fact",
+            "children": []
+        },
+        "f_predator_resilience": {
+            "label": "Grazing-Induced Resilience",
+            "summary": "When subjected to grazing by fungivorous Collembola, mycelia adapt by increasing interstitial proliferation and cross-linking, thereby consolidating the network and increasing topological robustness against targeted structural attacks.",
+            "type": "fact",
+            "children": []
+        },
+        "c_mathematical_modeling": {
+            "label": "Computational & Empirical Modeling",
+            "summary": "Frameworks bridging microscopic hyphal behavior with macroscopic ecological dynamics.",
+            "type": "concept",
+            "children": [
+                "f_biophysical_mass_flow",
+                "f_neighbor_sensing"
+            ]
+        },
+        "f_biophysical_mass_flow": {
+            "label": "Minimal Biophysical Mass-Flow Models",
+            "summary": "Models use digitized network architectures as inputs to predict long-distance radiolabel movement, revealing that global control mechanisms can emerge naturally from the network's intrinsic hydraulic connectivity.",
+            "type": "fact",
+            "children": []
+        },
+        "f_neighbor_sensing": {
+            "label": "Neighbor-Sensing Models",
+            "summary": "Computational models demonstrating that complex, decentralized, and adaptive architectural morphologies emerge purely from simple, localized biophysical rules followed by individual hyphal tips without central coordination.",
+            "type": "fact",
+            "children": []
+        }
+    }
+}

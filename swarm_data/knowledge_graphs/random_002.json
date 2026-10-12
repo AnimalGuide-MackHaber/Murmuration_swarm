@@ -1,0 +1,933 @@
+{
+  "nodes": {
+    "root": {
+      "label": "Cognitive Architectures for Language Agents (CoALA)",
+      "summary": "A conceptual framework that draws on cognitive science and symbolic AI to organize and design general-purpose language agents using Large Language Models (LLMs) as core computation units.",
+      "type": "concept",
+      "children": [
+        "comparative_agents",
+        "coala_framework",
+        "hieramas_framework",
+        "design_insights",
+        "historical_foundations"
+      ]
+    },
+    "historical_foundations": {
+      "label": "Historical Foundations",
+      "summary": "The theoretical lineage from symbolic manipulation to modern LLM-based agents.",
+      "type": "concept",
+      "children": [
+        "production_systems",
+        "cognitive_architectures_symbolic",
+        "llm_production_analogy"
+      ]
+    },
+    "production_systems": {
+      "label": "Production Systems",
+      "summary": "Formalisms that reduce computation to symbolic manipulation via rules.",
+      "type": "concept",
+      "children": [
+        "ps_definition",
+        "markov_algorithms"
+      ]
+    },
+    "ps_definition": {
+      "label": "Production System Definition",
+      "summary": "A set of rules where each specifies a precondition and an action; if the precondition is met, the action is taken. Original forms were string rewriting systems (X Y Z -> X W Z).",
+      "type": "fact",
+      "children": []
+    },
+    "markov_algorithms": {
+      "label": "Markov Algorithms",
+      "summary": "Production systems with priority ordering used to specify algorithms; proven to be Turing complete.",
+      "type": "fact",
+      "children": []
+    },
+    "cognitive_architectures_symbolic": {
+      "label": "Symbolic Cognitive Architectures",
+      "summary": "Systems that mimic human cognition by instantiating perception, memory, and planning to achieve flexible, rational behaviors.",
+      "type": "concept",
+      "children": [
+        "soar_architecture"
+      ]
+    },
+    "soar_architecture": {
+      "label": "Soar Architecture",
+      "summary": "A canonical cognitive architecture that uses a decision loop to match productions in long-term memory against working memory.",
+      "type": "concept",
+      "children": [
+        "soar_memory",
+        "soar_decision_making",
+        "soar_learning"
+      ]
+    },
+    "soar_memory": {
+      "label": "Soar Memory Types",
+      "summary": "Working memory (current circumstances/goals), Procedural memory (the production system), Semantic memory (world facts), and Episodic memory (past behaviors).",
+      "type": "fact",
+      "children": []
+    },
+    "soar_decision_making": {
+      "label": "Soar Decision Cycle",
+      "summary": "A loop consisting of a proposal and evaluation phase (ranking candidate actions) followed by the implementation of the best action.",
+      "type": "fact",
+      "children": []
+    },
+    "soar_learning": {
+      "label": "Soar Learning Mechanisms",
+      "summary": "Includes writing to semantic/episodic memory, reinforcement learning to weight productions, and 'chunking' to write new productions into procedural memory.",
+      "type": "fact",
+      "children": []
+    },
+    "llm_production_analogy": {
+      "label": "LLMs as Probabilistic Production Systems",
+      "summary": "The analogy that LLMs define a probability distribution over possible string completions (productions) given a prompt (precondition).",
+      "type": "concept",
+      "children": [
+        "prob_prod_definition",
+        "prompt_engineering_control"
+      ]
+    },
+    "prob_prod_definition": {
+      "label": "Probabilistic Production Definition",
+      "summary": "If X is a prompt and Y a continuation, the LLM defines P(Yi|X), sampling a completion each time it is called.",
+      "type": "fact",
+      "children": []
+    },
+    "prompt_engineering_control": {
+      "label": "Prompt Engineering as Control Flow",
+      "summary": "Manipulations of the input string (few-shot, CoT) act as a sequence of productions that bias the LLM toward high-quality completions.",
+      "type": "fact",
+      "children": []
+    },
+    "coala_framework": {
+      "label": "The CoALA Framework",
+      "summary": "A blueprint for language agents organizing them by information storage, action space, and decision-making procedure.",
+      "type": "concept",
+      "children": [
+        "coala_components",
+        "coala_decision_making",
+        "coala_design_principles",
+        "coala_memory",
+        "coala_conceptual_dilemmas",
+        "coala_action_space",
+        "coala_reasoning_learning"
+      ]
+    },
+    "coala_memory": {
+      "label": "Information Storage (Memory)",
+      "summary": "Modular memory components that allow stateless LLMs to maintain internal state across interactions.",
+      "type": "concept",
+      "children": [
+        "semantic_memory",
+        "episodic_memory",
+        "working_memory",
+        "coala_procedural_memory",
+        "procedural_memory",
+        "coala_memory_types"
+      ]
+    },
+    "working_memory": {
+      "label": "Working Memory",
+      "summary": "A central hub data structure persisting across LLM calls, storing perceptual inputs, active goals, and results from reasoning/retrieval.",
+      "type": "fact",
+      "children": [
+        "wm_fact_2",
+        "wm_fact_1"
+      ]
+    },
+    "episodic_memory": {
+      "label": "Episodic Memory",
+      "summary": "Stores experience from earlier decision cycles, such as history event flows or game trajectories, used as bases for reasoning.",
+      "type": "fact",
+      "children": [
+        "em_fact_1"
+      ]
+    },
+    "semantic_memory": {
+      "label": "Semantic Memory",
+      "summary": "Stores structured or unstructured knowledge about the world and the agent, often initialized from databases (e.g., Wikipedia).",
+      "type": "fact",
+      "children": [
+        "sm_fact_1",
+        "sm_fact_2"
+      ]
+    },
+    "procedural_memory": {
+      "label": "Procedural Memory",
+      "summary": "Includes implicit knowledge (LLM weights) and explicit knowledge (agent code for actions and decision-making).",
+      "type": "fact",
+      "children": [
+        "pm_implicit",
+        "pm_explicit"
+      ]
+    },
+    "coala_action_space": {
+      "label": "Structured Action Space",
+      "summary": "Divides actions into those that affect the internal state and those that interact with the external environment.",
+      "type": "concept",
+      "children": [
+        "internal_actions",
+        "external_actions",
+        "coala_internal_actions",
+        "coala_action_tradeoffs",
+        "coala_external_actions"
+      ]
+    },
+    "external_actions": {
+      "label": "External Actions (Grounding)",
+      "summary": "Procedures that execute actions in the world and process feedback into text for working memory.",
+      "type": "concept",
+      "children": [
+        "digital_grounding",
+        "dialogue_grounding",
+        "physical_grounding",
+        "digital_env",
+        "physical_env",
+        "dialogue_env"
+      ]
+    },
+    "physical_grounding": {
+      "label": "Physical Grounding",
+      "summary": "Processing sensory input (via VLMs) into text and using robotic planners to execute language-based commands.",
+      "type": "fact",
+      "children": []
+    },
+    "dialogue_grounding": {
+      "label": "Dialogue Grounding",
+      "summary": "Interaction with humans or other agents for instructions, clarification, or social simulation.",
+      "type": "fact",
+      "children": []
+    },
+    "digital_grounding": {
+      "label": "Digital Grounding",
+      "summary": "Interacting with APIs, websites, games, or general code execution; often packaged as 'tools'.",
+      "type": "fact",
+      "children": []
+    },
+    "internal_actions": {
+      "label": "Internal Actions",
+      "summary": "Actions that modify or access the agent's internal memory modules.",
+      "type": "concept",
+      "children": [
+        "retrieval_action",
+        "learning_action",
+        "reasoning_action"
+      ]
+    },
+    "retrieval_action": {
+      "label": "Retrieval Actions",
+      "summary": "Reading information from long-term memories (episodic, semantic, procedural) into working memory using rule-based, sparse, or dense methods.",
+      "type": "fact",
+      "children": [
+        "ret_fact_1"
+      ]
+    },
+    "reasoning_action": {
+      "label": "Reasoning Actions",
+      "summary": "Using the LLM to process working memory to generate new information, summarize observations, or distill insights.",
+      "type": "fact",
+      "children": [
+        "reas_fact_1"
+      ]
+    },
+    "learning_action": {
+      "label": "Learning Actions",
+      "summary": "Writing information to long-term memory to improve future performance.",
+      "type": "concept",
+      "children": [
+        "learn_semantic",
+        "learn_episodic",
+        "learning_semantic",
+        "learning_procedural_code",
+        "learn_agent_code",
+        "learn_llm_params",
+        "learning_episodic",
+        "learning_procedural_weights"
+      ]
+    },
+    "learning_episodic": {
+      "label": "Updating Episodic Memory",
+      "summary": "Storing trajectories or experiences to be used as examples for future reasoning.",
+      "type": "fact",
+      "children": []
+    },
+    "learning_semantic": {
+      "label": "Updating Semantic Memory",
+      "summary": "Storing inferences drawn from experience (e.g., via reflection) as world knowledge.",
+      "type": "fact",
+      "children": []
+    },
+    "learning_procedural_weights": {
+      "label": "Updating LLM Parameters",
+      "summary": "Fine-tuning the LLM using supervised learning, RL from environment/human/AI feedback, or self-improvement.",
+      "type": "fact",
+      "children": []
+    },
+    "learning_procedural_code": {
+      "label": "Updating Agent Code",
+      "summary": "Modifying prompt templates (learning to reason) or creating new code-based skills for grounding.",
+      "type": "fact",
+      "children": []
+    },
+    "coala_decision_making": {
+      "label": "Decision-Making Procedure",
+      "summary": "The top-level 'main' program that runs a repeated cycle of planning and execution.",
+      "type": "concept",
+      "children": [
+        "planning_stage",
+        "execution_stage"
+      ]
+    },
+    "planning_stage": {
+      "label": "Planning Stage",
+      "summary": "A sub-process using reasoning and retrieval to determine the next best action.",
+      "type": "concept",
+      "children": [
+        "proposal_substage",
+        "evaluation_substage",
+        "selection_substage"
+      ]
+    },
+    "proposal_substage": {
+      "label": "Proposal",
+      "summary": "Generating one or more action candidates using reasoning or structured simulators.",
+      "type": "fact",
+      "children": []
+    },
+    "evaluation_substage": {
+      "label": "Evaluation",
+      "summary": "Assigning values to proposed actions via heuristic rules, LLM perplexity, learned value functions, or simulated rollouts.",
+      "type": "fact",
+      "children": []
+    },
+    "selection_substage": {
+      "label": "Selection",
+      "summary": "Choosing the final action to execute based on values (e.g., argmax, softmax, majority vote).",
+      "type": "fact",
+      "children": []
+    },
+    "execution_stage": {
+      "label": "Execution Stage",
+      "summary": "Applying the selected action (grounding or learning), receiving environmental feedback, and looping back to planning.",
+      "type": "fact",
+      "children": []
+    },
+    "comparative_agents": {
+      "label": "Comparative Agent Analysis",
+      "summary": "Application of CoALA to existing agents to highlight their architectural differences.",
+      "type": "concept",
+      "children": [
+        "agent_saycan",
+        "agent_react",
+        "agent_voyager",
+        "agent_generative",
+        "agent_tot"
+      ]
+    },
+    "agent_saycan": {
+      "label": "SayCan",
+      "summary": "Procedural memory only; external action space only; decision-making via single-step evaluation of a fixed set of skills.",
+      "type": "fact",
+      "children": []
+    },
+    "agent_react": {
+      "label": "ReAct",
+      "summary": "No long-term memory; action space includes internal reasoning and external grounding; decision cycle: reason -> act.",
+      "type": "fact",
+      "children": []
+    },
+    "agent_voyager": {
+      "label": "Voyager",
+      "summary": "Uses procedural memory for a skill library; all four action types (grounding, reasoning, retrieval, learning); learns by adding new code skills.",
+      "type": "fact",
+      "children": []
+    },
+    "agent_generative": {
+      "label": "Generative Agents",
+      "summary": "Uses episodic and semantic memory; retrieval/reasoning to generate reflections; high-level daily planning.",
+      "type": "fact",
+      "children": []
+    },
+    "agent_tot": {
+      "label": "Tree of Thoughts (ToT)",
+      "summary": "No long-term memory; reasoning-only internal actions; deliberate decision-making using tree search (BFS/DFS).",
+      "type": "fact",
+      "children": []
+    },
+    "design_insights": {
+      "label": "Actionable Design Insights",
+      "summary": "Guidelines for building next-generation language agents based on the CoALA framework.",
+      "type": "concept",
+      "children": [
+        "modular_agents",
+        "code_llm_tradeoff",
+        "structured_reasoning",
+        "lifelong_learning",
+        "action_space_safety",
+        "deliberative_planning"
+      ]
+    },
+    "modular_agents": {
+      "label": "Modular Agent Architecture",
+      "summary": "Agents should be structured as modular components (Memory, Action, Agent classes) to improve compatibility and reduce technical debt.",
+      "type": "fact",
+      "children": []
+    },
+    "code_llm_tradeoff": {
+      "label": "LLM vs. Code Trade-off",
+      "summary": "Code provides interpretable, deterministic rules; LLMs provide stochastic, zero-shot flexibility. Use code for generic algorithms (e.g., tree search) to complement LLMs.",
+      "type": "fact",
+      "children": []
+    },
+    "structured_reasoning": {
+      "label": "Structured Reasoning",
+      "summary": "Move beyond low-level prompt engineering toward higher-level sequences of reasoning steps and structural output parsing.",
+      "type": "fact",
+      "children": []
+    },
+    "lifelong_learning": {
+      "label": "Lifelong Learning",
+      "summary": "Combining human knowledge (semantic) with self-generated experience (episodic) and skills (procedural) for autonomous improvement.",
+      "type": "fact",
+      "children": []
+    },
+    "action_space_safety": {
+      "label": "Action Space Safety",
+      "summary": "Differentiating between risky internal actions (procedural modification) and risky external actions (harmful grounding) to implement safety guards.",
+      "type": "fact",
+      "children": []
+    },
+    "deliberative_planning": {
+      "label": "Deliberative Planning",
+      "summary": "Implementing propose-evaluate-select loops, mixing language reasoning with code-based simulation and adaptive computation allocation.",
+      "type": "fact",
+      "children": []
+    },
+    "coala_root": {
+      "label": "Cognitive Architectures for Language Agents (CoALA)",
+      "summary": "A conceptual framework for organizing and designing language agents by positioning the LLM as the core component of a larger cognitive architecture, drawing from symbolic AI and cognitive science.",
+      "type": "concept",
+      "children": [
+        "memory_module",
+        "action_space",
+        "decision_making_procedure"
+      ]
+    },
+    "memory_module": {
+      "label": "Memory Modules",
+      "summary": "The internal information storage system of the agent, divided into short-term and long-term components to persist information across stateless LLM calls.",
+      "type": "concept",
+      "children": [
+        "working_memory",
+        "long_term_memory"
+      ]
+    },
+    "wm_fact_1": {
+      "label": "Working Memory Contents",
+      "summary": "Maintains active and readily available information as symbolic variables, including perceptual inputs, active knowledge (generated by reasoning or retrieved), and active goals. (Page 9)",
+      "type": "fact",
+      "children": []
+    },
+    "wm_fact_2": {
+      "label": "Working Memory Process",
+      "summary": "LLM input is synthesized from a subset of working memory (e.g., prompt templates); LLM output is parsed into variables stored back in working memory. (Page 9)",
+      "type": "fact",
+      "children": []
+    },
+    "long_term_memory": {
+      "label": "Long-Term Memory",
+      "summary": "Persistent storage divided into episodic, semantic, and procedural modules.",
+      "type": "concept",
+      "children": [
+        "episodic_memory",
+        "semantic_memory",
+        "procedural_memory"
+      ]
+    },
+    "em_fact_1": {
+      "label": "Episodic Memory Formats",
+      "summary": "Can consist of training input-output pairs, history event flows, or game trajectories from previous episodes. (Page 9)",
+      "type": "fact",
+      "children": []
+    },
+    "sm_fact_1": {
+      "label": "Semantic Memory Sources",
+      "summary": "Initialized from external databases (e.g., Wikipedia) or game manuals and facts. (Page 9)",
+      "type": "fact",
+      "children": []
+    },
+    "sm_fact_2": {
+      "label": "Semantic Memory Updates",
+      "summary": "Language agents can write new knowledge obtained from LLM reasoning into semantic memory as a form of learning. (Page 9)",
+      "type": "fact",
+      "children": []
+    },
+    "pm_implicit": {
+      "label": "Implicit Procedural Memory",
+      "summary": "Knowledge stored within the LLM weights. (Page 9)",
+      "type": "fact",
+      "children": []
+    },
+    "pm_explicit": {
+      "label": "Explicit Procedural Memory",
+      "summary": "Knowledge written in the agent's code, divided into procedures that implement actions and procedures that implement decision-making. (Page 9)",
+      "type": "fact",
+      "children": []
+    },
+    "action_space": {
+      "label": "Action Space",
+      "summary": "The set of all possible operations the agent can perform, divided into external grounding and internal memory interactions.",
+      "type": "concept",
+      "children": [
+        "external_actions",
+        "internal_actions"
+      ]
+    },
+    "physical_env": {
+      "label": "Physical Environments",
+      "summary": "Involves processing visual, audio, and tactile inputs into text and using robotic planners to execute language-based commands. (Page 10)",
+      "type": "fact",
+      "children": []
+    },
+    "dialogue_env": {
+      "label": "Dialogue Environments",
+      "summary": "Linguistic interactions with humans or other agents for instruction, help, clarification, or social simulation. (Page 10)",
+      "type": "fact",
+      "children": []
+    },
+    "digital_env": {
+      "label": "Digital Environments",
+      "summary": "Interactions with games, APIs, websites, and general code execution. APIs are often packaged as 'tools'. (Page 10)",
+      "type": "fact",
+      "children": []
+    },
+    "ret_fact_1": {
+      "label": "Retrieval Implementations",
+      "summary": "Can be implemented as rule-based, sparse, or dense retrieval. (Page 10)",
+      "type": "fact",
+      "children": []
+    },
+    "reas_fact_1": {
+      "label": "Reasoning Use Cases",
+      "summary": "Used to summarize observations, analyze trajectories, or support decision-making by providing additional context for subsequent LLM calls. (Page 10)",
+      "type": "fact",
+      "children": []
+    },
+    "learn_episodic": {
+      "label": "Updating Episodic Memory",
+      "summary": "Storing trajectories or experiences to be retrieved later as examples. (Page 11)",
+      "type": "fact",
+      "children": []
+    },
+    "learn_semantic": {
+      "label": "Updating Semantic Memory",
+      "summary": "Reasoning about raw experiences to store resulting inferences as world knowledge. (Page 11)",
+      "type": "fact",
+      "children": []
+    },
+    "learn_llm_params": {
+      "label": "Updating LLM Parameters",
+      "summary": "Modifying implicit procedural knowledge via fine-tuning (supervised, imitation, RL, RLHF, or AI feedback). (Page 11)",
+      "type": "fact",
+      "children": []
+    },
+    "learn_agent_code": {
+      "label": "Updating Agent Code",
+      "summary": "Modifying explicit procedural memory, including reasoning (prompt templates), grounding (code-based skills), retrieval, or decision-making procedures. (Page 11)",
+      "type": "fact",
+      "children": []
+    },
+    "decision_making_procedure": {
+      "label": "Decision Making Procedure",
+      "summary": "The top-level 'main' agent program that manages the decision cycle to select grounding or learning actions.",
+      "type": "concept",
+      "children": [
+        "decision_cycle"
+      ]
+    },
+    "decision_cycle": {
+      "label": "Decision Cycle",
+      "summary": "A repeated loop consisting of a planning stage and an execution stage.",
+      "type": "concept",
+      "children": [
+        "planning_stage",
+        "execution_stage"
+      ]
+    },
+    "coala_components": {
+      "label": "CoALA Agent Components",
+      "summary": "The three distinct concepts that define an agent in the CoALA framework.",
+      "type": "concept",
+      "children": [
+        "fact_coala_def"
+      ]
+    },
+    "fact_coala_def": {
+      "label": "CoALA Definition",
+      "summary": "Agents are defined over: (i) internal memory, (ii) a set of possible internal and external actions, and (iii) a decision making procedure over those actions. (Page 15)",
+      "type": "fact",
+      "children": []
+    },
+    "coala_internal_actions": {
+      "label": "Internal Actions",
+      "summary": "Actions that modify or read from the agent's internal state.",
+      "type": "concept",
+      "children": [
+        "fact_int_actions_list"
+      ]
+    },
+    "fact_int_actions_list": {
+      "label": "Internal Action Types",
+      "summary": "Internal actions consist of reasoning, retrieval, and learning. (Page 16)",
+      "type": "fact",
+      "children": []
+    },
+    "coala_external_actions": {
+      "label": "External Actions",
+      "summary": "Actions that interact with the external world.",
+      "type": "concept",
+      "children": [
+        "fact_ext_actions_def"
+      ]
+    },
+    "fact_ext_actions_def": {
+      "label": "Grounding Actions",
+      "summary": "External actions are referred to as 'grounding' actions, which interface with the environment. (Page 16)",
+      "type": "fact",
+      "children": []
+    },
+    "coala_action_tradeoffs": {
+      "label": "Action Space Tradeoffs",
+      "summary": "The relationship between the size of the action space and the complexity of decision-making.",
+      "type": "concept",
+      "children": [
+        "fact_action_complexity",
+        "fact_action_safety"
+      ]
+    },
+    "fact_action_complexity": {
+      "label": "Complexity Tradeoff",
+      "summary": "Larger action spaces (e.g., Voyager, Generative Agents) lead to more complex decision-making problems, often requiring customized or hand-crafted procedures. (Page 16)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_action_safety": {
+      "label": "Action Space Safety",
+      "summary": "Learning actions can cause internal harm (procedural deletion), while grounding actions can cause external harm (e.g., 'rm' in bash, harmful speech). (Page 16)",
+      "type": "fact",
+      "children": []
+    },
+    "coala_memory_types": {
+      "label": "Memory Types",
+      "summary": "The specific functional categories of memory in the framework.",
+      "type": "concept",
+      "children": [
+        "fact_semantic_mem",
+        "fact_episodic_mem",
+        "fact_working_mem"
+      ]
+    },
+    "fact_semantic_mem": {
+      "label": "Semantic Memory",
+      "summary": "Stores general knowledge, such as a set of items for sale in a retail assistant. (Page 15)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_episodic_mem": {
+      "label": "Episodic Memory",
+      "summary": "Stores specific events or interactions, such as a customer's previous purchases. (Page 15)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_working_mem": {
+      "label": "Working Memory",
+      "summary": "Used to track the current state, such as the dialogue state in a conversation. (Page 15)",
+      "type": "fact",
+      "children": []
+    },
+    "coala_procedural_memory": {
+      "label": "Procedural Memory",
+      "summary": "Memory regarding how to perform tasks, implemented in two distinct forms.",
+      "type": "concept",
+      "children": [
+        "fact_proc_code",
+        "fact_proc_params"
+      ]
+    },
+    "fact_proc_code": {
+      "label": "Agent Code",
+      "summary": "Deterministic rules that are interpretable and extensible but brittle to stochasticity. (Page 14)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_proc_params": {
+      "label": "LLM Parameters",
+      "summary": "A large, stochastic production system that is hard to interpret but offers zero-shot flexibility. (Page 14)",
+      "type": "fact",
+      "children": []
+    },
+    "coala_reasoning_learning": {
+      "label": "Reasoning and Learning",
+      "summary": "The processes by which agents update their internal state and produce output.",
+      "type": "concept",
+      "children": [
+        "coala_structured_reasoning",
+        "coala_learning_modes"
+      ]
+    },
+    "coala_structured_reasoning": {
+      "label": "Structured Reasoning",
+      "summary": "Moving beyond simple prompt engineering to structured procedures for updating working memory.",
+      "type": "concept",
+      "children": [
+        "fact_reasoning_frameworks",
+        "fact_output_parsing"
+      ]
+    },
+    "fact_reasoning_frameworks": {
+      "label": "Reasoning Frameworks",
+      "summary": "Frameworks like LangChain and LlamaIndex define higher-level sequences of reasoning steps to reduce per-call LLM burden. (Page 15)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_output_parsing": {
+      "label": "Structured Output Parsing",
+      "summary": "Solutions like Guidance and OpenAI function calling help update working memory variables. (Page 15)",
+      "type": "fact",
+      "children": []
+    },
+    "coala_learning_modes": {
+      "label": "Learning Modes",
+      "summary": "Methods for agents to acquire new knowledge or skills.",
+      "type": "concept",
+      "children": [
+        "fact_meta_learning",
+        "fact_learning_forms"
+      ]
+    },
+    "fact_meta_learning": {
+      "label": "Meta-learning",
+      "summary": "Modifying agent code to learn more effectively, such as learning better retrieval procedures. (Page 16)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_learning_forms": {
+      "label": "Other Learning Forms",
+      "summary": "Includes fine-tuning smaller models for reasoning sub-tasks and 'unlearning' by deleting unneeded memory items. (Page 16)",
+      "type": "fact",
+      "children": []
+    },
+    "coala_design_principles": {
+      "label": "CoALA Design Principles",
+      "summary": "Guidelines for implementing practical language agents.",
+      "type": "concept",
+      "children": [
+        "fact_modularity",
+        "fact_decision_tradeoff"
+      ]
+    },
+    "fact_modularity": {
+      "label": "Modular Architecture",
+      "summary": "Agents should be structured and modular to consolidate technical investment, improve compatibility, and reduce technical debt in industry. (Page 14)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_decision_tradeoff": {
+      "label": "Decision-Making Tradeoff",
+      "summary": "Tradeoff between performance (complex, problem-specific like Voyager) and generalization (simpler, domain-agnostic like ReAct). (Page 15)",
+      "type": "fact",
+      "children": []
+    },
+    "coala_conceptual_dilemmas": {
+      "label": "Conceptual Dilemmas",
+      "summary": "Open research questions regarding the boundaries and modalities of agents.",
+      "type": "concept",
+      "children": [
+        "fact_llm_vlm",
+        "fact_internal_external_boundary"
+      ]
+    },
+    "fact_llm_vlm": {
+      "label": "LLMs vs VLMs",
+      "summary": "Modular approach uses separate image-to-text models; Integrated approach projects images directly into the language model representation space. (Page 17)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_internal_external_boundary": {
+      "label": "Internal vs External Boundary",
+      "summary": "The boundary is determined by controllability and coupling. If a resource is controllable and tightly coupled, it is internal memory; otherwise, it is an external environment. (Page 17)",
+      "type": "fact",
+      "children": []
+    },
+    "hieramas_framework": {
+      "label": "HieraMAS (Hierarchical Agent Collaboration)",
+      "summary": "A hierarchical framework optimizing intra-node LLM mixtures and inter-node communication topology for multi-agent systems.",
+      "type": "concept",
+      "children": [
+        "hieramas_architecture",
+        "hieramas_mdp",
+        "hieramas_training",
+        "hieramas_theory",
+        "hieramas_evaluation"
+      ]
+    },
+    "hieramas_architecture": {
+      "label": "HieraMAS Architecture",
+      "summary": "The structural organization of agents into supernodes.",
+      "type": "concept",
+      "children": [
+        "hieramas_supernode"
+      ]
+    },
+    "hieramas_supernode": {
+      "label": "Supernode",
+      "summary": "A mixture-of-LLMs unit that implements a propose-synthesis structure for a specific functional role.",
+      "type": "concept",
+      "children": [
+        "fact_supernode_composition",
+        "fact_supernode_structure"
+      ]
+    },
+    "fact_supernode_composition": {
+      "label": "Supernode Composition",
+      "summary": "A supernode consists of W proposer LLMs (generating diverse proposals) and one synthesizer LLM (aggregating proposals into a unified response). (Page 2)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_supernode_structure": {
+      "label": "Internal Connectivity",
+      "summary": "Internally, each proposer connects directly to the synthesizer. (Page 2)",
+      "type": "fact",
+      "children": []
+    },
+    "hieramas_mdp": {
+      "label": "HieraMAS MDP Formulation",
+      "summary": "The formalization of HieraMAS as a Markov Decision Process.",
+      "type": "concept",
+      "children": [
+        "fact_mdp_state",
+        "fact_mdp_action",
+        "fact_mdp_reward"
+      ]
+    },
+    "fact_mdp_state": {
+      "label": "MDP State",
+      "summary": "State x = {Role assignments r_i, LLM assignments m within supernodes, Adjacency matrix E, Input query Q}. (Page 2)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_mdp_action": {
+      "label": "MDP Action Space",
+      "summary": "Actions include: (1) Role selection/deactivation, (2) LLM selection/skip per position, (3) Edge selection for communication topology. (Page 2)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_mdp_reward": {
+      "label": "MDP Reward Function",
+      "summary": "Reward R(x, a) balances task correctness U against token expenditure cost C. (Page 2)",
+      "type": "fact",
+      "children": []
+    },
+    "hieramas_training": {
+      "label": "Two-Stage Training Algorithm",
+      "summary": "A decoupled training process to solve credit assignment problems.",
+      "type": "concept",
+      "children": [
+        "hieramas_stage1",
+        "hieramas_stage2"
+      ]
+    },
+    "hieramas_stage1": {
+      "label": "Stage 1: Supernode Optimization",
+      "summary": "Learning optimal LLM selection within supernodes using random graphs.",
+      "type": "concept",
+      "children": [
+        "fact_stage1_reward",
+        "fact_skip_token"
+      ]
+    },
+    "fact_stage1_reward": {
+      "label": "Multi-Level Reward",
+      "summary": "Combines node-level reward (synthesizer output vs ground truth) and final system reward: Reff_i = alpha * Rnode_i + (1 - alpha) * Rfinal. (Page 4)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_skip_token": {
+      "label": "Skip Token Mechanism",
+      "summary": "A special token that enables automatic pruning: skipping a proposer removes it; skipping a synthesizer deactivates the entire functional role. (Page 3)",
+      "type": "fact",
+      "children": []
+    },
+    "hieramas_stage2": {
+      "label": "Stage 2: Graph Classifier Training",
+      "summary": "Learning the optimal communication topology as a holistic classification task.",
+      "type": "concept",
+      "children": [
+        "fact_graph_pool",
+        "fact_graph_classifier"
+      ]
+    },
+    "fact_graph_pool": {
+      "label": "Graph Candidate Pool",
+      "summary": "A pre-generated pool of K random Directed Acyclic Graphs (DAGs) with varying edge densities. (Page 3)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_graph_classifier": {
+      "label": "GCN-based Classifier",
+      "summary": "Uses a Graph Convolutional Network (GCN) to score candidate graphs based on query and role embeddings. (Page 3)",
+      "type": "fact",
+      "children": []
+    },
+    "hieramas_theory": {
+      "label": "HieraMAS Theoretical Analysis",
+      "summary": "Formal proofs justifying the framework's design to solve credit assignment.",
+      "type": "concept",
+      "children": [
+        "fact_theorem_masking",
+        "fact_theorem_edge_error"
+      ]
+    },
+    "fact_theorem_masking": {
+      "label": "Masking Effect Theorem",
+      "summary": "Multi-level rewards prevent the 'masking effect' where a system-level success hides the failure of an individual supernode. (Page 5)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_theorem_edge_error": {
+      "label": "Edge Credit Assignment Error",
+      "summary": "Per-edge policy gradients incur an irreducible error rate Omega((1-rho)pq); holistic graph scoring reduces this to a vanishing estimation error O(1/sqrt(Nsamples)). (Page 5)",
+      "type": "fact",
+      "children": []
+    },
+    "hieramas_evaluation": {
+      "label": "HieraMAS Evaluation",
+      "summary": "Empirical results and analysis of the framework's performance.",
+      "type": "concept",
+      "children": [
+        "fact_benchmarks",
+        "fact_topology_patterns",
+        "fact_lost_in_middle"
+      ]
+    },
+    "fact_benchmarks": {
+      "label": "Evaluation Benchmarks",
+      "summary": "Tested on HumanEval++ (coding), MATH (mathematical reasoning), and MMLU-Redux (general knowledge). (Page 6)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_topology_patterns": {
+      "label": "Learned Topology Patterns",
+      "summary": "Psychologist and Doctor roles consistently act as sink nodes; Critic and Economist roles act as source/hub nodes. (Page 6)",
+      "type": "fact",
+      "children": []
+    },
+    "fact_lost_in_middle": {
+      "label": "Lost-in-the-Middle Phenomenon",
+      "summary": "Observation that increasing proposer count beyond 2 leads to performance drops because the synthesizer overlooks critical information in excessively long contexts. (Page 18)",
+      "type": "fact",
+      "children": []
+    }
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "nodes": {
+    "root": {
+      "label": "Complex Adaptive Systems",
+      "summary": "A relatively new field of study originating at the Santa Fe Institute, focusing on systems with emergent behavior and adaptation.",
+      "type": "concept",
+      "children": [
+        "cas_concepts",
+        "history_origins"
+      ]
+    },
+    "cas_concepts": {
+      "label": "Core Concepts of CAS",
+      "summary": "Fundamental ideas defining Complex Adaptive Systems.",
+      "type": "concept",
+      "children": [
+        "complexity_definition",
+        "cas_definition",
+        "cas_attributes"
+      ]
+    },
+    "complexity_definition": {
+      "label": "Complexity",
+      "summary": "Results from the inter-relationship, inter-action, and inter-connectivity of elements within a system and its environment. Rooted in the Latin 'plexus' and 'complexus'.",
+      "type": "concept",
+      "children": []
+    },
+    "cas_definition": {
+      "label": "Complex Adaptive Systems (CAS)",
+      "summary": "Systems exhibiting complex behaviors emerging from nonlinear interactions among many components at different levels of organization.",
+      "type": "concept",
+      "children": []
+    },
+    "cas_attributes": {
+      "label": "Attributes of CAS",
+      "summary": "Characteristics that define and distinguish Complex Adaptive Systems.",
+      "type": "concept",
+      "children": [
+        "distributed_control",
+        "connectivity",
+        "co_evolution",
+        "sensitive_dependence",
+        "emergent_order",
+        "far_from_equilibrium",
+        "state_of_paradox"
+      ]
+    },
+    "distributed_control": {
+      "label": "Distributed Control",
+      "summary": "No single centralized control mechanism governs system behavior; coherence arises from inter-relationships.",
+      "type": "fact",
+      "children": []
+    },
+    "connectivity": {
+      "label": "Connectivity",
+      "summary": "Complexity arises from the inter-relationship and inter-connectivity of elements within and between systems.",
+      "type": "fact",
+      "children": []
+    },
+    "co_evolution": {
+      "label": "Co-evolution",
+      "summary": "Elements in a system change based on interactions with each other and the environment; patterns change over time.",
+      "type": "concept",
+      "children": []
+    },
+    "sensitive_dependence": {
+      "label": "Sensitive Dependence on Initial Conditions",
+      "summary": "Small changes in input can have profound impacts on overall behavior, making long-term prediction difficult.",
+      "type": "fact",
+      "children": []
+    },
+    "emergent_order": {
+      "label": "Emergent Order",
+      "summary": "Global properties arise from the aggregate behavior of individual agents, not predictable from individual understanding.",
+      "type": "concept",
+      "children": []
+    },
+    "far_from_equilibrium": {
+      "label": "Far From Equilibrium",
+      "summary": "Systems pushed away from equilibrium can survive and thrive, creating new structures and patterns.",
+      "type": "fact",
+      "children": []
+    },
+    "state_of_paradox": {
+      "label": "State of Paradox",
+      "summary": "Dynamics combining both order and chaos, characterized by stability and instability.",
+      "type": "fact",
+      "children": []
+    },
+    "history_origins": {
+      "label": "History and Origins",
+      "summary": "The development and key figures in the field of Complex Adaptive Systems.",
+      "type": "concept",
+      "children": [
+        "santa_fe_institute",
+        "gell_mann",
+        "holland",
+        "kauffman",
+        "prigogine",
+        "goodwin"
+      ]
+    },
+    "santa_fe_institute": {
+      "label": "Santa Fe Institute (SFI)",
+      "summary": "A multidisciplinary research center founded in 1984, dedicated to the study of emerging science and complex systems.",
+      "type": "fact",
+      "children": []
+    },
+    "gell_mann": {
+      "label": "Murray Gell-Mann",
+      "summary": "Co-Chairman of the Science Board of SFI and Nobel laureate for his work on elementary particles; now focuses on CAS.",
+      "type": "fact",
+      "children": []
+    },
+    "holland": {
+      "label": "John Holland",
+      "summary": "Founder of the domain of genetic algorithms, used for problem-solving, optimization, and modeling ecological systems.",
+      "type": "fact",
+      "children": []
+    },
+    "kauffman": {
+      "label": "Stuart Kauffman",
+      "summary": "Biologist investigating how networks of genes can give rise to organ differentiation; explores self-organization and evolution.",
+      "type": "fact",
+      "children": []
+    },
+    "prigogine": {
+      "label": "Ilya Prigogine",
+      "summary": "Nobel laureate in chemistry for his work on non-equilibrium thermodynamics and dissipative structures.",
+      "type": "fact",
+      "children": []
+    },
+    "goodwin": {
+      "label": "Brian Goodwin",
+      "summary": "Professor of biology focusing on 'new' biology \u2013 the study of complex systems dealing with dynamics and emergent order.",
+      "type": "fact",
+      "children": []
+    }
+  }
+}

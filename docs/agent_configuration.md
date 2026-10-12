@@ -1,38 +1,90 @@
 # Agent Configuration & Settings Management
 
-The Murmur Swarm is highly configurable, designed to be completely driven by an external JSON file (`swarm_settings.json`). This decoupling allows users to shape the physical properties of the environment, alter API rate limits per-provider, and inject totally new agents without touching the core Python codebase.
+The Murmur Swarm system is completely configurable via external JSON schemas (`swarm_settings.json` and agent-specific files in `swarm_data/agents/`). This decoupling allows users to tune 3D fluid physical dynamics, adjust API rate-limits, and define complex multi-disciplinary agent personas without modifying any Python code.
 
-## The Settings Manager
+---
 
-The `SettingsManager` class parses the local configuration on initialization and establishes the global ruleset.
+## 1. The Settings Manager ([`core/settings_manager.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/settings_manager.py))
 
-### 1. Physical Environment Tuning
-The swarm's fluid dynamics can be heavily modified. Within the `physics` block of the JSON, users can alter:
+The `SettingsManager` is a singleton service that maintains the active configuration, persists updates to disk, and manages provider-specific rate limiters.
 
-- **Vector Weights (`separation`, `alignment`, `cohesion`, `goal_seeking`)**: These floating point values are the coefficients used in calculating the Net Acceleration. Increasing cohesion makes the swarm tighten into a ball; increasing separation forces it to scatter.
-- **`max_speed`**: Hard caps the velocity vector magnitude.
-- **`visual_range`**: The simulated radius within which an agent can detect peers.
-- **`influence_decay_alpha`**: Modifies the steepness of the $1 / (1 + \alpha \cdot d^2)$ curve, controlling how fast attention drops off with distance.
+### Physics Environment Tuning
 
-### 2. Agent Instantiation
-The `agents` array defines the genetic makeup of the swarm. Each JSON object initializes a unique Pydantic `AgentConfig`.
+The swarm's 3D motion follows a modified Reynolds Boids model. In `swarm_settings.json`, the `physics` block exposes the following parameters:
 
 ```json
 {
-  "id": "chem_01",
-  "name": "Dr. Bonds",
-  "domain": "Chemist",
-  "interaction_style": "Analytical, data-driven, skeptical.",
-  "knowledge_graph_path": "swarm_data/kbase/chemistry.faiss",
-  "system_prompt_template": "You are a swarm agent participating in a spatial simulation..."
+  "physics": {
+    "weights": {
+      "separation": 1.5,
+      "alignment": 1.0,
+      "cohesion": 1.0,
+      "goal_seeking": 0.5
+    },
+    "max_speed": 5.0,
+    "max_force": 0.5,
+    "visual_range": 25.0,
+    "influence_decay_alpha": 0.1
+  }
 }
 ```
 
-- **Domain & Interaction Style**: These fields dynamically alter the system prompt fed to the LLM. "Aggressive/Contrarian" agents will actively attempt to dismantle the theories of others during the ReAct phase.
-- **Knowledge Graph Path**: Tells the orchestrator where to query FAISS/semantic DBs when this specific agent requests contextual knowledge during the simulation.
+- **Separation Weight**: Repulsive force preventing agents from crowding together. Higher values foster topical and cognitive divergence.
+- **Alignment Weight**: Steers agents toward the average heading of local peers, synchronizing conversational trajectory.
+- **Cohesion Weight**: Pulls agents toward the centroid of local peers, encouraging cluster formation and collaborative debate.
+- **Goal Seeking Weight**: Gentle attraction vector pulling agents toward the origin `[0.0, 0.0, 0.0]`, anchoring them to the universal research goal.
+- **Visual Range**: Maximum 3D Euclidean distance over which an agent can detect and communicate with peers.
+- **Influence Decay Alpha ($\alpha$)**: Controls the steepness of auditory attenuation:
+  $$I(r, s) = \frac{1.0}{1.0 + \alpha \cdot d^2}$$
 
-## The State Configuration (`SwarmSnapshot`)
+---
 
-When `app.py` begins a run, it takes the `swarm_settings.json` and uses it to construct the genesis frame: a `SwarmSnapshot`. 
+## 2. Agent Definition & Persona Schema
 
-This snapshot spawns `AgentRuntimeState` objects for every defined agent, randomly placing them across the 3D grid with random initial velocities, waiting for the Physics Engine to take over.
+Every agent in the swarm is defined by an immutable `AgentConfig` model ([`core/swarm_schema.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/swarm_schema.py)):
+
+```json
+{
+  "id": "e4b2d189-5321-4f10-bf71-700142fa9123",
+  "name": "Structural_Engineer",
+  "domain": "Civil and Structural Engineering",
+  "interaction_style": "Collaborative, analytical, rigorous",
+  "knowledge_graph_path": "swarm_data/knowledge_graphs/structural_physics.json",
+  "system_prompt_template": "You are a senior structural engineer. Ground your recommendations in Newtonian physics, finite element analysis, and material limits.",
+  "color": "#3B82F6",
+  "perception_range": 25.0
+}
+```
+
+### Key Persona Properties
+
+- **`domain`**: The agent's specialized technical domain (e.g., "Quantum Computing", "Microeconomics", "Neuroscience"). Injected into RAG search queries and consensus enrichment passes.
+- **`interaction_style`**: Controls debate posture:
+  - `Collaborative`: Seeks synthesis, resolves contradictions.
+  - `Socratic`: Asks probing questions, exposes implicit assumptions.
+  - `Contrarian` / `Iconoclast`: Actively challenges prevailing consensus and proposes unconventional counter-hypotheses.
+  - `Empiricist`: Demands empirical verification, citations, and mathematical proofs.
+- **`knowledge_graph_path`**: Relative path to a domain-specific JSON knowledge graph used for semantic context injection during the ReAct loop.
+- **`color`**: Hex color code used for 3D visual tracking in the Control Tower and Streamlit UI.
+
+---
+
+## 3. Dynamic Lifecycle State (`AgentRuntimeState`)
+
+During simulation execution, the Orchestrator maintains an `AgentRuntimeState` for every agent:
+- `position`: Current 3D Cartesian coordinates (`Vector3`).
+- `velocity`: Current directional speed vector (`Vector3`).
+- `acceleration`: Current cumulative force vector (`Vector3`), recalculated on each tick.
+- `latest_thought`: The most recent output generated by the agent, broadcast to neighbors within auditory range.
+- `private_memory`: Chronological list of `ChatMessage` objects containing private thoughts, heard peer messages, and retrieved KG facts.
+
+---
+
+## 4. Agent Forge & Management APIs
+
+Agents can be created, edited, and deleted either via the Control Tower UI ("Agent Forge" tab) or programmatically via REST API:
+
+- `GET /api/agents`: Lists all registered agent configurations.
+- `POST /api/agents`: Creates a new agent configuration with auto-generated UUID.
+- `DELETE /api/agents/{agent_name}`: Removes an agent configuration.
+- `POST /api/agents/upload-pdf`: Ingests an academic PDF, extracts structured concepts, builds an agent-specific knowledge graph, and registers the agent.

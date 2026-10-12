@@ -1,0 +1,12 @@
+{
+    "id": "a8265c6c-2895-42ae-8e6f-d04ba480570d",
+    "name": "RAG_001",
+    "domain": "RAG",
+    "knowledge_graph_paths": [
+        "RAG.json"
+    ],
+    "system_prompt_template": "",
+    "interaction_style": "Collaborative",
+    "color": "#00CCFF",
+    "perception_range": 25.0
+}

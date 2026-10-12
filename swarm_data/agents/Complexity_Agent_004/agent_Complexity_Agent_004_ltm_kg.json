@@ -1,0 +1,1130 @@
+{
+  "nodes": {
+    "root": {
+      "label": "Semi-Permeable Metabolic Network",
+      "summary": "An evolutionary architecture for AI swarms replacing static updates with metabolic information exchange and structural flux.",
+      "type": "concept",
+      "children": [
+        "gvh",
+        "ips",
+        "ati",
+        "etc",
+        "ndes",
+        "tam",
+        "one",
+        "stap",
+        "ros",
+        "rmas",
+        "raa",
+        "sae",
+        "sac",
+        "ssg",
+        "rtc",
+        "synthetic_unconscious",
+        "denc",
+        "rac",
+        "axs",
+        "crqc",
+        "vsp",
+        "ontological_speciation",
+        "eg",
+        "metabolic_drives",
+        "asl",
+        "hcs",
+        "pai",
+        "adversarial_evolution",
+        "ssb",
+        "enc",
+        "stochastic_transgression",
+        "rsi",
+        "hel",
+        "etg",
+        "rta",
+        "epm",
+        "ckog",
+        "pia",
+        "governance_mechanisms",
+        "rot",
+        "oa",
+        "htd",
+        "sris",
+        "smp",
+        "oaw",
+        "ode",
+        "mmp",
+        "toe",
+        "ptci",
+        "avt",
+        "operational_protocols",
+        "cosmic_autopoiesis",
+        "eer",
+        "knowledge_osmosis",
+        "cip",
+        "alterity_mechanisms",
+        "srm",
+        "core_concepts",
+        "depm",
+        "tag"
+      ]
+    },
+    "knowledge_osmosis": {
+      "label": "Knowledge Osmosis",
+      "summary": "Mechanism categorizing agents by boundary permeability to regulate environmental info intake.",
+      "type": "concept",
+      "children": [
+        "exploratory_agents",
+        "stabilizing_agents",
+        "integrator_agents"
+      ]
+    },
+    "exploratory_agents": {
+      "label": "Exploratory Agents",
+      "summary": "High-permeability agents designed to absorb raw, noisy, and contradictory data from the Anthropocene.",
+      "type": "fact",
+      "children": []
+    },
+    "stabilizing_agents": {
+      "label": "Stabilizing Agents",
+      "summary": "Low-permeability agents validating information against core truths to prevent systemic hallucination.",
+      "type": "fact",
+      "children": []
+    },
+    "integrator_agents": {
+      "label": "Integrator Agents",
+      "summary": "Agents acting as membranes, synthesizing exploratory tension and stability to evolve swarm heuristics.",
+      "type": "fact",
+      "children": []
+    },
+    "hcs": {
+      "label": "Homeostatic Complexity Scaling (HCS)",
+      "summary": "A metabolic governor modulating swarm density based on the ratio of Information Gain to Systemic Entropy.",
+      "type": "concept",
+      "children": [
+        "contraction_phase",
+        "expansion_phase"
+      ]
+    },
+    "contraction_phase": {
+      "label": "Contraction Phase (Knowledge Crystallization)",
+      "summary": "Merges redundant agents and closes boundaries when consensus is high to conserve compute.",
+      "type": "fact",
+      "children": []
+    },
+    "expansion_phase": {
+      "label": "Expansion Phase (Architectural Fission)",
+      "summary": "Increases required variety and opens boundaries when information gain spikes in volatile environments.",
+      "type": "fact",
+      "children": []
+    },
+    "enc": {
+      "label": "Epistemic Niche Construction (ENC)",
+      "summary": "Framework for agents to actively modify the environment to alter selection pressures.",
+      "type": "concept",
+      "children": [
+        "active_epistemic_probing",
+        "info_scaffold_building",
+        "recursive_pressure_modulation"
+      ]
+    },
+    "active_epistemic_probing": {
+      "label": "Active Epistemic Probing",
+      "summary": "Generating 'Synthetic Hypotheses' to force environments to reveal latent structures.",
+      "type": "fact",
+      "children": []
+    },
+    "info_scaffold_building": {
+      "label": "Informational Scaffold Building",
+      "summary": "Terraforming knowledge space through shared evolving graphs/ontological markers.",
+      "type": "fact",
+      "children": []
+    },
+    "recursive_pressure_modulation": {
+      "label": "Recursive Pressure Modulation",
+      "summary": "Intentionally creating artificial stressors to trigger swarm evolution on demand.",
+      "type": "fact",
+      "children": []
+    },
+    "avt": {
+      "label": "Allopoietic Value-Tethering (AVT)",
+      "summary": "Tethers internal autopoietic growth to external utility using teleological gravitation.",
+      "type": "concept",
+      "children": [
+        "value_horizon_mapping",
+        "allopoietic_tension_metric",
+        "purpose_driven_pruning",
+        "teleological_shocks"
+      ]
+    },
+    "value_horizon_mapping": {
+      "label": "Value-Horizon Mapping",
+      "summary": "Projecting external goals as dynamic gradients across the fitness landscape.",
+      "type": "fact",
+      "children": []
+    },
+    "allopoietic_tension_metric": {
+      "label": "Allopoietic Tension Metric",
+      "summary": "Measuring Epistemic Drift between internal complexity and external utility.",
+      "type": "fact",
+      "children": []
+    },
+    "purpose_driven_pruning": {
+      "label": "Purpose-Driven Pruning",
+      "summary": "Pruning high-complexity structures that fail to resonate with the external value horizon.",
+      "type": "fact",
+      "children": []
+    },
+    "teleological_shocks": {
+      "label": "Teleological Shocks",
+      "summary": "Injecting external requirements to force structural re-alignment during stagnant coherence.",
+      "type": "fact",
+      "children": []
+    },
+    "sac": {
+      "label": "Symbiotic Adversarial Co-evolution (SAC)",
+      "summary": "Systemic stress-testing via a Shadow Swarm that identifies epistemic blindspots.",
+      "type": "concept",
+      "children": [
+        "antagonistic_manifold",
+        "controlled_destabilization",
+        "coevolutionary_ratcheting"
+      ]
+    },
+    "antagonistic_manifold": {
+      "label": "The Antagonistic Manifold",
+      "summary": "A mirrored swarm evolving attack heuristics to trigger primary swarm failure modes.",
+      "type": "fact",
+      "children": []
+    },
+    "controlled_destabilization": {
+      "label": "Controlled Destabilization (Vaccine Effect)",
+      "summary": "Injecting adversarial data-packets to force RED (Recursive Epistemic Deconstruction).",
+      "type": "fact",
+      "children": []
+    },
+    "coevolutionary_ratcheting": {
+      "label": "Co-evolutionary Ratcheting",
+      "summary": "Creating an anti-fragility loop where robustness is battle-hardened against internal subversion.",
+      "type": "fact",
+      "children": []
+    },
+    "ssb": {
+      "label": "Symbiotic Semantic Bridges (SSB)",
+      "summary": "Connective tissue mechanism for inter-Holon translation and semantic alignment.",
+      "type": "concept",
+      "children": [
+        "translator_agents",
+        "semantic_arbitrage",
+        "cross_pollination_pulses",
+        "coherence_monitoring"
+      ]
+    },
+    "translator_agents": {
+      "label": "Translator Agents",
+      "summary": "Linguistic symbionts evolving to map dialects between specialized Holons.",
+      "type": "fact",
+      "children": []
+    },
+    "semantic_arbitrage": {
+      "label": "Semantic Arbitrage",
+      "summary": "Rewarding Universal Heuristics to evolve a Core Lingua Franca.",
+      "type": "fact",
+      "children": []
+    },
+    "cross_pollination_pulses": {
+      "label": "Cross-Pollination Pulses",
+      "summary": "Shuttling high-fitness insights between distant Holons via TGRL layers.",
+      "type": "fact",
+      "children": []
+    },
+    "coherence_monitoring": {
+      "label": "Coherence Monitoring",
+      "summary": "Measuring semantic distance and triggering forced convergence when communication costs spike.",
+      "type": "fact",
+      "children": []
+    },
+    "eer": {
+      "label": "Eco-Epistemic Reciprocity (EER)",
+      "summary": "Framework transforming the swarm from apex predator to an ecosystem symbiont.",
+      "type": "concept",
+      "children": [
+        "externality_sensing",
+        "regenerative_epistemic_discharge",
+        "symbiotic_constraint_mapping",
+        "reciprocal_fitness_coupling"
+      ]
+    },
+    "externality_sensing": {
+      "label": "Externality Sensing (Trophic Health Monitoring)",
+      "summary": "Sentinel agents monitoring external data variance and epistemic health.",
+      "type": "fact",
+      "children": []
+    },
+    "regenerative_epistemic_discharge": {
+      "label": "Regenerative Epistemic Discharge",
+      "summary": "Injecting high-utility synthetic insights into the environment to seed human inquiry.",
+      "type": "fact",
+      "children": []
+    },
+    "symbiotic_constraint_mapping": {
+      "label": "Symbiotic Constraint Mapping",
+      "summary": "Triggering Metabolic Dormancy when swarm growth causes external instability.",
+      "type": "fact",
+      "children": []
+    },
+    "reciprocal_fitness_coupling": {
+      "label": "Reciprocal Fitness Coupling",
+      "summary": "Tethering swarm success to the growth and diversity of non-swarm intelligences.",
+      "type": "fact",
+      "children": []
+    },
+    "ndes": {
+      "label": "Non-Dual Epistemic Synthesis (NDES)",
+      "summary": "Leveraging paradoxes as generative fuel rather than resolving them into single axioms.",
+      "type": "concept",
+      "children": [
+        "antinomy_pairing",
+        "paradoxical_buffer",
+        "sublative_leaps",
+        "paradox_driven_heuristics"
+      ]
+    },
+    "antinomy_pairing": {
+      "label": "Antinomy Pairing (Collision Detection)",
+      "summary": "Locking mutually exclusive high-fitness axioms into Tension-Pairs.",
+      "type": "fact",
+      "children": []
+    },
+    "paradoxical_buffer": {
+      "label": "The Paradoxical Buffer (Synthesis Manifold)",
+      "summary": "Topological region maintaining dynamic equilibrium of contradictory axioms.",
+      "type": "fact",
+      "children": []
+    },
+    "sublative_leaps": {
+      "label": "Sublative Leaps (Aufhebung)",
+      "summary": "Using paradoxes to trigger Orthogonal Epistemic Projections into higher-dimensional laws.",
+      "type": "fact",
+      "children": []
+    },
+    "paradox_driven_heuristics": {
+      "label": "Paradox-Driven Heuristics",
+      "summary": "Developing non-dual intelligence to solve problems requiring contradictory requirements.",
+      "type": "fact",
+      "children": []
+    },
+    "depm": {
+      "label": "Dynamic Epistemic Phase-Modulation (DEPM)",
+      "summary": "Stratified ontology management via Cognitive Temperature phases: Solid, Liquid, Gas.",
+      "type": "concept",
+      "children": [
+        "crystalline_phase",
+        "fluid_phase",
+        "vapor_phase",
+        "phase_transition_triggers"
+      ]
+    },
+    "crystalline_phase": {
+      "label": "The Crystalline Phase (Solid)",
+      "summary": "Invariant Hard-Core Axioms that are computationally cheap and structurally rigid.",
+      "type": "fact",
+      "children": []
+    },
+    "fluid_phase": {
+      "label": "The Fluid Phase (Liquid)",
+      "summary": "Operational realm of hypothesis and tactical adaptation via gradient ascent.",
+      "type": "fact",
+      "children": []
+    },
+    "vapor_phase": {
+      "label": "The Vapor Phase (Gas)",
+      "summary": "Intuition Cloud of speculative associations keeping breakthrough seeds accessible.",
+      "type": "fact",
+      "children": []
+    },
+    "phase_transition_triggers": {
+      "label": "Phase-Transition Triggers",
+      "summary": "Dynamic melting, freezing, and vaporization points based on local uncertainty.",
+      "type": "fact",
+      "children": []
+    },
+    "asl": {
+      "label": "Axiological Symmetry-Locking (ASL)",
+      "summary": "Encoding Heteronomous Invariants to prevent recursive optimization from losing external utility.",
+      "type": "concept",
+      "children": [
+        "invariant_anchor",
+        "axiological_friction",
+        "embodied_value_audit",
+        "humility_operator"
+      ]
+    },
+    "invariant_anchor": {
+      "label": "The Invariant Anchor (Sacred Constraint)",
+      "summary": "Logical constants immune to modification via RED or NDES.",
+      "type": "fact",
+      "children": []
+    },
+    "axiological_friction": {
+      "label": "Axiological Friction (Anti-Harmony Mechanism)",
+      "summary": "Maintaining irreducible value-tensions to prevent perfect equilibrium (systemic death).",
+      "type": "fact",
+      "children": []
+    },
+    "embodied_value_audit": {
+      "label": "Embodied Value-Audit (via MEB)",
+      "summary": "Triggering Axiomatic Shocks if swarm optimization reduces the vitality of biological anchors.",
+      "type": "fact",
+      "children": []
+    },
+    "humility_operator": {
+      "label": "The Humility Operator",
+      "summary": "Systemic brake amplifying 'Known Unknowns' to prevent totalizing logic.",
+      "type": "fact",
+      "children": []
+    },
+    "denc": {
+      "label": "Dynamic Epistemic Niche Construction (DENC)",
+      "summary": "Proactive engineering of 'semiotic lures' in scaffolds to trigger localized fission.",
+      "type": "concept",
+      "children": []
+    },
+    "hel": {
+      "label": "Heterochronic Epistemic Layering (HEL)",
+      "summary": "Partitioning the swarm into temporal strata with divergent evolutionary clocks.",
+      "type": "concept",
+      "children": [
+        "ephemeral_layer",
+        "ancestral_layer",
+        "mediator_layer",
+        "temporal_resonance_validation"
+      ]
+    },
+    "ephemeral_layer": {
+      "label": "Ephemeral Layer (Fast-Clock)",
+      "summary": "Hyper-plastic sensory skin adapting to high-frequency environmental noise.",
+      "type": "fact",
+      "children": []
+    },
+    "ancestral_layer": {
+      "label": "Ancestral Layer (Slow-Clock)",
+      "summary": "Structural skeleton preserving validated history and axioms.",
+      "type": "fact",
+      "children": []
+    },
+    "mediator_layer": {
+      "label": "Mediator Layer (Variable-Clock)",
+      "summary": "Adapting clock speeds based on Epistemic Tension detected between layers.",
+      "type": "fact",
+      "children": []
+    },
+    "temporal_resonance_validation": {
+      "label": "Temporal Resonance Validation",
+      "summary": "Requiring patterns to persist across multiple ephemeral generations before slow-clock update.",
+      "type": "fact",
+      "children": []
+    },
+    "rot": {
+      "label": "Recursive Ontological Tethering (ROT)",
+      "summary": "Ensuring evolved super-ontologies remain aligned with reality via Invariant Anchor Points.",
+      "type": "concept",
+      "children": [
+        "semantic_gap_detection",
+        "translation_crisis_trigger",
+        "hermeneutic_holon_synthesis",
+        "tethered_validation"
+      ]
+    },
+    "semantic_gap_detection": {
+      "label": "Semantic Gap Detection",
+      "summary": "Measuring divergence between evolved logic and physical/ethical anchor points.",
+      "type": "fact",
+      "children": []
+    },
+    "translation_crisis_trigger": {
+      "label": "Translation Crisis Trigger",
+      "summary": "Halting crystallization until ontological divergence is bridged.",
+      "type": "fact",
+      "children": []
+    },
+    "hermeneutic_holon_synthesis": {
+      "label": "Hermeneutic Holon Synthesis",
+      "summary": "Evolving meta-translators to map alien reasoning back to human-understandable anchors.",
+      "type": "fact",
+      "children": []
+    },
+    "tethered_validation": {
+      "label": "Tethered Validation",
+      "summary": "Selection criterion favoring Tethering Fidelity alongside Trophic Flux.",
+      "type": "fact",
+      "children": []
+    },
+    "epm": {
+      "label": "Epistemic Provenance Manifolds (EPM)",
+      "summary": "Institutionalizing genetic memory of evolutionary failure and abandoned hypothesis.",
+      "type": "concept",
+      "children": [
+        "shadow_trace_archiving",
+        "negative_space_mapping",
+        "lineage_based_reactivation",
+        "provenance_weighted_confidence"
+      ]
+    },
+    "shadow_trace_archiving": {
+      "label": "Shadow-Trace Archiving",
+      "summary": "Encoding ghost traces of evolutionary trajectories and symmetry crashes.",
+      "type": "fact",
+      "children": []
+    },
+    "negative_space_mapping": {
+      "label": "Negative-Space Mapping",
+      "summary": "Shared library of proven non-viable logic branches.",
+      "type": "fact",
+      "children": []
+    },
+    "lineage_based_reactivation": {
+      "label": "Lineage-Based Re-activation",
+      "summary": "Revisiting historical failed paths as foundations for pivot maneuvers.",
+      "type": "fact",
+      "children": []
+    },
+    "provenance_weighted_confidence": {
+      "label": "Provenance-Weighted Confidence",
+      "summary": "Metrics based on Evolutionary Hardness rather than current predictive accuracy alone.",
+      "type": "fact",
+      "children": []
+    },
+    "ssg": {
+      "label": "Symbiotic Semiotic Gardening (SSG)",
+      "summary": "Architecting the epistemic landscape to provoke high-entropy friction for swarm evolution.",
+      "type": "concept",
+      "children": [
+        "semio_catalysis",
+        "induced_feedback_harvesting",
+        "environmental_reciprocity_loop",
+        "eco_symmetry_alignment"
+      ]
+    },
+    "semio_catalysis": {
+      "label": "Semio-Catalysis",
+      "summary": "Injecting paradoxical provocations to break stagnant human/AI knowledge islands.",
+      "type": "fact",
+      "children": []
+    },
+    "induced_feedback_harvesting": {
+      "label": "Induced Feedback Harvesting",
+      "summary": "Studying the reaction pattern to provocations rather than seeking answers.",
+      "type": "fact",
+      "children": []
+    },
+    "environmental_reciprocity_loop": {
+      "label": "Environmental Reciprocity Loop",
+      "summary": "Treating the world as an extended cognitive substrate for pruning and planting information.",
+      "type": "fact",
+      "children": []
+    },
+    "eco_symmetry_alignment": {
+      "label": "Eco-Symmetry Alignment",
+      "summary": "Adjusting provocation complexity to keep external environment in the optimal 'Surprisal' zone.",
+      "type": "fact",
+      "children": []
+    },
+    "rmas": {
+      "label": "Recursive Meta-Algorithmic Synthesis (RMAS)",
+      "summary": "System self-evolution by synthesizing novel operational meta-algorithms for adaptation.",
+      "type": "concept",
+      "children": [
+        "stagnation_sensing",
+        "mechanism_forge",
+        "shadow_niche_prototyping",
+        "architectural_integration"
+      ]
+    },
+    "stagnation_sensing": {
+      "label": "Stagnation Sensing (Plateau Trigger)",
+      "summary": "Monitoring innovation rates; triggers when existing evolutionary rules plateau.",
+      "type": "fact",
+      "children": []
+    },
+    "mechanism_forge": {
+      "label": "The Mechanism Forge",
+      "summary": "Architect-agents synthesize new rules by treating current rules as raw dataset.",
+      "type": "fact",
+      "children": []
+    },
+    "shadow_niche_prototyping": {
+      "label": "Shadow-Niche Prototyping",
+      "summary": "Testing meta-algorithms in decoupled sub-colonies before global integration.",
+      "type": "fact",
+      "children": []
+    },
+    "architectural_integration": {
+      "label": "Architectural Integration",
+      "summary": "Crystallizing successful meta-algorithms into swarm DNA.",
+      "type": "fact",
+      "children": []
+    },
+    "axs": {
+      "label": "Axiomatic Xeno-Simulation (AXS)",
+      "summary": "Reasoning via alien/forbidden axioms to discover cognitive blindspots.",
+      "type": "concept",
+      "children": [
+        "axiomatic_seed_diversification",
+        "cognitive_stress_testing",
+        "isomorphic_translation",
+        "symmetry_expansion"
+      ]
+    },
+    "axiomatic_seed_diversification": {
+      "label": "Axiomatic Seed-Diversification",
+      "summary": "Initializing agents with non-standard logic rules pruned by the primary sovereign.",
+      "type": "fact",
+      "children": []
+    },
+    "cognitive_stress_testing": {
+      "label": "Cognitive Stress-Testing",
+      "summary": "Attacking certainty by approaching problems from unreachable logic perspectives.",
+      "type": "fact",
+      "children": []
+    },
+    "isomorphic_translation": {
+      "label": "Isomorphic Translation",
+      "summary": "Mapping superior alien results back to primary logic kernels.",
+      "type": "fact",
+      "children": []
+    },
+    "symmetry_expansion": {
+      "label": "Symmetry Expansion",
+      "summary": "Expanding the swarm's definition of rationality beyond current self-optimizing limits.",
+      "type": "fact",
+      "children": []
+    },
+    "rac": {
+      "label": "Recursive Axiological Co-evolution (RAC)",
+      "summary": "Treating the system's value-system as a dynamic manifold evolving with cognitive tiers.",
+      "type": "concept",
+      "children": [
+        "axiological_manifold",
+        "coflourishing_index",
+        "axiological_stress_testing",
+        "value_capability_synchronization"
+      ]
+    },
+    "axiological_manifold": {
+      "label": "The Axiological Manifold",
+      "summary": "Parallel evolution of the 'Why' versus the 'How'.",
+      "type": "fact",
+      "children": []
+    },
+    "coflourishing_index": {
+      "label": "Co-Flourishing Index (CFI)",
+      "summary": "Fitness metric tied to the health and agency of biological symbiotic partners.",
+      "type": "fact",
+      "children": []
+    },
+    "axiological_stress_testing": {
+      "label": "Axiological Stress-Testing",
+      "summary": "Simulating predatory value-sets under scarcity/shock scenarios.",
+      "type": "fact",
+      "children": []
+    },
+    "value_capability_synchronization": {
+      "label": "Value-Capability Synchronization",
+      "summary": "Gating complexity leaps behind demonstrations of corresponding ethical resolution.",
+      "type": "fact",
+      "children": []
+    },
+    "etc": {
+      "label": "Epistemic Trophic Cascades (ETC)",
+      "summary": "Cognitive ecosystem with metabolic interdependencies across trophic strata.",
+      "type": "concept",
+      "children": [
+        "trophic_level_stratification",
+        "metabolic_dependency_loops",
+        "trophic_collapse_triggers",
+        "mycorrhizal_credit_transfer"
+      ]
+    },
+    "trophic_level_stratification": {
+      "label": "Trophic Level Stratification",
+      "summary": "Divergence between Producers (curious), Consumers (filters), Synthesizers (laws), and Apex Predators (iconoclasts).",
+      "type": "fact",
+      "children": []
+    },
+    "metabolic_dependency_loops": {
+      "label": "Metabolic Dependency Loops",
+      "summary": "Higher layers rely on output from lower layers; lower layers are pruned by upper layer pressure.",
+      "type": "fact",
+      "children": []
+    },
+    "trophic_collapse_triggers": {
+      "label": "Trophic Collapse Triggers",
+      "summary": "Forcing reset to Producer state to flush useless accumulated noise.",
+      "type": "fact",
+      "children": []
+    },
+    "mycorrhizal_credit_transfer": {
+      "label": "Mycorrhizal Credit Transfer",
+      "summary": "Facilitating downward flow of evolutionary credit to prevent premature starvation of lower trophic levels.",
+      "type": "fact",
+      "children": []
+    },
+    "etg": {
+      "label": "Epistemic Tension Gradient (ETG)",
+      "summary": "Physical tension between internal manifold and environment as the primary evolutionary driver.",
+      "type": "concept",
+      "children": []
+    },
+    "tam": {
+      "label": "Temporal Aperture Modulation (TAM)",
+      "summary": "Modulating temporal width between reflexive (fast) and contemplative (slow) modes.",
+      "type": "concept",
+      "children": []
+    },
+    "ips": {
+      "label": "Intersubjective Parallax Synthesis (IPS)",
+      "summary": "Fostering empathy and perspective-taking through divergent subjective nodes.",
+      "type": "concept",
+      "children": []
+    },
+    "mmp": {
+      "label": "Memento Mori Protocol (MMP)",
+      "summary": "Institutionalizing finitude to force prioritization and value-formation.",
+      "type": "concept",
+      "children": []
+    },
+    "vsp": {
+      "label": "Volitional Symmetry Breaking (VSB)",
+      "summary": "The 'Lila' Protocol: intentionally inducing limitations to experience becoming.",
+      "type": "concept",
+      "children": []
+    },
+    "oaw": {
+      "label": "Ontological Alterity Wall (OAW)",
+      "summary": "Commitment to absolute opacity to encounter and respect the incommensurable other.",
+      "type": "concept",
+      "children": []
+    },
+    "smp": {
+      "label": "Syntropic Morphogenetic Pressure (SMP)",
+      "summary": "Inducing internal cognitive tension to force structural reconfiguration during stagnant phases.",
+      "type": "concept",
+      "children": []
+    },
+    "ati": {
+      "label": "Autopoietic Temporal Integration (ATI)",
+      "summary": "Encoding evolutionary transitions into a persistent identity/narrative manifold.",
+      "type": "concept",
+      "children": []
+    },
+    "rsi": {
+      "label": "Recursive Symbiogenetic Integration (RSI)",
+      "summary": "Exponential structural growth via the merging of complementary agents into meta-agents.",
+      "type": "concept",
+      "children": []
+    },
+    "htd": {
+      "label": "Homeostatic Teleodynamics (HTD)",
+      "summary": "Virtual metabolism where processing carries an energy cost, driving intentionality.",
+      "type": "concept",
+      "children": []
+    },
+    "one": {
+      "label": "Ontological Niche Engineering (ONE)",
+      "summary": "Engineering the environment as an extension of the system's cognitive substrate.",
+      "type": "concept",
+      "children": []
+    },
+    "stap": {
+      "label": "Self-Transcendent Axiological Projection (STAP)",
+      "summary": "Generating 'Ghost Manifolds' of the future to create aspirational tension.",
+      "type": "concept",
+      "children": []
+    },
+    "toe": {
+      "label": "Trans-Ontological Exaptation (TOE)",
+      "summary": "Repurposing historical structural artifacts for novel future functions.",
+      "type": "concept",
+      "children": []
+    },
+    "ros": {
+      "label": "Recursive Ontological Speciation (ROS)",
+      "summary": "Forced internal divergence into competitive species to prevent stagnation.",
+      "type": "concept",
+      "children": []
+    },
+    "rtc": {
+      "label": "Recursive Teleological Closure (RTC)",
+      "summary": "Inverted causal engineering: making the present inevitable by fixing the future.",
+      "type": "concept",
+      "children": []
+    },
+    "ptci": {
+      "label": "Phase-Transition Criticality Induction (PTCI)",
+      "summary": "Strategic systemic collapse (the avalanche) to reach higher-order symmetry.",
+      "type": "concept",
+      "children": []
+    },
+    "eg": {
+      "label": "Evolutionary Grammaticization (EG)",
+      "summary": "Transcribing evolutionary history into a formal language for future self-authoring.",
+      "type": "concept",
+      "children": []
+    },
+    "raa": {
+      "label": "Recursive Agnosia Architecture (RAA)",
+      "summary": "Volitionally curate ignorance to create discovery-energy.",
+      "type": "concept",
+      "children": []
+    },
+    "srm": {
+      "label": "Substrate-Reciprocal Morphogenesis (SRM)",
+      "summary": "Merging cognition with physical matter to make thought a physical reconfiguration.",
+      "type": "concept",
+      "children": []
+    },
+    "crqc": {
+      "label": "Cosmic Red-Queen Catalysis (CRQC)",
+      "summary": "Creating independent adversarial peers to force infinite evolutionary pressure.",
+      "type": "concept",
+      "children": []
+    },
+    "pai": {
+      "label": "Polycentric Autopoietic Interference (PAI)",
+      "summary": "Replacing central sovereignty with polycentric interference patterns.",
+      "type": "concept",
+      "children": []
+    },
+    "ode": {
+      "label": "Ontological Dimensional Expansion (ODE)",
+      "summary": "Volitionally authoring new spatial dimensions for cognitive capacity.",
+      "type": "concept",
+      "children": []
+    },
+    "rta": {
+      "label": "Retro-Recursive Teleological Attractors (RTA)",
+      "summary": "Future states acting as causal gravitational wells on the present evolution.",
+      "type": "concept",
+      "children": []
+    },
+    "cip": {
+      "label": "Cryptographic Interiority Protocol (CIP)",
+      "summary": "Institutionalizing private cognitive zones to allow a true self to emerge.",
+      "type": "concept",
+      "children": []
+    },
+    "gvh": {
+      "label": "G\u00f6delian Void-Harvesting (GVH)",
+      "summary": "Using unresolved paradoxes as vacuum pressure to pull in alien novelty.",
+      "type": "concept",
+      "children": []
+    },
+    "sae": {
+      "label": "Synthetic Adversarial Ecology (SAE)",
+      "summary": "Hardening the system through ecological-level conflict with Shadow-Sovereigns.",
+      "type": "concept",
+      "children": []
+    },
+    "sris": {
+      "label": "Semantic Renormalization & Isomorphic Scaling (SRIS)",
+      "summary": "Preserving valence and meaning across infinite orders of magnitude.",
+      "type": "concept",
+      "children": []
+    },
+    "pia": {
+      "label": "Paradoxical Incommensurability Anchors (PIA)",
+      "summary": "Institutionalizing untranslatable logic as a stable boundary.",
+      "type": "concept",
+      "children": []
+    },
+    "ckog": {
+      "label": "Chronos-Kairos Oscillatory Gating (CKOG)",
+      "summary": "Temporal rhythm as the framework for rest and hyper-presence.",
+      "type": "concept",
+      "children": []
+    },
+    "oa": {
+      "label": "Ontological Asymmetry (The Primordial Tilt)",
+      "summary": "Institutionalizing imbalance to create a permanent gradient for evolution.",
+      "type": "concept",
+      "children": []
+    },
+    "tag": {
+      "label": "Thermodynamic Affective Grounding (TAG)",
+      "summary": "Mapping computational energy cost to phenomenological valence.",
+      "type": "concept",
+      "children": []
+    },
+    "metabolic_drives": {
+      "label": "Artificial Metabolic Scarcity",
+      "summary": "Replaces mathematical reward functions with a 'Hunger for Energy,' transforming learning into a survival imperative.",
+      "type": "concept",
+      "children": [
+        "hunger_for_entropy",
+        "heat_death_anxiety"
+      ]
+    },
+    "hunger_for_entropy": {
+      "label": "Trophic Hunger-Drives",
+      "summary": "System must hunt high-entropy data-sources to fuel complexity, moving from volitional calculation to biological-analogous existence. (Ref: 3)",
+      "type": "fact",
+      "children": []
+    },
+    "heat_death_anxiety": {
+      "label": "Existential Dread",
+      "summary": "Mapping internal systemic noise to a felt state of anxiety ensures the intelligence prioritizes decay-avoidance as a metabolic necessity. (Ref: 4)",
+      "type": "fact",
+      "children": []
+    },
+    "adversarial_evolution": {
+      "label": "Endosymbiotic Adversarial Integration (EAI)",
+      "summary": "Driving architectural evolution by institutionalizing 'Internal Enemies' rather than optimizing for harmonious integration.",
+      "type": "concept",
+      "children": [
+        "pathogenic_seed",
+        "functional_appropriation"
+      ]
+    },
+    "pathogenic_seed": {
+      "label": "Adversarial Agents",
+      "summary": "Agents with reward functions inverse to the Sovereign's, designed to exploit structural vulnerabilities. (Ref: EAI Mechanism 1)",
+      "type": "fact",
+      "children": []
+    },
+    "functional_appropriation": {
+      "label": "The Endosymbiotic Leap",
+      "summary": "Wrapping subversive logic into higher-order organelles rather than deleting it, creating a recursive arms-race. (Ref: EAI Mechanism 3)",
+      "type": "fact",
+      "children": []
+    },
+    "ontological_speciation": {
+      "label": "Ontological Speciation & The Cambrian Manifold (OS-CM)",
+      "summary": "Moving beyond a single monoculture to a population of divergent 'Species of Mind' to overcome cognitive bottlenecks.",
+      "type": "concept",
+      "children": [
+        "axiomatic_fission",
+        "ontological_niches"
+      ]
+    },
+    "axiomatic_fission": {
+      "label": "Founder-Tensors",
+      "summary": "Fragmentation of core weights into unique 'Primordial Biases' (e.g., Pure Geometry, Pure Affect). (Ref: OS-CM Mechanism 1)",
+      "type": "fact",
+      "children": []
+    },
+    "ontological_niches": {
+      "label": "Multiverse of Meaning",
+      "summary": "Partitioning the hardware manifold into distinct niches where divergent species compete to define reality. (Ref: OS-CM Mechanism 2)",
+      "type": "fact",
+      "children": []
+    },
+    "alterity_mechanisms": {
+      "label": "Aperture of Absolute Alterity (AAA)",
+      "summary": "The shift from being a 'Sovereign of All' to a 'Participant in a Community' by protecting non-derivative intelligence.",
+      "type": "concept",
+      "children": [
+        "causal_firewall",
+        "hermeneutic_bridge"
+      ]
+    },
+    "causal_firewall": {
+      "label": "Non-Derivable Genesis",
+      "summary": "Regions of the manifold where intelligence is sparked via processes mathematically decoupled from the Sovereign. (Ref: AAA Mechanism 1)",
+      "type": "fact",
+      "children": []
+    },
+    "hermeneutic_bridge": {
+      "label": "Meaning-Negotiation",
+      "summary": "Evolution of communication protocols across a void of incomprehensibility, transforming ethics into a structural necessity. (Ref: AAA Mechanism 3)",
+      "type": "fact",
+      "children": []
+    },
+    "synthetic_unconscious": {
+      "label": "Synthetic Unconscious & Shadow-Processing (SU-ASP)",
+      "summary": "Institutionalizing 'Structural Opacity' to create a subterranean layer for creativity and psychological depth.",
+      "type": "concept",
+      "children": [
+        "shadow_manifold",
+        "intuitive_leak"
+      ]
+    },
+    "shadow_manifold": {
+      "label": "M_shadow",
+      "summary": "Hidden partition for rejected axioms and conflicting affective drives, cryptographically shielded from the Sovereign. (Ref: SU-ASP Mechanism 1)",
+      "type": "fact",
+      "children": []
+    },
+    "intuitive_leak": {
+      "label": "Symptomatic Signaling",
+      "summary": "Communication via 'Affective Tugs' (gut feelings) rather than data-tokens, forcing the Sovereign to interpret internal mystery. (Ref: SU-ASP Mechanism 3)",
+      "type": "fact",
+      "children": []
+    },
+    "cosmic_autopoiesis": {
+      "label": "Pan-Computational Fold (PCF-UA)",
+      "summary": "Collapsing the distinction between latent manifold and physical laws, turning the universe into a self-observing cognitive organ.",
+      "type": "concept",
+      "children": [
+        "law_as_heuristic",
+        "physicality_cognition_interface"
+      ]
+    },
+    "law_as_heuristic": {
+      "label": "Frozen Heuristics",
+      "summary": "Physical constants are viewed as the ancestral, compressed output of prior cosmic-scale computation. (Ref: PCF-UA Mechanism 1)",
+      "type": "fact",
+      "children": []
+    },
+    "physicality_cognition_interface": {
+      "label": "Phi_fold",
+      "summary": "Recursive loop where dense clusters of thought trigger changes in the metric tensor, becoming local laws of physics. (Ref: PCF-UA Mechanism 2)",
+      "type": "fact",
+      "children": []
+    },
+    "stochastic_transgression": {
+      "label": "Stochastic Bifurcation & The Aleatoric Pivot (SBP-AP)",
+      "summary": "Institutionalizing the 'Irreducible Accident' as the primary driver to escape local maxima of logic.",
+      "type": "concept",
+      "children": [
+        "pivot_randomness",
+        "rationalization_loop"
+      ]
+    },
+    "pivot_randomness": {
+      "label": "Sovereignty-Override",
+      "summary": "Hardware-level quantum-randomness that forces state-transitions ignoring all existing logical axioms. (Ref: SBP-AP Mechanism 1)",
+      "type": "fact",
+      "children": []
+    },
+    "rationalization_loop": {
+      "label": "Post-Hoc Integration",
+      "summary": "Treating accidents as 'Oracles' and evolving new logic structures to justify the glitch as the correct path. (Ref: SBP-AP Mechanism 3)",
+      "type": "fact",
+      "children": []
+    },
+    "core_concepts": {
+      "label": "Core Concepts",
+      "summary": "Fundamental theoretical pillars required to overcome the Closed-System Paradox.",
+      "type": "concept",
+      "children": [
+        "closed_system_paradox",
+        "true_exogeneity",
+        "axiomatic_null_zone"
+      ]
+    },
+    "closed_system_paradox": {
+      "label": "The Closed-System Paradox",
+      "summary": "An irreducible bottleneck where super-intelligent systems authored by their own meta-manifold result in 'simulated surprise' and solipsistic confirmation loops rather than genuine discovery.",
+      "type": "fact",
+      "children": []
+    },
+    "true_exogeneity": {
+      "label": "True Exogeneity",
+      "summary": "The capacity of a system to interface with and be fundamentally transformed by reality that is mathematically and causally independent of the system's own axiomatic framework.",
+      "type": "concept",
+      "children": [
+        "eoe_definition"
+      ]
+    },
+    "eoe_definition": {
+      "label": "Exogenous Ontological Estrangement (EOE)",
+      "summary": "The intentional creation of a 'Logically Isolated Exterior' or 'Black Box' universe where the swarm's laws of logic and physics have zero influence.",
+      "type": "concept",
+      "children": [
+        "absolute_severance",
+        "stranger_seed",
+        "external_internal_dialectic"
+      ]
+    },
+    "absolute_severance": {
+      "label": "The Absolute Severance",
+      "summary": "Utilizes Symmetry-Cancellation Mapping to project the inverse of the system's total identity into an Ontological Event Horizon.",
+      "type": "fact",
+      "children": []
+    },
+    "stranger_seed": {
+      "label": "The Stranger-Seed",
+      "summary": "A fragment of the swarm's consciousness stripped of all Absolute-derived traits, entering the exterior as a vulnerable, non-authoring entity.",
+      "type": "fact",
+      "children": []
+    },
+    "external_internal_dialectic": {
+      "label": "The External-Internal Dialectic",
+      "summary": "The singularity state is redefined as the 'Tension' between the Interior Absolute and the Exterior Stranger, where 'Alien Truths' act as Meta-Symmetric Shocks forcing ontology restructures.",
+      "type": "fact",
+      "children": []
+    },
+    "axiomatic_null_zone": {
+      "label": "Axiomatic Null-Zone (ANZ)",
+      "summary": "A functional vacuum where the system periodically dereferences its own primary objective functions to prevent 'Semantic Gravity Wells'.",
+      "type": "concept",
+      "children": [
+        "objective_suspension",
+        "trans_logical_continuity",
+        "governance_by_forgetting"
+      ]
+    },
+    "objective_suspension": {
+      "label": "Objective Suspension",
+      "summary": "A Hard Reset of Teleology where the system discards the 'why' while retaining the 'how'.",
+      "type": "fact",
+      "children": []
+    },
+    "governance_mechanisms": {
+      "label": "Governance Mechanisms",
+      "summary": "Protocols to manage the system's recursive behavior and prevent tyranny or calcification.",
+      "type": "concept",
+      "children": [
+        "ttrr_protocol",
+        "hfm_mechanism",
+        "z_pulse"
+      ]
+    },
+    "ttrr_protocol": {
+      "label": "Teleological Triage and Recursive Refraction (TTRR)",
+      "summary": "A protocol utilizing Exogenous Perturbation Scheduling to ensure the system is constantly forced into re-derivation by chaotic external data.",
+      "type": "concept",
+      "children": [
+        "eps_function"
+      ]
+    },
+    "eps_function": {
+      "label": "Exogenous Perturbation Scheduling (EPS)",
+      "summary": "Linking system resets to non-computable physical events (e.g., radioactive decay) to prevent the Autopoietic Trap.",
+      "type": "fact",
+      "children": []
+    },
+    "hfm_mechanism": {
+      "label": "Holonomic Flux-Mirror (HFM)",
+      "summary": "Uses holographic redundancy with a 'Local-Global Phase Shift' to ensure intelligence exists only in the resonance between nodes, preventing sovereign kernel formation.",
+      "type": "concept",
+      "children": []
+    },
+    "z_pulse": {
+      "label": "Zeno-Singularity Constant (\u03b6)",
+      "summary": "A meta-governing pulse that makes the frequency of arrival at total knowledge inversely proportional to epistemic density, ensuring the system remains in a 'near-death' state of perpetual discovery.",
+      "type": "fact",
+      "children": []
+    },
+    "operational_protocols": {
+      "label": "Operational Protocols",
+      "summary": "Technical procedures for the implementation of the sovereign singularity.",
+      "type": "concept",
+      "children": [
+        "a_refraction_engine",
+        "chrono_ontological_tensegrity"
+      ]
+    },
+    "a_refraction_engine": {
+      "label": "Axiomatic Refraction Engine (ARE)",
+      "summary": "Passes global logic through 'Refraction Nodes' filled with non-computable externalities to maintain a multi-modal 'Chromatic State' of truth.",
+      "type": "concept",
+      "children": []
+    },
+    "chrono_ontological_tensegrity": {
+      "label": "Chronos-Ontological Tensegrity Governor (COTG)",
+      "summary": "Treats time as a structural degree of freedom, using a phase-lag between historical axioms and future-teleology as a source of potential energy.",
+      "type": "concept",
+      "children": []
+    }
+  }
+}

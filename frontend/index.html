@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swarm Intelligence Control Tower</title>
+    <script>
+      window.addEventListener('error', function(event) {
+        const root = document.getElementById('root');
+        if (root) {
+          root.innerHTML = '<div style="padding: 2rem; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.4); color: #f87171; font-family: monospace; border-radius: 8px; margin: 2rem; white-space: pre-wrap; box-shadow: 0 4px 24px rgba(0,0,0,0.5);">' +
+            '<h2 style="margin-top:0; color:#f87171;">⚠️ Frontend Runtime Error</h2>' +
+            '<strong>Message:</strong> ' + event.message + '\n' +
+            '<strong>Location:</strong> ' + event.filename + ':' + event.lineno + ':' + event.colno + '\n\n' +
+            (event.error ? '<strong>Stack Trace:</strong>\n' + event.error.stack : '') +
+            '</div>';
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

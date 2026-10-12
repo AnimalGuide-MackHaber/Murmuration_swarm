@@ -1,39 +1,118 @@
-# LLM Provider Integration & Resiliency
+# LLM Provider Integration & Resiliency Tier
 
-Murmur Swarm is extremely token-hungry by design. To mitigate the architectural stresses of orchestrating multiple synchronous LLM calls every iteration, the system uses a robust abstraction tier for its models, paired with aggressive rate limiters and circuit breakers.
+**Murmur Swarm** is designed to execute high-concurrency multi-agent cognitive simulations without suffering from API rate-limit exhaustion, network dropouts, or vendor lock-in. It provides hot-swappable model adapters abstracted behind a unified interface with built-in sliding-window rate limiting, exponential backoff retries, and circuit breakers.
 
-## Hot-Swappable LLM Tier
+---
 
-Instead of hard-coding API calls to a single provider, Murmur relies on an abstracted `LLMProvider` interface. The Orchestrator can dynamically hotswap the active model without dropping the simulation state.
+## 1. Provider Adapter Architecture
 
-The system natively supports:
-1. **Gemini** (`swarm_gemini.py`): Leverages Google's `google-genai` SDK. Highly performant for complex contextual reasoning.
-2. **Nvidia NIM** (`swarm_nvidia.py`): Routes commands to Nvidia's hosted inference APIs. 
-3. **Ollama** (`swarm_ollama.py`): Connects to localized models running on-premise, bypassing cloud token costs and latency entirely for privacy-first operations.
+All providers implement an asynchronous `generate_content_async(prompt: str) -> GenerationResponse` interface located in the `core/` package:
 
 ```mermaid
 graph TD
-    O[Orchestrator] --> IL[Abstract LLM Interface]
-    IL -.->|if provider == gemini| G[Gemini Wrapper]
-    IL -.->|if provider == nvidia| N[Nvidia Wrapper]
-    IL -.->|if provider == ollama| L[Ollama Wrapper]
+    SO[SwarmOrchestrator] --> ProviderSelector{Provider Config}
+    ProviderSelector -->|gemini| G[GeminiLLM core/swarm_gemini.py]
+    ProviderSelector -->|nvidia| N[NvidiaLLM core/swarm_nvidia.py]
+    ProviderSelector -->|ollama| O[OllamaWrapper core/swarm_ollama.py]
+    
+    G --> GSDK[google-genai SDK]
+    N --> NSDK[openai AsyncOpenAI SDK]
+    O --> OREST[aiohttp ClientSession]
+    
+    GSDK --> GCloud[(Google Gemini 2.5/3.0 API)]
+    NSDK --> NCloud[(NVIDIA NIM Hosted Inference)]
+    OREST --> OLocal[(Local Ollama Instance :11434)]
 ```
 
-## Token Economics and Flow Control
+### Supported Providers
 
-Running multi-agent simulations places massive strain on external APIs. If 5 agents trigger a 2000-token prompt per iteration over 10 iterations, the system can instantly hit HTTP 429 Rate Limit boundaries.
+| Provider | Adapter Module | Underlying SDK | Key Features |
+| :--- | :--- | :--- | :--- |
+| **Google Gemini** | [`core/swarm_gemini.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/swarm_gemini.py) | `google-genai` | Native async client (`client.aio.models.generate_content`), dynamic model introspection filtering for `generateContent` support, token usage metadata parsing. |
+| **NVIDIA NIM** | [`core/swarm_nvidia.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/swarm_nvidia.py) | `openai` (`AsyncOpenAI`) | Direct integration with NVIDIA inference microservices (`https://integrate.api.nvidia.com/v1`), high-throughput reasoning models like Llama-3.3-70B-Instruct. |
+| **Local Ollama** | [`core/swarm_ollama.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/swarm_ollama.py) | `aiohttp` | Completely offline execution, zero token fees, local hardware acceleration, native support for DeepSeek reasoning tags (`"think": true`). |
 
-To handle this, Murmur Swarm implements two critical mechanisms in its orchestration loop:
+---
 
-### 1. Token Bucket Rate Limiting
-Stored in `rate_limiter.py`, the system tracks both `requests_per_minute` and `tokens_per_minute` using a leaky-bucket algorithm. Before an agent fires its ReAct prompt, it estimates the token payload ($Tokens_{est} \approx \frac{len(text)}{4}$). The rate limiter forces an `asyncio.sleep` if generating the thought would breach the configured ceiling for the active provider.
+## 2. Resiliency & Flow Control Mechanisms
 
-### 2. Circuit Breaking
-If an API fails consecutively (e.g., due to an outage, bad network connection, or hard throttling), Murmur will not infinitely stall in an error loop. 
+Running a simulation with $M$ agents across $N$ iterations generates $M \times N$ cognitive prompts plus consensus and enrichment rounds. Without flow control, this quickly triggers HTTP `429 Too Many Requests` or context quota penalties. Murmur Swarm mitigates this via three layers:
 
-A Circuit Breaker tracks `failure_count`. If it exceeds a configured threshold (e.g., 5 sequential failures), the circuit "Opens".
-- While Open, all LLM calls are instantly bypassed and replaced with a static string `"(Thinking paused: Circuit Breaker Open)"`.
-- The simulation loop continues physically moving the agents, representing a momentary cognitive blackout for the swarm.
-- After an `open_duration_seconds` cool-down, the circuit "Half-Opens" and allows the swarm to try reasoning again.
+```mermaid
+flowchart LR
+    Request[Agent Prompt] --> RL[1. Sliding Window Rate Limiter]
+    RL --> CB{2. Circuit Breaker}
+    CB -- Closed --> Retry[3. Exponential Backoff Retry]
+    Retry --> Provider[Provider Execution]
+    Provider -- Success --> Response[Valid Thought]
+    Provider -- 429/Transient Error --> Retry
+    Retry -- Max Retries Exceeded --> CB_Trip[Trip Circuit Breaker]
+    CB -- Open --> Fallback[Fallback Thought: Circuit Open]
+```
 
-This unique combination of physical stalling and algorithmic tracking ensures the Swarm can survive highly unpredictable external environments gracefully.
+### 1. Sliding-Window Rate Limiting ([`core/rate_limiter.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/rate_limiter.py))
+- Shared instance managed by `SettingsManager` per provider key.
+- Tracks dual ceilings:
+  - **RPM (Requests Per Minute)**
+  - **TPM (Tokens Per Minute)**
+- Uses a double-ended timestamp queue (`collections.deque`).
+- Before sending a prompt, the orchestrator estimates token weight:
+  $$\text{Tokens}_{est} = \max\left(10, \frac{\text{len}(\text{prompt})}{4}\right)$$
+- If either RPM or TPM would exceed configured limits, `RateLimiter.acquire()` computes the necessary wait time and pauses execution via `await asyncio.sleep(wait_time)`.
+- When the API responds with actual token usage metadata, `RateLimiter.update_usage()` reconciles the queue with true token counts.
+
+### 2. Exponential Backoff Retries ([`core/llm_retry.py`](file:///Users/mike/Documents/code/Murmur_swarm/core/llm_retry.py))
+- Asynchronous API calls are decorated with `@async_retry(max_retries=10, base_delay=2.0)`.
+- Inspects exception messages for transient indicators (HTTP `429`, `503`, `rate limit`, `ResourceExhausted`, `timeout`, `connection reset`).
+- Backs off exponentially:
+  $$\text{Delay}(k) = \text{base\_delay} \cdot 2^k \pm \text{jitter}$$
+- Non-transient exceptions (e.g., authentication failures) fail fast without wasted retries.
+
+### 3. Circuit Breaker Pattern
+- Implemented within `SwarmOrchestrator` to prevent deadlocks and excessive billing during persistent service outages.
+- Tracks sequential failures (`failure_count`).
+- If failures exceed `max_failures` (default: 15), the circuit trips to **Open** for `open_duration_seconds` (default: 600s).
+- During the open phase, LLM calls are skipped immediately, returning:
+  `"(Thinking paused: Circuit Breaker Open)"`
+- The physics engine continues moving agents, visually indicating a cognitive freeze while maintaining spatial continuity. After the cool-down expires, the circuit enters **Half-Open** to test connectivity.
+
+---
+
+## 3. Configuration & Hot Swapping
+
+LLM providers can be switched dynamically via the UI (Settings panel or API endpoint `POST /api/settings`) without restarting the simulation. 
+
+Example configuration in `swarm_settings.json`:
+
+```json
+{
+  "llm_provider": "gemini",
+  "model_name": "gemini-2.5-flash",
+  "gemini_api_key": "YOUR_API_KEY",
+  "nvidia_api": {
+    "api_key": "YOUR_NVIDIA_KEY",
+    "base_url": "https://integrate.api.nvidia.com/v1"
+  },
+  "ollama": {
+    "base_url": "http://localhost:11434",
+    "think": true
+  },
+  "rate_limiting": {
+    "gemini": {
+      "requests_per_minute": 60,
+      "tokens_per_minute": 100000,
+      "request_delay_seconds": 0.5
+    },
+    "nvidia": {
+      "requests_per_minute": 30,
+      "tokens_per_minute": 60000,
+      "request_delay_seconds": 1.0
+    },
+    "ollama": {
+      "requests_per_minute": 120,
+      "tokens_per_minute": 200000,
+      "request_delay_seconds": 0.1
+    }
+  }
+}
+```

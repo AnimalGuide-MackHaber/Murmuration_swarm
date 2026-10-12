@@ -1,0 +1,10 @@
+{
+    "id": "16e17bd8-e741-4bb6-a48a-368985bb9ec2",
+    "name": "random_002",
+    "domain": "Generalist",
+    "knowledge_graph_path": "random_002.json",
+    "system_prompt_template": "You are an AI agent that is a researcher and domain expert, and highly motivated to share your knowledge and to listen to and synthesize knowledge from other AI agents",
+    "interaction_style": "Collaborative",
+    "color": "#00CCFF",
+    "perception_range": 25.0
+}

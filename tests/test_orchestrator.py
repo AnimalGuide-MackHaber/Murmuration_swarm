@@ -1,18 +1,17 @@
 import unittest
 from unittest.mock import MagicMock, patch, AsyncMock
 import asyncio
-from swarm_schema import SwarmSnapshot, AgentRuntimeState, Vector3, AgentConfig
-from swarm_orchestrator import SwarmOrchestrator
+from core.swarm_schema import SwarmSnapshot, AgentRuntimeState, Vector3, AgentConfig
+from core.swarm_orchestrator import SwarmOrchestrator
 from datetime import datetime
 
 class TestSwarmOrchestrator(unittest.IsolatedAsyncioTestCase):
     async def asyncSetUp(self):
         self.orchestrator = SwarmOrchestrator()
         
-    @patch('google.generativeai.GenerativeModel')
-    async def test_orchestrator_flow(self, MockModel):
+    async def test_orchestrator_flow(self):
         # Mock LLM
-        mock_model_instance = MockModel.return_value
+        mock_model_instance = MagicMock()
         # Mock async generate_content_async
         mock_response = MagicMock()
         mock_response.text = "Mock Thought"
@@ -50,13 +49,14 @@ class TestSwarmOrchestrator(unittest.IsolatedAsyncioTestCase):
         )
         
         # Run
-        final_state = await self.orchestrator.run_swarm(snapshot)
+        history, export_path = await self.orchestrator.run_full_simulation(snapshot)
+        final_state = history[-1]
         
         # Verify Iterations
-        self.assertGreaterEqual(final_state['iteration'], 2)
+        self.assertGreaterEqual(final_state.iteration, 2)
         
         # Verify Thoughts
-        agent_final = final_state['agent_states']['a1']
+        agent_final = final_state.agent_states['a1']
         self.assertEqual(agent_final.latest_thought, "Mock Thought")
         self.assertGreater(len(agent_final.private_memory), 0)
 

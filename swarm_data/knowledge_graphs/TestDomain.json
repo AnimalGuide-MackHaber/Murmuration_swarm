@@ -1,0 +1,18 @@
+{
+  "nodes": {
+    "root": {
+      "label": "Test Domain",
+      "summary": "Root",
+      "type": "concept",
+      "children": [
+        "c1"
+      ]
+    },
+    "c1": {
+      "label": "Sub Concept",
+      "summary": "Sub",
+      "type": "concept",
+      "children": []
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+    "llm_provider": "gemini",
+    "google_api_key": "",
+    "model_name": "gemini-2.5-flash",
+    "embedding_model_name": "models/gemini-embedding-001",
+    "rate_limits": {
+        "gemini": {
+            "requests_per_minute": 14,
+            "tokens_per_minute": 1000000,
+            "request_delay_seconds": 0.05
+        }
+    },
+    "visitation_threshold": 40,
+    "producers_paused": true
+}
